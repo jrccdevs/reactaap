@@ -1,0 +1,44 @@
+.mapa-tamanio{
+    
+    height: 600px;
+}
+.primero{
+	background-color: yellow;
+	height: 600px;
+}
+
+
+	.st0{fill:navy;}
+	.st1{fill:#B873D2;}
+	.st2{fill:#2FA158;}
+	.st3{fill:#CFF576;}
+	.st4{fill:#F5A6B8;}
+	.st5{fill:#A4D7B2;}
+	.st6{fill:#C0E828;}
+	.st7{fill:#F25AD7;}
+	.st8{fill:#42BF87;}
+	.st9{fill:#E72C73;}
+	.st10{font-family:'Tahoma';}
+	.st11{font-size:13px;}
+	.st12{font-family:'ArialMT';}
+
+svg{
+	
+ 
+ width: 600px;
+ height: 600px;
+	  margin-left: 2px;
+	  margin-right: 2px;
+	  margin-top: 5px;
+}
+
+.segundo{
+	
+	
+}
+
+ 
+.tercero{
+	background-color: #2FA158;
+	margin-right: 5px;
+}
