@@ -25,7 +25,7 @@ export default function Navigation(){
 
                                 </div>
                                 <div className="texto1">
-                                <h6>Las Empresasss</h6> 
+                                <h6>Las Es</h6> 
                                 </div>
 
                             </div>
