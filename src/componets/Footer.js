@@ -7,7 +7,7 @@ export default function Footer() {
         return (
             <div className="footer">
                 <div className="texto">
-                © Copyright 2022 Ing. Reynaldo Calani
+                © Copyright 2022 
                 </div>
             </div>
         );

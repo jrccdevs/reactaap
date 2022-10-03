@@ -3,9 +3,12 @@ import Button from 'react-bootstrap/Button';
 import '../style/Productos.css';
 import Header from './Header'
 import Footer from './Footer'
-import Imagen1 from '../img/Imagen1.jpg'
-
-
+import Logochica from '../assets/img/logochica.jpg'
+import Calidad from '../assets/img/calidad.png'
+import { FcSearch } from 'react-icons/fc';
+import { AiOutlineFunnelPlot } from 'react-icons/ai'
+import {GiMedicalThermometer} from 'react-icons/gi'
+import {FaTable} from 'react-icons/fa'
 export default class Productos extends Component {
     render() {
         return (
@@ -18,68 +21,64 @@ export default class Productos extends Component {
                             <section className="col-12 col-sm-6 col-lg-3">
                                 <div className="row">
                                     <div className="btn-productos">
+                                    <h6>MOSTRAR PRODUCTOS POR:</h6>
                                         <div className=" boton1 col-12 col-sm-6 col-lg-12">
+                                         
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Capsulas</h6>
+                                                Capsulas
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Comprimidos</h6>
+                                                Comprimidos
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Cremas</h6>
+                                                Cremas
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Gel</h6>
+                                                Gel
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Gotas</h6>
+                                                Gotas
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Granulado</h6>
+                                                Granulado
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Inyectable</h6>
+                                                Inyectable
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Jarabes</h6>
+                                                Jarabes
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Polvo</h6>
+                                                Polvo
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Pomada</h6>
+                                                Pomada
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Shampo</h6>
+                                                Shampo
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Solucion</h6>
+                                                Solucion
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Supositorio</h6>
+                                                Supositorio
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Suspension</h6>
+                                                Suspension
                                             </Button>
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                                <h6>Tableta</h6>
+                                                Tableta
                                             </Button>
                                         </div>
-                                        <div className="col-12 col-sm-6 col-lg-12">
-                                            <Button variant="outline-primary" type="checkbox">
-                                                <h6>comprimidos</h6>
-                                            </Button>
-                                        </div>
-
                                     </div>
 
                                 </div>
                             </section>
-                            <section className="col-12 col-sm-6 col-lg-6">
+                            <section className="col-12 col-sm-6 col-lg-4">
                                 <div className="row">
                                     <div className="btn-productos">
                                         <div className="col-12 col-sm-6 col-lg-12">
-                                            <a href="/"><img className="logo_producto" src={Imagen1} alt="" /></a>
+                                            <a href="/"><img className="logo_producto" src={Logochica} alt="" /></a>
                                         </div>
                                         <div className="col-12 col-sm-6 col-lg-12">
                                             <div className="div-producto col-12">
@@ -91,19 +90,23 @@ export default class Productos extends Component {
 
                                 </div>
                             </section>
-                            <section className="col-12 col-sm-6 col-lg-3">
+                            <section className="col-12 col-sm-6 col-lg-5">
                                 <div className="row">
-                                    <div className="btn-productos">
+                                    <div className="btn-productos2">
                                         <div className="col-12 col-sm-6 col-lg-12">
-                                            <a href="/"><img className="logo_producto" src={Imagen1} alt="" /></a>
+                                            <a href="/"><img className="logo_producto2" src={Calidad} alt="" /></a>
                                         </div>
                                         <div className="col-12 col-sm-6 col-lg-12">
-                                            <div className="buscador input-group rounded">
-                                                <input type="search" className="buscador form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                                <span className="input-group-text border-0" id="search-addon">
-                                                    <i className="fas fa-search"></i>
-                                                </span>
+                                            <div className="buscador input-group ">
+                                                <input type="search" className="buscador form-control " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
+                                                 <div className="lupa"><FcSearch className="lupaicono"></FcSearch></div>
+                                                
                                             </div>
+                                           
+                                            <h6 className="detalle" style={{color: 'red'}}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:</h6>
+                                            <h6 className="detalleprospecto" style={{color: '#2062f0'}}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:</h6>
+                                            <h6 className="detalleprospecto" style={{color: 'rgb(65, 67, 68)'}}><FaTable></FaTable>    Forma Farmaceutica:</h6>
+                                            <h5 style={{color: 'green'}}>VER MAS (Prospecto)</h5>
                                         </div>
 
                                     </div>
@@ -115,7 +118,7 @@ export default class Productos extends Component {
 
 
                 </div>
-                <h1>productos</h1>
+                
                 <Footer></Footer>
             </div>
         )

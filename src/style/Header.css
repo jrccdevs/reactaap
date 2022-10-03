@@ -1,7 +1,7 @@
 .arriba{
     height: 100px;
-    background-color: rgba(164, 170, 170, 0.199);
-}
+    background-color: 
+    #003057;}
 
 
 .arriba .logo{
@@ -15,7 +15,7 @@
 
 
 .navbar{
-    background-color: rgb(45, 160, 150);
+ /*   background-color: #003057;*/
     height: 100px;
 }
 
@@ -29,17 +29,25 @@
     
 }
 .navbar .busqueda{
-    background-color: yellowgreen;
+    border-radius: 2%;
+    background-color: #0018A8;
     height: 50px;
+    width: 520px;
+    margin-left: 200px;
 }
 .navbar .busqueda .rel{
-    background-color: rgb(22, 24, 18);
-    margin-left: 250px;
-    width: 400px;
-    height: 70px;
-    margin-top: 10px;
+ /*   background-color: rgb(22, 24, 18);*/
+    margin-left: auto;
+    width: 500px;
+    height: 90px;
+    margin-top: 50px;
+    
    
 }
  .barra{
     margin-top: 15px;
+}
+.rel{
+   /* background-color: aquamarine;*/
+    height: 50px;
 }

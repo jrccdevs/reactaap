@@ -25,7 +25,7 @@ export default function Navigation(){
 
                                 </div>
                                 <div className="texto1">
-                                <h6>Las Es</h6> 
+                                <h6>La Empresa</h6> 
                                 </div>
 
                             </div>
@@ -35,14 +35,15 @@ export default function Navigation(){
 
                                 </div>
                                 <div className="texto1">
-                                    <h6>Productos mas</h6>
+                                    <h6>Productos</h6>
                                 </div>
 
                             </div>
                             <div className="btn-menu2 col-lg-6">
 
                                 <div className="texto1">
-                                    <h6>Farmacovigilancia</h6>
+                                <a style={{textDecoration: 'none', color: 'black'}} href="./farmacovigilancia" target="_blank">Farmacovigilancia</a>
+                            
                                 </div>
 
                             </div>

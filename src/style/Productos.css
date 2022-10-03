@@ -1,6 +1,10 @@
 .btn-productos{
     margin-top: 10px;
 }
+.btn-productos2{
+
+   
+}
 .boton1{
     background-color: rgba(190, 184, 197, 0.438);
     margin-bottom: 20px;
@@ -18,8 +22,9 @@
     margin-top: 20px;
     
 }
-.h6{
+h6{
     text-align: center;
+ margin-top: 2px;
     
 }
 
@@ -38,6 +43,37 @@
     height: 200px;
 }
 
+.logo_producto2{
+margin-left: 130px;
+    margin-top: 10px;
+    width: 300px;
+    height: 200px;
+}
+
 .buscador{
+    margin-top: 20px;
     width: 100%;
+}
+.lupa{
+    background-color: rgb(72, 134, 228);
+    height: 40px;
+    width: 35px;
+    margin-top: 20px;
+    
+   
+}
+
+.lupaicono{
+   margin-left: 5px;
+   margin-top: 10px;
+   font-size: 25px;
+}
+.detalle{
+    margin-top: 100px;
+    text-align: left;
+   
+}
+.detalleprospecto{
+    text-align: left;
+    margin-top: 5px;
 }

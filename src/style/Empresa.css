@@ -187,13 +187,16 @@
   }
   #testimonials .profile .pic1 {
     border-radius: 50%;
-    border: 6px solid rgb(59, 88, 168);
+    border: 3px solid rgb(59, 88, 168);
     margin-bottom: 15px;
     overflow: hidden;
     height: 260px;
     width: 260px;
   }
-  
+  .pci1 img{
+   width: 100px;
+   height: 100px;
+  }
   #testimonials .profile .pic img {
     max-width: 100%;
   }

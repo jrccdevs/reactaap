@@ -1,13 +1,38 @@
-.mapa-tamanio{
-    
-    height: 600px;
+.container{
+	height: auto;
 }
-.primero{
-	background-color: yellow;
+.mapa-tamanio{
+    margin-left: -235px;
+	height: 600px;
+	width: 600px;
+}
+.seccion{
+	background-color: #5098bd;
 	height: 600px;
 }
+.seccion .primero{
 
-
+	height: auto;
+}
+.datosemp{
+	text-align: left;
+	margin-top: 50px;
+margin-left: 25px;
+}
+.linea{
+	text-align: left;
+	margin-top: 30px;
+	margin-left: 30px;
+	text-decoration: underline;
+}
+h4{
+	margin-top: 30px;
+	text-align: center;
+}
+li{
+	margin-top: 20px;
+	margin-left: 30px;
+}
 	.st0{fill:navy;}
 	.st1{fill:#B873D2;}
 	.st2{fill:#2FA158;}
@@ -22,23 +47,31 @@
 	.st11{font-size:13px;}
 	.st12{font-family:'ArialMT';}
 
-svg{
+.mapa{
 	
  
  width: 600px;
  height: 600px;
-	  margin-left: 2px;
-	  margin-right: 2px;
-	  margin-top: 5px;
+	  margin-left: 200px;
+	  margin-right: 100px;
+	  
 }
 
-.segundo{
+.seccion .segundo{
 	
+	height: 600px;
 	
 }
 
  
-.tercero{
-	background-color: #2FA158;
-	margin-right: 5px;
+.seccion .tercero{
+	
+	height: auto;
+}
+
+.logo-maps{
+	height: 80px;
+    margin-left: 270px;
+    margin-top: 25px;
+    margin-bottom: auto;
 }

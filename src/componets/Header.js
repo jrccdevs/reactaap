@@ -8,13 +8,16 @@ export default class Header extends Component {
     render() {
         return (
 
-
-            <div className="arriba">
-                
-                    <a href="/"><img className="logo" src={Imagen1} alt="" /></a>
-                
-            </div>
             
+                <div className="arriba">
+
+                    <a href="/"><img className="logo" src={Imagen1} alt="" /></a>
+                    
+                </div>
+
+            
+
+
 
 
         );

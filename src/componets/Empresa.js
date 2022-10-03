@@ -10,18 +10,19 @@ export default class Empresa extends Component {
                 <Header></Header>
                 <div className="container">
                     <div className="row">
+                        <div className="col-12">
 
-                        <section className="about-us" id="about-us">
+                        <section className="about-us col-12" id="about-us">
 
                             <h1>NOSOTROS</h1>
-                            <div className="column-one">
+                            <div className="column-one col-lg-4">
                                 <div className="circle-one"></div>
                                 <h2>MISION</h2>
                                 <p>“Laboratorios Alfa es una empresa industrial farmacéutica que tiene el propósito de desarrollar, fabricar y comercializar medicamentos accesibles, efectivos y seguros, que contribuyan a mantener y restablecer la salud de la población boliviana.”</p>
 
                             </div>
 
-                            <div className="column-two">
+                            <div className="column-two col-lg-4">
 
                                 <div className="circle-two"></div>
 
@@ -31,7 +32,7 @@ export default class Empresa extends Component {
                             </div>
 
 
-                            <div className="column-three">
+                            <div className="column-three col-lg-4">
 
                                 <div className="circle-three"></div>
 
@@ -42,7 +43,7 @@ export default class Empresa extends Component {
 
 
                         </section>
-
+                    </div>
                     </div>
                 </div>
                 <section id="testimonials">
@@ -60,7 +61,7 @@ export default class Empresa extends Component {
                                 <div className="profile">
                                     <div className="pic1"><img src="../../css/img/Imagen4.jpg" alt="" /></div>
                                         <h4>Dr. Santiago Ferrer Alsina</h4>
-                                        <span>Lawless Inc</span>
+                                        <span>texto </span>
                                 </div>
                             </div>
                             <div className="col-md-9">
