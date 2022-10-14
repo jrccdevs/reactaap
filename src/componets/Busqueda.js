@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import '../style/Header.css';
-import LogoAlfa from '../img/LogoAlfa.png'
+//import LogoAlfa from '../img/LogoAlfa.png'
 
 export default class Busqueda extends Component {
     render() {
         return (
             
                  <nav className="navbar navbar-expand-lg ">
-                    <a href="/"><img className="logoAlfa" src={LogoAlfa} alt="" /></a>
+              {  /*  <a href="/"><img className="logoAlfa" src={LogoAlfa} alt="" /></a>*/}
                     <div className="busqueda container-fluid">
 
                         <div className="flexbox flex-1">

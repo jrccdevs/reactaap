@@ -1,6 +1,6 @@
 .container{
     margin-top: 25px;
-    background-color: rgb(221, 224, 213);
+    background-color:#fff;
 }
 
 
@@ -18,7 +18,7 @@
 }
 .btn-menu1 .imagen1{
     background-color: rgb(27, 126, 93);
-    
+  /* width: 168px;*/
     height: 60%;
     margin-top: 15px;
     margin-left: 5px;
@@ -62,10 +62,14 @@
     margin-bottom: auto;
     border-radius: 5%;
     text-align: center;
+    
    
 }
 
-
+h6{
+  font-family: sans-serif;
+  
+}
 
 /*block de noticias*/
 .noticia{

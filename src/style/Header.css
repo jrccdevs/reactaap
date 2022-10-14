@@ -1,7 +1,7 @@
 .arriba{
     height: 100px;
     background-color: 
-    #003057;}
+    #fff;}
 
 
 .arriba .logo{
@@ -15,8 +15,9 @@
 
 
 .navbar{
- /*   background-color: #003057;*/
-    height: 100px;
+   background-color:rgb(17, 120, 189);
+    height: 70px;
+    margin-bottom: 20px;
 }
 
 .navbar .logoAlfa{
@@ -30,10 +31,10 @@
 }
 .navbar .busqueda{
     border-radius: 2%;
-    background-color: #0018A8;
+ /*   background-color: #0018A8; color de buscador en el borde*/
     height: 50px;
     width: 520px;
-    margin-left: 200px;
+    margin-left: 450px;
 }
 .navbar .busqueda .rel{
  /*   background-color: rgb(22, 24, 18);*/

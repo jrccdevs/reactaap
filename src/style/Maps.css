@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .container{
 	height: auto;
 }
 .mapa-tamanio{
     margin-left: -235px;
 	height: 600px;
-	width: 600px;
+	width: 650px;
 }
 .seccion{
 	background-color: #5098bd;
@@ -28,6 +30,7 @@ margin-left: 25px;
 h4{
 	margin-top: 30px;
 	text-align: center;
+	
 }
 li{
 	margin-top: 20px;
