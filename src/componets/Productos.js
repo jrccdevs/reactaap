@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import '../style/Productos.css';
-import Header from './Header'
+//import Header from './Header'
 import Footer from './Footer'
 import Logochica from '../assets/img/logochica.jpg'
 import Calidad from '../assets/img/calidad.png'
+import Alfatossin from '../assets/productos/Alfa Tossin.png'
 import { FcSearch } from 'react-icons/fc';
 import { AiOutlineFunnelPlot } from 'react-icons/ai'
 import {GiMedicalThermometer} from 'react-icons/gi'
@@ -13,7 +14,12 @@ export default class Productos extends Component {
     render() {
         return (
             <div>
-                <Header></Header>
+               {/* <Header></Header>*/}
+                <div className="barra-superio-producto">
+<div className="barra-superio-producto-dentro">
+
+</div>
+                </div>
                 <div class="container">
                     <div className="col-lg-12">
                         <div className="row">
@@ -82,7 +88,8 @@ export default class Productos extends Component {
                                         </div>
                                         <div className="col-12 col-sm-6 col-lg-12">
                                             <div className="div-producto col-12">
-
+                                            <a href="/"><img className="img-productos" src={Alfatossin} alt="" /></a>
+                                     
                                             </div>
                                         </div>
 

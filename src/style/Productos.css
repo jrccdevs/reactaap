@@ -15,6 +15,20 @@
     
     
 }
+.barra-superio-producto{
+    height: 50px;
+    margin-top: 30px;
+    background-color: #3780ee;
+}
+ .barra-superio-producto-dentro{
+   
+     margin-top: 5px;
+   
+   width: 150px;
+   height: 20px;
+   margin-left: 50px;
+   
+}
 .btn-btn{
     width: 120px;
     height: 30px;
@@ -37,6 +51,12 @@ h6{
     margin-top: 25px;
     border:2px solid #2062f0;
     
+}
+.img-productos{
+    height: 450px;
+    border-radius: 8%;
+    width: 250px;
+   
 }
 .logo_producto{
     width: 300px;
