@@ -45,15 +45,16 @@ h6{
 
 .div-producto{
     
-    height: 450px;
+    height: 350px;
     border-radius: 8%;
     width: 250px;
     margin-top: 25px;
-    border:2px solid #2062f0;
+/*  border:2px solid #8a8f9b;*/
+/*color: rgb(78, 78, 78);*/
     
 }
 .img-productos{
-    height: 450px;
+    height: 350px;
     border-radius: 8%;
     width: 250px;
    

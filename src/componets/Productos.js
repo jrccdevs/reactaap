@@ -84,11 +84,11 @@ export default class Productos extends Component {
                                 <div className="row">
                                     <div className="btn-productos">
                                         <div className="col-12 col-sm-6 col-lg-12">
-                                            <a href="/"><img className="logo_producto" src={Logochica} alt="" /></a>
+                                            <a href="#!"><img className="logo_producto" src={Logochica} alt="" /></a>
                                         </div>
                                         <div className="col-12 col-sm-6 col-lg-12">
                                             <div className="div-producto col-12">
-                                            <a href="/"><img className="img-productos" src={Alfatossin} alt="" /></a>
+                                            <a href="#!"><img className="img-productos" src={Alfatossin} alt="" /></a>
                                      
                                             </div>
                                         </div>
@@ -101,7 +101,7 @@ export default class Productos extends Component {
                                 <div className="row">
                                     <div className="btn-productos2">
                                         <div className="col-12 col-sm-6 col-lg-12">
-                                            <a href="/"><img className="logo_producto2" src={Calidad} alt="" /></a>
+                                            <a href="#!"><img className="logo_producto2" src={Calidad} alt="" /></a>
                                         </div>
                                         <div className="col-12 col-sm-6 col-lg-12">
                                             <div className="buscador input-group ">
@@ -110,9 +110,11 @@ export default class Productos extends Component {
                                                 
                                             </div>
                                            
-                                            <h6 className="detalle" style={{color: 'red'}}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:</h6>
-                                            <h6 className="detalleprospecto" style={{color: '#2062f0'}}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:</h6>
-                                            <h6 className="detalleprospecto" style={{color: 'rgb(65, 67, 68)'}}><FaTable></FaTable>    Forma Farmaceutica:</h6>
+                                            <h6 className="detalle" style={{color: 'red'}}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text  style={{color: 'rgb(248, 149, 149)'}}>  Codeina</text></h6>
+                                            <h6 className="detalleprospecto" style={{color: '#2062f0'}}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text  style={{color: '  #5187fc'}}>  Antitusigeno</text></h6>
+                                            <h6 className="detalleprospecto" style={{color: 'rgb(65, 67, 68)'}}><FaTable></FaTable>    Forma Farmaceutica:<text  style={{color: 'rgb(159, 163, 165)'}}>  Jarabe</text></h6>
+                                            <h6 className="detalleprospecto" style={{color: 'black'}}>Precio:<text  style={{color: 'rgb(78, 78, 78)'}}>  34.60 Bs</text></h6>
+                                        
                                             <h5 style={{color: 'green'}}>VER MAS (Prospecto)</h5>
                                         </div>
 
