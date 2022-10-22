@@ -3,6 +3,7 @@ import Empresa1 from '../img/empresa.jpg'
 import Productos from '../img/productos.jpg'
 import Noticia1 from '../img/noticia1.jpg'
 import {  useNavigate } from 'react-router-dom';
+
 import '../style/Navigation.css';
 
 

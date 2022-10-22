@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+
 import Button from 'react-bootstrap/Button';
 import '../style/Productos.css';
 //import Header from './Header'
@@ -8,17 +9,24 @@ import Calidad from '../assets/img/calidad.png'
 import Alfatossin from '../assets/productos/Alfa Tossin.png'
 import { FcSearch } from 'react-icons/fc';
 import { AiOutlineFunnelPlot } from 'react-icons/ai'
-import {GiMedicalThermometer} from 'react-icons/gi'
-import {FaTable} from 'react-icons/fa'
-export default class Productos extends Component {
-    render() {
+import { GiMedicalThermometer } from 'react-icons/gi'
+import { FaTable } from 'react-icons/fa'
+
+
+
+
+export default function Productos(){
+    
+   
         return (
             <div>
-               {/* <Header></Header>*/}
+                 
+                {/* <Header></Header>*/}
                 <div className="barra-superio-producto">
-<div className="barra-superio-producto-dentro">
+                    
+                    <div className="barra-superio-producto-dentro">
 
-</div>
+                    </div>
                 </div>
                 <div class="container">
                     <div className="col-lg-12">
@@ -27,9 +35,9 @@ export default class Productos extends Component {
                             <section className="col-12 col-sm-6 col-lg-3">
                                 <div className="row">
                                     <div className="btn-productos">
-                                    <h6>MOSTRAR PRODUCTOS POR:</h6>
+                                        <h6>MOSTRAR PRODUCTOS POR:</h6>
                                         <div className=" boton1 col-12 col-sm-6 col-lg-12">
-                                         
+
                                             <Button className="btn-btn" variant="outline-primary" type="checkbox">
                                                 Capsulas
                                             </Button>
@@ -88,8 +96,8 @@ export default class Productos extends Component {
                                         </div>
                                         <div className="col-12 col-sm-6 col-lg-12">
                                             <div className="div-producto col-12">
-                                            <a href="#!"><img className="img-productos" src={Alfatossin} alt="" /></a>
-                                     
+                                                <a href="#!"><img className="img-productos" src={Alfatossin} alt="" /></a>
+
                                             </div>
                                         </div>
 
@@ -100,22 +108,23 @@ export default class Productos extends Component {
                             <section className="col-12 col-sm-6 col-lg-5">
                                 <div className="row">
                                     <div className="btn-productos2">
-                                        <div className="col-12 col-sm-6 col-lg-12">
+                                        <div className="col-12 col-sm-6 col-lg-8">
                                             <a href="#!"><img className="logo_producto2" src={Calidad} alt="" /></a>
                                         </div>
+
                                         <div className="col-12 col-sm-6 col-lg-12">
                                             <div className="buscador input-group ">
                                                 <input type="search" className="buscador form-control " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
-                                                 <div className="lupa"><FcSearch className="lupaicono"></FcSearch></div>
-                                                
+                                                <div className="lupa"><FcSearch className="lupaicono"></FcSearch></div>
+
                                             </div>
-                                           
-                                            <h6 className="detalle" style={{color: 'red'}}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text  style={{color: 'rgb(248, 149, 149)'}}>  Codeina</text></h6>
-                                            <h6 className="detalleprospecto" style={{color: '#2062f0'}}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text  style={{color: '  #5187fc'}}>  Antitusigeno</text></h6>
-                                            <h6 className="detalleprospecto" style={{color: 'rgb(65, 67, 68)'}}><FaTable></FaTable>    Forma Farmaceutica:<text  style={{color: 'rgb(159, 163, 165)'}}>  Jarabe</text></h6>
-                                            <h6 className="detalleprospecto" style={{color: 'black'}}>Precio:<text  style={{color: 'rgb(78, 78, 78)'}}>  34.60 Bs</text></h6>
-                                        
-                                            <h5 style={{color: 'green'}}>VER MAS (Prospecto)</h5>
+
+                                            <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  Codeina</text></h6>
+                                            <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  Antitusigeno</text></h6>
+                                            <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}>  Jarabe</text></h6>
+                                            <h6 className="detalleprospecto" style={{ color: 'black' }}>Precio:<text style={{ color: 'rgb(78, 78, 78)' }}>  34.60 Bs</text></h6>
+
+                                            <h5 style={{ color: 'green' }}>VER MAS (Prospecto)</h5>
                                         </div>
 
                                     </div>
@@ -127,9 +136,9 @@ export default class Productos extends Component {
 
 
                 </div>
-                
+
                 <Footer></Footer>
             </div>
         )
     }
-}
+
