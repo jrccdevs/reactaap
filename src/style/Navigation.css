@@ -16,6 +16,17 @@
     
     
 }
+.btn-menu2{
+  margin-top: 15px;
+  height: 120px;
+  width: 200px;
+  margin-left: 25px;
+  background-color: rgb(44, 128, 224);
+  border-radius: 5%;
+  margin-right: auto;
+  
+  
+}
 .btn-menu1 .imagen1{
     background-color: rgb(27, 126, 93);
   /* width: 168px;*/
@@ -42,7 +53,7 @@
    height: 100%;
    border-radius: 5%;
 }
-.btn-menu2{
+/*.btn-menu2{
     height: 50px;
     width: 200px;
     margin-left: 25px;
@@ -52,7 +63,7 @@
     margin-right: auto;
     
     
-}
+}*/
 .btn-menu2 .texto1 {
     background-color: rgb(164, 196, 211);
     margin-top: 10px;
@@ -95,7 +106,7 @@ h6{
 	position: relative;	
 	margin-top:0%;
 	margin-bottom:30px;
-	background: #272727;
+	background: white;
 	text-align: center;
 	cursor: pointer;
 }
@@ -108,7 +119,7 @@ h6{
 
 .gallery figure figcaption {
 	padding: 2em;
-	color: #fff;
+	color: rgb(72, 161, 189);
 	text-transform: uppercase;
 	font-size: 1.25em;
 	-webkit-backface-visibility: hidden;
@@ -136,7 +147,7 @@ figure.effect-marley p {
 
 figure.effect-marley p {
 	bottom: 30px;
-	color:#fff;
+	color:rgb(43, 131, 231);
 	line-height: 1.5;
 	-webkit-transform: translate3d(0,100%,0);
 	transform: translate3d(0,100%,0);
@@ -144,7 +155,7 @@ figure.effect-marley p {
 
 figure.effect-marley h4 {
 	top: 30px;
-	color:#fff;
+	color:rgb(43, 131, 231);
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,20px,0);

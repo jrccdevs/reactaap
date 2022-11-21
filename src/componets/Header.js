@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../style/Header.css';
-import Logochica from '../assets/img/logochica.jpg'
+import Logochica from '../img/imgLogochica.png'
+import LogoAlfa from '../img/LogoAlfa.png'
 
 
 
@@ -11,7 +12,7 @@ export default class Header extends Component {
             
                 <div className="arriba">
 
-                    <a href="/"><img className="logo" src={Logochica} alt="" /></a>
+                    <a href="/"><img className="logo" src={Logochica} alt="" /><img className="logoAlfa" src={LogoAlfa} alt="" /></a>
                     
                 </div>
 

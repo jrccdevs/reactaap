@@ -1,69 +1,76 @@
-import React, { Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Swal from "sweetalert2"
+import Menuadmin from './menuadmin.js'
 
 
 function ProductoAdmin() {
 
-    return (
-        <Fragment>
 
-            <nav className="navbar navbar-expand-lg bg-light">
-                <div className="container-fluid">
-                    <div className="container-fluid">
-                        <a className="navbar-brand" href="/">Inicio</a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ml-auto">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#!">Productos</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#!">Carrucel</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#!">Noticias</a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+    const [files, setFiles] = useState([])
+
+
+    useEffect(() => {
+        const getupload = async () => {
+            const tabla = 'tblcarrucel'
+            let result = await axios.get(`http://localhost:5000/images/get/${tabla}`)
+            setFiles(result.data)
+
+        }
+        getupload();
+    }, [])
+
+
+
+
+
+    const upload = async () => {
+        try {
+            const formdata = new FormData()
+            formdata.append("image", files)
+
+            const tabla = 'tblcarrucel'
+            let res = await axios.post(`http://localhost:5000/images/post/${tabla}`,
+                formdata
+            );
+
+            Swal.fire({
+                position: 'top-end',
+                icon: res.data.err ? 'error' : 'success',
+                title: res.data.err ? res.data.err : res.data.msg,
+                showConfirmButton: false,
+                timer: 3000
+            });
+        } catch (error) {
+            console.log(error)
+        }
+
+    };
+
+
+
+    return (
+        <>
+            <div>
+                <Menuadmin></Menuadmin>
+            </div>
+
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
                                 <form action="">
-                                    <div className="form-group">
-                                        <input type="text" name="title" className="form-control" placeholder="Producto"></input>
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="text" name="title" className="form-control" placeholder="Producto" />
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="text" name="title" className="form-control" placeholder="Categoria" />
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="text" name="title" className="form-control" placeholder="Principio Activo" />
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="text" name="title" className="form-control" placeholder="Forma Farmaceutica" />
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="text" name="title" className="form-control" placeholder="precio" />
-                                    </div>
+
                                     <div className="input-group mb-3">
                                         <div className="custom-file">
-                                            <input type="file" name="image" className="custom-file-input" id="inputGroupFile01" />
-                                            <label for="inputGroupFile01" className="custom-file-label" >seleccionar imagen</label>
+                                            <input id="fileinput" onChange={(e) => setFiles(e.target.files[0])} className="form-control" type="file" />
                                         </div>
 
                                     </div>
-                                    <buttom className="btn btn-primary">
-                                        subir imagen
-                                    </buttom>
+                                    <button onClick={upload} className="btn btn-primary">
+                                        subir imagenes
+                                    </button>
 
 
                                 </form>
@@ -79,13 +86,22 @@ function ProductoAdmin() {
                                     <th>acciones</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <tr>
-                                    <th>producto</th>
-                                    <th>categoria</th>
-                                    <th>acciones</th>
-                                </tr>
+                                {files.map(file => (
+                                    <tr key={file.id} >
+                                        <th>{file.id}</th>
+                                        <th>{file.type}</th>
+                                        <th>{file.name}</th>
+                                    </tr>
+                                ))
+
+                                }
+
+
+
                             </tbody>
+
                         </table>
 
                     </div>
@@ -94,7 +110,8 @@ function ProductoAdmin() {
 
             </div>
 
-        </Fragment>
+        </>
     );
 }
+
 export default ProductoAdmin;

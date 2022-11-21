@@ -10,6 +10,12 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.arriba .logoAlfa{
+    height: 80px;
+    margin-left: -5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -34,14 +40,14 @@
  /*   background-color: #0018A8; color de buscador en el borde*/
     height: 50px;
     width: 520px;
-    margin-left: 450px;
+    margin-left: 400px;
 }
 .navbar .busqueda .rel{
  /*   background-color: rgb(22, 24, 18);*/
     margin-left: auto;
     width: 500px;
-    height: 90px;
-    margin-top: 50px;
+    height: 10px;
+    margin-top: -25px;
     
    
 }
@@ -50,5 +56,26 @@
 }
 .rel{
    /* background-color: aquamarine;*/
-    height: 50px;
+    height: 10px;
+}
+
+
+.buscador1{
+    margin-top: -40px;
+    width: 400px;
+    height: 40px;
+}
+.lupa1{
+    background-color: rgb(72, 134, 228);
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+    
+   
+}
+
+.lupaicono1{
+   margin-left: 1px;
+   margin-top: 1px;
+   font-size: 20px;
 }

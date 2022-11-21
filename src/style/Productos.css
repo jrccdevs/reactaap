@@ -48,7 +48,7 @@ h6{
     height: 350px;
     border-radius: 8%;
     width: 250px;
-    margin-top: 25px;
+    margin-top: 110px;
 /*  border:2px solid #8a8f9b;*/
 /*color: rgb(78, 78, 78);*/
     
@@ -73,21 +73,22 @@ margin-left: 130px;
 
 .buscador{
     margin-top: 20px;
-    width: 100%;
+    width: 400px;
+    height: 40px;
 }
 .lupa{
     background-color: rgb(72, 134, 228);
-    height: 40px;
-    width: 35px;
+    height: auto;
+    width: auto;
     margin-top: 20px;
     
    
 }
 
 .lupaicono{
-   margin-left: 5px;
-   margin-top: 10px;
-   font-size: 25px;
+   margin-left: 1px;
+   margin-top: 1px;
+   font-size: 20px;
 }
 .detalle{
     margin-top: 100px;
