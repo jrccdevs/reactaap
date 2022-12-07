@@ -21,7 +21,6 @@ export default function Busqueda() {
                         <span className="barra search-icon"><i className="search"></i></span>
                         <input className="form-control" placeholder="Buscar..." />
                     </div>
-
                 </div> */}
                 <div className="col-12 col-sm-6 col-lg-12">
                     <div className="buscador1 input-group ">

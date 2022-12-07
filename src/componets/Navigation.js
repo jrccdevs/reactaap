@@ -20,7 +20,7 @@ export default function Navigation() {
 
         <div className="container">
             <div className="row">
-                <secction className="col-12 col-sm-6 col-lg-6">
+                <section className="col-12 col-sm-6 col-lg-6">
                     <div className="row">
                         <div className="btn-menu1 col-lg-6">
                             <div className="imagen1">
@@ -62,7 +62,7 @@ export default function Navigation() {
                         </div>
 
                     </div>
-                </secction>
+                </section>
                 <section className="col-12 col-sm-6 col-lg-6">
                     <div className="gallery">
 
