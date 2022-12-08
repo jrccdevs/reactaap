@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useEffect, useState } from 'react'
 import { getProductosRequest } from '../api/productos.api'
 import Button from 'react-bootstrap/Button';
@@ -7,7 +7,7 @@ import '../style/Productos.css';
 import Footer from './Footer'
 import Logochica from '../assets/img/logochica.jpg'
 import Calidad from '../assets/img/calidad.png'
-import Alfatossin from '../assets/productos/Alfa Tossin.png'
+//import Alfatossin from '../assets/productos/Alfa Tossin.png'
 import { FcSearch } from 'react-icons/fc';
 import { AiOutlineFunnelPlot } from 'react-icons/ai'
 import { GiMedicalThermometer } from 'react-icons/gi'
@@ -33,18 +33,22 @@ export default function Productos() {
 
     const handleChange = e => {
         setBusqueda(e.target.value);
-        // filtrar(e.target.value)
+      buscar(e.target.value)
     }
 
     let result = []
-    if (!busqueda) {
-        result = productos
-    } else {
-        result = productos.filter((dato) =>
-            dato.principioactivo.toLowerCase().includes(busqueda.toLocaleLowerCase())
-        )
+    const buscar = e =>{
+        if (!busqueda) {
+            result = productos
+        } else {
+            result = productos.filter((dato) =>
+                dato.principioactivo.toLowerCase().includes(busqueda.toLocaleLowerCase())
+            )
+        }
     }
-    console.log(result)
+    buscar();
+     
+      console.log(result) 
     /*  const filtrar = (terminobusqueda) => {
           var resbusqueda = productos.filter((elemento) => {
               if (elemento.nombreproducto.toString().toLowerCase().includes(terminobusqueda.toLowerCase())
@@ -56,7 +60,7 @@ export default function Productos() {
           setProductos(resbusqueda);
       }*/
     return (
-        <div>
+        <Fragment>
 
             {/* <Header></Header>*/}
             <div className="barra-superio-producto">
@@ -131,12 +135,16 @@ export default function Productos() {
                                     <div className="col-12 col-sm-6 col-lg-12">
                                         <a href="#!"><img className="logo_producto" src={Logochica} alt="" /></a>
                                     </div>
-                                    <div className="col-12 col-sm-6 col-lg-12">
-                                        <div className="div-producto col-12">
-                                            <a href="#!"><img className="img-productos" src={Alfatossin} alt="" /></a>
+                                    
 
+                                        <div className="col-12 col-sm-6 col-lg-12">
+                                            <div className="div-producto col-12">
+                                                <a href="#!"><img className="img-productos" src={buscar.principioactivo} alt="" /></a>
+
+                                            </div>
                                         </div>
-                                    </div>
+
+                                    
 
                                 </div>
 
@@ -158,37 +166,48 @@ export default function Productos() {
                                             </form>
                                         </div>
                                     </div>
-                                    {result.map(producto => {
-                                        return (
-                                            <div key={producto.id} >
-                                                <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
-                                                <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
-                                                <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
-                                                <h5 style={{ color: 'green' }}>VER MAS (Prospecto)</h5>
-                                            </div>
+                                   
+                                     {result.map((producto) => (
 
-                                        )
-                                    })
+                                    <div key={producto.id} >
+                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
+                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
+                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
+                                        <h5 style={{ color: 'green' }}>VER MAS (Prospecto)</h5>
+                                    </div>
+
+
+                                ))
+
+                                }
+
+                                {/*  {result.find(producto => (
+                                       
+                                            <div key={producto.id} >
+                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
+                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
+                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
+                                        <h5 style={{ color: 'green' }}>VER MAS (Prospecto)</h5>
+                                    </div>
+
+                                        
+                                     ))
+                                    
                                     }
 
-
-
-                                </div>
-
-
-
-
+{console.log(result.find)} */}
 
                             </div>
+                            </div>
                         </section>
-                    </div>
                 </div>
-
-
             </div>
 
-            <Footer></Footer>
+
         </div>
+
+        <Footer></Footer>
+        </Fragment >
     )
 }
 
