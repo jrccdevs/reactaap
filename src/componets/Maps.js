@@ -547,12 +547,12 @@ gg==" transform="matrix(1 0 0 1 187 25)">
 							<h4><FaFacebook></FaFacebook>       <FaTwitter></FaTwitter></h4>
 							<li>La Paz</li>
 							<li>Cochabamba</li>
-							<li>Santa Cruz</li>
+							<li>Santa Cruz pruebas</li>
 							<li>Chuquisaca</li>
 							<li>Tarija</li>
 							<li>Potosi</li>
 							<li>Oruro</li>
-							<li>Beni</li>
+							<li>Beni pruebas</li>
 							<a href="/"><img className="logo-maps" src={LogoAlfa} alt="" /></a>
 
 						</div>
