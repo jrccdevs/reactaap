@@ -8,61 +8,55 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import '../style/Navigation.css';
 
-
-
-
-
 export default function Navigation() {
     const navigate = useNavigate();
 
     return (
 
-
         <div className="container">
             <div className="row">
                 <section className="col-12 col-sm-6 col-lg-6">
                     <div className="row">
-                        <div className="btn-menu1 col-lg-6">
+                        
+                        <div className="col-lg-6 mt-3">
                             <div className="imagen1">
                                 <img onClick={() => navigate("/empresa")} className="fondo-img" src={Empresa} alt="" />
-
                             </div>
-                            <div className="texto1">
-                                <h6>La Empresa</h6>
-                            </div>
-
                         </div>
-                        <div className="btn-menu1 col-lg-6">
+
+                        <div className="col-lg-6 mt-3">
                             <div className="imagen1">
                                 <img onClick={() => navigate("/productos")} className="fondo-img" src={Productos} alt="" />
-
                             </div>
-                            <div className="texto1">
-                                <h6>Productos</h6>
-                            </div>
-
                         </div>
-                        <div className="btn-menu2 col-lg-6">
-
+                        <div className="col-lg-6 mt-3">
                             <div className="imagen1">
-                            
                                 <Link to= "/es/farmaco-vigilancia"><img className="fondo-img" src={Farmacovigilancia} alt="" /></Link>
-
                             </div>
-
                         </div>
-                        <div className="btn-menu2 col-lg-6">
 
+                        <div className="col-lg-6 mt-3">
                             <div className="imagen1">
-
                             <Link to= "/vademecun"><img className="fondo-img" target="_blank" src={Vademecum} alt="" /></Link>
-
                             </div>
-
                         </div>
-
                     </div>
                 </section>
+
+                <section className="col-12 col-sm-6 col-lg-6">
+                    <div className="row">
+                        
+                        <div className="col-lg-12">
+                            <div className="imagen1">
+                                <img onClick={() => navigate("/empresa")} className="fondo-img" src={Empresa} alt="" />
+                            </div>
+                        </div>
+
+ 
+                    </div>
+                </section>
+
+{/* 
                 <section className="col-12 col-sm-6 col-lg-6">
                     <div className="gallery">
 
@@ -83,9 +77,12 @@ export default function Navigation() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
+            
         </div>
+
+        
 
     )
 }

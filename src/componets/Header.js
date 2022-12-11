@@ -8,8 +8,8 @@ export default class Header extends Component {
     return (
       <div className="arriba">
         <a href="/">
-          <img className="logo" src={Logochica} alt="" />
-          <img className="logoAlfa" src={LogoAlfa} alt="" />
+          <img className="logoAlfa" src={LogoAlfa} alt="logoAlfa" />
+          <img className="logo" src={Logochica} alt="logoChicaAlfa" />
         </a>
       </div>
     );

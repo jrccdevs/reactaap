@@ -1,81 +1,81 @@
-.arriba{
-    height: 100px;
-    background-color: 
-    #fff;}
-
-
-.arriba .logo{
-    height: 80px;
-    margin-left: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.arriba .logoAlfa{
-    height: 80px;
-    margin-left: -5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.arriba {
+  height: 100px;
+  background-color: #fff;
 }
 
-
-
-
-.navbar{
-   background-color:rgb(17, 120, 189);
-    height: 70px;
-    margin-bottom: 20px;
+.arriba .logoAlfa {
+  height: 80px;
+  margin-left: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.arriba .logo {
+  height: 80px;
+  margin-left: -5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.navbar .logoAlfa{
-    height: 80px;
-    margin-left: 80px;
+.navbar {
+  background-color: rgb(17, 120, 189);
+  height: 70px;
+  margin-bottom: 20px;
 }
 
-.navbar .rel{ 
-    margin-left: 200px;
-    
-}
-.navbar .busqueda{
-    border-radius: 2%;
- /*   background-color: #0018A8; color de buscador en el borde*/
-    height: 50px;
-    width: 520px;
-    margin-left: 400px;
-}
-.navbar .busqueda .rel{
- /*   background-color: rgb(22, 24, 18);*/
-    margin-left: auto;
-    width: 500px;
-    height: 10px;
-    margin-top: -25px;
-    
-   
-}
- .barra{
-    margin-top: 15px;
-}
-.rel{
-   /* background-color: aquamarine;*/
-    height: 10px;
+.navbar .logoAlfa {
+  height: 80px;
+  margin-left: 80px;
 }
 
-
-.buscador1{
-    margin-top: -40px;
-    width: 400px;
-    height: 40px;
+.navbar .rel {
+  margin-left: 200px;
 }
-.lupa1{
-    background-color: rgb(72, 134, 228);
-    height: auto;
-    width: auto;
-    margin-top: 20px;
-    
-   
+.navbar .busqueda {
+  border-radius: 2%;
+  /*   background-color: #0018A8; color de buscador en el borde*/
+  height: 50px;
+  width: 520px;
+  margin-left: 400px;
+}
+.navbar .busqueda .rel {
+  /*   background-color: rgb(22, 24, 18);*/
+  margin-left: auto;
+  width: 500px;
+  height: 10px;
+  margin-top: -25px;
+}
+.barra {
+  margin-top: 15px;
+}
+.rel {
+  /* background-color: aquamarine;*/
+  height: 10px;
 }
 
-.lupaicono1{
-   margin-left: 1px;
-   margin-top: 1px;
-   font-size: 20px;
+.buscador1 {
+  margin-top: -40px;
+  width: 400px;
+  height: 40px;
+}
+
+.lupa1 {
+  background-color: rgb(72, 134, 228);
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+}
+
+.lupaicono1 {
+  margin-left: 1px;
+  margin-top: 1px;
+  font-size: 20px;
+}
+
+.buscar {
+  width: 70%;
+  height: 40px;
+}
+
+.buscar input {
+  height: 40px;
 }

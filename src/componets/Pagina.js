@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import React, { useState } from "react";
+import Carousel from "react-bootstrap/Carousel";
 
-
-import '../style/Pagina.css'
-import BannerAnticaspa from '../img/BannerAnticaspa.png'
-import BannerHidratacion from '../img/BannerHidratacion.png'
-import BannerLimpieza from '../img/BannerLimpieza.png'
+import "../style/Pagina.css";
+import BannerAnticaspa from "../img/BannerAnticaspa.png";
+import BannerHidratacion from "../img/BannerHidratacion.png";
+import BannerLimpieza from "../img/BannerLimpieza.png";
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -17,33 +16,16 @@ function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img
-          className="tamanio  d-block"
-          src={BannerAnticaspa}
-          alt=""
-          
-        />
-        <Carousel.Caption>
-         
-        </Carousel.Caption>
+        <img className="tamanio  d-block" src={BannerAnticaspa} alt="" />
+        <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="tamanio d-block"
-          src={BannerHidratacion}
-          alt=""
-        />
+        <img className="tamanio d-block" src={BannerHidratacion} alt="" />
 
-        <Carousel.Caption>
-          
-        </Carousel.Caption>
+        <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="tamanio d-block"
-          src={BannerLimpieza}
-          alt=""
-        />
+        <img className="tamanio d-block" src={BannerLimpieza} alt="" />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>
@@ -57,4 +39,3 @@ function ControlledCarousel() {
 }
 
 export default ControlledCarousel;
-
