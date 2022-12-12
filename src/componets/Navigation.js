@@ -5,6 +5,8 @@ import Noticias from "../img/Botonnoticias.png";
 import Farmacovigilancia from "../img/imgFarmacovigilancia.png";
 import Vademecum from "../img/imgVademecum.png";
 import { useNavigate, Link } from "react-router-dom";
+import LogoAlfa from "../img/LogoAlfa.png";
+
 
 import "../style/Navigation.css";
 
@@ -65,6 +67,7 @@ export default function Navigation() {
             <div className="col-lg-12 mt-4 abajo">
               <div class="container2">
                 <h1>Laboratorios Alfa</h1>
+                <img className="logoAlfa" src={LogoAlfa} width="30%" height="30%" alt="logoAlfa" />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
                 dictum arcu sed erat fringilla placerat. Proin fringilla lacinia
                 risus sed porttitor. Quisque tincidunt lectus vitae massa

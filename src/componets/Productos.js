@@ -68,114 +68,19 @@ export default function Productos() {
             <div className="container">
                 <div className="col-lg-12">
                     <div className="row">
-
-                        <section className="col-12 col-sm-6 col-lg-3">
-                            <div className="row">
-                                <div className="btn-productos">
-                                    <h6>MOSTRAR PRODUCTOS POR:</h6>
-                                    <div className=" boton1 col-12 col-sm-6 col-lg-12">
-
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Capsulas
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Comprimidos
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Cremas
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Gel
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Gotas
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Granulado
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Inyectable
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Jarabes
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Polvo
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Pomada
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Shampo
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Solucion
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Supositorio
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Suspension
-                                            </Button>
-                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
-                                            Tableta
-                                            </Button>
-                                    </div>
+                        <section className="col-12 col-sm-6 col-lg-6">
+                            
+                        </section>
+                        <section className="col-12 col-sm-6 col-lg-6">
+                            <div className="btn-productos2">
+                                <div className="4 ">
+                                    <form className="d-flex" role="search">
+                                        <input onChange={handleChange} type="search" value={busqueda} className="buscador form-control me-8 " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
+                                        <Button className="lupa" type="submit"><FcSearch className="lupaicono"></FcSearch></Button>
+                                    </form>
                                 </div>
 
-                            </div>
-                        </section>
-                        <section className="col-12 col-sm-6 col-lg-4">
-                            <div className="row">
-                                <div className="btn-productos">
-                                   
-
-                                    {result.map((producto) => (
-                                        <div className="col-12 col-sm-6 col-lg-12">
-                                            <div className="div-producto col-12">
-                                                <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
-
-                                            </div>
-                                        </div>
-
-                                    ))
-
-                                    }
-
-                                </div>
-
-                            </div>
-                        </section>
-                        <section className="col-12 col-sm-6 col-lg-5">
-                            <div className="row">
-
-                                <div className="btn-productos2">
-                                    
-                                    <div className="col-12 col-sm-6 col-lg-12">
-                                        <div className="buscador input-group ">
-                                            <form className="d-flex" role="search">
-
-                                                <input onChange={handleChange} type="search" value={busqueda} className="buscador form-control me-8 " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
-                                                <Button className="lupa" type="submit"><FcSearch className="lupaicono"></FcSearch></Button>
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                    {result.map((producto) => (
-
-                                        <div key={producto.id} >
-                                            <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
-                                            <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
-                                            <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
-                                            <h5 style={{ color: 'green' }}>VER MAS (Prospecto)</h5>
-                                        </div>
-
-
-                                    ))
-
-                                    }
-
-                                    {/*  {result.find(producto => (
+                                {/*  {result.find(producto => (
                                        
                                             <div key={producto.id} >
                                         <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
@@ -189,19 +94,183 @@ export default function Productos() {
                                     
                                     }
 
-{console.log(result.find)} */}
+                                    {console.log(result.find)} */}
 
-                                </div>
                             </div>
                         </section>
                     </div>
                 </div>
 
+                <div className="col-lg-12">
+                    <div className="row">
+                        <section className="col-12 col-sm-6 col-lg-2 mt-4">
+                            <div className="row">
+                                <div className="btn-productos">
+                                    <h6>MOSTRAR PRODUCTOS POR:</h6>
+                                    <div className=" boton1 col-12 col-sm-6 col-lg-12">
+
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Capsulas
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Comprimidos
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Cremas
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Gel
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Gotas
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Granulado
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Inyectable
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Jarabes
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Polvo
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Pomada
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Shampo
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Solucion
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Supositorio
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Suspension
+                                        </Button>
+                                        <Button className="btn-btn" variant="outline-primary" type="checkbox">
+                                            Tableta
+                                        </Button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <section className="col-12 col-sm-6 col-lg-10">
+                            <div className="row">
+
+                                <div class="row row-cols-1 row-cols-md-3 g-4">
+                                    <div class="col">
+                                        <div class="card">
+                                            {result.map((producto) => (
+                                                <div className="div-producto col-12">
+                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
+                                                </div>
+                                            ))
+                                            }
+                                            <div class="card-body">
+                                                {result.map((producto) => (
+                                                    <div key={producto.id} >
+                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
+                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
+                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
+                                                    </div>
+                                                ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            {result.map((producto) => (
+                                                <div className="div-producto col-12">
+                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
+                                                </div>
+                                            ))
+                                            }
+                                            <div class="card-body">
+                                                {result.map((producto) => (
+                                                    <div key={producto.id} >
+                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
+                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
+                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
+                                                    </div>
+                                                ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            {result.map((producto) => (
+                                                <div className="div-producto col-12">
+                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
+                                                </div>
+                                            ))
+                                            }
+                                            <div class="card-body">
+                                                {result.map((producto) => (
+                                                    <div key={producto.id} >
+                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
+                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
+                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
+                                                    </div>
+                                                ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            {result.map((producto) => (
+                                                <div className="div-producto col-12">
+                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
+                                                </div>
+                                            ))
+                                            }
+                                            <div class="card-body">
+                                                {result.map((producto) => (
+                                                    <div key={producto.id} >
+                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
+                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
+                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
+                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
+                                                    </div>
+                                                ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+
+
+
+                    </div>
+                </div>
+
+
+
 
             </div>
 
             <Footer></Footer>
-         </Fragment >
+        </Fragment >
     )
 }
 
