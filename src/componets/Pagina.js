@@ -28,10 +28,6 @@ function ControlledCarousel() {
         <img className="tamanio d-block" src={BannerLimpieza} alt="" />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
