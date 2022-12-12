@@ -16,7 +16,7 @@ export default function Busqueda() {
                 <div className="mh-8" style={{ marginLeft: '-390px' }} >
                     <Button className="btn btn-primary" onClick={() => Busqueda("/menuadmin")} src={Menuadmin} alt="">Administrador</Button>
                 </div>
-               {/*  <div className="flexbox flex-1">
+                {/*  <div className="flexbox flex-1">
                     <div className="rel">
                         <span className="barra search-icon"><i className="search"></i></span>
                         <input className="form-control" placeholder="Buscar..." />
@@ -26,7 +26,7 @@ export default function Busqueda() {
                     <div className="buscador1 input-group ">
                         <form className="d-flex" role="search">
 
-                            <input  type="search"  className="buscador form-control me-8 " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
+                            <input type="search" className="buscador form-control me-8 " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
                             <Button className="lupa1" type="submit"><FcSearch className="lupaicono1"></FcSearch></Button>
                         </form>
                     </div>

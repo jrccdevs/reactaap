@@ -1,6 +1,6 @@
 import { BsTelephoneInbound } from "react-icons/bs";
 import { MdMarkEmailRead } from "react-icons/md";
-import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin} from "react-icons/fa";
 
 import React from "react";
 import "../style/Footer.css";
@@ -29,7 +29,7 @@ export default function Footer() {
               <strong>NUESTRAS REDES SOCIALES</strong>
             </h4>
             <h4 className="icono">
-              <FaFacebook></FaFacebook> <FaTwitter></FaTwitter>
+              <FaFacebook></FaFacebook> <FaTwitter></FaTwitter> <FaLinkedin></FaLinkedin> 
             </h4>
           </div>
         </div>

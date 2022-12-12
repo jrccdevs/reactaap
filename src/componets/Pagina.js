@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-import "../style/Pagina.css";
 import BannerAnticaspa from "../img/BannerAnticaspa.png";
 import BannerHidratacion from "../img/BannerHidratacion.png";
 import BannerLimpieza from "../img/BannerLimpieza.png";
+import "../style/Pagina.css";
+
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -13,19 +14,20 @@ function ControlledCarousel() {
     setIndex(selectedIndex);
   };
 
+
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img className="tamanio  d-block" src={BannerAnticaspa} alt="" />
+        <img className="d-block w-100" src={BannerAnticaspa} alt="" />
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="tamanio d-block" src={BannerHidratacion} alt="" />
+        <img className="d-block w-100" src={BannerHidratacion} alt="" />
 
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="tamanio d-block" src={BannerLimpieza} alt="" />
+        <img className="d-block w-100" src={BannerLimpieza} alt="" />
 
         <Carousel.Caption>
         </Carousel.Caption>
