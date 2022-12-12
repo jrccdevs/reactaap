@@ -3,8 +3,8 @@ import axios from 'axios'
 
 
 export const getProductosRequest = async () => 
- await axios.get('http://localhost:7000/productos');
-
+ await axios.get('https://node-alfa.vercel.app/productos');
+ //https://node-alfa.vercel.app/productos
 
 export const crearProductosRequest = async(productos) => {
     const form = new FormData()
@@ -12,7 +12,7 @@ export const crearProductosRequest = async(productos) => {
     for(let key in productos){
         form.append(key, productos[key]);
     }
-   return await axios.post('http://localhost:7000/productos', form, {
+   return await axios.post('https://node-alfa.vercel.app/productos', form, {
         headers: {
             "Content-Type" : "multipart/form-data",
         },

@@ -15,20 +15,7 @@
     
     
 }
-.barra-superio-producto{
-    height: 50px;
-    margin-top: 30px;
-    background-color: #3780ee;
-}
- .barra-superio-producto-dentro{
-   
-     margin-top: 5px;
-   
-   width: 150px;
-   height: 20px;
-   margin-left: 50px;
-   
-}
+
 .btn-btn{
     width: 120px;
     height: 30px;
@@ -91,7 +78,7 @@ margin-left: 130px;
    font-size: 20px;
 }
 .detalle{
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: left;
    
 }
