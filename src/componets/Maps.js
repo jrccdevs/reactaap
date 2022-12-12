@@ -20,8 +20,8 @@ function Maps() {
             <div className="segundo col-lg-12 text-center">
               <h4>SUCURSALES BOLIVIA</h4>
 
-            <img src={mapa} width="652" height="682" alt="sucursales-bolivia" usemap="#Map"/>
-            <map name="Map">
+              <img src={mapa} width="652" height="682" alt="sucursales-bolivia" usemap="#Map" />
+              <map name="Map">
                 <area shape="circle" coords="417,319,17" href="#" alt="santa_cruz" data-bs-toggle="modal" data-bs-target="#modalf1" />
                 <area shape="circle" coords="236,182,17" href="#" alt="beni" data-bs-toggle="modal" data-bs-target="#modalf2" />
                 <area shape="circle" coords="134,49,17" href="#" alt="pando" data-bs-toggle="modal" data-bs-target="#modalf3" />
@@ -32,10 +32,10 @@ function Maps() {
                 <area shape="circle" coords="292,429,17" href="#" alt="chuquisaca" data-bs-toggle="modal" data-bs-target="#modalf8" />
                 <area shape="circle" coords="267,531,17" href="#" alt="tarija" data-bs-toggle="modal" data-bs-target="#modalf9" />
                 {/* <area shape="rect" coords="691,336,1239,375" title="Offer Details" alt="Offer Details" data-toggle="modal" data-target="#myModal" style="outline:none" /> */}
-            </map>
+              </map>
 
 
-        {/* Modal de sucursales bolivia */}
+              {/* Modal de sucursales bolivia */}
               <div class="modal fade" id="modalf1" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
@@ -44,7 +44,12 @@ function Maps() {
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      Direcion de la sucursal santa Cruz
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-4">Calle Las Piñas Nº 2157 esq. Los Mangos (3er. anillo interno)</div>
+                          <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -162,14 +167,14 @@ function Maps() {
                 </div>
               </div>
             </div>
-            
-        {/* fin modal de sucursales bolivia */}
+
+            {/* fin modal de sucursales bolivia */}
           </div>
         </section>
       </div>
     </div>
 
-    
+
   );
 }
 export default Maps;

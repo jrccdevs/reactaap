@@ -18,7 +18,7 @@ export default class Empresa extends Component {
                 <div class="container">
 
                     <div class="row">
-                        <p class="h1 text-center mb-4">Empresa</p>
+                        <p class="h1 text-center mb-4">“Laboratorios ALFA”</p>
 
                         <div class="row mt-4">
                             <div class="col-6 col-md-4 text-center">
