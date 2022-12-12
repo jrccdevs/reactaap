@@ -47,20 +47,20 @@ export default function ProductoAdmin() {
                 }}
             >
                 {({ handleChange, handleSubmit, setFieldValue }) => (
-                    <div class="container">
+                    <div className="container">
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="card">
                                     <div className="card-body">
                                         <Form onSubmit={handleSubmit}>
 
-                                            <div class="form-group">
-                                                <label class="block">Codigo Producto</label>
+                                            <div className="form-group">
+                                                <label className="block">Codigo Producto</label>
                                                 <input
                                                     type="number"
                                                     name="codigoproducto"
                                                     placeholder="Codigo"
-                                                    class="form-control" onChange={handleChange}
+                                                    className="form-control" onChange={handleChange}
                                                 //  value={values.title}
                                                 />
                                             </div>

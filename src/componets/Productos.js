@@ -163,16 +163,16 @@ export default function Productos() {
                         <section className="col-12 col-sm-6 col-lg-10">
                             <div className="row">
 
-                                <div class="row row-cols-1 row-cols-md-3 g-4">
-                                    <div class="col">
-                                        <div class="card">
+                                <div className="row row-cols-1 row-cols-md-3 g-4">
+                                    <div className="col">
+                                        <div className="card">
                                             {result.map((producto) => (
                                                 <div className="div-producto col-12">
                                                     <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
                                                 </div>
                                             ))
                                             }
-                                            <div class="card-body">
+                                            <div className="card-body">
                                                 {result.map((producto) => (
                                                     <div key={producto.id} >
                                                         <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
@@ -186,15 +186,15 @@ export default function Productos() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="card">
+                                    <div className="col">
+                                        <div className="card">
                                             {result.map((producto) => (
                                                 <div className="div-producto col-12">
                                                     <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
                                                 </div>
                                             ))
                                             }
-                                            <div class="card-body">
+                                            <div className="card-body">
                                                 {result.map((producto) => (
                                                     <div key={producto.id} >
                                                         <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
@@ -208,15 +208,15 @@ export default function Productos() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="card">
+                                    <div className="col">
+                                        <div className="card">
                                             {result.map((producto) => (
                                                 <div className="div-producto col-12">
                                                     <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
                                                 </div>
                                             ))
                                             }
-                                            <div class="card-body">
+                                            <div className="card-body">
                                                 {result.map((producto) => (
                                                     <div key={producto.id} >
                                                         <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
@@ -230,15 +230,15 @@ export default function Productos() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="card">
+                                    <div className="col">
+                                        <div className="card">
                                             {result.map((producto) => (
                                                 <div className="div-producto col-12">
                                                     <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
                                                 </div>
                                             ))
                                             }
-                                            <div class="card-body">
+                                            <div className="card-body">
                                                 {result.map((producto) => (
                                                     <div key={producto.id} >
                                                         <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>

@@ -1,39 +1,72 @@
-import React from 'react'
-import Menuadmin from './menuadmin'
-import { useNavigate } from 'react-router-dom';
-import { FcSearch } from 'react-icons/fc';
-import Button from 'react-bootstrap/Button';
-import '../style/Header.css';
-//import LogoAlfa from '../img/LogoAlfa.png'
+import React from "react";
+import Menuadmin from "./menuadmin";
+import { useNavigate } from "react-router-dom";
+// import { FcSearch } from "react-icons/fc";
+import Button from "react-bootstrap/Button";
+// import LogoAlfa from "../img/LogoAlfa.png";
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { FaSearch} from "react-icons/fa";
+
+
+import "../style/Header.css";
 
 export default function Busqueda() {
     const Busqueda = useNavigate();
     return (
-
-        <nav className="navbar navbar-expand-lg ">
-            {  /*  <a href="/"><img className="logoAlfa" src={LogoAlfa} alt="" /></a>*/}
-            <div className="busqueda container-fluid">
-                <div className="mh-8" style={{ marginLeft: '-390px' }} >
-                    <Button className="btn btn-primary" onClick={() => Busqueda("/menuadmin")} src={Menuadmin} alt="">Administrador</Button>
-                </div>
-                {/*  <div className="flexbox flex-1">
-                    <div className="rel">
-                        <span className="barra search-icon"><i className="search"></i></span>
-                        <input className="form-control" placeholder="Buscar..." />
-                    </div>
-                </div> */}
-                <div className="col-12 col-sm-6 col-lg-12">
-                    <div className="buscador1 input-group ">
-                        <form className="d-flex" role="search">
-
-                            <input type="search" className="buscador form-control me-8 " placeholder="Buscador de Productos (x Marca / x P.A.)...." aria-label="Search" aria-describedby="search-addon" />
-                            <Button className="lupa1" type="submit"><FcSearch className="lupaicono1"></FcSearch></Button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-    )
+        <>
+            {['lg'].map((expand) => (
+                <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
+                    <Container fluid>
+                        {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
+                        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+                        <Navbar.Offcanvas
+                            id={`offcanvasNavbar-expand-${expand}`}
+                            aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                            placement="end"
+                        >
+                            <Offcanvas.Header closeButton>
+                                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                                    Laboratorio ALFA
+                                </Offcanvas.Title>
+                            </Offcanvas.Header>
+                            <Offcanvas.Body>
+                                <Nav className="justify-content flex-grow-1 pe-3">
+                                    {/* <Nav.Link href="#action1">Home</Nav.Link> */}
+                                    <Button variant="primary" onClick={() => Busqueda("/menuadmin")} src={Menuadmin} >ADMINISTRADOR</Button>
+                                    {/* <Nav.Link href="#action2">Link</Nav.Link> */}
+                                    {/* <NavDropdown
+                                        title="Dropdown"
+                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
+                                    >
+                                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                                        <NavDropdown.Item href="#action4">
+                                            Another action
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item href="#action5">
+                                            Something else here
+                                        </NavDropdown.Item>
+                                    </NavDropdown> */}
+                                </Nav>
+                                <Form className="d-flex">
+                                    <Form.Control
+                                        type="search"
+                                        placeholder="Buscador de Productos"
+                                        className="me-2"
+                                        aria-label="Search"
+                                    />
+                                    <Button variant="primary"><FaSearch></FaSearch></Button>
+                                </Form>
+                            </Offcanvas.Body>
+                        </Navbar.Offcanvas>
+                    </Container>
+                </Navbar>
+            ))}
+        </>
+    );
 }
-

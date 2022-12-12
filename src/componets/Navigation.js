@@ -65,7 +65,7 @@ export default function Navigation() {
         <section className="col-12 col-sm-12 col-lg-6">
           <div className="row">
             <div className="col-lg-12 mt-4 abajo">
-              <div class="container2">
+              <div className="container2">
                 <h1>Laboratorios Alfa</h1>
                 <img className="logoAlfa" src={LogoAlfa} width="30%" height="30%" alt="logoAlfa" />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
