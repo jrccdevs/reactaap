@@ -16,23 +16,8 @@ function Maps() {
       <div className="row">
         <section className="seccion col-12">
           <div className="row">
-            <div className="primero col-md-3">
-              <h4 className="linea">OFICINA CENTRAL</h4>
-              <h6 className="linea">LA PAZ</h6>
-              <h6 className="datosemp">
-                <BsTelephoneInbound /> (+591) 2224217
-              </h6>
-              <h6 className="datosemp">
-                <MdMarkEmailRead /> alfa@alfabolivia.com
-              </h6>
-              <h6 className="datosemp">
-                {" "}
-                <FaMapMarkerAlt /> Av. Busch #1970 Miraflores
-              </h6>
-            </div>
-
             {/* Sucursales de bolivia */}
-            <div className="segundo col-lg-6">
+            <div className="segundo col-lg-12 text-center">
               <h4>SUCURSALES BOLIVIA</h4>
 
             <img src={mapa} width="652" height="682" alt="sucursales-bolivia" usemap="#Map"/>
@@ -179,27 +164,12 @@ function Maps() {
             </div>
             
         {/* fin modal de sucursales bolivia */}
-            <div className="tercero col-md-3">
-              <h4>Encuentranos en Facebook</h4>
-              <h4>
-                <FaFacebook></FaFacebook> <FaTwitter></FaTwitter>
-              </h4>
-              <li>La Paz</li>
-              <li>Cochabamba</li>
-              <li>Santa Cruz</li>
-              <li>Chuquisaca</li>
-              <li>Tarija</li>
-              <li>Potosi</li>
-              <li>Oruro</li>
-              <li>Beni</li>
-              <a href="/">
-                <img className="logo-maps" src={LogoAlfa} alt="" />
-              </a>
-            </div>
           </div>
         </section>
       </div>
     </div>
+
+    
   );
 }
 export default Maps;
