@@ -1,7 +1,7 @@
 import React from "react";
 import Empresa from "../img/imgempresa.png";
 import Productos from "../img/imgProductos.png";
-import Noticias from "../img/Botonnoticias.png";
+// import Noticias from "../img/Botonnoticias.png";
 import Farmacovigilancia from "../img/imgFarmacovigilancia.png";
 import Vademecum from "../img/imgVademecum.png";
 import { useNavigate, Link } from "react-router-dom";
@@ -16,9 +16,9 @@ export default function Navigation() {
   return (
     <div className="container">
       <div className="row">
-        <section className="col-12 col-sm-6 col-lg-6">
+        <section className="col-12 col-sm-12 col-lg-6">
           <div className="row">
-            <div className="col-lg-6 mt-4">
+            <div className="col-12 col-sm-6 mt-4">
               <div className="imagen1">
                 <img
                   onClick={() => navigate("/empresa")}
@@ -29,7 +29,7 @@ export default function Navigation() {
               </div>
             </div>
 
-            <div className="col-lg-6 mt-4">
+            <div className="col-12 col-sm-6 mt-4">
               <div className="imagen1">
                 <img
                   onClick={() => navigate("/productos")}
@@ -39,7 +39,7 @@ export default function Navigation() {
                 />
               </div>
             </div>
-            <div className="col-lg-6 mt-4">
+            <div className="col-12 col-sm-6 mt-4">
               <div className="imagen1">
                 <Link to="/es/farmaco-vigilancia">
                   <img className="fondo-img" src={Farmacovigilancia} alt="" />
@@ -47,7 +47,7 @@ export default function Navigation() {
               </div>
             </div>
 
-            <div className="col-lg-6 mt-4">
+            <div className="col-12 col-sm-6 mt-4">
               <div className="imagen1">
                 <Link to="/vademecun">
                   <img
@@ -62,7 +62,7 @@ export default function Navigation() {
           </div>
         </section>
 
-        <section className="col-12 col-sm-6 col-lg-6">
+        <section className="col-12 col-sm-12 col-lg-6">
           <div className="row">
             <div className="col-lg-12 mt-4 abajo">
               <div class="container2">

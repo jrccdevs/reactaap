@@ -2,25 +2,26 @@
 import React from "react";
 
 //import { ReactSVG, G } from 'react-svg'
-import "../style/Maps.css";
-import LogoAlfa from "../img/LogoAlfa.png";
-import { BsTelephoneInbound } from "react-icons/bs";
-import { MdMarkEmailRead } from "react-icons/md";
-import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
+
+// import LogoAlfa from "../img/LogoAlfa.png";
+// import { BsTelephoneInbound } from "react-icons/bs";
+// import { MdMarkEmailRead } from "react-icons/md";
+// import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
 import mapa from "../img/mapa-sucursales.png";
+import "../style/Maps.css";
 
 function Maps() {
 
   return (
-    <div className="container-lg">
+    <div className="container">
       <div className="row">
-        <section className="seccion col-12">
-          <div className="row">
+        <section className="col-12">
+          {/* <div className="row"> */}
             {/* Sucursales de bolivia */}
-            <div className="segundo col-lg-12 text-center">
+            <div className="col-lg-12 text-center">
               <h4>SUCURSALES BOLIVIA</h4>
 
-              <img src={mapa} width="652" height="682" alt="sucursales-bolivia" usemap="#Map" />
+              <img className="img-fluid" src={mapa} width="652" height="682" alt="sucursales-bolivia" usemap="#Map" />
               <map name="Map">
                 <area shape="circle" coords="417,319,17" href="#" alt="santa_cruz" data-bs-toggle="modal" data-bs-target="#modalf1" />
                 <area shape="circle" coords="236,182,17" href="#" alt="beni" data-bs-toggle="modal" data-bs-target="#modalf2" />
@@ -169,7 +170,7 @@ function Maps() {
             </div>
 
             {/* fin modal de sucursales bolivia */}
-          </div>
+          {/* </div> */}
         </section>
       </div>
     </div>
