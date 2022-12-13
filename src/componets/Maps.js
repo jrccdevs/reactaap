@@ -3,10 +3,10 @@ import React from "react";
 
 //import { ReactSVG, G } from 'react-svg'
 import "../style/Maps.css";
-import LogoAlfa from "../img/LogoAlfa.png";
-import { BsTelephoneInbound } from "react-icons/bs";
-import { MdMarkEmailRead } from "react-icons/md";
-import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
+//import LogoAlfa from "../img/LogoAlfa.png";
+//import { BsTelephoneInbound } from "react-icons/bs";
+//import { MdMarkEmailRead } from "react-icons/md";
+//import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
 import mapa from "../img/mapa-sucursales.png";
 
 function Maps() {

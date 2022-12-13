@@ -3,7 +3,7 @@ import '../style/Empresa.css'
 import Header from './Header'
 import Busqueda from './Busqueda'
 import Footer from './Footer'
-import mapa from "../img/mapa-sucursales.png";
+//import mapa from "../img/mapa-sucursales.png";
 import empresa from "../img/empresa.jpg";
 import mision from "../img/mision.png";
 import vision from "../img/vision.png";
