@@ -99,3 +99,8 @@ margin-left: 130px;
     text-align: left;
     margin-top: 5px;
 }
+
+
+.form-select{
+    height: 100%;
+}
