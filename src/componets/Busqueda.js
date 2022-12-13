@@ -16,7 +16,7 @@ import { FaSearch} from "react-icons/fa";
 import "../style/Header.css";
 
 export default function Busqueda() {
-    const ruta = useNavigate();
+    const Busqueda = useNavigate();
     return (
         <>
             {['lg'].map((expand) => (
@@ -37,7 +37,7 @@ export default function Busqueda() {
                             <Offcanvas.Body>
                                 <Nav className="justify-content flex-grow-1 pe-3">
                                     {/* <Nav.Link href="#action1">Home</Nav.Link> */}
-                                    <Button variant="primary" onClick={() => ruta("/menuadmin")} src={Menuadmin} >ADMINISTRADOR</Button>
+                                    <Button variant="primary" onClick={() => Busqueda("/menuadmin")} src={Menuadmin} >ADMINISTRADOR</Button>
                                     {/* <Nav.Link href="#action2">Link</Nav.Link> */}
                                     {/* <NavDropdown
                                         title="Dropdown"

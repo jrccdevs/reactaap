@@ -52,7 +52,7 @@ export default function Productos() {
             )
         }
     }
-    
+
     buscar();
 
     console.log(result);
@@ -60,7 +60,7 @@ export default function Productos() {
 
 
     // if (result == 0) {
-    //     console.log("RODRIGO Y GABY");
+    //     console.log("RODRIGO ");
     // };
     /*  const filtrar = (terminobusqueda) => {
           var resbusqueda = productos.filter((elemento) => {
