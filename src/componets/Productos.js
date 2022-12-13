@@ -12,7 +12,7 @@ import { FcSearch } from 'react-icons/fc';
 import { AiOutlineFunnelPlot } from 'react-icons/ai'
 import { GiMedicalThermometer } from 'react-icons/gi'
 import { FaTable } from 'react-icons/fa'
-import { FaSearch} from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 
 // import { PaginationControl } from 'react-bootstrap-pagination-control';
@@ -22,14 +22,7 @@ import { FaSearch} from "react-icons/fa";
 
 export default function Productos() {
 
-
     // const [page, setPage] = useState(1)
-
-
-
-
-
-
 
     const [productos, setProductos] = useState([])
 
@@ -59,9 +52,16 @@ export default function Productos() {
             )
         }
     }
+    
     buscar();
 
-    console.log(result)
+    console.log(result);
+
+
+
+    // if (result == 0) {
+    //     console.log("RODRIGO Y GABY");
+    // };
     /*  const filtrar = (terminobusqueda) => {
           var resbusqueda = productos.filter((elemento) => {
               if (elemento.nombreproducto.toString().toLowerCase().includes(terminobusqueda.toLowerCase())
@@ -83,14 +83,23 @@ export default function Productos() {
     //         </Pagination.Item>,
     //     );
     // }
-
+    // const unreadMessages = "hola";
+    
+    // if (result.length > 0) {
+    // }else {
+    //     console.log("RODRIGO    ")
+    // }
 
     return (
         <Fragment>
 
             <Header />
             <Busqueda />
+
             <div className="container">
+                {/* <h2>
+                    You have {unreadMessages} unread messages.
+                </h2> */}
                 <div className="col-lg-12">
                     <div className="row">
                         <section className="col-12 col-sm-6 col-lg-3">
