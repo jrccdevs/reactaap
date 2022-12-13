@@ -41,8 +41,9 @@ h6{
     
 }
 .img-productos{
-    height: 350px;
-    border-radius: 8%;
+    height: 100%;
+    width: 100%;
+    /* border-radius: 8%; */
     /* width: 250px; */
    
 }

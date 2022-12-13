@@ -9,6 +9,7 @@ import React from "react";
 // import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
 import mapa from "../img/mapa-sucursales.png";
 import "../style/Maps.css";
+// responsive imagen
 import ImageMap from "image-map";
 
 

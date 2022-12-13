@@ -62,14 +62,13 @@ export default function Productos() {
     return (
         <Fragment>
 
-            {/* <Header></Header>*/}
             <Header />
             <Busqueda />
             <div className="container">
                 <div className="col-lg-12">
                     <div className="row">
                         <section className="col-12 col-sm-6 col-lg-6">
-                            
+
                         </section>
                         <section className="col-12 col-sm-6 col-lg-6">
                             <div className="btn-productos2">
@@ -88,12 +87,8 @@ export default function Productos() {
                                         <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
                                         <h5 style={{ color: 'green' }}>VER MAS (Prospecto)</h5>
                                     </div>
-
-                                        
                                      ))
-                                    
                                     }
-
                                     {console.log(result.find)} */}
 
                             </div>
@@ -103,7 +98,7 @@ export default function Productos() {
 
                 <div className="col-lg-12">
                     <div className="row">
-                        <section className="col-12 col-sm-6 col-lg-2 mt-4">
+                        <section className="col-12 col-sm-12 col-lg-2 mt-4">
                             <div className="row">
                                 <div className="btn-productos">
                                     <h6>MOSTRAR PRODUCTOS POR:</h6>
@@ -160,115 +155,34 @@ export default function Productos() {
                             </div>
                         </section>
 
-                        <section className="col-12 col-sm-6 col-lg-10">
+                        <section className="col-12 col-sm-12 col-lg-10">
                             <div className="row">
-
                                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                                    <div className="col">
-                                        <div className="card">
-                                            {result.map((producto) => (
-                                                <div className="div-producto col-12">
-                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
-                                                </div>
-                                            ))
-                                            }
-                                            <div className="card-body">
-                                                {result.map((producto) => (
+                                    {result.map((producto) => (
+                                        <div className="col d-flex">
+                                            <div className="card">
+                                                <div className="card-body">
                                                     <div key={producto.id} >
+                                                        <div className="div-producto col-12">
+                                                            <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
+                                                        </div>
                                                         <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
                                                         <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
                                                         <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
                                                         <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
-                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
+                                                        <h5 style={{ color: 'green', textAlign: 'center' }}>VER MAS (Prospecto)</h5>
                                                     </div>
-                                                ))
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col">
-                                        <div className="card">
-                                            {result.map((producto) => (
-                                                <div className="div-producto col-12">
-                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
                                                 </div>
-                                            ))
-                                            }
-                                            <div className="card-body">
-                                                {result.map((producto) => (
-                                                    <div key={producto.id} >
-                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
-                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
-                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
-                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
-                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
-                                                    </div>
-                                                ))
-                                                }
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col">
-                                        <div className="card">
-                                            {result.map((producto) => (
-                                                <div className="div-producto col-12">
-                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
-                                                </div>
-                                            ))
-                                            }
-                                            <div className="card-body">
-                                                {result.map((producto) => (
-                                                    <div key={producto.id} >
-                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
-                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
-                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
-                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
-                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
-                                                    </div>
-                                                ))
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col">
-                                        <div className="card">
-                                            {result.map((producto) => (
-                                                <div className="div-producto col-12">
-                                                    <a href="#!"><img className="img-productos" src={producto.image} alt="" /></a>
-                                                </div>
-                                            ))
-                                            }
-                                            <div className="card-body">
-                                                {result.map((producto) => (
-                                                    <div key={producto.id} >
-                                                        <h5 className="card-title" style={{ textAlign: 'center' }}>{producto.nombreproducto}</h5>
-                                                        <h6 className="detalle" style={{ color: 'red' }}><AiOutlineFunnelPlot></AiOutlineFunnelPlot>   Principio Activo:<text style={{ color: 'rgb(248, 149, 149)' }}>  {producto.principioactivo}</text></h6>
-                                                        <h6 className="detalleprospecto" style={{ color: '#2062f0' }}><GiMedicalThermometer></GiMedicalThermometer>   Accion Terapectica:<text style={{ color: '  #5187fc' }}>  {producto.accionterapeutica}</text></h6>
-                                                        <h6 className="detalleprospecto" style={{ color: 'rgb(65, 67, 68)' }}><FaTable></FaTable>    Forma Farmaceutica:<text style={{ color: 'rgb(159, 163, 165)' }}> {producto.formafarmaceutica} </text></h6>
-                                                        <h5 style={{ color: 'green',textAlign: 'center' }}>VER MAS (Prospecto)</h5>
-                                                    </div>
-                                                ))
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    ))
+                                    }
                                 </div>
-
                             </div>
                         </section>
-
-
-
-
                     </div>
                 </div>
-
-
-
-
             </div>
-
             <Footer></Footer>
         </Fragment >
     )
