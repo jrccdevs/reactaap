@@ -9,8 +9,12 @@ import React from "react";
 // import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
 import mapa from "../img/mapa-sucursales.png";
 import "../style/Maps.css";
+import ImageMap from "image-map";
+
 
 function Maps() {
+
+  ImageMap('img[useMap]')
 
   return (
     <div className="container">
