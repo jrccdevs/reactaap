@@ -23,7 +23,7 @@ export default class Principal extends Component {
           <ControlledCarousel />
           <Navigation />
         </div>
-
+  
         <div>
           <Maps></Maps>
         </div>
