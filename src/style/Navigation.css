@@ -234,7 +234,7 @@ figure.effect-marley:hover p {
 .container2{
  height: 400px;
  width: 100%;
- border: 3px  solid #0081b8;
+ /* border: 3px  solid #0081b8; */
  padding: 15px 15px 15px 15px;
  overflow-y: auto;
  border-radius: 3%;

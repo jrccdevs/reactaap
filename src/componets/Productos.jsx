@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
+import axios from 'axios'
 import { useEffect, useState } from "react";
 import { getProductosRequest } from "../api/productos.api";
 import Button from "react-bootstrap/Button";
 import "../style/Productos.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import Busqueda from "./Busqueda";
-// import Rodrigo from "./rodrigo";
+import BusquedaProducto from "./BusquedaProducto";
 
-//import Alfatossin from '../assets/productos/Alfa Tossin.png'
+
 import { FcSearch } from "react-icons/fc";
 import { AiOutlineFunnelPlot } from "react-icons/ai";
 import { GiMedicalThermometer } from "react-icons/gi";
@@ -16,6 +16,9 @@ import { FaTable } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 
 import ReactPaginate from "react-paginate";
+
+
+import { Link, Routes } from "react-router-dom";
 
 // import { PaginationControl } from 'react-bootstrap-pagination-control';
 // import Pagination from 'react-bootstrap/Pagination';
@@ -26,6 +29,7 @@ export default function Productos() {
   const [productos, setProductos] = useState([]);
 
   const [busqueda, setBusqueda] = useState("");
+
 
   useEffect(() => {
     async function loadProductos() {
@@ -92,7 +96,9 @@ export default function Productos() {
     <Fragment>
       <Header />
 
-      <Busqueda handleChange={handleChange} />
+
+      <BusquedaProducto handleChange={handleChange} />
+
 
       {/* <Rodrigo handleChange={handleChange}></Rodrigo> */}
 
@@ -102,7 +108,7 @@ export default function Productos() {
                 </h2> */}
         <div className="col-lg-12">
           <div className="row">
-            
+
             {/* <section className="col-12 col-sm-6 col-lg-3">
               <select class="form-select" aria-label="Default select example">
                 <option selected>Mostrar Productos Por:</option>
@@ -225,28 +231,27 @@ export default function Productos() {
 
             <section className="col-12 col-sm-12 col-lg-12">
               <div className="row">
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-4">
                   {result.map((producto) => (
-                    <div className="col d-flex">
+                    <div className="col flex-nowrap">
                       <div className="card">
                         <div className="card-body">
                           <div key={producto.id}>
                             <div className="div-producto col-12">
                               <a href="#!">
-                                <img
-                                  className="img-productos"
-                                  src={producto.image}
-                                  alt=""
-                                />
+                                <Link to={`/productos/${producto.id}`}>
+                                  <img
+                                    className="img-productos"
+                                    src={producto.image}
+                                    alt=""
+                                  />
+                                </Link>
                               </a>
                             </div>
-                            <h5
-                              className="card-title"
-                              style={{ textAlign: "center" }}
-                            >
+                            <h5 className="card-title" style={{ textAlign: "center" }} >
                               {producto.nombreproducto}
                             </h5>
-                            <h6 className="detalle" style={{ color: "red" }}>
+                            {/* <h6 className="detalle" style={{ color: "red" }}>
                               <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                               Principio Activo:
                               <text style={{ color: "rgb(248, 149, 149)" }}>
@@ -277,7 +282,7 @@ export default function Productos() {
                             </h6>
                             <h5 style={{ color: "green", textAlign: "center" }}>
                               VER MAS (Prospecto)
-                            </h5>
+                            </h5> */}
                           </div>
                         </div>
                       </div>
@@ -307,6 +312,7 @@ export default function Productos() {
         </div>
       </div>
       <Footer></Footer>
+
     </Fragment>
   );
 }

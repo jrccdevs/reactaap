@@ -29,7 +29,7 @@ export default function Footer() {
               <strong>NUESTRAS REDES SOCIALES</strong>
             </h4>
             <h4 className="icono">
-              <FaFacebook></FaFacebook> <FaTwitter></FaTwitter> <FaLinkedin></FaLinkedin> 
+              <FaFacebook className="facebook"/> <FaTwitter className="twitter"/> <FaLinkedin className="linkedin"/> 
             </h4>
           </div>
         </div>

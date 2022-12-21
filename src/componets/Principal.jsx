@@ -9,6 +9,7 @@ import Header from "./Header";
 import Navigation from "./Navigation";
 import Busqueda from "./Busqueda";
 import Maps from "./Maps";
+import Search from './Search'
 
 export default class Principal extends Component {
   render() {
@@ -20,8 +21,10 @@ export default class Principal extends Component {
         </div>
 
         <div>
+          {/* <Search /> */}
           <ControlledCarousel />
           <Navigation />
+
         </div>
   
         <div>

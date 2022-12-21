@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 //import { usePosts } from "../context/postContext";
 import { Form, Formik } from 'formik'
 import { crearProductosRequest, getProductosRequest } from '../api/productos.api'
-import Menuadmin from './menuadmin.js'
+import Menuadmin from './menuadmin'
 
 
 export default function ProductoAdmin() {

@@ -38,3 +38,41 @@
 .copyright {
   font-size: 18px;
 }
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.facebook:hover {
+  animation: heartbeat 1s infinite;
+  fill: #4267B2;
+  color: #4267B2;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.twitter:hover {
+  animation: heartbeat 1s infinite;
+  fill: #00acee;
+  color: #00acee;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.linkedin:hover {
+  animation: heartbeat 1s infinite;
+  fill:  #0072B1;
+  color:  #0072B1;
+  opacity: 1;
+  transition: opacity 500ms;
+}

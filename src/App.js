@@ -10,6 +10,7 @@ import Administradorcarrucel from './componets/administradorcarrucel'
 import Administrarproducto from './componets/administrarproducto'
 import Farmaco from './componets/Farmaco'
 import {PostProvider} from './context/postContext'
+import DetalleProducto from './componets/DetalleProducto';
 
 export default function App() {
 
@@ -21,6 +22,13 @@ export default function App() {
           <Route path="/" element={<Principal />} />
           <Route path="/empresa" element={<Empresa />} />
           <Route path="/productos" element={<Productos />} />
+
+
+          <Route path="/productos/:id" element={<DetalleProducto />} />
+
+
+
+
           <Route path="/menuadmin" element={<Menuadmin />} />
           <Route path="/vademecun" element={<Vademecun />} />
           <Route path="/es/farmaco-vigilancia" element={<Farmaco />} />
@@ -31,6 +39,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </PostProvider>
+    
 
 
   );

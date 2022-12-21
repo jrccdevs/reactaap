@@ -4,7 +4,9 @@ import axios from 'axios'
 
 export const getProductosRequest = async () => 
  await axios.get('https://node-alfa.vercel.app/productos');
+//  await axios.get('http://localhost:7000/productos');
  
+
 
 
 

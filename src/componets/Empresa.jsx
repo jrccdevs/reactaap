@@ -15,7 +15,6 @@ export default class Empresa extends Component {
                 <Header />
                 <Busqueda />
                 <div className="container">
-
                     <div className="row">
                         <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
 
