@@ -6,6 +6,8 @@ import Button from "react-bootstrap/Button";
 import "../style/Productos.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import Productos2 from "./Productos2";
+// import Search from "./Search";
 import BusquedaProducto from "./BusquedaProducto";
 
 
@@ -94,11 +96,13 @@ export default function Productos() {
 
   return (
     <Fragment>
-      <Header />
+      {/* <Header />
 
 
-      <BusquedaProducto handleChange={handleChange} />
+      <BusquedaProducto handleChange={handleChange} /> */}
 
+      {/* <Search /> */}
+      <Productos2 />
 
       {/* <Rodrigo handleChange={handleChange}></Rodrigo> */}
 

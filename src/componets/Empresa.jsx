@@ -14,10 +14,11 @@ export default class Empresa extends Component {
             <div>
                 <Header />
                 <Busqueda />
+                {/* <Adriana /> */}
+
                 <div className="container">
                     <div className="row">
                         <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
-
                         <div className="row mt-4">
                             <div className="col-12 col-sm-12 col-md-4 text-center">
                                 <img src={mision} width="300" height="300" className="rounded img-fluid" alt="..." />

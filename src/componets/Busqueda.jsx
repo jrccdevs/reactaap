@@ -31,12 +31,13 @@ export default function Busqueda() {
 
 
   const [productos, setProductos] = useState([]);
-  const [productosMatch, etProductosMatch] = useState([]);
+  const [productosMatch, setProductosMatch] = useState([]);
 
   useEffect(() => {
     async function loadProductos() {
       const response = await getProductosRequest();
-      setProductos(response.data);
+      // const response = await (`http://localhost:7000/formaFarmaceutica`);
+      setProductos(response.data.slice(0, 5));
     }
     loadProductos();
   }, []);
@@ -45,7 +46,7 @@ export default function Busqueda() {
 
   const buscarProductos = (text) => {
     if (!text) {
-      etProductosMatch([]);
+      setProductosMatch([]);
     } else {
       let matches = productos.filter((country) => {
         const regex = new RegExp(`${text}`, "gi");
@@ -54,7 +55,7 @@ export default function Busqueda() {
           country.principioactivo.match(regex)
         );
       });
-      etProductosMatch(matches);
+      setProductosMatch(matches);
     }
   };
 
@@ -112,27 +113,27 @@ export default function Busqueda() {
                       aria-label="Search"
                     />
                     <Button variant="primary"><FaSearch></FaSearch></Button>
-                    <div class="position-absolute">
-                      {productosMatch && productosMatch.map((item, index) => (
-                        <div class="" key={index} style={{ marginLeft: "35%", marginTop: "5px" }}>
-                          <div key={item.id}>
+                    <div class="position-absolute" style={{ maxWidth: "88%", marginTop: "56px" }}>
 
-                            <div class="card mb-3 " style={{ maxWidth: "100%" }}>
-                              <div class="row g-0">
-                                <div class="col-md-4">
-                                  <Link to={`/productos/${item.id}`}>
-                                    <img src={item.image} class="img-fluid rounded-start" alt="..." />
-                                  </Link>
-                                </div>
-                                <div class="col-md-8">
-                                  <div class="card-body">
-                                    <h5 class="card-title">{item.nombreproducto}</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      {productosMatch && productosMatch.map((item, index) => (
+                        <div key={index}>
+                          <div key={item.id} className="producto-item"> 
+                            <Link to={`/productos/${item.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                              <div class="mb-3 " style={{ maxWidth: "100%" }}>
+                                <div class="row g-0">
+                                  <div class="col-md-3">
+                                    <img src={item.image} style={{ maxWidth: "50%", maxHeight: "80%", display: "block", margin: "0 auto" }} class="img-fluid rounded-start" alt={item.nombreproducto} />
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="text-center">
+                                      <h5 class="">{item.nombreproducto}</h5>
+                                      {/* <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
+                                      {/* <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> */}
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </Link>
                           </div>
                         </div>
                       ))}
@@ -154,19 +155,3 @@ export default function Busqueda() {
   );
 }
 
-
-
-{/* <section className="col-12 col-sm-6 col-lg-7">
-                  <Form className="d-flex">
-                    <Search />
-                    <Button variant="primary"><FaSearch></FaSearch></Button>
-                  </Form>
-                </section> */}
-{/* <Nav className="justify-content flex-grow-1 pe-3">
-                  <Button
-                    onClick={() => Busqueda("/menuadmin")}
-                    src={Menuadmin}
-                    variant="primary">
-                    ADMINISTRADOR
-                  </Button>
-                </Nav> */}

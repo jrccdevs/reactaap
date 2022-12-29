@@ -17,9 +17,9 @@ import "../style/Header.css";
 
 class BusquedaProducto extends React.Component {
   render() {
+    
     const { handleChange } = this.props;
-
-    // this.props.navigate('/menuadmin');
+    const { handleFormaFarmace } = this.props;
 
     return (
       <>
@@ -43,23 +43,23 @@ class BusquedaProducto extends React.Component {
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
                   <section className="col-12 col-sm-6 col-lg-2 me-2">
-                    <select class="form-select mx-4 px-1" aria-label="Default select example">
-                      <option selected>Mostrar Productos Por:</option>
-                      <option value="1">Capsulas</option>
-                      <option value="2">Comprimidos</option>
-                      <option value="3">Cremas</option>
-                      <option value="4">Gel</option>
-                      <option value="5">Gotas</option>
-                      <option value="6">Granulado</option>
-                      <option value="7">Inyectable</option>
-                      <option value="8">Jarabes</option>
-                      <option value="9">Polvo</option>
-                      <option value="10">Pomada</option>
-                      <option value="11">Shampo</option>
-                      <option value="12">Solucion</option>
-                      <option value="13">Supositorio</option>
-                      <option value="14">Suspension</option>
-                      <option value="15">Tableta</option>
+                    <select class="form-select mx-4 px-1" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
+                      <option value={''}>-- MOSTRAR TODOS --</option>
+                      <option value="CAPSULAS">CAPSULAS</option>
+                      <option value="COMPRIMIDOS">COMPRIMIDOS</option>
+                      <option value="CREMAS">CREMAS</option>
+                      <option value="GEL">GEL</option>
+                      <option value="GOTAS">GOTAS</option>
+                      <option value="GRANULADO">GRANULADO</option>
+                      <option value="INYECTABLE">INYECTABLE</option>
+                      <option value="JARABES">JARABES</option>
+                      <option value="POLVO">POLVO</option>
+                      <option value="POMADA">POMADA</option>
+                      <option value="SHAMPO">SHAMPO</option>
+                      <option value="SOLUCION">SOLUCION</option>
+                      <option value="SUPOSITORIO">SUPOSITORIO</option>
+                      <option value="SUSPENSION">SUSPENSION</option>
+                      <option value="TABLETAS">TABLETAS</option>
                     </select>
                   </section>
 
@@ -76,7 +76,7 @@ class BusquedaProducto extends React.Component {
                     </Form>
                   </section>
 
-                  
+
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
             </Container>
