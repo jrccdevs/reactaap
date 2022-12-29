@@ -21,7 +21,7 @@ export default function Productos2() {
 
     useEffect(() => {
         const getstate = async () => {
-            const response = await fetch(`http://localhost:7000/formaFarmaceutica/${formafarmaceutica}`);
+            const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`);
             const getst = response.json();
             setProductos(await getst);
             // console.log(getst);
