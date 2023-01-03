@@ -88,7 +88,7 @@ function Search() {
         //         onChange={(e) => buscarProductos(e.target.value)}
         //     />
         //         <section className="col-12 col-sm-6 col-lg-6">
-        //             <Form class="busca">
+        //             <Form className="busca">
         //                 <Form.Control
         //                     onChange={(e) => buscarProductos(e.target.value)}
         //                     type="search"
@@ -97,23 +97,23 @@ function Search() {
         //                     aria-label="Search"
         //                 />
 
-        //                 <div class="">
+        //                 <div className="">
         //                     {productosMatch && productosMatch.map((item, index) => (
-        //                         <div class="" key={index} style={{ marginLeft: "35%", marginTop: "5px" }}>
+        //                         <div className="" key={index} style={{ marginLeft: "35%", marginTop: "5px" }}>
         //                             <div key={item.id}>
 
-        //                                 <div class="card mb-3 " style={{ maxWidth: "100%" }}>
-        //                                     <div class="row g-0">
-        //                                         <div class="col-md-4">
+        //                                 <div className="card mb-3 " style={{ maxWidth: "100%" }}>
+        //                                     <div className="row g-0">
+        //                                         <div className="col-md-4">
         //                                             <Link to={`/productos/${item.id}`}>
-        //                                                 <img src={item.image} class="img-fluid rounded-start" alt="..." />
+        //                                                 <img src={item.image} className="img-fluid rounded-start" alt="..." />
         //                                             </Link>
         //                                         </div>
-        //                                         <div class="col-md-8">
-        //                                             <div class="card-body">
-        //                                                 <h5 class="card-title">{item.nombreproducto}</h5>
-        //                                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        //                                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        //                                         <div className="col-md-8">
+        //                                             <div className="card-body">
+        //                                                 <h5 className="card-title">{item.nombreproducto}</h5>
+        //                                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        //                                                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
         //                                             </div>
         //                                         </div>
         //                                     </div>

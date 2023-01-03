@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import Footer from "./Footer";
-import ControlledCarousel from "./Pagina";
+import ControlCarousel from "./Carrusel";
 import Header from "./Header";
-import Navigation from "./Navigation";
+import Navegacion from "./Navegacion";
 import Busqueda from "./Busqueda";
 import Maps from "./Maps";
-
 import "../App.css";
+import BusquedaProducto from "./BusquedaProducto";
+
 export default class Principal extends Component {
   render() {
     return (
@@ -16,15 +16,16 @@ export default class Principal extends Component {
         <div>
           <Header />
           <Busqueda />
+          {/* <BusquedaProducto /> */}
         </div>
 
         <div>
-          <ControlledCarousel />
-          <Navigation />
+          <ControlCarousel />
+          <Navegacion />
         </div>
 
         <div>
-          <Maps></Maps>
+          <Maps />
         </div>
 
         <div>

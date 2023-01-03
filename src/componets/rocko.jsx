@@ -105,7 +105,7 @@ export default class App extends Component {
                     <div className="col-lg-12">
                         <div className="row">
                             <section className="col-12 col-sm-6 col-lg-3">
-                                <select class="form-select" aria-label="Default select example">
+                                <select className="form-select" aria-label="Default select example">
                                     <option selected>Mostrar Productos Por:</option>
                                     <option value="1">Capsulas</option>
                                     <option value="2">Comprimidos</option>

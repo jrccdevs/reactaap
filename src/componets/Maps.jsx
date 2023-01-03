@@ -1,186 +1,219 @@
-// /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
-
-//import { ReactSVG, G } from 'react-svg'
-
-// import LogoAlfa from "../img/LogoAlfa.png";
-// import { BsTelephoneInbound } from "react-icons/bs";
-// import { MdMarkEmailRead } from "react-icons/md";
-// import { FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import mapa from "../img/mapa-sucursales.png";
-import "../style/Maps.css";
-// responsive imagen
-import ImageMap from "image-map";
+
+export default function Maps() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState(null);
 
 
-function Maps() {
+  const openModal = (event, data) => {
+    event.preventDefault();
+    setModalOpen(true);
+    setModalData(data);
+  };
 
-  ImageMap('img[useMap]')
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalData(null);
+  };
 
   return (
     <div className="container">
       <div className="row">
         <section className="col-12">
-          {/* <div className="row"> */}
-            {/* Sucursales de bolivia */}
-            <div className="col-lg-12 text-center">
-              <h4>SUCURSALES BOLIVIA</h4>
+          <div className="col-lg-12 text-center">
+            <h4 className="text-center my-4">SUCURSALES BOLIVIA</h4>
 
-              <img className="img-fluid" src={mapa} width="652" height="682" alt="sucursales-bolivia" useMap="#Map" />
-              <map name="Map">
-                <area shape="circle" coords="417,319,17" href="#" alt="santa_cruz" data-bs-toggle="modal" data-bs-target="#modalf1" />
-                <area shape="circle" coords="236,182,17" href="#" alt="beni" data-bs-toggle="modal" data-bs-target="#modalf2" />
-                <area shape="circle" coords="134,49,17" href="#" alt="pando" data-bs-toggle="modal" data-bs-target="#modalf3" />
-                <area shape="circle" coords="91,240,17" href="#" alt="la_paz" data-bs-toggle="modal" data-bs-target="#modalf4" />
-                <area shape="circle" coords="215,327,17" href="#" alt="cochabamba" data-bs-toggle="modal" data-bs-target="#modalf5" />
-                <area shape="circle" coords="136,391,17" href="#" alt="oruro" data-bs-toggle="modal" data-bs-target="#modalf6" />
-                <area shape="circle" coords="193,464,17" href="#" alt="potosi" data-bs-toggle="modal" data-bs-target="#modalf7" />
-                <area shape="circle" coords="292,429,17" href="#" alt="chuquisaca" data-bs-toggle="modal" data-bs-target="#modalf8" />
-                <area shape="circle" coords="267,531,17" href="#" alt="tarija" data-bs-toggle="modal" data-bs-target="#modalf9" />
-                {/* <area shape="rect" coords="691,336,1239,375" title="Offer Details" alt="Offer Details" data-toggle="modal" data-target="#myModal" style="outline:none" /> */}
-              </map>
+            <img className="img-fluid" src={mapa} width="652" height="682" alt="sucursales-bolivia" useMap="#Map" />
+            <map name="Map">
+              <area
+                shape="circle"
+                coords="417,319,17"
+                href="#"
+                alt="santa_cruz"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal Santa Cruz",
+                  body: "Información de la sucursal de Santa Cruz",
+                })}
+              />
+              <area
+                shape="circle"
+                coords="236,182,17"
+                href="#"
+                alt="beni"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal Beni",
+                  body: "Información de la sucursal de Beni",
+                })}
+              />
 
+              <area
+                shape="circle"
+                coords="134,49,17"
+                href="#"
+                alt="pando"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal pando",
+                  body: "Información de la sucursal de pando",
+                })}
+              />
 
-              {/* Modal de sucursales bolivia */}
-              <div className="modal fade" id="modalf1" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Santa Cruz</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      <div className="container-fluid">
-                        <div className="row">
-                          <div className="col-md-4">Calle Las Piñas Nº 2157 esq. Los Mangos (3er. anillo interno)</div>
-                          <div className="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <area
+                shape="circle"
+                coords="91,240,17"
+                href="#"
+                alt="la_paz"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal La Paz",
+                  body: "Información de la sucursal de La Paz",
+                })}
+              />
 
-              <div className="modal fade" id="modalf2" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Beni</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal beni
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <area
+                shape="circle"
+                coords="215,327,17"
+                href="#"
+                alt="cochabamba"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal cochabamba",
+                  body: "Información de la sucursal de cochabamba",
+                })}
+              />
 
-              <div className="modal fade" id="modalf3" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Pando</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal pando
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <area
+                shape="circle"
+                coords="136,391,17"
+                href="#"
+                alt="oruro"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal oruro",
+                  body: "Información de la sucursal de oruro",
+                })}
+              />
 
-              <div className="modal fade" id="modalf4" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal La Paz</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal de la paz
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <area
+                shape="circle"
+                coords="193,464,17"
+                href="#"
+                alt="potosi"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal potosi",
+                  body: "Información de la sucursal de potosi",
+                })}
+              />
 
-              <div className="modal fade" id="modalf5" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Cochabamba</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal de cochabamba
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <area
+                shape="circle"
+                coords="292,429,17"
+                href="#"
+                alt="chuquisaca"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal chuquisaca",
+                  body: "Información de la sucursal de chuquisaca",
+                })}
+              />
 
-              <div className="modal fade" id="modalf6" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Oruro</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal de oruro
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="modal fade" id="modalf7" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Potosi</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal de potosi
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="modal fade" id="modalf8" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Chuquisaca</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal de chuquisaca
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="modal fade" id="modalf9" tabIndex="-1" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Sucursal Tarija</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      Direcion de la sucursal de tarija
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* fin modal de sucursales bolivia */}
-          {/* </div> */}
+              <area
+                shape="circle"
+                coords="267,531,17"
+                href="#"
+                alt="tarija"
+                onClick={(event) => openModal(event, {
+                  title: "Sucursal tarija",
+                  body: "Información de la sucursal de tarija",
+                })}
+              />
+            </map>
+          </div>
         </section>
       </div>
-    </div>
 
+      {modalData && (
+        <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title>{modalData.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{modalData.body}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={closeModal}>
+              Cerrar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )
+      }
 
+    </div >
   );
 }
-export default Maps;
+
+// import React, { useState } from "react";
+// import { Modal, Button } from "react-bootstrap";
+// import { ImageMap } from '@qiuz/react-image-map';
+// import mapa from "../img/mapa-sucursales.png";
+
+// export default function Maps() {
+//   const [modalOpen, setModalOpen] = useState(false);
+//   const [modalData, setModalData] = useState(null);
+
+//   const openModal = (event, data) => {
+//     event.preventDefault();
+//     setModalOpen(true);
+//     setModalData(data);
+//   };
+
+//   const closeModal = () => {
+//     setModalOpen(false);
+//     setModalData(null);
+//   };
+
+//   const shapes = [
+//     {
+//       shape: "circle",
+//       coords: [417, 319, 17],
+//       alt: "santa_cruz",
+//       onClick: (event) =>
+//         openModal(event, {
+//           title: "Sucursal Santa Cruz",
+//           body: "Información de la sucursal de Santa Cruz",
+//         }),
+//     },
+//     {
+//       shape: "circle",
+//       coords: [236, 182, 17],
+//       alt: "beni",
+//       onClick: (event) =>
+//         openModal(event, {
+//           title: "Sucursal Beni",
+//           body: "Información de la sucursal de Beni",
+//         }),
+//     },
+//   ];
+
+//   return (
+//     <div className="container">
+//       <div className="row">
+//         <section className="col-12">
+//           <ImageMap className="img-fluid" src={mapa} width={652} height={682} shapes={shapes} />
+//           <img className="img-fluid" src={mapa} width="652" height="682" alt="sucursales-bolivia" useMap="#Map" />
+
+//         </section>
+//       </div>
+
+//       {modalData && (
+//         <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
+//           <Modal.Header closeButton>
+//             <Modal.Title>{modalData.title}</Modal.Title>
+//           </Modal.Header>
+//           <Modal.Body>{modalData.body}</Modal.Body>
+//           <Modal.Footer>
+//             <Button variant="primary" onClick={closeModal}>
+//               Cerrar
+//             </Button>
+//           </Modal.Footer>
+//         </Modal>
+//       )}
+//     </div>
+//   );
+// }

@@ -17,7 +17,7 @@ import "../style/Header.css";
 
 class BusquedaProductoDetalle extends React.Component {
   render() {
-    const { handleChange } = this.props;
+    // const { handleChange } = this.props;
 
     // this.props.navigate('/menuadmin');
 
@@ -43,7 +43,7 @@ class BusquedaProductoDetalle extends React.Component {
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
                   {/* <section className="col-12 col-sm-6 col-lg-2 me-2">
-                    <select class="form-select mx-4 px-1" aria-label="Default select example">
+                    <select className="form-select mx-4 px-1" aria-label="Default select example">
                       <option selected>Mostrar Productos Por:</option>
                       <option value="1">Capsulas</option>
                       <option value="2">Comprimidos</option>

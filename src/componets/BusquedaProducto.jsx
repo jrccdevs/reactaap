@@ -43,7 +43,7 @@ class BusquedaProducto extends React.Component {
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
                   <section className="col-12 col-sm-6 col-lg-2 me-2">
-                    <select class="form-select mx-4 px-1" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
+                    <select className="form-select mx-4 px-1" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
                       <option value={''}>-- MOSTRAR TODOS --</option>
                       <option value="CAPSULAS">CAPSULAS</option>
                       <option value="COMPRIMIDOS">COMPRIMIDOS</option>

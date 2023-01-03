@@ -6,22 +6,23 @@ import { FaTable } from "react-icons/fa";
 import Footer from "./Footer";
 import Header from "./Header";
 import BusquedaProductoDetalle from "./BusquedaProductoDetalle";
-import "../style/Productos.css";
+import "../style/DetalleProductos.css";
 
 export default function DetalleProducto() {
+
   //   console.log(useParams());
 
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
-  const [usuario, setUsuario] = React.useState([]);
+  const [producto, setProducto] = React.useState([]);
 
   React.useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(`https://node-alfa.vercel.app/productos/${id}`);
-      const user = await data.json();
-      //   console.log(user);
-      setUsuario(user);
+      const product = await data.json();
+      //   console.log(product);
+      setProducto(product);
     };
     fetchData();
   }, [id]);
@@ -30,30 +31,21 @@ export default function DetalleProducto() {
     <>
       <Header />
       <BusquedaProductoDetalle />
-      <div class="container">
-        <div class="card mb-3">
-          {usuario.map((producto) => (
-            <div class="row g-0">
 
-              {/* <div class="col-md-6">
-                <img src={producto.image} class="imagen img-fluid rounded-start" alt="..." />
-              </div> */}
-
+      <div className="container">
+        <div className="card mb-3">
+          {producto.map((producto) => (
+            <div className="row">
               <div className="div-producto2 col-md-6 col-12">
-                <a href="#!">
                   <img
                     className="img-productos"
                     src={producto.image}
                     alt=""
                   />
-                </a>
               </div>
 
-              <div class="col-md-6 ">
-                <div class="card-body">
-
-                  {/* <p class="card-text"><small class="text-muted">Última actualización hace 3 minutos</small></p> */}
-
+              <div className="col-md-6 ">
+                <div className="card-body">
                   <h5 className="titulo card-title text-center">
                     {producto.nombreproducto}
                   </h5>
@@ -92,7 +84,6 @@ export default function DetalleProducto() {
                         {producto.presentacion}{" "}
                       </text>
                     </h6>
-
                     <h5 className="detalle" style={{ color: "green", textAlign: "center" }}>
                       <button className="btn btn-success" >VER MAS (Prospecto)</button>
                     </h5>
@@ -102,10 +93,7 @@ export default function DetalleProducto() {
             </div>
           ))}
         </div>
-
-
       </div>
-
       <Footer />
     </>
   );

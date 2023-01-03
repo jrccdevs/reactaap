@@ -24,11 +24,7 @@ export default function App() {
           <Route path="/empresa" element={<Empresa />} />
           {/* <Route path="/productos" element={<Productos />} /> */}
           <Route path="/productos" element={<Productos2 />} />
-
-
           <Route path="/productos/:id" element={<DetalleProducto />} />
-
-
 
 
           <Route path="/menuadmin" element={<Menuadmin />} />

@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from "react";
 import { getProductosRequest } from "../api/productos.api";
 import Button from "react-bootstrap/Button";
-import "../style/Productos.css";
+// import "../style/Productos.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Productos2 from "./Productos2";
@@ -114,7 +114,7 @@ export default function Productos() {
           <div className="row">
 
             {/* <section className="col-12 col-sm-6 col-lg-3">
-              <select class="form-select" aria-label="Default select example">
+              <select className="form-select" aria-label="Default select example">
                 <option selected>Mostrar Productos Por:</option>
                 <option value="1">Capsulas</option>
                 <option value="2">Comprimidos</option>
