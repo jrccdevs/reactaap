@@ -1,6 +1,6 @@
 // /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-
+import ImageMap from "image-map";
 //import { ReactSVG, G } from 'react-svg'
 
 // import LogoAlfa from "../img/LogoAlfa.png";
@@ -10,7 +10,7 @@ import React from "react";
 import mapa from "../img/mapa-sucursales.png";
 import "../style/Maps.css";
 // responsive imagen
-import ImageMap from "image-map";
+
 
 
 function Maps() {

@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 export const getProductosRequest = async () => 
- await axios.get('https://node-alfa.vercel.app/productos');
+ await axios.get('https://node-alfa.vercel.app/productos/suspencion');
  //https://node-alfa.vercel.app/productos
 
 export const crearProductosRequest = async(productos) => {
@@ -18,3 +18,5 @@ export const crearProductosRequest = async(productos) => {
         },
     });
 };
+
+

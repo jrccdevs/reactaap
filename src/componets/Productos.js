@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 import { useEffect, useState } from 'react'
 import { getProductosRequest } from '../api/productos.api'
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 import '../style/Productos.css';
 import Header from './Header'
 import Footer from './Footer'
 import Busqueda from './Busqueda';
 
 //import Alfatossin from '../assets/productos/Alfa Tossin.png'
-import { FcSearch } from 'react-icons/fc';
+//import { FcSearch } from 'react-icons/fc';
 import { AiOutlineFunnelPlot } from 'react-icons/ai'
 import { GiMedicalThermometer } from 'react-icons/gi'
 import { FaTable } from 'react-icons/fa'
