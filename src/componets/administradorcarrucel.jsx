@@ -1,6 +1,6 @@
 //import  {useState, useEffect}  from 'react'
 //import axios from 'axios'
-import Menuadmin from './menuadmin.js'
+import Menuadmin from './menuadmin'
 export default function Administradorcarrucel() {
    
   /*  const [producto, setProducto] = useState('')

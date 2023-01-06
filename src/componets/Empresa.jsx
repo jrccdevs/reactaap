@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import '../style/Empresa.css'
-import Header from './Header'
-import Busqueda from './Busqueda'
-import Footer from './Footer'
+import React, { Component } from 'react';
+import Header from './Header';
+import Busqueda from './Busqueda';
+import Footer from './Footer';
 import empresa from "../img/empresa.jpg";
 import mision from "../img/mision.png";
 import vision from "../img/vision.png";
@@ -11,14 +10,12 @@ import valores from "../img/valores.png";
 export default class Empresa extends Component {
     render() {
         return (
-            <div>
+            <>
                 <Header />
                 <Busqueda />
                 <div className="container">
-
                     <div className="row">
                         <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
-
                         <div className="row mt-4">
                             <div className="col-12 col-sm-12 col-md-4 text-center">
                                 <img src={mision} width="300" height="300" className="rounded img-fluid" alt="..." />
@@ -60,14 +57,9 @@ export default class Empresa extends Component {
                             </div>
                         </div> */}
                     </div>
-
-
-
-
                 </div>
-
-                <Footer></Footer>
-            </div>
+                <Footer />
+            </>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from "sweetalert2"
-import Menuadmin from './menuadmin.js'
+import Menuadmin from './menuadmin.jsx'
 
 
 function ProductoAdmin() {

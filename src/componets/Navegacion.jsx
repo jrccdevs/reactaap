@@ -1,16 +1,15 @@
 import React from "react";
 import Empresa from "../img/imgempresa.png";
 import Productos from "../img/imgProductos.png";
-// import Noticias from "../img/Botonnoticias.png";
 import Farmacovigilancia from "../img/imgFarmacovigilancia.png";
 import Vademecum from "../img/imgVademecum.png";
 import { useNavigate, Link } from "react-router-dom";
 import LogoAlfa from "../img/LogoAlfa.png";
 
+import "../style/Navegacion.css";
 
-import "../style/Navigation.css";
+export default function Navegacion() {
 
-export default function Navigation() {
   const navigate = useNavigate();
 
   return (
@@ -24,7 +23,7 @@ export default function Navigation() {
                   onClick={() => navigate("/empresa")}
                   className="fondo-img"
                   src={Empresa}
-                  alt=""
+                  alt="Empresa"
                 />
               </div>
             </div>
@@ -35,7 +34,7 @@ export default function Navigation() {
                   onClick={() => navigate("/productos")}
                   className="fondo-img"
                   src={Productos}
-                  alt=""
+                  alt="Productos"
                 />
               </div>
             </div>
@@ -116,29 +115,6 @@ export default function Navigation() {
             </div>
           </div>
         </section>
-
-        {/* 
-                <section className="col-12 col-sm-6 col-lg-6">
-                    <div className="gallery">
-
-                        <div className="container">
-                            <div className="row">
-
-
-                                <div className="noticiacol-md-12">
-                                    <figure className="effect-marley animate__animated animate__fadeInRight div-img">
-                                        <img src={Noticias} alt="" className="img-responsive" />
-
-                                        <figcaption>
-                                            <h4>LAB ALFA</h4>
-                                            <p>Texto Aqui.........</p>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
       </div>
     </div>
   );
