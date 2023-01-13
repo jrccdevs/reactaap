@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import mapa from "../img/mapa-sucursales.png";
 import ImageMapResizer from 'image-map-resizer';
+// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { BsTelephoneInbound } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
+// import Swal from 'react-sweetalert2';
 
 
 export default function Maps() {
@@ -23,13 +27,14 @@ export default function Maps() {
   useEffect(() => {
     ImageMapResizer();
   }, []);
+
+
   return (
     <div className="container">
       <div className="row">
         <section className="col-12">
           <div className="col-lg-12 text-center">
-            <h4 className="text-center my-4">SUCURSALES BOLIVIA</h4>
-
+            <h4 className="text-center my-4 fw-bold">SUCURSALES BOLIVIA</h4>
             <img className="img-fluid" src={mapa} alt="sucursales-bolivia" useMap="#Map" />
             <map name="Map">
               <area
@@ -39,7 +44,8 @@ export default function Maps() {
                 alt="santa_cruz"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal Santa Cruz",
-                  body: "Información de la sucursal de Santa Cruz",
+                  body: "C/ Los Gomeros Nº 96 - Barrio Sirari",
+                  telefono: "Tel.: (3) 3 413444, Cel.: 721-30959"
                 })}
               />
               <area
@@ -49,7 +55,7 @@ export default function Maps() {
                 alt="beni"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal Beni",
-                  body: "Información de la sucursal de Beni",
+                  body: "Calle Alfredo Pereira s/n, entre Av. Cochabamba y Av. Ganadera (lado Caja Petrolera de Salud)",
                 })}
               />
 
@@ -72,6 +78,7 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal La Paz",
                   body: "Avda. Bush Nº 1970 (entre Rosendo Villalobos y Díaz Romero), Miraflores.",
+                  telefono: "Tel.: (2) 2 224217, (2) 2 227910, (2 )2 224237"
                 })}
               />
 
@@ -82,7 +89,8 @@ export default function Maps() {
                 alt="cochabamba"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal cochabamba",
-                  body: "Información de la sucursal de cochabamba",
+                  body: "Calle Aniceto Padilla Nº 406 Zona Recoleta",
+                  telefono: "Tel.: (4) 4 141977, Cel.:717-29408"
                 })}
               />
 
@@ -93,7 +101,8 @@ export default function Maps() {
                 alt="oruro"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal oruro",
-                  body: "Información de la sucursal de oruro",
+                  body: "Calle Sucre Nº 930 Zona Central",
+                  telefono: "Tel.: (2) 5 280755, Cel.: 718-40821"
                 })}
               />
 
@@ -104,7 +113,8 @@ export default function Maps() {
                 alt="potosi"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal potosi",
-                  body: "Información de la sucursal de potosi",
+                  body: "Calle Hoyos Nº 54 - Zona San Martin",
+                  telefono: "Tel.: (2) 6 228180, Cel.:679-00639"
                 })}
               />
 
@@ -112,10 +122,11 @@ export default function Maps() {
                 shape="circle"
                 coords="292,429,17"
                 href="#"
-                alt="chuquisaca"
+                alt="sucre"
                 onClick={(event) => openModal(event, {
-                  title: "Sucursal chuquisaca",
-                  body: "Información de la sucursal de chuquisaca",
+                  title: "Sucursal Sucre",
+                  body: "Calle 4 Nº 94 - entre calle 1 y Bernardo Bitti - Zona los Alamos",
+                  telefono: "Tel.: (4) 6 445995, Cel.: 728-76811"
                 })}
               />
 
@@ -125,8 +136,9 @@ export default function Maps() {
                 href="#"
                 alt="tarija"
                 onClick={(event) => openModal(event, {
-                  title: "Sucursal tarija",
-                  body: "Información de la sucursal de tarija",
+                  title: "Sucursal Tarija",
+                  body: "Calle Coronel Delgadillo Nº 165 (entre calle Abaroa y Av. Victor Paz). Zona Las Panosas",
+                  telefono: "Tel.: (4) 6 673093, Cel.: 729-86212, 687-05408"
                 })}
               />
             </map>
@@ -135,22 +147,23 @@ export default function Maps() {
       </div>
 
       {modalData && (
-        <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
-          <Modal.Header closeButton>
-            <Modal.Title>
+        <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="sg">
+          <Modal.Header className="text-center">
+            <Modal.Title className="fw-bold fs-4">
               {modalData.title}
             </Modal.Title>
           </Modal.Header>
-          {/* <Modal.Body>{modalData.body}</Modal.Body> */}
           <Modal.Body>
             <Container>
               <Row>
-                <Col className="bg-danger" xs={6} md={6}>
-                  <p>{modalData.body}</p>
+                <Col xs={12} md={12}>
+                  <p className="fs-5 px-2"><FaMapMarkerAlt /> {modalData.body}</p>
+                  <p className="fs-5 px-2"><BsTelephoneInbound /> {modalData.telefono}</p>
                 </Col>
-                <Col className="bg-info" xs={6} md={6}>
+
+                {/* <Col className="bg-info" xs={6} md={6}>
                   .col-xs-6 .col-md-4
-                </Col>
+                </Col> */}
 
               </Row>
             </Container>
