@@ -3,6 +3,9 @@ import axios from 'axios'
 
 
 export const getProductosRequest = async () => 
+
+
+
 //  await axios.get(`http://localhost:7000/formaFarmaceutica/${formafarmaceutica}`);
 //  await axios.get('http://localhost:7000/formaFarmaceutica');
  await axios.get('https://node-alfa.vercel.app/productos');
@@ -16,6 +19,7 @@ export const getProductosRequest = async () =>
  
 
 //  await axios.get('http://localhost:7000/productos');
+
  //https://node-alfa.vercel.app/productos
 
 
@@ -33,3 +37,5 @@ export const crearProductosRequest = async(productos) => {
         },
     });
 };
+
+
