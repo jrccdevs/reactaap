@@ -3,12 +3,9 @@ import axios from 'axios'
 import Swal from "sweetalert2"
 import Menuadmin from './menuadmin.jsx'
 
-
 function ProductoAdmin() {
 
-
     const [files, setFiles] = useState([])
-
 
     useEffect(() => {
         const getupload = async () => {
@@ -19,9 +16,6 @@ function ProductoAdmin() {
         }
         getupload();
     }, [])
-
-
-
 
 
     const upload = async () => {
@@ -46,7 +40,6 @@ function ProductoAdmin() {
         }
 
     };
-
 
 
     return (
@@ -97,19 +90,11 @@ function ProductoAdmin() {
                                 ))
 
                                 }
-
-
-
                             </tbody>
-
                         </table>
-
                     </div>
-
                 </div>
-
             </div>
-
         </>
     );
 }

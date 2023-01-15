@@ -3,6 +3,9 @@ import emailjs from '@emailjs/browser';
 import Header from "./Header";
 import Busqueda from "./Busqueda";
 import Footer from './Footer';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 
 export default function Farmaco() {
 
@@ -10,6 +13,10 @@ export default function Farmaco() {
     const [valueNombre, setValueNombre] = useState('');
     const [valueApellido, setValueApellido] = useState('');
     const [valueEmail, setValueEmail] = useState('');
+    const [valueSexo, setValueSexo] = useState('');
+    const [valueCondicion, setValueCondicion] = useState('');
+    const [valueTelefono, setValueTelefono] = useState('');
+
 
     const handleChangeNombre = (event) => {
         setValueNombre(event.target.value);
@@ -58,6 +65,35 @@ export default function Farmaco() {
         }
     };
 
+
+    const clearInputs = () => {
+        setValueNombre('');
+        setValueApellido('');
+        setValueEmail('');
+        setComentario('');
+        setProducto('');
+        setValueSexo('');
+        setValueTelefono("");
+        setValueCondicion('');
+    }
+
+    const MySwal = withReactContent(Swal)
+
+    function handleClick(e) {
+        e.preventDefault();
+        MySwal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '"Gracias por enviar su formulario, le responderemos a la brevedad."',
+            showConfirmButton: true,
+            // timer: 2000
+
+        })
+        clearInputs();
+    }
+
+
+
     return (
         <>
             <Header />
@@ -78,7 +114,7 @@ export default function Farmaco() {
                     </div>
                     <div className="mb-3">
                         <label className="form-label fw-bold">Sexo</label>
-                        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="sexo">
+                        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="sexo" value={valueSexo} onChange={e => setValueSexo(e.target.value)}>
                             <option selected>Eligir...</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -87,7 +123,7 @@ export default function Farmaco() {
 
                     <div className="mb-3">
                         <label className="form-label fw-bold">Condición</label>
-                        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="condicion">
+                        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="condicion" value={valueCondicion} onChange={e => setValueCondicion(e.target.value)}>
                             <option selected>Eligir...</option>
                             <option value="Paciente">Paciente</option>
                             <option value="Profesional en Salud">Profesional en Salud</option>
@@ -102,7 +138,7 @@ export default function Farmaco() {
 
                     <div className="mb-3">
                         <label className="form-label fw-bold">Teléfono</label>
-                        <input type="number" name="telefono" className="form-control" />
+                        <input type="number" name="telefono" className="form-control" value={valueTelefono} onChange={e => setValueTelefono(e.target.value)} />
                     </div>
 
                     <div className="mb-3">
@@ -120,15 +156,12 @@ export default function Farmaco() {
                     </div>
 
                     <div className="mb-3 text-center">
-                        <button className="btn btn-success" type="submit" disabled={!valueNombre || !valueApellido || !valueEmail}>Enviar</button>
+                        <button onClick={handleClick} className="btn btn-success" type="submit" disabled={!valueNombre || !valueApellido || !valueEmail}>Enviar</button>
                     </div>
-
 
 
                 </form>
             </div>
-            <div>   
-        </div>
             <Footer />
         </>
     )

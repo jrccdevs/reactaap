@@ -68,7 +68,7 @@ export default function Busqueda() {
       {['lg'].map((expand) => (
         <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
           <Container fluid>
-            <Navbar.Brand href="#">Laboratorios ALFA</Navbar.Brand>
+            <Navbar.Brand className="tituloLafar" href="#" >Laboratorios ALFA</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -85,7 +85,7 @@ export default function Busqueda() {
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
 
-                <section className="col-12 col-sm-6 col-lg-2 me-2">
+                <section className="col-8 col-sm-7 col-md-4 col-lg-5 col-xl-3 me-2">
                   <select className="form-select mx-4 px-1" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
                     <option value={''}>-- MOSTRAR TODOS --</option>
                     <option value="CAPSULAS">CAPSULAS</option>
@@ -106,7 +106,7 @@ export default function Busqueda() {
                   </select>
                 </section>
 
-                <section className="col-12 col-sm-6 col-lg-6">
+                <section className="busquer col-12 col-sm-6 col-lg-6">
                   <Form className="d-flex">
                     <Form.Control
                       onChange={(e) => buscarProductos(e.target.value)}

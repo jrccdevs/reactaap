@@ -20,6 +20,70 @@
   height: 100%;
 }
 
+/* @media screen and (max-width: 100px) {
+  .form-select {
+    background-color: olive;
+
+  }
+} */
+
+@media screen and (max-width: 991px) {
+  .nav-bar {
+    /* background-color: rgb(17, 120, 189) !important;  */
+    padding: 0px 0px 0px 0px !important;
+    text-align: center;
+    
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 441px) {
+  .navbar-brand.tituloLafar {
+    background-color: rgb(127, 120, 189) !important; 
+    display: none !important;
+    font-size: 10px !important; 
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 441px) {
+  .form-select {
+    /* background-color: rgb(17, 120, 122) !important;  */
+    /* padding: 0px 0px 0px 0px !important; */
+    height: 12%;
+  }
+}
+
+@media screen and (max-width: 441px) {
+  .busquer {
+    /* background-color: rgb(17, 120, 122) !important;  */
+    /* padding: 0px 0px 0px 0px !important; */
+    /* height: 12%; */
+    margin-top: -350px;
+  }
+}
+
 .navbar {
   background-color: rgb(17, 120, 189);
   height: 70px;

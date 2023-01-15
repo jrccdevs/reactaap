@@ -40,3 +40,15 @@ h6 {
   margin-top: 25px;
   text-align: left;
 }
+
+@media screen and (max-width: 441px) {
+  .card-centro {
+    /* background-color: rgb(127, 120, 189) !important;  */
+    /* display: none !important;
+    font-size: 10px !important;  */
+    /* text-align: center !important; */
+    margin: 0 15px 0 15px !important; 
+
+  }
+}
+
