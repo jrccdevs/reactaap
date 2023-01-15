@@ -1,14 +1,14 @@
-import React, { Fragment, Component } from "react";
-import axios from 'axios'
+import React, { Fragment } from "react";
+//import axios from 'axios'
 import { useEffect, useState } from "react";
 import { getProductosRequest } from "../api/productos.api";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 // import "../style/Productos.css";
-import Header from "./Header";
+//import Header from "./Header";
 import Footer from "./Footer";
 import Productos2 from "./Productos2";
 // import Search from "./Search";
-import BusquedaProducto from "./BusquedaProducto";
+/* import BusquedaProducto from "./BusquedaProducto";
 
 
 import { FcSearch } from "react-icons/fc";
@@ -18,9 +18,9 @@ import { FaTable } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 
 import ReactPaginate from "react-paginate";
+ */
 
-
-import { Link, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // import { PaginationControl } from 'react-bootstrap-pagination-control';
 // import Pagination from 'react-bootstrap/Pagination';

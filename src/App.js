@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react'
 import Principal from './componets/Principal'
 import Empresa from './componets/Empresa'
-import Productos from './componets/Productos'
+//import Productos from './componets/Productos'
 import Vademecun from './componets/Vademecun'
 import Menuadmin from './componets/menuadmin'
 import Productoadmin from './componets/productoadmin'
