@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import mapa from "../img/mapa-sucursales.png";
 import ImageMapResizer from 'image-map-resizer';
-// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 // import Swal from 'react-sweetalert2';
+
+
 
 
 export default function Maps() {
@@ -28,6 +30,16 @@ export default function Maps() {
     ImageMapResizer();
   }, []);
 
+  //Google Maps API
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: "AIzaSyCu1PibFXxSl3qpJvjbEcs0TgRHSyd_gbE&callback"
+  })
+
+  const containerStyle = {
+    width: '100%',
+    height: '400px'
+  };
 
   return (
     <div className="container">
@@ -45,7 +57,11 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal Santa Cruz",
                   body: "C/ Los Gomeros Nº 96 - Barrio Sirari",
-                  telefono: "Tel.: (3) 3 413444, Cel.: 721-30959"
+                  telefono: "Tel.: (3) 3 413444, Cel.: 721-30959",
+                  lugar: {
+                    lat: -17.763801289739543,
+                    lng: -63.20111662953935
+                  }
                 })}
               />
               <area
@@ -56,6 +72,10 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal Beni",
                   body: "Calle Alfredo Pereira s/n, entre Av. Cochabamba y Av. Ganadera (lado Caja Petrolera de Salud)",
+                  lugar: {
+                    lat: -17.979165952324628,
+                    lng: -67.0503323177913
+                  }
                 })}
               />
 
@@ -77,8 +97,12 @@ export default function Maps() {
                 alt="la_paz"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal La Paz",
-                  body: "Avda. Bush Nº 1970 (entre Rosendo Villalobos y Díaz Romero), Miraflores.",
-                  telefono: "Tel.: (2) 2 224217, (2) 2 227910, (2 )2 224237"
+                  body: "Av. Bush Nº 1970, entre R. Villalobos y Díaz Romero (zona Miraflores).",
+                  telefono: "Tel.: (2) 2 224217, (2) 2 227910, (2 )2 224237",
+                  lugar: {
+                    lat: -16.50202943556111,
+                    lng: -68.12109449615929
+                  }
                 })}
               />
 
@@ -90,7 +114,11 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal cochabamba",
                   body: "Calle Aniceto Padilla Nº 406 Zona Recoleta",
-                  telefono: "Tel.: (4) 4 141977, Cel.:717-29408"
+                  telefono: "Tel.: (4) 4 141977, Cel.:717-29408",
+                  lugar: {
+                    lat: -17.3782952166273,
+                    lng: -66.15580733516121
+                  }
                 })}
               />
 
@@ -102,7 +130,11 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal oruro",
                   body: "Calle Sucre Nº 930 Zona Central",
-                  telefono: "Tel.: (2) 5 280755, Cel.: 718-40821"
+                  telefono: "Tel.: (2) 5 280755, Cel.: 718-40821",
+                  lugar: {
+                    lat: -17.979165952324628,
+                    lng: -67.0503323177913
+                  }
                 })}
               />
 
@@ -114,7 +146,11 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal potosi",
                   body: "Calle Hoyos Nº 54 - Zona San Martin",
-                  telefono: "Tel.: (2) 6 228180, Cel.:679-00639"
+                  telefono: "Tel.: (2) 6 228180, Cel.:679-00639",
+                  lugar: {
+                    lat: -19.588846630188737,
+                    lng: -65.749548
+                  }
                 })}
               />
 
@@ -126,7 +162,11 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal Sucre",
                   body: "Calle 4 Nº 94 - entre calle 1 y Bernardo Bitti - Zona los Alamos",
-                  telefono: "Tel.: (4) 6 445995, Cel.: 728-76811"
+                  telefono: "Tel.: (4) 6 445995, Cel.: 728-76811",
+                  lugar: {
+                    lat: -19.047346,
+                    lng: -65.251774
+                  }
                 })}
               />
 
@@ -138,43 +178,58 @@ export default function Maps() {
                 onClick={(event) => openModal(event, {
                   title: "Sucursal Tarija",
                   body: "Calle Coronel Delgadillo Nº 165 (entre calle Abaroa y Av. Victor Paz). Zona Las Panosas",
-                  telefono: "Tel.: (4) 6 673093, Cel.: 729-86212, 687-05408"
+                  telefono: "Tel.: (4) 6 673093, Cel.: 729-86212, 687-05408",
+                  lugar: {
+                    lat: -21.539136404468316,
+                    lng: -64.73116447229489
+                  }
                 })}
               />
             </map>
           </div>
         </section>
       </div>
+      {
+        modalData && (
+          <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
+            <Modal.Header className="text-center">
+              <Modal.Title className="fw-bold fs-4">
+                {modalData.title}
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Container>
+                <Row>
+                  <Col className="text-center" xs={12} md={12}>
+                    <p className="fs-5 px-2"><FaMapMarkerAlt /> {modalData.body}</p>
+                    <p className="fs-5 px-2"><BsTelephoneInbound /> {modalData.telefono}</p>
+                  </Col>
 
-      {modalData && (
-        <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="sg">
-          <Modal.Header className="text-center">
-            <Modal.Title className="fw-bold fs-4">
-              {modalData.title}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Container>
-              <Row>
-                <Col xs={12} md={12}>
-                  <p className="fs-5 px-2"><FaMapMarkerAlt /> {modalData.body}</p>
-                  <p className="fs-5 px-2"><BsTelephoneInbound /> {modalData.telefono}</p>
-                </Col>
+                  <Col xs={12} md={12} >
+                    {isLoaded ? (
+                      <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        center={modalData.lugar}
+                        zoom={19}
+                      >
+                        <Marker
+                          position={modalData.lugar}
+                        >
+                        </Marker>
+                      </GoogleMap>
+                    ) : <></>}
+                  </Col>
 
-                {/* <Col className="bg-info" xs={6} md={6}>
-                  .col-xs-6 .col-md-4
-                </Col> */}
-
-              </Row>
-            </Container>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" onClick={closeModal}>
-              Cerrar
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      )
+                </Row>
+              </Container>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="primary" onClick={closeModal}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )
       }
 
     </div >
