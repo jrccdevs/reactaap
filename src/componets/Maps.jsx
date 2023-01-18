@@ -33,8 +33,16 @@ export default function Maps() {
   //Google Maps API
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyCu1PibFXxSl3qpJvjbEcs0TgRHSyd_gbE&callback"
+    googleMapsApiKey: "AIzaSyCu1PibFXxSl3qpJvjbEcs0TgRHSyd_gbE"
   })
+
+  // const {isLoaded, loadError} = useJsApiLoader({
+  //   id: 'google-map-script',
+  //   googleMapsApiKey: "AIzaSyCu1PibFXxSl3qpJvjbEcs0TgRHSyd_gbE",
+  //   onLoad: () => console.log('Google Maps API loaded!'),
+  //   onError: (error) => console.error(error),
+  // })
+
 
   const containerStyle = {
     width: '100%',
