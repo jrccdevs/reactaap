@@ -67,8 +67,8 @@ export default function Maps() {
                   body: "C/ Los Gomeros Nº 96 - Barrio Sirari",
                   telefono: "Tel.: (3) 3 413444, Cel.: 721-30959",
                   lugar: {
-                    lat: -17.763801289739543,
-                    lng: -63.20111662953935
+                    lat: -17.765003,
+                    lng: -63.200214
                   }
                 })}
               />
@@ -81,8 +81,8 @@ export default function Maps() {
                   title: "Sucursal Beni",
                   body: "Calle Alfredo Pereira s/n, entre Av. Cochabamba y Av. Ganadera (lado Caja Petrolera de Salud)",
                   lugar: {
-                    lat: -17.979165952324628,
-                    lng: -67.0503323177913
+                    lat: -14.822037,
+                    lng: -64.902107
                   }
                 })}
               />
@@ -140,8 +140,8 @@ export default function Maps() {
                   body: "Calle Sucre Nº 930 Zona Central",
                   telefono: "Tel.: (2) 5 280755, Cel.: 718-40821",
                   lugar: {
-                    lat: -17.979165952324628,
-                    lng: -67.0503323177913
+                    lat: -17.970390,
+                    lng: -67.116676
                   }
                 })}
               />
@@ -153,11 +153,11 @@ export default function Maps() {
                 alt="potosi"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal potosi",
-                  body: "Calle Hoyos Nº 54 - Zona San Martin",
+                  body: "Calle Ecuador Nº 19 - zona  ciudad satelite",
                   telefono: "Tel.: (2) 6 228180, Cel.:679-00639",
                   lugar: {
-                    lat: -19.588846630188737,
-                    lng: -65.749548
+                    lat: -19.576336,
+                    lng: -65.766487
                   }
                 })}
               />
@@ -172,8 +172,8 @@ export default function Maps() {
                   body: "Calle 4 Nº 94 - entre calle 1 y Bernardo Bitti - Zona los Alamos",
                   telefono: "Tel.: (4) 6 445995, Cel.: 728-76811",
                   lugar: {
-                    lat: -19.047346,
-                    lng: -65.251774
+                    lat: -19.047775,
+                    lng: -65.252602
                   }
                 })}
               />
@@ -188,8 +188,8 @@ export default function Maps() {
                   body: "Calle Coronel Delgadillo Nº 165 (entre calle Abaroa y Av. Victor Paz). Zona Las Panosas",
                   telefono: "Tel.: (4) 6 673093, Cel.: 729-86212, 687-05408",
                   lugar: {
-                    lat: -21.539136404468316,
-                    lng: -64.73116447229489
+                    lat: -21.538475,
+                    lng: -64.731079
                   }
                 })}
               />

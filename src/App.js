@@ -5,6 +5,7 @@ import Empresa from './componets/Empresa'
 //import Productos from './componets/Productos'
 import Vademecun from './componets/Vademecun'
 import Menuadmin from './componets/menuadmin'
+import Login from './componets/login/login'
 import Productoadmin from './componets/productoadmin'
 import Administradorcarrucel from './componets/administradorcarrucel'
 import Administrarproducto from './componets/administrarproducto'
@@ -28,6 +29,7 @@ export default function App() {
 
 
           <Route path="/menuadmin" element={<Menuadmin />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/vademecun" element={<Vademecun />} />
           <Route path="/es/farmaco-vigilancia" element={<Farmaco />} />
 
