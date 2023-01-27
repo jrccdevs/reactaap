@@ -5,6 +5,8 @@ import BannerAnticaspa from "../img/BannerAnticaspa.png";
 import BannerHidratacion from "../img/BannerHidratacion.png";
 import BannerLimpieza from "../img/BannerLimpieza.png";
 
+import "../style/Header.css";
+
 export default function ControlCarousel() {
   const [index, setIndex] = useState(0);
 

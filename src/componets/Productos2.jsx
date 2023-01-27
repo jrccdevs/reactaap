@@ -70,9 +70,9 @@ export default function Productos2() {
             <Header />
             <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
             <Container className="content">
-                <section className="col-12 col-sm-12 col-lg-12">
+                <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
-                        <div className="row row-cols-1 row-cols-md-4">
+                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
                             {/* {result.map((producto) => ( */}
                             {currentItems.map((producto) => (
 
@@ -80,7 +80,7 @@ export default function Productos2() {
                                     <div className="card">
                                         <div className="card-body">
                                             <div key={producto.id}>
-                                            {/* <div key={producto.id.toString()}> */}
+                                                {/* <div key={producto.id.toString()}> */}
                                                 <div className="div-producto col-12">
                                                     <a href="#!">
                                                         <Link to={`/productos/${producto.id}`}>

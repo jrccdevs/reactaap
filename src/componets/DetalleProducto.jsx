@@ -5,8 +5,11 @@ import { GiMedicalThermometer } from "react-icons/gi";
 import { FaTable } from "react-icons/fa";
 import Footer from "./Footer";
 import Header from "./Header";
-import BusquedaProductoDetalle from "./BusquedaProductoDetalle";
+import Busqueda from "./Busqueda";
+import Card from 'react-bootstrap/Card';
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "../style/DetalleProductos.css";
+
 
 export default function DetalleProducto() {
 
@@ -30,26 +33,18 @@ export default function DetalleProducto() {
   return (
     <>
       <Header />
-      <BusquedaProductoDetalle />
-
-      <div className="container">
-        <div className="card mb-3">
-          {producto.map((producto) => (
-            <div className="row">
-              <div className="div-producto2 col-md-6 col-12">
-                  <img
-                    className="img-productos"
-                    src={producto.image}
-                    alt=""
-                  />
-              </div>
-
-              <div className="col-md-6 ">
-                <div className="card-body">
-                  <h5 className="titulo card-title text-center">
-                    {producto.nombreproducto}
-                  </h5>
-                  <div className="card-centro">
+      <Busqueda />
+      <Container>
+        {producto.map((producto) => (
+          <Card>
+            <Row className="detalleProducto">
+              <Col sm={12} md={12} lg={6} xl={6}>
+                <Card.Img variant="top" src={producto.image} />
+              </Col>
+              <Col sm={12} md={12} lg={6} xl={6}>
+                <Card.Body>
+                  <Card.Title className="tituloDetalleProducto">{producto.nombreproducto}</Card.Title>
+                  <Card.Text>
                     <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                       Precio:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
@@ -84,16 +79,17 @@ export default function DetalleProducto() {
                         {producto.presentacion}{" "}
                       </text>
                     </h6>
-                    <h5 className="detalle" style={{ color: "green", textAlign: "center" }}>
-                      <button className="btn btn-success" >VER MAS (Prospecto)</button>
+
+                    <h5 className="detalle" style={{ textAlign: "center" }}>
+                      <Button variant="success">VER MAS (Prospecto)</Button>
                     </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+                  </Card.Text>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        ))}
+      </Container>
       <Footer />
     </>
   );

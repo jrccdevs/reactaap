@@ -17,7 +17,7 @@ export default function Navegacion() {
       <div className="row">
         <section className="col-12 col-sm-12 col-lg-6">
           <div className="row">
-            <div className="col-12 col-sm-6 mt-4">
+            <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
                 <img
                   onClick={() => navigate("/empresa")}
@@ -28,7 +28,7 @@ export default function Navegacion() {
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 mt-4">
+            <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
                 <img
                   onClick={() => navigate("/productos")}
@@ -38,7 +38,7 @@ export default function Navegacion() {
                 />
               </div>
             </div>
-            <div className="col-12 col-sm-6 mt-4">
+            <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
                 <Link to="/es/farmaco-vigilancia">
                   <img className="fondo-img" src={Farmacovigilancia} alt="" />
@@ -46,7 +46,7 @@ export default function Navegacion() {
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 mt-4">
+            <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
                 <Link to="/vademecun">
                   <img

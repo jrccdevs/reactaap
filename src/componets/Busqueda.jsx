@@ -69,7 +69,7 @@ export default function Busqueda() {
         <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
           <Container fluid>
             <Navbar.Brand className="tituloLafar" href="#" >Laboratorios ALFA</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
