@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getProductosRequest } from "../api/productos.api";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -63,13 +62,14 @@ export default function Busqueda() {
     }
   };
 
+
   return (
     <>
       {['lg'].map((expand) => (
         <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
           <Container fluid>
-            <Navbar.Brand className="tituloLafar" href="#" >Laboratorios ALFA</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
+            <Navbar.Brand className="tituloLafar ml-4" href="#" >Laboratorios ALFA</Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -80,13 +80,13 @@ export default function Busqueda() {
                   Laboratorio ALFA
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body className="row justify-content-center">
+              <Offcanvas.Body className="row justify-content-center ">
                 {/* <Nav className="justify-content flex-grow-1 pe-3">
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
 
-                <section className="col-8 col-sm-7 col-md-4 col-lg-5 col-xl-3 me-2">
-                  <select className="form-select mx-4 px-1" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
+                <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2">
+                  <select className="form-select" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
                     <option value={''}>-- MOSTRAR TODOS --</option>
                     <option value="CAPSULAS">CAPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>
@@ -106,7 +106,7 @@ export default function Busqueda() {
                   </select>
                 </section>
 
-                <section className="busquer col-12 col-sm-6 col-lg-6">
+                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6">
                   <Form className="d-flex">
                     <Form.Control
                       onChange={(e) => buscarProductos(e.target.value)}
@@ -116,7 +116,7 @@ export default function Busqueda() {
                       aria-label="Search"
                     />
                     <Button variant="primary"><FaSearch></FaSearch></Button>
-                    <div className="position-absolute" style={{ maxWidth: "88%", marginTop: "56px" }}>
+                    <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
 
                       {productosMatch && productosMatch.slice(0, 5).map((item, index) => (
                         <div key={index}>
@@ -124,14 +124,12 @@ export default function Busqueda() {
                             <Link to={`/productos/${item.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                               <div className="mb-3 " style={{ maxWidth: "100%" }}>
                                 <div className="row g-0">
-                                  <div className="col-md-3">
+                                  <div className="col-md-3 col-3">
                                     <img src={item.image} style={{ maxWidth: "50%", maxHeight: "80%", display: "block", margin: "0 auto" }} className="img-fluid rounded-start" alt={item.nombreproducto} />
                                   </div>
-                                  <div className="col-md-9">
+                                  <div className="col-md-9 col-9">
                                     <div className="text-center">
                                       <h5 className="">{item.nombreproducto}</h5>
-                                      {/* <p className="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
-                                      {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
                                     </div>
                                   </div>
                                 </div>

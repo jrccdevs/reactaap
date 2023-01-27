@@ -49,7 +49,7 @@ class BusquedaProducto extends React.Component {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="primary"><FaSearch></FaSearch></Button>
+                  <Button className="botonLupa" variant="primary"><FaSearch></FaSearch></Button>
                 </Form>
               </section>
 
