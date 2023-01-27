@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
 import { FaSearch } from "react-icons/fa";
-
 import "../style/Productos2.css";
 
 class BusquedaProducto extends React.Component {

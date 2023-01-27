@@ -7,7 +7,7 @@ import Navegacion from "./Navegacion";
 import Busqueda from "./Busqueda";
 import Maps from "./Maps";
 import "../App.css";
-import BusquedaProducto from "./BusquedaProducto";
+//import BusquedaProducto from "./BusquedaProducto";
 
 export default class Principal extends Component {
   render() {

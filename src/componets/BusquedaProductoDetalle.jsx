@@ -1,17 +1,17 @@
 import React from "react";
 // import Menuadmin from "./menuadmin";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 // import { FcSearch } from "react-icons/fc";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 // import LogoAlfa from "../img/LogoAlfa.png";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
+//import Form from "react-bootstrap/Form";
+//import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { FaSearch } from "react-icons/fa";
-import NavDropdown from "react-bootstrap/NavDropdown";
+//import { FaSearch } from "react-icons/fa";
+//import NavDropdown from "react-bootstrap/NavDropdown";
 
 import "../style/Header.css";
 
