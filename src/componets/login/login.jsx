@@ -1,96 +1,16 @@
-/* import React from 'react'
-
-import "../../style/login/Login.css"
-
-
-const btnSignIn= document.querySelector('sign-in-btn'),
-      btnSignUp = document.querySelector('sign-up-btn'),  
-      signUp = document.querySelector('sign-up'),
-      signIn  = document.querySelector('sign-in');
-
-document.addEventListener('click', e => {
-    if (e.target === btnSignIn || e.target === btnSignUp) {
-        signIn.classList.toggle('active');
-        signUp.classList.toggle('active')
-    }
-});
-
-export default function login() {
-
-    return (
-    <>
-        <div className="container-form sign-up">
-            <div className="welcome-back">
-                <div className="message">
-                    <h2>Bienvenido a DaniCodex</h2>
-                    <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
-                    <button className="sign-up-btn">Iniciar Sesion</button>
-                </div>
-            </div>
-            <form className="formulario">
-                <h2 className="create-account">Crear una cuenta</h2>
-                <div className="iconos">
-                    <div className="border-icon">
-                        <i className='bx bxl-instagram'></i>
-                    </div>
-                    <div className="border-icon">
-                        <i className='bx bxl-linkedin' ></i>
-                    </div>
-                    <div className="border-icon">
-                        <i className='bx bxl-facebook-circle' ></i>
-                    </div>
-                </div>
-                <p className="cuenta-gratis">Crear una cuenta gratis</p>
-                <input type="text" placeholder="Nombre" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Contraseña" />
-                <input type="button" value="Registrarse" />
-            </form>
-        </div>
-        <div className="container-form sign-in">
-            <form className="formulario">
-                <h2 className="create-account">Iniciar Sesion</h2>
-                <div className="iconos">
-                    <div clclassNameass="border-icon">
-                        <i className='bx bxl-instagram'></i>
-                    </div>
-                    <div className="border-icon">
-                        <i className='bx bxl-linkedin' ></i>
-                    </div>
-                    <div className="border-icon">
-                        <i className='bx bxl-facebook-circle' ></i>
-                    </div>
-                </div>
-                <p className="cuenta-gratis">¿Aun no tienes una cuenta?</p>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Contraseña" />
-                <input type="button" value="Iniciar Sesion" />
-            </form>
-            <div className="welcome-back">
-                <div className="message">
-                    <h2>Bienvenido de nuevo</h2>
-                    <p>Si aun no tienes una cuenta por favor registrese aqui</p>
-                    <button className="sign-in-btn">Registrarse</button>
-                </div>
-            </div>
-        </div>
-    </> 
-        )
-
-}
- */
-/* 
 
 import React, { useState } from 'react'
-import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBaseline } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import fondo from './assets/images/fondo.png'
-import { LockOutlined as LockOutlinedIcon } from '@material-ui/icons'
+import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBaseline } from "@mui/material"
+//import { makeStyles } from "@mui/material/styles"
+//import fondo from './assets/images/fondo.png'
+import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material'
+import "../../style/login/Login.css"
+import axios from 'axios'
+function Login () {
 
-
-const useStyles = makeStyles(theme => ({
+/* const useStyles = makeStyles(theme => ({
 	root: {
-		backgroundImage: `url(${fondo})`,
+		//backgroundImage: `url(${fondo})`,
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
@@ -123,11 +43,11 @@ const useStyles = makeStyles(theme => ({
 	button: {
 		margin: theme.spacing(3, 0, 2)
 	}
-}))
+})) */
 
-const App = () => {
-	const [body, setBody] = useState({ nickname: '', password: '' })
-	const classes = useStyles()
+
+	const [body, setBody] = useState({ email: '', password: '' })
+	//const classes = useStyles()
 
 
 	const handleChange = e => {
@@ -138,28 +58,36 @@ const App = () => {
 	}
 
 	const onSubmit = () => {
+		axios.post('http://localhost:7000/login', body)
+		.then(({ data }) => {
+			console.log(data)
+		})
+		.catch(({ response }) => {
+			console.log(response.data)
+		})
 		console.log(body)
 	}
 
 	return (
-		<Grid container component='main' className={classes.root}>
+		<Grid container component='main' className="root">
 			<CssBaseline />
-			<Container component={Paper} elevation={5} maxWidth='xs' className={classes.container}>
-				<div className={classes.div}>
-					<Avatar className={classes.avatar}>
+			<Container component={Paper} elevation={5} maxWidth='xs' className="container">
+				<div className="div">
+					<Avatar className="avatar">
 						<LockOutlinedIcon />
 					</Avatar>
-					<Typography component='h1' variant='h5'>Sign In</Typography>
-					<form className={classes.form}>
+					<Typography component='h1' variant='h5'>Laboratorios ALFA S.A.</Typography>
+					<form className="form">
 						<TextField
 							fullWidth
 							autoFocus
+							type='email'
 							color='primary'
 							margin='normal'
 							variant='outlined'
-							label='Nickname'
-							name='nickname'
-							value={body.nickname}
+							label='E-mail'
+							name='email'
+							value={body.email}
 							onChange={handleChange}
 						/>
 						<TextField
@@ -177,10 +105,10 @@ const App = () => {
 							fullWidth
 							variant='contained'
 							color='secondary'
-							className={classes.button}
+							className="button"
 							onClick={() => onSubmit()}
 						>
-							Sign In
+							Iniciar Sesion
 						</Button>
 					</form>
 				</div>
@@ -189,5 +117,5 @@ const App = () => {
 	)
 }
 
-export default App
- */
+export default Login;
+  

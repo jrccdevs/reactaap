@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Busqueda from './Busqueda';
 import Footer from './Footer';
-import empresa from "../img/empresa.jpg";
+/* import empresa from "../img/empresa.jpg";
 import mision from "../img/mision.png";
 import vision from "../img/vision.png";
-import valores from "../img/valores.png";
+import valores from "../img/valores.png"; */
 
 export default class Empresa extends Component {
     render() {
@@ -15,7 +15,9 @@ export default class Empresa extends Component {
                 <Busqueda />
                 <div className="container">
                     <div className="row">
-                        <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
+
+                        <h4>PAGINA EN DESARROLLO</h4>
+                       {/*  <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
                         <div className="row mt-4">
                             <div className="col-12 col-sm-12 col-md-4 text-center">
                                 <img src={mision} width="300" height="300" className="rounded img-fluid" alt="..." />
@@ -44,7 +46,7 @@ export default class Empresa extends Component {
                                 <p> A principios de la década de los 80's, se trasladan las instalaciones a su nueva planta ubicada en la Plaza Uyuni, donde desarrolla actualmente sus actividades. </p>
                                 <p>  En Abril de 2015 se incorporan nuevos socios con nuevos aportes de capital y “know-how”, iniciando la transformación de S.R.L. a S.A. Asimismo, se constituye en Asunción del Paraguay la Subsidiaria Pharmanest S.A.</p>
                             </div>
-                        </div>
+                        </div> */}
                         {/* <div className="row mt-4">
                             
                             <div className="col-12 col-sm-12 col-md-7 text-center pt-4">

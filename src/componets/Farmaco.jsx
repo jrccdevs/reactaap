@@ -33,7 +33,7 @@ export default function Farmaco() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_nfl4oyx', 'template_su3cz1p', form.current, 'mSAsr7S7ayqL61pcD')
+        emailjs.sendForm('service_pdqygui', 'template_6r13slm', form.current, 'mSAsr7S7ayqL61pcD')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {

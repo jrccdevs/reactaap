@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.6",
     "@qiuz/react-image-map": "^1.1.8",
     "@react-google-maps/api": "^2.17.1",
     "@testing-library/jest-dom": "^5.16.5",

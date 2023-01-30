@@ -144,10 +144,10 @@ export default function Busqueda() {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
-              <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button>
+           {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
             </Nav></Navbar.Brand>
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
-              <Button onClick={() => Busqueda("/login")} variant="primary">LOGIN</Button>
+              <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
             </Nav></Navbar.Brand>
           </Container>
         </Navbar>
