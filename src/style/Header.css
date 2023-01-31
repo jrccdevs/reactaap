@@ -13,11 +13,17 @@
   height: 100%;
   padding: 5px 0 5px 0;
 }
+.tituloLafar{
+  font-size: 30px;
+}
 
 /* ========================================= Componente Busqueda ============================================== */
 
 .form-select {
   height: 100%;
+}
+.mostrar-pro{
+  font-size: 20px;
 }
 
 @media (max-width: 441px) {

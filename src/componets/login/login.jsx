@@ -69,15 +69,15 @@ function Login () {
 	}
 
 	return (
-		<Grid container component='main' className="root">
+		<Grid container component='main' className="login-root">
 			<CssBaseline />
-			<Container component={Paper} elevation={5} maxWidth='xs' className="container">
-				<div className="div">
-					<Avatar className="avatar">
+			<Container component={Paper} elevation={5} maxWidth='xs' className="login-container">
+				<div className="login-div">
+					<Avatar className="login-avatar">
 						<LockOutlinedIcon />
 					</Avatar>
-					<Typography component='h1' variant='h5'>Laboratorios ALFA S.A.</Typography>
-					<form className="form">
+					<Typography component='h1' variant='h5' className="login-alfa">Laboratorios ALFA S.A.</Typography>
+					<form className="login-form">
 						<TextField
 							fullWidth
 							autoFocus
@@ -104,8 +104,8 @@ function Login () {
 						<Button
 							fullWidth
 							variant='contained'
-							color='secondary'
-							className="button"
+							
+							className="login-button"
 							onClick={() => onSubmit()}
 						>
 							Iniciar Sesion

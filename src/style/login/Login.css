@@ -1,5 +1,5 @@
 
-	.root{
+	.login-root{
         
       /*   background-image: url(../../assets/img/logochica.jpg); */
         background-repeat: no-repeat;
@@ -8,26 +8,31 @@
         height: 100vh;
       
 	}
-	.container{
+	.login-alfa{
+		text-align: center;
+	}
+	.login-container{
 		opacity: 0.8;
         height: 60%;
         margin-top: 70px;
 		
     }
-	.div{
+	.login-div{
         margin-top: 58px;
        
 		
 	}
-	.avatar{
+	.login-avatar{
 		margin:1px;
 		background-color: brown;
+		background-image: url(../../img/LogoAlfa.png);
 	}
-	.form{
+	.login-form{
         width: 100%;
         margin-top: 1px;
 	
 	}
-	.button{
+	.login-button{
 		margin: 3, 0, 2;
+		color: rgb(53, 142, 243);
 	}

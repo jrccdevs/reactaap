@@ -45,12 +45,12 @@ export default function DetalleProducto() {
                 <Card.Body>
                   <Card.Title className="tituloDetalleProducto">{producto.nombreproducto}</Card.Title>
                   <Card.Text>
-                    <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
+                   {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                       Precio:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
                         {" "} Bs. {producto.precio}
                       </text>
-                    </h6>
+                    </h6> */}
                     <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                       Principio Activo:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
