@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
+import ModalProducto from "./ModalProducto";
 
 
 export default function Productos2() {
@@ -67,6 +68,7 @@ export default function Productos2() {
 
     return (
         <>
+            <ModalProducto />
             <Header />
             <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
             <Container className="content">

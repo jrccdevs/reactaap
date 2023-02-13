@@ -115,7 +115,8 @@ export default function Busqueda() {
                       className="me-2"
                       aria-label="Search"
                     />
-                    <Button variant="primary"><FaSearch></FaSearch></Button>
+                    <Button variant="primary"><FaSearch /></Button>
+
                     <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
 
                       {productosMatch && productosMatch.slice(0, 5).map((item, index) => (
@@ -144,7 +145,7 @@ export default function Busqueda() {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
-           {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
+              {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
             </Nav></Navbar.Brand>
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
               <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
