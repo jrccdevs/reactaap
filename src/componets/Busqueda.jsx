@@ -20,11 +20,22 @@ export default function Busqueda() {
   const [productosMatch, setProductosMatch] = useState([]);
 
 
+  // const handleFormaFarmace = (event) => {
+  //   const getformafarmaceuticaid = event.target.value;
+  //   setformafarmaceuticaid(getformafarmaceuticaid);
+  //   event.preventDefault();
+  // }
+
+  const navigate = useNavigate();
+
   const handleFormaFarmace = (event) => {
-    const getformafarmaceuticaid = event.target.value;
-    setformafarmaceuticaid(getformafarmaceuticaid);
+    const selectedValue = event.target.value;
+    // console.log(selectedValue);
+    navigate(`/productos?selectedValue=${selectedValue}`);
     event.preventDefault();
   }
+
+
 
   // useEffect(() => {
   //   async function loadProductos() {

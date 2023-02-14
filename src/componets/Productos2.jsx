@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BusquedaProducto from "./BusquedaProducto";
 import Footer from "./Footer";
 import Header from "./Header";
 import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
 import ModalProducto from "./ModalProducto";
+import { useLocation } from 'react-router-dom';
+
 
 
 export default function Productos2() {
@@ -14,6 +16,12 @@ export default function Productos2() {
     const [formafarmaceutica, setformafarmaceuticaid] = useState('');
     const [producto, setProductos] = useState([]);
     const [busqueda, setBusqueda] = useState("");
+
+    //Parametro de selectValue
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const selectedValue = searchParams.get('selectedValue');
+    // console.log(selectedValue);
 
     // Paginacion
     const [currentPage, setCurrentPage] = useState(1);
@@ -23,21 +31,30 @@ export default function Productos2() {
         setCurrentPage(pageNumber);
     };
 
+
+    const navigate = useNavigate();
+
     const handleFormaFarmace = (event) => {
         const getformafarmaceuticaid = event.target.value;
         setformafarmaceuticaid(getformafarmaceuticaid);
+        navigate(`/productos`);
         event.preventDefault();
     }
 
+
     useEffect(() => {
-        const getstate = async () => {
-            const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`);
-            const getst = response.json();
-            setProductos(await getst);
-            // console.log(getst);
-        }
-        getstate();
-    }, [formafarmaceutica]);
+        const fetchData = async () => {
+            let endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`;
+            if (selectedValue) {
+                endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${selectedValue}`;
+            }
+            const response = await fetch(endpoint);
+            const data = await response.json();
+            setProductos(data);
+        };
+        fetchData();
+    }, [selectedValue, formafarmaceutica]);
+
 
     const handleChange = (e) => {
         setBusqueda(e.target.value);
