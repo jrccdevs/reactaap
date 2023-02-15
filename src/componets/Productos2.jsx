@@ -72,12 +72,14 @@ export default function Productos2() {
             <Container className="content">
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
-                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-                            {/* {result.map((producto) => ( */}
+                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 ">
+                        
+                      
+                            {/*   row-cols-xl-4    {result.map((producto) => ( */}
                             {currentItems.map((producto) => (
 
                                 <div className="col flex-nowrap">
-                                    <div className="card">
+                                    <div className="card ">
                                         <div className="card-body">
                                             <div key={producto.id}>
                                                 {/* <div key={producto.id.toString()}> */}
@@ -92,9 +94,13 @@ export default function Productos2() {
                                                         </Link>
                                                     </a>
                                                 </div>
-                                                <h5 className="card-title" style={{ textAlign: "center" }} >
+                                                <h5 className="card-title" style={{ textAlign: "left" }} >
                                                     {producto.nombreproducto}
                                                 </h5>
+                                                <h5 className="card-title1" style={{ textAlign: "left" }} >
+                                                    {producto.presentacion}
+                                                </h5>
+                                                
                                             </div>
                                         </div>
                                     </div>

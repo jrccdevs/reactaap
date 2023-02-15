@@ -14,7 +14,32 @@ import {PostProvider} from './context/postContext'
 import DetalleProducto from './componets/DetalleProducto';
 import Productos2 from './componets/Productos2';
 
+//import React, { useState, useEffect } from 'react'
+//import { Redirect } from 'react-router-dom'
+
 export default function App() {
+
+ /*  const RouteController = props => {
+    const { component: Component, isAuthenticated, ...rest } = props
+
+    const [isAuth, setIsAuth] = useState(true)
+
+    const init = () => {
+        if (!localStorage.getItem("auth")) {
+            setIsAuth(false)
+        } else {
+            const auth = JSON.parse(localStorage.getItem('auth'))
+            if (auth === 'yes') {
+                setIsAuth(true)
+            } else {
+                setIsAuth(false)
+            }
+        }
+    }
+    useEffect(init, [])
+
+    return isAuth ? <Component {...rest} /> : <Redirect to='/login' />
+} */
 
   return (
     <PostProvider>

@@ -33,7 +33,7 @@ export default function Farmaco() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_pdqygui', 'template_6r13slm', form.current, 'mSAsr7S7ayqL61pcD')
+        emailjs.sendForm('service_pdqygui', 'template_6r13slm', form.current, '8qKNpO_udkT1f1ksK')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
@@ -99,7 +99,7 @@ export default function Farmaco() {
             <Header />
             <Busqueda />
             <div className="container">
-                <h1>Fármaco vigilancia</h1>
+                <h1>Fármacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
                 <form ref={form} onSubmit={(e) => { sendEmail(e) }}>
                     <div className="mb-3 mt-4">

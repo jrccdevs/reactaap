@@ -1,73 +1,48 @@
 
 import React, { useState } from 'react'
 import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBaseline } from "@mui/material"
-//import { makeStyles } from "@mui/material/styles"
-//import fondo from './assets/images/fondo.png'
 import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material'
 import "../../style/login/Login.css"
 import axios from 'axios'
+
+import { Navigate } from "react-router-dom";
+
+
+
+
 function Login () {
 
-/* const useStyles = makeStyles(theme => ({
-	root: {
-		//backgroundImage: `url(${fondo})`,
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
-		backgroundPosition: 'center',
-		height: '100vh'
-	},
-	container: {
-		opacity: '0.8',
-		height: '60%',
-		marginTop: theme.spacing(10),
-		[theme.breakpoints.down(400 + theme.spacing(2) + 2)]: {
-			marginTop: 0,
-			width: '100%',
-			height: '100%'
-		}
-	},
-	div: {
-		marginTop: theme.spacing(8),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center'
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.primary.main
-	},
-	form: {
-		width: '100%',
-		marginTop: theme.spacing(1)
-	},
-	button: {
-		margin: theme.spacing(3, 0, 2)
-	}
-})) */
+	//const Login = useNavigate();
+	
+
 
 
 	const [body, setBody] = useState({ email: '', password: '' })
-	//const classes = useStyles()
-
-
 	const handleChange = e => {
 		setBody({
 			...body,
 			[e.target.name]: e.target.value
 		})
 	}
-
-	const onSubmit = () => {
-		axios.post('http://localhost:7000/login', body)
-		.then(({ data }) => {
-			console.log(data)
+	 const onSubmit = () => {
+	axios.post('http://localhost:7000/login', body)
+	.then(({data}) =>{
+       localStorage.setItem('auth', '"yes"')
+	
+			return (
+				<Navigate to="/menuadmin" replace={true} />
+			  )
+			//Login("/menuadmin")
 		})
 		.catch(({ response }) => {
 			console.log(response.data)
+			return (
+				<Navigate to="/login" replace={true} />
+			  )
 		})
 		console.log(body)
 	}
-
+ 
 	return (
 		<Grid container component='main' className="login-root">
 			<CssBaseline />
