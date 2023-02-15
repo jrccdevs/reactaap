@@ -13,6 +13,7 @@ import Farmaco from './componets/Farmaco'
 import {PostProvider} from './context/postContext'
 import DetalleProducto from './componets/DetalleProducto';
 import Productos2 from './componets/Productos2';
+import PanelControl from './componets/PanelControl';
 
 export default function App() {
 
@@ -26,6 +27,7 @@ export default function App() {
           {/* <Route path="/productos" element={<Productos />} /> */}
           <Route path="/productos" element={<Productos2 />} />
           <Route path="/productos/:id" element={<DetalleProducto />} />
+          
 
 
           <Route path="/menuadmin" element={<Menuadmin />} />
@@ -37,6 +39,9 @@ export default function App() {
           <Route path="/administradorcarrucel" element={<Administradorcarrucel />} />
           <Route path="/administrarproducto" element={<Administrarproducto />} />
 
+
+          {/* PanelControl */}
+          <Route path="/panelControl" element={<PanelControl />} />
 
         </Routes>
       </BrowserRouter>

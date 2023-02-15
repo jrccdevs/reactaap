@@ -7,6 +7,11 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
+import { useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
+
+
+
 export default function Farmaco() {
 
     const form = useRef();
@@ -91,13 +96,18 @@ export default function Farmaco() {
         })
         clearInputs();
     }
-
+    const Panel = useNavigate();
 
 
     return (
         <>
             <Header />
             <Busqueda />
+
+            <div className="mb-3 text-right px-5">
+                <Button className='float-rigth' onClick={() => Panel("/panelControl")} variant="success">Panel Control</Button>
+            </div>
+
             <div className="container">
                 <h1>Fármaco vigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>

@@ -6,7 +6,7 @@ import Footer from './Footer';
 import mision from "../img/mision.png";
 import vision from "../img/vision.png";
 import valores from "../img/valores.png"; */
-import construccion from "../img/construccion.jpg"; 
+import construccion from "../img/construccion.jpg";
 
 export default class Empresa extends Component {
     render() {
@@ -14,12 +14,13 @@ export default class Empresa extends Component {
             <>
                 <Header />
                 <Busqueda />
+
                 <div className="container">
                     <div className="row">
 
                         {/* <h4>PAGINA EN DESARROLLO</h4> */}
                         <img src={construccion} width="300" height="300" className="rounded img-fluid" alt="..." />
-                       {/*  <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
+                        {/*  <p className="h1 text-center mb-4">“Laboratorios ALFA”</p>
                         <div className="row mt-4">
                             <div className="col-12 col-sm-12 col-md-4 text-center">
                                 <img src={mision} width="300" height="300" className="rounded img-fluid" alt="..." />
