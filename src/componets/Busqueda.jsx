@@ -20,11 +20,22 @@ export default function Busqueda() {
   const [productosMatch, setProductosMatch] = useState([]);
 
 
+  // const handleFormaFarmace = (event) => {
+  //   const getformafarmaceuticaid = event.target.value;
+  //   setformafarmaceuticaid(getformafarmaceuticaid);
+  //   event.preventDefault();
+  // }
+
+  const navigate = useNavigate();
+
   const handleFormaFarmace = (event) => {
-    const getformafarmaceuticaid = event.target.value;
-    setformafarmaceuticaid(getformafarmaceuticaid);
+    const selectedValue = event.target.value;
+    // console.log(selectedValue);
+    navigate(`/productos?selectedValue=${selectedValue}`);
     event.preventDefault();
   }
+
+
 
   // useEffect(() => {
   //   async function loadProductos() {
@@ -115,9 +126,14 @@ export default function Busqueda() {
                       className="me-2"
                       aria-label="Search"
                     />
+<<<<<<< HEAD
                   {/*   {productosMatch && productosMatch.slice(0, 1).map((item, index) => (
                   <Button className="botonlupa" key={item.id} variant="primary"  ><Link  key={index} to={`/productos/${item.id}`}> <FaSearch></FaSearch></Link></Button>
                    ))} */}
+=======
+                    <Button variant="primary"><FaSearch /></Button>
+
+>>>>>>> 556aae5e017e416eee5b039d3e5c4419fd7918fa
                     <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
 
                       {productosMatch && productosMatch.slice(0, 5).map((item, index) => (
@@ -155,9 +171,15 @@ export default function Busqueda() {
                 </section>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
+<<<<<<< HEAD
            {/*  <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
              <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button>
             </Nav></Navbar.Brand> */}
+=======
+            <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
+              {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
+            </Nav></Navbar.Brand>
+>>>>>>> 556aae5e017e416eee5b039d3e5c4419fd7918fa
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
               <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
             </Nav></Navbar.Brand>

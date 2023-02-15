@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AiOutlineFunnelPlot } from "react-icons/ai";
 import { GiMedicalThermometer } from "react-icons/gi";
@@ -8,7 +8,9 @@ import Header from "./Header";
 import Busqueda from "./Busqueda";
 import Card from 'react-bootstrap/Card';
 import { Button, Col, Container, Row } from "react-bootstrap";
+
 import "../style/DetalleProductos.css";
+import ModalProducto from "./ModalProducto";
 
 
 export default function DetalleProducto() {
@@ -32,6 +34,7 @@ export default function DetalleProducto() {
 
   return (
     <>
+      <ModalProducto />
       <Header />
       <Busqueda />
       <Container>
@@ -45,7 +48,7 @@ export default function DetalleProducto() {
                 <Card.Body>
                   <Card.Title className="tituloDetalleProducto">{producto.nombreproducto}</Card.Title>
                   <Card.Text>
-                   {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
+                    {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                       Precio:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
                         {" "} Bs. {producto.precio}
