@@ -79,7 +79,7 @@ export default function Busqueda() {
       {['lg'].map((expand) => (
         <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
           <Container fluid>
-            <Navbar.Brand className="tituloLafar ml-4" href="#" >Laboratorios ALFA</Navbar.Brand>
+            <Navbar.Brand className="tituloLafar ml-4" href="#" >Laboratorios Alfa S.A.</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -126,7 +126,9 @@ export default function Busqueda() {
                       className="me-2"
                       aria-label="Search"
                     />
+
                     <Button variant="primary"><FaSearch /></Button>
+
 
                     <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
 
@@ -140,8 +142,8 @@ export default function Busqueda() {
                                     <img src={item.image} style={{ maxWidth: "50%", maxHeight: "80%", display: "block", margin: "0 auto" }} className="img-fluid rounded-start" alt={item.nombreproducto} />
                                   </div>
                                   <div className="col-md-9 col-9">
-                                    <div className="text-center">
-                                      <h5 className="">{item.nombreproducto}</h5>
+                                    <div className="text-center" >
+                                      <h6 className="" >{item.nombreproducto}</h6>
                                     </div>
                                   </div>
                                 </div>
@@ -149,15 +151,19 @@ export default function Busqueda() {
                             </Link>
                           </div>
                         </div>
-                      ))}
+                        ))}
                     </div>
+                 
                   </Form>
                 </section>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
+
+
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
               {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
             </Nav></Navbar.Brand>
+
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
               <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
             </Nav></Navbar.Brand>

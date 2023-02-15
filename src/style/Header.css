@@ -14,9 +14,16 @@
   padding: 5px 0 5px 0;
 }
 .tituloLafar{
-  font-size: 30px;
+  font-size: 35px;
 }
-
+.botonlupa{
+  height: 100%;
+  
+}
+.lupahidden{
+  visibility: hidden;
+  margin-top: -10px;
+}
 /* ========================================= Componente Busqueda ============================================== */
 
 .form-select {
@@ -46,6 +53,7 @@
 
   .busquer{
     margin-bottom: auto;
+    
   }
 }
 

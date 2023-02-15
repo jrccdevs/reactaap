@@ -54,7 +54,7 @@ export default function Maps() {
       <div className="row">
         <section className="col-12">
           <div className="col-lg-12 text-center">
-            <h4 className="text-center my-4 fw-bold">SUCURSALES BOLIVIA</h4>
+            <h4 className="text-center my-4 fw-bold">OFICINAS ALFA BOLIVIA</h4>
             <img className="img-fluid" src={mapa} alt="sucursales-bolivia" useMap="#Map" />
             <map name="Map">
               <area
@@ -87,7 +87,7 @@ export default function Maps() {
                 })}
               />
 
-              <area
+            {/*   <area
                 shape="circle"
                 coords="134,49,17"
                 href="#"
@@ -96,7 +96,7 @@ export default function Maps() {
                   title: "Sucursal pando",
                   body: "Información de la sucursal de pando",
                 })}
-              />
+              /> */}
 
               <area
                 shape="circle"

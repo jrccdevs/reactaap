@@ -16,7 +16,7 @@ function ModalProducto() {
         <div>
             <Modal show={showModal} onHide={() => setShowModal(false)} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
                 <Modal.Header className="text-center" closeButton>
-                    <Modal.Title>Laboratorio Lafar</Modal.Title>
+                    <Modal.Title>Laboratorio ALFA</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus porttitor enim, eu lobortis nisl suscipit eu. Maecenas id tellus fringilla lectus pretium gravida. Morbi ullamcorper scelerisque massa, id convallis nulla vulputate at. Proin ut dignissim sapien. Maecenas nibh justo, pretium non sapien vel, blandit finibus mi. Aenean vitae ornare dolor. Morbi faucibus fringilla enim, in lobortis nibh fermentum hendrerit.
