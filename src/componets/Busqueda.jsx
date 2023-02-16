@@ -18,6 +18,7 @@ export default function Busqueda() {
   const [formafarmaceutica, setformafarmaceuticaid] = useState('');
   const [productos, setProductos] = useState([]);
   const [productosMatch, setProductosMatch] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
 
   // const handleFormaFarmace = (event) => {
@@ -70,9 +71,17 @@ export default function Busqueda() {
         );
       });
       setProductosMatch(matches);
+
+      setSearchText(text); // guardamos el valor del input en el estado searchText
     }
   };
 
+  const handleRedirect = () => {
+    // navigate("/productos", { state: { searchText } });
+    navigate(`/productos?searchProcut=${searchText}`);
+
+    // pasamos el valor del input guardado en el estado searchText a la función Busqueda
+  };
 
   return (
     <>
@@ -127,8 +136,7 @@ export default function Busqueda() {
                       aria-label="Search"
                     />
 
-                    <Button variant="primary"><FaSearch /></Button>
-
+                    <Button variant="primary" onClick={handleRedirect}><FaSearch /></Button>
 
                     <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
 
@@ -151,9 +159,9 @@ export default function Busqueda() {
                             </Link>
                           </div>
                         </div>
-                        ))}
+                      ))}
                     </div>
-                 
+
                   </Form>
                 </section>
               </Offcanvas.Body>
@@ -164,9 +172,14 @@ export default function Busqueda() {
               {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
             </Nav></Navbar.Brand>
 
-            <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
+            <Navbar.Brand href="#" className="panelControl">  <Nav className="justify-content flex-grow-1 pe-3">
               <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
             </Nav></Navbar.Brand>
+
+            <Navbar.Brand href="#" className="panelControl">  <Nav className="justify-content flex-grow-1 pe-3">
+              <Button onClick={() => Busqueda("/panelControl")} variant="success">Panel Control</Button>
+            </Nav></Navbar.Brand>
+
           </Container>
         </Navbar>
       ))

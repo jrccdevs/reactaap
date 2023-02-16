@@ -13,14 +13,13 @@
   height: 100%;
   padding: 5px 0 5px 0;
 }
-.tituloLafar{
+.tituloLafar {
   font-size: 35px;
 }
-.botonlupa{
+.botonlupa {
   height: 100%;
-  
 }
-.lupahidden{
+.lupahidden {
   visibility: hidden;
   margin-top: -10px;
 }
@@ -29,7 +28,7 @@
 .form-select {
   height: 100%;
 }
-.mostrar-pro{
+.mostrar-pro {
   font-size: 20px;
 }
 
@@ -51,9 +50,15 @@
     text-align: center;
   }
 
-  .busquer{
+  .busquer {
     margin-bottom: auto;
-    
+  }
+
+  /* Nuevo panel control */
+  .navbar-brand.panelControl button{
+    /* display: none !important; */
+    font-size: 10px;
+    padding: auto;
   }
 }
 

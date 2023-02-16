@@ -13,6 +13,8 @@ import { useLocation } from 'react-router-dom';
 
 export default function Productos2() {
 
+
+
     const [formafarmaceutica, setformafarmaceuticaid] = useState('');
     const [producto, setProductos] = useState([]);
     const [busqueda, setBusqueda] = useState("");
@@ -22,6 +24,11 @@ export default function Productos2() {
     const searchParams = new URLSearchParams(location.search);
     const selectedValue = searchParams.get('selectedValue');
     // console.log(selectedValue);
+
+    //Busqueda por el boton 
+    const searchText = searchParams.get('searchProcut');
+    // console.log(searchText);
+
 
     // Paginacion
     const [currentPage, setCurrentPage] = useState(1);
@@ -53,31 +60,74 @@ export default function Productos2() {
             setProductos(data);
         };
         fetchData();
-    }, [selectedValue, formafarmaceutica]);
+    }, [selectedValue, formafarmaceutica, searchText]);
 
 
     const handleChange = (e) => {
+        navigate(`/productos`);
         setBusqueda(e.target.value);
         buscar(e.target.value);
+        e.preventDefault();
+        // e.preventDefault();
     };
 
     let result = [];
 
 
-    const buscar = (e) => {
-        if (!busqueda) {
+    // const buscar = (e) => {
+    //     if (!busqueda) {
+    //         result = producto;
+    //     } else {
+    //         result = producto.filter((dato) =>
+    //             dato.nombreproducto
+    //                 .toLowerCase()
+    //                 .includes(busqueda.toLocaleLowerCase())
+    //         );
+    //     }
+    // };
+
+    const buscar = () => {
+        if (!busqueda && busqueda.length > 0) {
             result = producto;
         } else {
             result = producto.filter((dato) =>
                 dato.nombreproducto
                     .toLowerCase()
-                    .includes(busqueda.toLocaleLowerCase())
+                    .includes(busqueda.toLowerCase())
+            );
+        }
+
+        if (searchText) {
+            result = result.filter((dato) =>
+                dato.nombreproducto.toLowerCase().includes(searchText.toLowerCase())
             );
         }
     };
 
+
+    // let searchTextTemp = searchText;
+
+    // const buscar = () => {
+    //     if (!busqueda && busqueda.length >= 0) {
+    //         navigate(`/productos`);
+    //         result = producto;
+    //         searchTextTemp = null;
+    //     } else {
+    //         result = producto.filter((dato) =>
+    //             dato.nombreproducto
+    //                 .toLowerCase()
+    //                 .includes(busqueda.toLowerCase())
+    //         );
+    //     }
+
+    //     if (searchTextTemp) {
+    //         result = result.filter((dato) =>
+    //             dato.nombreproducto.toLowerCase().includes(searchTextTemp.toLowerCase())
+    //         );
+    //     }
+    // };
+
     buscar();
-    // console.log(result);
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -92,8 +142,8 @@ export default function Productos2() {
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
                         <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 ">
-                        
-                      
+
+
                             {/*   row-cols-xl-4    {result.map((producto) => ( */}
                             {currentItems.map((producto) => (
 
@@ -119,7 +169,7 @@ export default function Productos2() {
                                                 <h5 className="card-title1" style={{ textAlign: "left" }} >
                                                     {producto.presentacion}
                                                 </h5>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
