@@ -23,6 +23,9 @@
   visibility: hidden;
   margin-top: -10px;
 }
+.textobuscador{
+  text-align: left;
+}
 /* ========================================= Componente Busqueda ============================================== */
 
 .form-select {

@@ -150,8 +150,8 @@ export default function Busqueda() {
                                     <img src={item.image} style={{ maxWidth: "50%", maxHeight: "80%", display: "block", margin: "0 auto" }} className="img-fluid rounded-start" alt={item.nombreproducto} />
                                   </div>
                                   <div className="col-md-9 col-9">
-                                    <div className="text-center" >
-                                      <h6 className="" >{item.nombreproducto}</h6>
+                                    <div className="text-left" >
+                                      <h6 className="textobuscador" >{item.nombreproducto}</h6>
                                     </div>
                                   </div>
                                 </div>
