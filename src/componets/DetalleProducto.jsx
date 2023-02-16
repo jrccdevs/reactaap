@@ -37,16 +37,16 @@ export default function DetalleProducto() {
       <ModalProducto />
       <Header />
       <Busqueda />
-      <Container>
+      <Container className="detalleimg">
         {producto.map((producto) => (
-          <Card>
+          <div  >
             <Row className="detalleProducto">
-              <Col sm={12} md={12} lg={6} xl={6}>
-                <Card.Img variant="top" src={producto.image} />
+              <Col  sm={12} md={12} lg={6} xl={6}>
+                <Card.Img  variant="top" src={producto.image} />
               </Col>
               <Col sm={12} md={12} lg={6} xl={6}>
-                <Card.Body>
-                  <Card.Title className="tituloDetalleProducto">{producto.nombreproducto}</Card.Title>
+                <Card.Body className="detalleimg">
+                  <div className="tituloDetalleProducto">{producto.nombreproducto}</div>
                   <Card.Text>
                     {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                       Precio:
@@ -62,7 +62,7 @@ export default function DetalleProducto() {
                     </h6>
                     <h6 className="detalle" style={{ color: "#2062f0" }}>
                       <GiMedicalThermometer></GiMedicalThermometer>{" "}
-                      Accion Terapectica:
+                      Accion Terapeuctica:
                       <text style={{ color: "  #5187fc" }}>
                         {" "} {producto.accionterapeutica}
                       </text>
@@ -75,9 +75,9 @@ export default function DetalleProducto() {
                       </text>
                     </h6>
 
-                    <h6 className="detalle" style={{ color: "rgb(65, 67, 68)" }}>
+                    <h6 className="detalle" style={{ color: "rgb(12, 143, 12)" }}>
                       <FaTable></FaTable> Presentacion:
-                      <text style={{ color: "rgb(159, 163, 165)" }}>
+                      <text style={{ color: " rgb(93, 180, 93)" }}>
                         {" "}
                         {producto.presentacion}{" "}
                       </text>
@@ -90,7 +90,7 @@ export default function DetalleProducto() {
                 </Card.Body>
               </Col>
             </Row>
-          </Card>
+          </div>
         ))}
       </Container>
       <Footer />

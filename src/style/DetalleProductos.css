@@ -12,14 +12,23 @@ h6 {
 }
 
 .detalleProducto {
-  /* background-color: red; */
+   /*background-color: red; */
   /* padding: 0 100px 0 100px !important; */
   width: 80%;
+  border:1px solid #2a739e;
+  margin-top: 50px;
+  margin-left: 150px;
 }
 
 .tituloDetalleProducto {
   font-size: 28px;
-  color: #00539a;
+  text-transform: uppercase;
+  color: rgb(0, 60, 139);
   font-weight: bold;
   text-align: center;
+  margin-top: 40px;
+  
+}
+.detalleimg{
+ /* border:1px solid #da9123;*/
 }
