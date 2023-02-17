@@ -37,7 +37,7 @@ function PanelControl() {
             <div className="dropdown pb-4">
               <a href="/#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" className="rounded-circle" />
-                <span className="d-none d-sm-inline mx-1">Pedro</span>
+                <span className="d-none d-sm-inline mx-1">ADMIN</span>
               </a>
               <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                 <li><a className="dropdown-item" href="/#">Perfil</a></li>

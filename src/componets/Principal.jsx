@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import ControlCarousel from "./Carrusel";
 import Header from "./Header";
 import Navegacion from "./Navegacion";
-import Busqueda from "./Busqueda";
+import BusquedaPrincipal from "./Busquedaprincipal";
 import Maps from "./Maps";
 import "../App.css";
 //import BusquedaProducto from "./BusquedaProducto";
@@ -15,7 +15,7 @@ export default class Principal extends Component {
       <React.Fragment>
         <div>
           <Header />
-          <Busqueda />
+          <BusquedaPrincipal />
           {/* <BusquedaProducto /> */}
         </div>
 
