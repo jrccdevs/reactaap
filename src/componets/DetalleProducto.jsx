@@ -24,7 +24,11 @@ export default function DetalleProducto() {
 
   React.useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(`https://node-alfa.vercel.app/productos/${id}`);
+
+      //cambiar en https
+     const data = await fetch(`https://node-alfa.vercel.app/productos/${id}`);
+      //const data = await fetch(`http://localhost:7000/productos/${id}`);
+      
       const product = await data.json();
       //   console.log(product);
       setProducto(product);

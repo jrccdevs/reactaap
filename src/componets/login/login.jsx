@@ -4,6 +4,7 @@ import { Grid, Container, Paper, Avatar, Typography, TextField, Button, CssBasel
 import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material'
 import "../../style/login/Login.css"
 import axios from 'axios'
+import LogoAlfa from '../../img/LogoAlfa.png'
 
 import { Navigate } from "react-router-dom";
 
@@ -51,6 +52,7 @@ function Login () {
 					<Avatar className="login-avatar">
 						<LockOutlinedIcon />
 					</Avatar>
+					<img className="logosesion" src={LogoAlfa} alt="..."></img>
 					<Typography component='h1' variant='h5' className="login-alfa">Laboratorios ALFA S.A.</Typography>
 					<form className="login-form">
 						<TextField
@@ -81,7 +83,7 @@ function Login () {
 							variant='contained'
 							
 							className="login-button"
-							onClick={() => onSubmit()}
+							onClick={onSubmit}
 						>
 							Iniciar Sesion
 						</Button>

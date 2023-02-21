@@ -167,6 +167,9 @@ export default function Productos2() {
                                                     {producto.nombreproducto}
                                                 </h5>
                                                 <h5 className="card-title1" style={{ textAlign: "left" }} >
+                                                    {producto.precio}
+                                                </h5>
+                                                <h5 className="card-title1" style={{ textAlign: "left" }} >
                                                     {producto.presentacion}
                                                 </h5>
 

@@ -57,7 +57,7 @@ export default function ProductoAdmin() {
                                             <div className="form-group">
                                                 <label className="block">Codigo Producto</label>
                                                 <input
-                                                    type="number"
+                                                    type="text"
                                                     name="codigoproducto"
                                                     placeholder="Codigo"
                                                     className="form-control" onChange={handleChange}
@@ -96,7 +96,7 @@ export default function ProductoAdmin() {
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label className="block">Forma Farmaceutica</label>
+                                                <label className="block">Categoria</label>
                                                 <select type="text" name="formafarmaceutica" onChange={handleChange} className="form-select" aria-label="Default select example">
                                                     <option selected>Seleccionar forma farmaceutica</option>
                                                     <option value="CAPSULAS">CAPSULAS</option>
@@ -117,9 +117,9 @@ export default function ProductoAdmin() {
                                                 </select>
                                             </div>
                                             <div className="form-group">
-                                                <label className="block">Precio</label>
+                                                <label className="block">Forma Farmaceutica</label>
                                                 <input
-                                                    type="double"
+                                                    type="text"
                                                     name="precio"
                                                     placeholder="Precio"
                                                     className="form-control" onChange={handleChange}

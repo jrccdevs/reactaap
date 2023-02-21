@@ -177,8 +177,8 @@ export default function Busqueda() {
             </Nav></Navbar.Brand>
 
             <Navbar.Brand href="#" className="panelControl">  <Nav className="justify-content flex-grow-1 pe-3">
-              <Button onClick={() => Busqueda("/panelControl")} variant="success">Panel Control</Button>
-            </Nav></Navbar.Brand>
+            {/*   <Button onClick={() => Busqueda("/panelControl")} variant="success">Panel Control</Button>
+          */}   </Nav></Navbar.Brand>
 
           </Container>
         </Navbar>
