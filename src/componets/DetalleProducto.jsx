@@ -75,7 +75,7 @@ export default function DetalleProducto() {
                       <FaTable></FaTable> Forma Farmaceutica:
                       <text style={{ color: "rgb(159, 163, 165)" }}>
                         {" "}
-                        {producto.formafarmaceutica}{" "}
+                        {producto.precio}{" "}
                       </text>
                     </h6>
 

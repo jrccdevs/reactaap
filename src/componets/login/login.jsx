@@ -25,7 +25,7 @@ function Login () {
 			[e.target.name]: e.target.value
 		})
 	}
-	 const onSubmit = () => {
+	 const onSubmit =() => {
 	axios.post('http://localhost:7000/login', body)
 	.then(({data}) =>{
        localStorage.setItem('auth', '"yes"')
