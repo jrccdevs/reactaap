@@ -6,26 +6,38 @@ import "../../style/login/Login.css"
 import axios from 'axios'
 import LogoAlfa from '../../img/LogoAlfa.png'
 
-import { Navigate } from "react-router-dom";
+//import { Navigate } from "react-router-dom";
 
-
+//import { useHistory } from "react-router-dom";
 
 
 function Login () {
 
-	//const Login = useNavigate();
-	
-
-
-
 	const [body, setBody] = useState({ email: '', password: '' })
-	const handleChange = e => {
+	//const { push } = useHistory()
+	const inputChange = ({ target}) => {
+		const {name, value } = target
 		setBody({
 			...body,
-			[e.target.name]: e.target.value
+			[name]: value
 		})
 	}
-	 const onSubmit =() => {
+
+   const onSubmit = () =>{
+	axios.post('http://localhost:7000/login', body)
+	.then(({data}) =>{
+		console.log(data)
+		
+		
+		
+	})
+	.catch(({ response }) => {
+		console.log(response.data)
+	})
+   }
+
+
+	 /*  const onSubmit =() => {
 	axios.post('http://localhost:7000/login', body)
 	.then(({data}) =>{
        localStorage.setItem('auth', '"yes"')
@@ -42,7 +54,7 @@ function Login () {
 			  )
 		})
 		console.log(body)
-	}
+	}  */
  
 	return (
 		<Grid container component='main' className="login-root">
@@ -54,29 +66,29 @@ function Login () {
 					</Avatar>
 					<img className="logosesion" src={LogoAlfa} alt="..."></img>
 					<Typography component='h1' variant='h5' className="login-alfa">Laboratorios ALFA S.A.</Typography>
-					<form className="login-form">
+					<form  className="login-form">
 						<TextField
 							fullWidth
 							autoFocus
-							type='email'
+							type="email"
 							color='primary'
 							margin='normal'
 							variant='outlined'
 							label='E-mail'
-							name='email'
+							name="email"
 							value={body.email}
-							onChange={handleChange}
+							onChange={inputChange}
 						/>
 						<TextField
 							fullWidth
-							type='password'
+							type="password"
 							color='primary'
 							margin='normal'
 							variant='outlined'
-							label='Password'
-							name='password'
+							label="password"
+							name="password"
 							value={body.password}
-							onChange={handleChange}
+							onChange={inputChange}
 						/>
 						<Button
 							fullWidth

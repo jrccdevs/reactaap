@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Container, Row, Col } from "react-bootstrap";
+import { Modal, Container, Row, Col } from "react-bootstrap";
 import mapa from "../img/mapa-sucursales.png";
 import ImageMapResizer from 'image-map-resizer';
 import { BsTelephoneInbound } from "react-icons/bs";
@@ -54,7 +54,7 @@ export default function Maps() {
       <div className="row">
         <section className="col-12">
           <div className="col-lg-12 text-center">
-            <h4 className="text-center my-4 fw-bold">OFICINAS ALFA BOLIVIA</h4>
+            <h4 style={{ color: "#003057" }} className="text-center my-4 fw-bold">OFICINAS ALFA BOLIVIA</h4>
             <img className="img-fluid" src={mapa} alt="sucursales-bolivia" useMap="#Map" />
             <map name="Map">
               <area
@@ -63,7 +63,7 @@ export default function Maps() {
                 href="#"
                 alt="santa_cruz"
                 onClick={(event) => openModal(event, {
-                  title: "Sucursal Santa Cruz",
+                  title: <p style={{ color: "#003057" }}>  Sucursal Santa Cruz</p>,
                   body: "C/ Los Gomeros Nº 96 - Barrio Sirari",
                   telefono: "Tel.: (3) 3 413444, Cel.: 721-30959",
                   lugar: {
@@ -200,7 +200,7 @@ export default function Maps() {
       {
         modalData && (
           <Modal show={modalOpen} onHide={closeModal} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
-            <Modal.Header className="text-center">
+            <Modal.Header className="text-center" closeButton>
               <Modal.Title className="fw-bold fs-4">
                 {modalData.title}
               </Modal.Title>
@@ -232,9 +232,9 @@ export default function Maps() {
               </Container>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="primary" onClick={closeModal}>
+              {/* <Button variant="primary" onClick={closeModal}>
                 Cerrar
-              </Button>
+              </Button> */}
             </Modal.Footer>
           </Modal>
         )

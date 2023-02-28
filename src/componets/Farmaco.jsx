@@ -104,9 +104,9 @@ export default function Farmaco() {
             <Busqueda />
 
             <div className="container">
-                <h1>Fármacovigilancia</h1>
+                <h1>Farmacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
-                <form ref={form} onSubmit={(e) => { sendEmail(e) }}>
+                <form style={{ fontSize: "12px" }} ref={form} onSubmit={(e) => { sendEmail(e) }}>
                     <div className="mb-3 mt-4">
                         <label className="form-label fw-bold">Nombre<span className="text-danger"> *</span></label>
                         <input value={valueNombre} onChange={handleChangeNombre} type="text" name="nombre" className="form-control" />

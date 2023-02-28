@@ -5,7 +5,7 @@ export default class Vademecun extends Component {
         return (
             <div style={{position: 'absolute', width: '100%', height: '100%'}}>
                <object
-               data={require('../docs/Vademecum2022.pdf')}
+               data={require('../docs/Vademecum2023.pdf')}
                type="application/pdf"
                width= "100%"
                height="100%"

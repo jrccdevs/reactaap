@@ -66,13 +66,13 @@ export default function DetalleProducto() {
                     </h6>
                     <h6 className="detalle" style={{ color: "#2062f0" }}>
                       <GiMedicalThermometer></GiMedicalThermometer>{" "}
-                      Accion Terapeuctica:
+                      Accion Terapéuctica:
                       <text style={{ color: "  #5187fc" }}>
                         {" "} {producto.accionterapeutica}
                       </text>
                     </h6>
                     <h6 className="detalle" style={{ color: "rgb(65, 67, 68)" }}>
-                      <FaTable></FaTable> Forma Farmaceutica:
+                      <FaTable></FaTable> Forma Farmacéutica:
                       <text style={{ color: "rgb(159, 163, 165)" }}>
                         {" "}
                         {producto.precio}{" "}
@@ -80,7 +80,7 @@ export default function DetalleProducto() {
                     </h6>
 
                     <h6 className="detalle" style={{ color: "rgb(12, 143, 12)" }}>
-                      <FaTable></FaTable> Presentacion:
+                      <FaTable></FaTable> Presentación:
                       <text style={{ color: " rgb(93, 180, 93)" }}>
                         {" "}
                         {producto.presentacion}{" "}

@@ -152,6 +152,7 @@ export default function Busqueda() {
                                   <div className="col-md-9 col-9">
                                     <div className="text-left" >
                                       <h6 className="textobuscador" >{item.nombreproducto}</h6>
+                                      <h6 className="textobuscador" >{item.precio}</h6>
                                     </div>
                                   </div>
                                 </div>
