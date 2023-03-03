@@ -24,15 +24,17 @@ function Login () {
 	}
 
    const onSubmit = () =>{
-	axios.post('http://localhost:7000/login', body)
-	.then(({data}) =>{
-		console.log(data)
+	axios.post('https://node-alfa.vercel.app/login', body)
+	.then((result) =>{
+		console.log("estoy logueado", result.data, result.status, result.text)
+		/* return (
+			<Navigate to="../PanelControl" replace={true} />
+		  ) */
 		
-		
-		
+		window.location.href="../PanelControl";
 	})
-	.catch(({ response }) => {
-		console.log(response.data)
+	.catch((error) => {
+		console.log(error)
 	})
    }
 

@@ -39,7 +39,8 @@ export default function Farmaco() {
 
         emailjs.sendForm('service_pdqygui', 'template_6r13slm', form.current, '8qKNpO_udkT1f1ksK')
             .then((result) => {
-                console.log(result.text);
+                console.log("mensaje enviuado", result.status, result.text);
+                handleClick()
             }, (error) => {
                 console.log(error.text);
             });
@@ -84,7 +85,7 @@ export default function Farmaco() {
     const MySwal = withReactContent(Swal)
 
     function handleClick(e) {
-        e.preventDefault();
+       // e.preventDefault();
         MySwal.fire({
             position: 'center',
             icon: 'success',
@@ -161,7 +162,7 @@ export default function Farmaco() {
                     </div>
 
                     <div className="mb-3 text-center">
-                        <button onClick={handleClick} className="btn btn-success" type="submit" disabled={!valueNombre || !valueApellido || !valueEmail}>Enviar</button>
+                        <button onClick={sendEmail} className="btn btn-success" type="submit" disabled={!valueNombre || !valueApellido || !valueEmail}>Enviar</button>
                     </div>
 
 

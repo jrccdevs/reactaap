@@ -66,7 +66,7 @@ export default function DetalleProducto() {
                     </h6>
                     <h6 className="detalle" style={{ color: "#2062f0" }}>
                       <GiMedicalThermometer></GiMedicalThermometer>{" "}
-                      Accion Terapéuctica:
+                      Acción Terapéuctica:
                       <text style={{ color: "  #5187fc" }}>
                         {" "} {producto.accionterapeutica}
                       </text>
