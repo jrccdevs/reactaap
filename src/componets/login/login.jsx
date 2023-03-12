@@ -36,7 +36,7 @@ function Login () {
 	})
 	.then((result) =>{
 		if(result.length>0){
-		 axios.post('http://localhost:7000/authenticacion', body)
+		 axios.post('https://reactaap.vercel.app/authenticacion', body)
 			console.log("ingreso")
 			navigate("../PanelControl");
 			//window.location.href="../PanelControl";
