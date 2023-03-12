@@ -1,10 +1,30 @@
 
 import React from 'react';
 import { FaCaretDown, FaListAlt, FaProductHunt } from 'react-icons/fa';
+import { Button } from "@mui/material"
+
+import axios from 'axios'
 import { useNavigate } from 'react-router';
 
 function PanelControl() {
-  const Ruta = useNavigate();
+ 
+  const navigate = useNavigate();
+
+
+  const cerrarSesion = async() =>{
+    console.log(" cerrando sesion")
+    await axios.get('http://localhost:7000/logout')
+    .then((result) =>{
+      console.log("cerrado", result.data, result.status, result.text)
+      //return <Redirect to="/" />;
+       
+        navigate("/login");
+    })
+   
+    .catch((error) => {
+      console.log(error)
+    })
+     }
   return (
 
     <div className="container-fluid">
@@ -45,8 +65,14 @@ function PanelControl() {
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
-                <li onClick={() => Ruta("/")} ><a className="dropdown-item" href="/#">Cerrar Sesion</a></li>
-              </ul>
+                <Button
+							fullWidth
+							variant='contained'
+							className="login-button"
+							onClick={cerrarSesion}
+						>
+							Cerrar Sesion
+						</Button>   </ul>
             </div>
           </div>
         </div>

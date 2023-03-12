@@ -6,12 +6,14 @@ import "../../style/login/Login.css"
 import axios from 'axios'
 import LogoAlfa from '../../img/LogoAlfa.png'
 
-//import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //import { useHistory } from "react-router-dom";
 
 
 function Login () {
+
+	const navigate = useNavigate();
 
 	const [body, setBody] = useState({ email: '', password: '' })
 	//const { push } = useHistory()
@@ -23,15 +25,26 @@ function Login () {
 		})
 	}
 
-   const onSubmit = () =>{
-	axios.post('https://node-alfa.vercel.app/login', body)
+   const onSubmit = async() =>{
+	console.log(" primera validacion ingreso")
+	await axios.post('http://localhost:7000/login', body)
 	.then((result) =>{
 		console.log("estoy logueado", result.data, result.status, result.text)
-		/* return (
-			<Navigate to="../PanelControl" replace={true} />
-		  ) */
-		
-		window.location.href="../PanelControl";
+		//return <Redirect to="/" />;
+		  return result.data;
+		  	
+	})
+	.then((result) =>{
+		if(result.length>0){
+		 axios.post('http://localhost:7000/authenticacion', body)
+			console.log("ingreso")
+			navigate("../PanelControl");
+			//window.location.href="../PanelControl";
+		}else{
+			console.log("error al entrar")
+          alert("usuario y contraseña incorrecto");
+		}
+	
 	})
 	.catch((error) => {
 		console.log(error)

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser';
+import nodemailer from 'nodemailer-smtp-transport';
+//import emailjs from '@emailjs/browser';
 import Header from "./Header";
 import Busqueda from "./Busqueda";
 import Footer from './Footer';
@@ -37,13 +38,24 @@ export default function Farmaco() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_cwhdo47', 'template_6r13slm', form.current, '8qKNpO_udkT1f1ksK')
-            .then((result) => {
-                console.log("mensaje enviuado", result.status, result.text);
-                handleClick()
-            }, (error) => {
-                console.log(error.text);
-            });
+       
+        let transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: 'reynaldocalani80@gmail.com',
+                pass: '1234aa??'
+            }
+            
+        });
+        transporter.sendMail(function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Correo enviado: ' + info.response);
+            }
+        });
+      
+            
     }
 
 

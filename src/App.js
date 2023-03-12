@@ -15,6 +15,8 @@ import DetalleProducto from './componets/DetalleProducto';
 import Productos2 from './componets/Productos2';
 import PanelControl from './componets/PanelControl';
 
+import Vigilancia from './componets/vigilancia'
+
 //import React, { useState, useEffect } from 'react'
 //import { Redirect } from 'react-router-dom'
 
@@ -54,7 +56,7 @@ export default function App() {
           <Route path="/productos/:id" element={<DetalleProducto />} />
           
 
-
+          <Route path="/vigilancia" element={<Vigilancia />} />
           <Route path="/menuadmin" element={<Menuadmin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/vademecun" element={<Vademecun />} />
