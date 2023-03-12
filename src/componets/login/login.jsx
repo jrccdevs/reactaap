@@ -27,7 +27,7 @@ function Login () {
 
    const onSubmit = async() =>{
 	console.log(" primera validacion ingreso")
-	await axios.post('http://localhost:7000/login', body)
+	await axios.post('https://reactaap.vercel.app/login', body)
 	.then((result) =>{
 		console.log("estoy logueado", result.data, result.status, result.text)
 		//return <Redirect to="/" />;
