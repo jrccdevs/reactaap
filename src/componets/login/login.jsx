@@ -27,7 +27,7 @@ function Login () {
 
    const onSubmit = async() =>{
 	console.log(" primera validacion ingreso")
-	await axios.post('https://reactaap.vercel.app/login', body)
+	await axios.post(`https://node-alfa.vercel.app/login`, body)
 	.then((result) =>{
 		console.log("estoy logueado", result.data, result.status, result.text)
 		//return <Redirect to="/" />;
@@ -36,7 +36,7 @@ function Login () {
 	})
 	.then((result) =>{
 		if(result.length>0){
-		 axios.post('https://reactaap.vercel.app/authenticacion', body)
+		 axios.post(`http://node-alfa.vercel.app/authenticacion`, body)
 			console.log("ingreso")
 			navigate("../PanelControl");
 			//window.location.href="../PanelControl";

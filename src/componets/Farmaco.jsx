@@ -37,7 +37,7 @@ export default function Farmaco() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_cwhdo47', 'template_6r13slm', form.current, '8qKNpO_udkT1f1ksK')
+        emailjs.sendForm('service_dhr6rib', 'template_alh2l5c', form.current, '8qKNpO_udkT1f1ksK')
             .then((result) => {
                 console.log("mensaje enviuado", result.status, result.text);
                 handleClick()
