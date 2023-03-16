@@ -1,19 +1,17 @@
-import React, { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser';
+import React, {  useState } from 'react'
+//import emailjs from '@emailjs/browser';
 import Header from "./Header";
 import Busqueda from "./Busqueda";
 import Footer from './Footer';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
+//import Swal from 'sweetalert2'
+//import withReactContent from 'sweetalert2-react-content'
 
 //import { useNavigate } from "react-router-dom";
 
 
 
 export default function Farmaco() {
-
-    const form = useRef();
+   // const form = useRef();
     const [valueNombre, setValueNombre] = useState('');
     const [valueApellido, setValueApellido] = useState('');
     const [valueEmail, setValueEmail] = useState('');
@@ -34,7 +32,7 @@ export default function Farmaco() {
         setValueEmail(event.target.value);
     };
 
-    const sendEmail = (e) => {
+    /* const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs.sendForm('service_dhr6rib', 'template_alh2l5c', form.current, '8qKNpO_udkT1f1ksK')
@@ -45,7 +43,7 @@ export default function Farmaco() {
                 console.log(error.text);
             });
     }
-
+ */
 
     const [comentario, setComentario] = useState('');
 
@@ -71,7 +69,7 @@ export default function Farmaco() {
     };
 
 
-    const clearInputs = () => {
+    /* const clearInputs = () => {
         setValueNombre('');
         setValueApellido('');
         setValueEmail('');
@@ -82,9 +80,9 @@ export default function Farmaco() {
         setValueCondicion('');
     }
 
-    const MySwal = withReactContent(Swal)
+    const MySwal = withReactContent(Swal) */
 
-    function handleClick(e) {
+    /* function handleClick(e) {
        // e.preventDefault();
         MySwal.fire({
             position: 'center',
@@ -95,7 +93,7 @@ export default function Farmaco() {
 
         })
         clearInputs();
-    }
+    } */
     
 
 
@@ -107,8 +105,9 @@ export default function Farmaco() {
             <div className="container">
                 <h1>Farmacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
-                <form style={{ fontSize: "12px" }} ref={form} onSubmit={(e) => { sendEmail(e) }}>
-                    <div className="mb-3 mt-4">
+                
+                <form action="https://formsubmit.co/farmacovigilancia@alfabolivia.com" method="POST" style={{ fontSize: "12px" }}>
+                <div className="mb-3 mt-4">
                         <label className="form-label fw-bold">Nombre<span className="text-danger"> *</span></label>
                         <input value={valueNombre} onChange={handleChangeNombre} type="text" name="nombre" className="form-control" />
                     </div>
@@ -160,12 +159,14 @@ export default function Farmaco() {
                         <p>{contadorDesendente} de 100 carácter(es) restante(s)</p>
 
                     </div>
-
                     <div className="mb-3 text-center">
-                        <button onClick={sendEmail} className="btn btn-success" type="submit" disabled={!valueNombre || !valueApellido || !valueEmail}>Enviar</button>
+                        <button  className="btn btn-success" type="submit" value="enviar" >Enviar</button>
                     </div>
 
-
+                   
+                    <input type="hidden" name="_template" value="box"/>
+                    <input type="hidden" name="_captcha" value="false"/>    
+                    <input type="hidden" name="_next" value="http://localhost:3000/es/farmaco-vigilancia"/>
                 </form>
             </div>
             <Footer />
@@ -174,3 +175,30 @@ export default function Farmaco() {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
