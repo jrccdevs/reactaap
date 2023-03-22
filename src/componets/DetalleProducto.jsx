@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { AiOutlineFunnelPlot } from "react-icons/ai";
-import { GiMedicalThermometer } from "react-icons/gi";
-import { FaTable } from "react-icons/fa";
+//import { AiOutlineFunnelPlot } from "react-icons/ai";
+//import { GiMedicalThermometer } from "react-icons/gi";
+//import { FaTable } from "react-icons/fa";
 import Footer from "./Footer";
 import Header from "./Header";
 import Busqueda from "./Busqueda";
 import Card from 'react-bootstrap/Card';
 import { Button, Col, Container, Row } from "react-bootstrap";
+import icono1 from "../img/icono 1.png";
+import icono2 from "../img/icono 2.png";
+import icono3 from "../img/icono 3.png";
+import icono4 from "../img/icono 4.png";
 
 import "../style/DetalleProductos.css";
 import ModalProducto from "./ModalProducto";
@@ -58,21 +62,21 @@ export default function DetalleProducto() {
                         {" "} Bs. {producto.precio}
                       </text>
                     </h6> */}
-                    <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
+                    <h6 className="detalle" style={{ color: "red" }}>   <img style={{ width: "30px" , height: "30px" }} src={icono1} alt="" />{" "}
                       Principio Activo:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
                         {" "} {producto.principioactivo}
                       </text>
                     </h6>
                     <h6 className="detalle" style={{ color: "#2062f0" }}>
-                      <GiMedicalThermometer></GiMedicalThermometer>{" "}
+                    <img style={{ width: "30px" , height: "30px" }} src={icono2}alt="" />{" "}
                       Acciónes Terapéutica:
                       <text style={{ color: "  #5187fc" }}>
                         {" "} {producto.accionterapeutica}
                       </text>
                     </h6>
                     <h6 className="detalle" style={{ color: "rgb(65, 67, 68)" }}>
-                      <FaTable></FaTable> Forma Farmacéutica:
+                    <img style={{ width: "30px" , height: "30px" }} src={icono3}alt="" /> Forma Farmacéutica:
                       <text style={{ color: "rgb(159, 163, 165)" }}>
                         {" "}
                         {producto.precio}{" "}
@@ -80,7 +84,7 @@ export default function DetalleProducto() {
                     </h6>
 
                     <h6 className="detalle" style={{ color: "rgb(12, 143, 12)" }}>
-                      <FaTable></FaTable> Presentación:
+                    <img style={{ width: "30px" , height: "30px" }} src={icono4}alt="" /> Presentación:
                       <text style={{ color: " rgb(93, 180, 93)" }}>
                         {" "}
                         {producto.presentacion}{" "}

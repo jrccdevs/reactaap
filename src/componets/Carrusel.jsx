@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-import BannerAnticaspa from "../img/BannerAnticaspa.png";
-import BannerHidratacion from "../img/BannerHidratacion.png";
-import BannerLimpieza from "../img/BannerLimpieza.png";
+import BannerAnticaspa from "../img/Banner1.png";
+import BannerHidratacion from "../img/Banner2.png";
+import BannerLimpieza from "../img/Banner3.png";
 
 import "../style/Header.css";
 

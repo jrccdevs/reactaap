@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FaSearch } from "react-icons/fa";
+import labalfa from "../img/labalfa.png";
 
 import "../style/Header.css";
 
@@ -88,7 +89,7 @@ export default function BusquedaPrincipal() {
       {['lg'].map((expand) => (
         <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
           <Container fluid>
-            <Navbar.Brand className="tituloLafar ml-4" href="#" >Laboratorios Alfa S.A.</Navbar.Brand>
+            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "320px" , height: "80px" }} src={labalfa}alt="" /></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
