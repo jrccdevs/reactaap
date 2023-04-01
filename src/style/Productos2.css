@@ -19,7 +19,7 @@
   /* border: none !important; */
 }
 .card-title{
-  margin-top: -65px;
+  margin-top: -5px;
   margin-left: 25px;
   text-transform: uppercase;
   color: #003057;
@@ -32,8 +32,8 @@
   
 }
 .img-productos {
-  height: 190px;
-  width: 190px;
+  height: 100%;
+  width: 100%;
   /* border-radius: 8%; */
   /* width: 250px; */
  

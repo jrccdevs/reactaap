@@ -13,12 +13,12 @@ function PanelControl() {
 
   const cerrarSesion = async() =>{
     console.log(" cerrando sesion")
-    await axios.get('http://localhost:7000/logout')
+    await axios.get(`http://localhost:7000/logout`)
     .then((result) =>{
       console.log("cerrado", result.data, result.status, result.text)
       //return <Redirect to="/" />;
-       
-        navigate("/login");
+      result.clear();
+        navigate("/../login");
     })
    
     .catch((error) => {

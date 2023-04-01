@@ -3,8 +3,9 @@ import React, {  useState } from 'react'
 import Header from "./Header";
 import Busqueda from "./Busqueda";
 import Footer from './Footer';
-//import Swal from 'sweetalert2'
-//import withReactContent from 'sweetalert2-react-content'
+import axios from "axios";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 //import { useNavigate } from "react-router-dom";
 
@@ -19,6 +20,66 @@ export default function Farmaco() {
     const [valueCondicion, setValueCondicion] = useState('');
     const [valueTelefono, setValueTelefono] = useState('');
 
+//prueba con axios
+const clearInputs = () => {
+    setValueNombre('');
+    setValueApellido('');
+    setValueEmail('');
+    setComentario('');
+    setProducto('');
+    setValueSexo('');
+    setValueTelefono("");
+    setValueCondicion('');
+}
+const MySwal = withReactContent(Swal)
+const handleSubmit = (event) => {
+    event.preventDefault();
+    axios({
+      method: "post",
+      url: "https://formsubmit.co/ajax/farmacovigilancia@alfabolivia.com",
+      data: {
+        Nombre: valueNombre,
+        Apellido: valueApellido,
+        Email: valueEmail,
+        Sexo: valueSexo,
+        Condicion: valueCondicion,
+        Telefono: valueTelefono,
+        producto: producto,
+        comentario: comentario,
+      },
+      headers: {
+        "Content-Type": "application/json",
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        Nombre: valueNombre,
+        comentario: "I'm from Devro LABS"
+    })
+    })
+      .then((response) => {
+        MySwal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '"Gracias por enviar su formulario, le responderemos a la brevedad."',
+            showConfirmButton: true,
+            // timer: 2000
+           
+        })
+        clearInputs();
+      })
+      .catch((error) => {
+        MySwal.fire({
+            position: 'center',
+            icon: 'error',
+            title: '"hubo un error al enviar su formulario"',
+            showConfirmButton: true,
+            // timer: 2000
+
+        })
+        console.log(error);
+      });
+  };
+
 
     const handleChangeNombre = (event) => {
         setValueNombre(event.target.value);
@@ -30,7 +91,9 @@ export default function Farmaco() {
 
     const handleChangeEmail = (event) => {
         setValueEmail(event.target.value);
-    };
+    }; 
+
+
 
     /* const sendEmail = (e) => {
         e.preventDefault();
@@ -69,7 +132,7 @@ export default function Farmaco() {
     };
 
 
-    /* const clearInputs = () => {
+   /*   const clearInputs = () => {
         setValueNombre('');
         setValueApellido('');
         setValueEmail('');
@@ -80,9 +143,9 @@ export default function Farmaco() {
         setValueCondicion('');
     }
 
-    const MySwal = withReactContent(Swal) */
+    const MySwal = withReactContent(Swal) 
 
-    /* function handleClick(e) {
+ function handleClick(e) {
        // e.preventDefault();
         MySwal.fire({
             position: 'center',
@@ -93,7 +156,7 @@ export default function Farmaco() {
 
         })
         clearInputs();
-    } */
+    }  */
     
 
 
@@ -106,7 +169,7 @@ export default function Farmaco() {
                 <h1>Farmacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
                 
-                <form action="https://formsubmit.co/farmacovigilancia@alfabolivia.com" method="POST" style={{ fontSize: "12px" }}>
+                <form onSubmit={handleSubmit} style={{ fontSize: "12px" }}>
                 <div className="mb-3 mt-4">
                         <label className="form-label fw-bold">Nombre<span className="text-danger"> *</span></label>
                         <input value={valueNombre} onChange={handleChangeNombre} type="text" name="nombre" className="form-control" />
@@ -175,9 +238,6 @@ export default function Farmaco() {
 
 
 }
-
-
-
 
 
 
