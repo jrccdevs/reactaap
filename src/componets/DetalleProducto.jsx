@@ -50,7 +50,7 @@ export default function DetalleProducto() {
           <div  >
             <Row className="detalleProducto">
               <Col  sm={12} md={12} lg={6} xl={6}>
-                <Card.Img  variant="top" src={producto.image} />
+                <Card.Img className="t-img" variant="top" src={producto.image} />
               </Col>
               <Col sm={12} md={12} lg={6} xl={6}>
                 <Card.Body className="detalleimg">
@@ -70,7 +70,7 @@ export default function DetalleProducto() {
                     </h6>
                     <h6 className="detalle" style={{ color: "#2062f0" }}>
                     <img style={{ width: "30px" , height: "30px" }} src={icono2}alt="" />{" "}
-                      Acciónes Terapéutica:
+                      Acción Terapéutica:
                       <text style={{ color: "  #5187fc" }}>
                         {" "} {producto.accionterapeutica}
                       </text>

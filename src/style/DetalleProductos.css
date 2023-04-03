@@ -32,3 +32,7 @@ h6 {
 .detalleimg{
  /* border:1px solid #da9123;*/
 }
+.t-img{
+  height: 100%;
+  width: 100%;
+}
