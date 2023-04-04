@@ -6,7 +6,7 @@ h6 {
 }
 
 .detalle {
-  font-size: 21px;
+  font-size: 19px;
   margin-top: 25px;
   text-align: left;
 }
@@ -21,7 +21,7 @@ h6 {
 }
 
 .tituloDetalleProducto {
-  font-size: 28px;
+  font-size: 25px;
   text-transform: uppercase;
   color: rgb(0, 60, 139);
   font-weight: bold;

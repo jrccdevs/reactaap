@@ -50,7 +50,7 @@ export default function DetalleProducto() {
           <div  >
             <Row className="detalleProducto">
               <Col  sm={12} md={12} lg={6} xl={6}>
-                <Card.Img className="t-img" variant="top" src={producto.image} />
+                <Card.Img variant="top" style={{objectFit: 'fill', maxWidth: '240px', height:'auto', marginTop: '25%', marginLeft: '20%' }}  src={producto.image} />
               </Col>
               <Col sm={12} md={12} lg={6} xl={6}>
                 <Card.Body className="detalleimg">
