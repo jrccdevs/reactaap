@@ -9,15 +9,17 @@ h6 {
   font-size: 19px;
   margin-top: 25px;
   text-align: left;
+  margin-left: 50px;
 }
 
 .detalleProducto {
    /*background-color: red; */
   /* padding: 0 100px 0 100px !important; */
-  width: 80%;
+ /*  width: 80%;
   border:1px solid #2a739e;
-  margin-top: 50px;
-  margin-left: 150px;
+ 
+  margin-left: 150px; */
+ 
 }
 
 .tituloDetalleProducto {
@@ -27,12 +29,14 @@ h6 {
   font-weight: bold;
   /* text-align: center; */
   margin-top: 40px;
+  margin-left: 50px;
   
 }
 .detalleimg{
  /* border:1px solid #da9123;*/
 }
-.t-img{
-  height: 100%;
-  width: 100%;
+/* .t-img{
+  margin-top: 80px;
+  height: auto;
 }
+ */

@@ -13,13 +13,13 @@ export default class Principal extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <Header />
+        <div style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
+          <Header  />
           <BusquedaPrincipal />
           {/* <BusquedaProducto /> */}
         </div>
-
-        <div>
+      <div  style={{ overflow: "hidden", margin:"190px auto 0px"}}>
+        <div >
           <ControlCarousel />
           <Navegacion />
         </div>
@@ -31,6 +31,7 @@ export default class Principal extends Component {
         <div>
           <Footer />
         </div>
+      </div>
       </React.Fragment>
     );
   }

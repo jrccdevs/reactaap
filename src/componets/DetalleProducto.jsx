@@ -43,13 +43,16 @@ export default function DetalleProducto() {
   return (
     <>
       <ModalProducto />
-      <Header />
-      <Busqueda />
-      <Container className="detalleimg">
+      <div style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
+        <Header />
+        <Busqueda />
+      </div>
+      
+      <Container className="detalleimg" style={{ overflow: "hidden", margin:"190px auto 0px"}}>
         {producto.map((producto) => (
           <div  >
             <Row className="detalleProducto">
-              <Col  sm={12} md={12} lg={6} xl={6}>
+              <Col sm={12} md={12} lg={6} xl={6}>
                 <Card.Img variant="top" style={{objectFit: 'fill',  height:'auto' }}  src={producto.image} />
               </Col>
               <Col sm={12} md={12} lg={6} xl={6}>

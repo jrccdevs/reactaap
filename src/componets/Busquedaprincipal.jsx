@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect  } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -9,6 +9,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FaSearch } from "react-icons/fa";
 import labalfa from "../img/labalfa.png";
+import Logochica from "../img/imgLogochica.png";
+import LogoAlfa from "../img/LogoAlfa.png";
 
 import "../style/Header.css";
 
@@ -85,11 +87,23 @@ export default function BusquedaPrincipal() {
   };
 
   return (
-    <>
+    <div className="arribainicio">
+      {/* <div className="arriba">
+       
+         <a href="#!">
+           <img className="logoAlfa" onClick={() => navigate("/")} src={LogoAlfa} alt="logoAlfa" />
+           <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
+         </a>
+       </div> */}
+      
       {['lg'].map((expand) => (
-        <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
+         
+        
+        <Navbar key={expand} variant="dark" expand={expand} className="fijo mb-3 nav-bar">
+          
           <Container fluid>
-            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "320px" , height: "80px" }} src={labalfa}alt="" /></Navbar.Brand>
+         
+            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "290px" , height: "80px" }} src={labalfa}alt="" /></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -109,7 +123,7 @@ export default function BusquedaPrincipal() {
                 <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2">
                   <select className="form-select" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
                     <option className="mostrar-pro" value={''}>-- MOSTRAR TODOS --</option>
-                    <option value="CAPSULAS">CAPSULAS</option>
+                    <option value="CAPSULAS">CÁPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                     <option value="CREMAS">CREMAS</option>
                     <option value="GEL">GEL</option>
@@ -119,10 +133,10 @@ export default function BusquedaPrincipal() {
                     <option value="JARABES">JARABES</option>
                     <option value="POLVO">POLVO</option>
                     <option value="POMADA">POMADA</option>
-                    <option value="SHAMPO">SHAMPO</option>
-                    <option value="SOLUCION">SOLUCION</option>
+                    <option value="SHAMPO">SHAMPOO</option>
+                    <option value="SOLUCION">SOLUCIÓN</option>
                     <option value="SUPOSITORIO">SUPOSITORIO</option>
-                    <option value="SUSPENSION">SUSPENSION</option>
+                    <option value="SUSPENSION">SUSPENSIÓN</option>
                     <option value="TABLETAS">TABLETAS</option>
                   </select>
                 </section>
@@ -170,10 +184,10 @@ export default function BusquedaPrincipal() {
             </Navbar.Offcanvas>
 
 
-           {/*   <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
+        {/*    <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
                 <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> 
             </Nav></Navbar.Brand>  
-  */}
+   */}
             <Navbar.Brand href="#" className="panelControl">  <Nav className="justify-content flex-grow-1 pe-3">
            {/*    <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
     */}         </Nav></Navbar.Brand>
@@ -186,7 +200,7 @@ export default function BusquedaPrincipal() {
         </Navbar>
       ))
       }
-    </>
+    </div>
   );
 }
 

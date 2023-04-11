@@ -136,12 +136,14 @@ export default function Productos2() {
     return (
         <>
             <ModalProducto />
-            <Header />
-            <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
-            <Container className="content">
+            <div  style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
+               <Header />
+               <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
+            </div>
+           <Container className="content" style={{ overflow: "hidden", margin:"190px auto 0px"}}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
-                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 ">
+                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-lg-4 ">
 
 
                             {/*   row-cols-xl-4    {result.map((producto) => ( */}

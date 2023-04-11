@@ -21,7 +21,7 @@ class BusquedaProducto extends React.Component {
               <section className="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
                 <select className="form-select" onChange={(e) => handleFormaFarmace(e)}>
                   <option value={''}>-- MOSTRAR TODOS --</option>
-                  <option value="CAPSULAS">CAPSULAS</option>
+                  <option value="CAPSULAS">CÁPSULAS</option>
                   <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                   <option value="CREMAS">CREMAS</option>
                   <option value="GEL">GEL</option>
@@ -31,10 +31,10 @@ class BusquedaProducto extends React.Component {
                   <option value="JARABES">JARABES</option>
                   <option value="POLVO">POLVO</option>
                   <option value="POMADA">POMADA</option>
-                  <option value="SHAMPO">SHAMPO</option>
-                  <option value="SOLUCION">SOLUCION</option>
+                  <option value="SHAMPO">SHAMPOO</option>
+                  <option value="SOLUCION">SOLUCIÓN</option>
                   <option value="SUPOSITORIO">SUPOSITORIO</option>
-                  <option value="SUSPENSION">SUSPENSION</option>
+                  <option value="SUSPENSION">SUSPENSIÓN</option>
                   <option value="TABLETAS">TABLETAS</option>
                 </select>
               </section>

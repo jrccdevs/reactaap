@@ -162,10 +162,13 @@ const handleSubmit = (event) => {
 
     return (
         <>
+        <div style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
             <Header />
             <Busqueda />
+        </div>
+           
 
-            <div className="container">
+            <div className="container" style={{ overflow: "hidden", margin:"190px auto 0px"}}>
                 <h1>Farmacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
                 

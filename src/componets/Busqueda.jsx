@@ -87,7 +87,7 @@ export default function Busqueda() {
   return (
     <>
       {['lg'].map((expand) => (
-        <Navbar key={expand} variant="dark" expand={expand} className="mb-3 nav-bar">
+        <Navbar key={expand} variant="dark" expand={expand} className=" fijo mb-3 nav-bar">
           <Container fluid>
             <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "320px" , height: "80px" }} src={labalfa}alt="" /></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -109,7 +109,7 @@ export default function Busqueda() {
                 <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2">
                   <select className="form-select" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
                     <option className="mostrar-pro" value={''}>-- MOSTRAR TODOS --</option>
-                    <option value="CAPSULAS">CAPSULAS</option>
+                    <option value="CAPSULAS">CÁPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                     <option value="CREMAS">CREMAS</option>
                     <option value="GEL">GEL</option>
@@ -119,10 +119,10 @@ export default function Busqueda() {
                     <option value="JARABES">JARABES</option>
                     <option value="POLVO">POLVO</option>
                     <option value="POMADA">POMADA</option>
-                    <option value="SHAMPO">SHAMPO</option>
-                    <option value="SOLUCION">SOLUCION</option>
+                    <option value="SHAMPO">SHAMPOO</option>
+                    <option value="SOLUCION">SOLUCIÓN</option>
                     <option value="SUPOSITORIO">SUPOSITORIO</option>
-                    <option value="SUSPENSION">SUSPENSION</option>
+                    <option value="SUSPENSION">SUSPENSIÓN</option>
                     <option value="TABLETAS">TABLETAS</option>
                   </select>
                 </section>
