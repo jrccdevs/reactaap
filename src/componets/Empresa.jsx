@@ -11,11 +11,14 @@ import docferrer from '../assets/img/docferrer.jpg';
 import imagen5 from '../assets/img/Imagen5.jpg';
 import imagen6 from '../assets/img/Imagen6.jpg';
 import imagen7 from '../assets/img/Imagen7.jpg';
+//import ReactImageMagnify from 'react-image-magnify';
 
 import "../style/Empresa.css";
 
 export default class Empresa extends Component {
+
     render() {
+
         return (
             <>
                 <Header />
@@ -25,7 +28,7 @@ export default class Empresa extends Component {
                     <div className="row">
 
                         {/* <h4>PAGINA EN DESARROLLO</h4> */}
-                      {/*   <img src={construccion} width="300" height="300" className="rounded img-fluid" alt="..." />
+                        {/*   <img src={construccion} width="300" height="300" className="rounded img-fluid" alt="..." />
              */}            <p className="h1 text-center mb-4">“Laboratorios Alfa S.A.”</p>
                         <div className="row mt-4">
                             <div className="col-12 col-sm-12 col-md-4 text-center">
@@ -50,7 +53,7 @@ export default class Empresa extends Component {
                                     <div className="col-md-12">
                                         <h3 className="section-title">HISTORIA</h3>
                                         <div className="section-title-divider"></div>
-                                       {/*  <p className="section-description">TEXTO AQUI</p> */}
+                                        {/*  <p className="section-description">TEXTO AQUI</p> */}
                                     </div>
                                 </div>
 
@@ -61,7 +64,7 @@ export default class Empresa extends Component {
                                                 <img className="docferrer" src={docferrer} alt="..."></img>
                                             </div>
                                             <h4>Dr. Santiago Ferrer Alsina</h4>
-                                           
+
                                         </div>
                                     </div>
                                     <div className="col-md-9">
@@ -106,7 +109,7 @@ export default class Empresa extends Component {
                                             <div className="pic">
                                                 <img className="imagencuadro" src={imagen6} alt="..."></img>
                                             </div>
-                                           {/*  <h4>texto referencial</h4>
+                                            {/*  <h4>texto referencial</h4>
                                             <span>Texto</span> */}
                                         </div>
                                     </div>
@@ -169,7 +172,25 @@ export default class Empresa extends Component {
                             </div>
                         </div>  */}
                     </div>
+                   {/*  <div style={{ width: "200px", height: "500px" }}>
+                        <ReactImageMagnify {...{
+                            smallImage: {
+                                alt: 'Wristwatch by Ted Baker London',
+                                isFluidWidth: true,
+                                src: mision
+                            },
+                            largeImage: {
+                                src: mision,
+                                width: 1009,
+                                height: 1600
+                            }
+                        }} />
+                    </div>
+                   */}
                 </div>
+
+
+
                 <Footer />
             </>
         )

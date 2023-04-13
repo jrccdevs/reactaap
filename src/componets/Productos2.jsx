@@ -168,13 +168,12 @@ export default function Productos2() {
                                                 <h5 className="card-title" style={{ textAlign: "left" }} >
                                                    <strong> {producto.nombreproducto}</strong>
                                                 </h5>
-                                                <h5 className="card-title1" style={{ textAlign: "left" }} >
+                                                <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
                                                     {producto.precio}
                                                 </h5>
-                                                <h5 className="card-title1" style={{ textAlign: "left" }} >
+                                                <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
                                                     {producto.presentacion}
                                                 </h5>
-
                                             </div>
                                         </div>
                                     </div>

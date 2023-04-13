@@ -9,8 +9,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FaSearch } from "react-icons/fa";
 import labalfa from "../img/labalfa.png";
-import Logochica from "../img/imgLogochica.png";
-import LogoAlfa from "../img/LogoAlfa.png";
 
 import "../style/Header.css";
 

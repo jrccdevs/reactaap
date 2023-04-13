@@ -12,6 +12,8 @@ import icono1 from "../img/icono 1.png";
 import icono2 from "../img/icono 2.png";
 import icono3 from "../img/icono 3.png";
 import icono4 from "../img/icono 4.png";
+import imagen7 from '../assets/img/Imagen7.jpg';
+import ReactImageMagnify from 'react-image-magnify';
 
 import "../style/DetalleProductos.css";
 import ModalProducto from "./ModalProducto";
@@ -30,9 +32,9 @@ export default function DetalleProducto() {
     const fetchData = async () => {
 
       //cambiar en https
-     const data = await fetch(`https://node-alfa.vercel.app/productos/${id}`);
+      const data = await fetch(`https://node-alfa.vercel.app/productos/${id}`);
       //const data = await fetch(`http://localhost:7000/productos/${id}`);
-      
+
       const product = await data.json();
       //   console.log(product);
       setProducto(product);
@@ -43,18 +45,38 @@ export default function DetalleProducto() {
   return (
     <>
       <ModalProducto />
-      <div style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
+      <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
         <Header />
         <Busqueda />
       </div>
-      
-      <Container className="detalleimg" style={{ overflow: "hidden", margin:"190px auto 0px"}}>
+
+      <Container className="detalleimg" style={{ overflow: "hidden", margin: "190px auto 0px" }}>
         {producto.map((producto) => (
           <div  >
             <Row className="detalleProducto">
-              <Col sm={12} md={12} lg={6} xl={6}>
-                <Card.Img variant="top" style={{objectFit: 'fill',  height:'auto' }}  src={producto.image} />
+              <Col sm={12} md={12} lg={6} xl={6} style={{ width: "550px", height: "auto" }}>
+                <ReactImageMagnify variant="top" style={{ width: "200px", height: 'auto' }} {...{
+                  smallImage: {
+                    alt: 'Wristwatch by Ted Baker London',
+                    isFluidWidth: true,
+                    src: producto.image,
+                    sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px'
+                    
+                  },
+                  largeImage: {
+                    src: producto.image,
+                    width: 2000,
+                    height: 2000,
+                   
+                  },
+                  lensStyle: { backgroundColor: 'hsla(0, 0%, 100%, .3)',
+                  
+                 }
+                }} />
               </Col>
+             {/*  <Col sm={12} md={12} lg={6} xl={6}>
+                <Card.Img variant="top" style={{ objectFit: 'fill', height: 'auto' }} src={producto.image} />
+              </Col> */}
               <Col sm={12} md={12} lg={6} xl={6}>
                 <Card.Body className="detalleimg">
                   <div className="tituloDetalleProducto">{producto.nombreproducto}</div>
@@ -65,21 +87,21 @@ export default function DetalleProducto() {
                         {" "} Bs. {producto.precio}
                       </text>
                     </h6> */}
-                    <h6 className="detalle" style={{ color: "red" }}>   <img style={{ width: "30px" , height: "30px" }} src={icono1} alt="" />{" "}
+                    <h6 className="detalle" style={{ color: "red" }}>   <img style={{ width: "30px", height: "30px" }} src={icono1} alt="" />{" "}
                       Principio Activo:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
                         {" "} {producto.principioactivo}
                       </text>
                     </h6>
                     <h6 className="detalle" style={{ color: "#2062f0" }}>
-                    <img style={{ width: "30px" , height: "30px" }} src={icono2}alt="" />{" "}
+                      <img style={{ width: "30px", height: "30px" }} src={icono2} alt="" />{" "}
                       Acción Terapéutica:
                       <text style={{ color: "  #5187fc" }}>
                         {" "} {producto.accionterapeutica}
                       </text>
                     </h6>
                     <h6 className="detalle" style={{ color: "rgb(65, 67, 68)" }}>
-                    <img style={{ width: "30px" , height: "30px" }} src={icono3}alt="" /> Forma Farmacéutica:
+                      <img style={{ width: "30px", height: "30px" }} src={icono3} alt="" /> Forma Farmacéutica:
                       <text style={{ color: "rgb(159, 163, 165)" }}>
                         {" "}
                         {producto.precio}{" "}
@@ -87,7 +109,7 @@ export default function DetalleProducto() {
                     </h6>
 
                     <h6 className="detalle" style={{ color: "rgb(12, 143, 12)" }}>
-                    <img style={{ width: "30px" , height: "30px" }} src={icono4}alt="" /> Presentación:
+                      <img style={{ width: "30px", height: "30px" }} src={icono4} alt="" /> Presentación:
                       <text style={{ color: " rgb(93, 180, 93)" }}>
                         {" "}
                         {producto.presentacion}{" "}

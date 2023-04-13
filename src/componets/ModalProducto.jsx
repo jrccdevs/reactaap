@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Modal/* , Button */} from "react-bootstrap";
 import "../style/Productos2.css";
+import LogoAlfa from "../img/LogoAlfa.png";
+
 
 function ModalProducto() {
     const [showModal, setShowModal] = useState(false);
@@ -31,9 +33,10 @@ consulta médica para el empleo de los mismos.</p>
 <p>El uso de la información contenida en esta sección es de responsabilidad exclusiva del usuario y exime a Laboratorios Alfa
 S.A. de cualquier responsabilidad por el uso indebido de la misma.</p>
 <p>ANTES DE HACER USO DE LOS MEDICAMENTOS CONSULTE A SU MÉDICO.</p>
+<img style={{ width: "70px" , height: "50px", marginLeft:"90%" }}   src={LogoAlfa} alt="logoAlfa" />
                     </Modal.Body>
                  <Modal.Footer>
-                  {/*   <Button onClick={() => setShowModal(false)}>Cerrar</Button> */}
+               
                 </Modal.Footer> 
             </Modal>
         </div>
