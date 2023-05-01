@@ -9,15 +9,18 @@
   /*color: rgb(46, 155, 243);*/
 }
 
+
+
 .card {
   margin-top: 70px;
-  border:1px solid #aaa8a8;
+  border:1px solid #ece9e9;
   border-radius: 5%;
   height: 100%;
   width: 100%;
   
   /* border: none !important; */
 }
+
 .card-title{
   margin-top: 15px;
   margin-left: 25px;

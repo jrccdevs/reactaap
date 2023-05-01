@@ -3,7 +3,8 @@ import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import BusquedaProducto from "./BusquedaProducto";
 import Footer from "./Footer";
-import Header from "./Header";
+//import Header from "./Header";
+import Prueba from "./prueba";
 import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
 import ModalProducto from "./ModalProducto";
@@ -137,7 +138,8 @@ export default function Productos2() {
         <>
             <ModalProducto />
             <div  style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
-               <Header />
+              {/*  <Header /> */}
+              <Prueba />
                <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
             </div>
            <Container className="content" style={{ overflow: "hidden", margin:"190px auto 0px"}}>
@@ -156,7 +158,7 @@ export default function Productos2() {
                                                 {/* <div key={producto.id.toString()}> */}
                                                 <div className="div-producto col-12">
                                                     <a href="#!">
-                                                        <Link to={`/productos/${producto.id}`}>
+                                                        <Link className="cover" to={`/productos/${producto.id}`}>
                                                             <img
                                                                 className="img-productos"
                                                                 src={producto.image}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 //import { AiOutlineFunnelPlot } from "react-icons/ai";
 //import { GiMedicalThermometer } from "react-icons/gi";
 //import { FaTable } from "react-icons/fa";
@@ -12,7 +12,8 @@ import icono1 from "../img/icono 1.png";
 import icono2 from "../img/icono 2.png";
 import icono3 from "../img/icono 3.png";
 import icono4 from "../img/icono 4.png";
-import Header from "./Header";
+//import Header from "./Header";
+import Prueba from "./prueba";
 import Busqueda from "./Busqueda";
 import imagen7 from '../assets/img/Imagen7.jpg';
 import ReactImageMagnify from 'react-image-magnify';
@@ -51,7 +52,8 @@ export default function DetalleProducto() {
 
           <ModalProducto />
           <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-            <Header />
+           {/*  <Header /> */}
+           <Prueba />
             <Busqueda />
           </div>
 
@@ -76,7 +78,7 @@ export default function DetalleProducto() {
                 },
                 lensStyle: {
                   backgroundColor: 'hsla(0, 0%, 100%, .3)',
-
+                  marginRight: '30px'
                 },
                 isHintEnabled: true
               }} />
@@ -122,7 +124,7 @@ export default function DetalleProducto() {
                 </h6>
 
                 <div className="boton" style={{marginTop:"20px", width:"auto" ,height:"30px", color:"white", marginLeft:"50px", backgroundColor:"#003057", textAlign: "center" }}>
-                  VER MAS (Prospecto)
+                <Link to="/"  style={{color:"white", textDecoration:"none"}}> VER MAS (Prospecto)</Link> 
                 </div>
               </Card.Text>
             </Card.Body>

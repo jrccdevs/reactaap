@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header';
+import Prueba from './prueba';
 import Busquedaprincipal from './Busquedaprincipal';
 import Footer from './Footer';
 //import empresa from "../img/empresa.jpg";
@@ -21,10 +21,13 @@ export default class Empresa extends Component {
 
         return (
             <>
-                <Header />
-                <Busquedaprincipal />
+                <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+                    <Prueba />
+                    <Busquedaprincipal />
 
-                <div className="container">
+                </div>
+
+                <div className="container"  style={{ overflow: "hidden", margin: "190px auto 0px" }}>
                     <div className="row">
 
                         {/* <h4>PAGINA EN DESARROLLO</h4> */}
@@ -172,7 +175,7 @@ export default class Empresa extends Component {
                             </div>
                         </div>  */}
                     </div>
-                   {/*  <div style={{ width: "200px", height: "500px" }}>
+                    {/*  <div style={{ width: "200px", height: "500px" }}>
                         <ReactImageMagnify {...{
                             smallImage: {
                                 alt: 'Wristwatch by Ted Baker London',

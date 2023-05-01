@@ -1,0 +1,50 @@
+.item{
+    height: auto;
+    width: 90px;
+    
+  margin-top: 10px;
+}
+.item img{
+    height: 100%;
+    width: 100%;
+   /* background-color: slateblue;*/
+    padding:-110px;
+}
+.slider{
+   width: 80%;
+    margin-right: -60px;
+    /*background-color: aqua;*/
+    margin-left: -20px;
+  
+}
+.slider-container{
+  /** margin-left: 27%;*/
+    
+   margin-bottom: 0px;
+  display: flex;
+  background-color: white;
+   
+}
+.principal{
+    
+    background-color: white;
+}
+.chica{
+    display: inline-block;
+  /* background-color: aqua;*/
+}
+.sliderimagen{
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+  /*  background-color: yellowgreen;*/
+}
+ .logoChica{
+    height: auto;
+    width: 95px;
+   margin-left: 5px;
+}
+.logoAlfaprueba{
+    height: auto;
+    width: 95px;
+}
