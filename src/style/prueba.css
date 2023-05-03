@@ -48,3 +48,17 @@
     height: auto;
     width: 95px;
 }
+.logoChica:hover{
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  box-shadow: 0px 0px 15px 15px rgb(17, 120, 189);
+  -webkit-box-shadow: 0px 0px 15px 15px rgb(17, 120, 189);
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  }
+  .logoAlfaprueba:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+  }
