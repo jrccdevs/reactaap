@@ -69,9 +69,14 @@ export default function Productos2() {
 
     useEffect(() => {
         const fetchData = async () => {
+            
+           
+           
             let endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`;
             if (selectedValue) {
-                endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${selectedValue}`;
+               
+               
+                 endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${selectedValue}`;
             }
             const response = await fetch(endpoint);
             const data = await response.json();
