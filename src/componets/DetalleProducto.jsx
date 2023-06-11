@@ -13,7 +13,7 @@ import icono2 from "../img/icono 2.png";
 import icono3 from "../img/icono 3.png";
 import icono4 from "../img/icono 4.png";
 //import Header from "./Header";
-import Prueba from "./prueba";
+import CarrucelHeader from "./HeaderCarrucel";
 import Busqueda from "./Busqueda";
 import imagen7 from '../assets/img/Imagen7.jpg';
 import ReactImageMagnify from 'react-image-magnify';
@@ -53,7 +53,7 @@ export default function DetalleProducto() {
           <ModalProducto />
           <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
            {/*  <Header /> */}
-           <Prueba />
+           <CarrucelHeader />
             <Busqueda />
           </div>
 

@@ -1,7 +1,7 @@
 import React, {  useState } from 'react'
 //import emailjs from '@emailjs/browser';
 //import Header from "./Header";
-import Prueba from "./prueba";
+import CarrucelHeader from "./HeaderCarrucel";
 import Busqueda from "./Busqueda";
 import Footer from './Footer';
 import axios from "axios";
@@ -165,7 +165,7 @@ const handleSubmit = (event) => {
         <>
         <div style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
            {/*  <Header /> */}
-           <Prueba />
+           <CarrucelHeader />
             <Busqueda />
         </div>
            

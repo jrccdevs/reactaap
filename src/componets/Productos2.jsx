@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import BusquedaProducto from "./BusquedaProducto";
 import Footer from "./Footer";
 //import Header from "./Header";
-import Prueba from "./prueba";
+import CarrucelHeader from "./HeaderCarrucel";
 import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
 import ModalProducto from "./ModalProducto";
@@ -139,7 +139,7 @@ export default function Productos2() {
             <ModalProducto />
             <div  style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
               {/*  <Header /> */}
-              <Prueba />
+              <CarrucelHeader />
                <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
             </div>
            <Container className="content" style={{ overflow: "hidden", margin:"190px auto 0px"}}>

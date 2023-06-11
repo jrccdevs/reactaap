@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Prueba from './prueba';
+import CarrucelHeader from './HeaderCarrucel';
 import Busquedaprincipal from './Busquedaprincipal';
 import Footer from './Footer';
 //import empresa from "../img/empresa.jpg";
@@ -22,7 +22,7 @@ export default class Empresa extends Component {
         return (
             <>
                 <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-                    <Prueba />
+                    <CarrucelHeader />
                     <Busquedaprincipal />
 
                 </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useNavigate, Link } from "react-router-dom";
-
+import { getProductosCarrucel } from "../api/productosCar";
 import { useLocation } from 'react-router-dom';
 import Slider from "react-slick";
 import Logochica from "../img/imgLogochica.png";
@@ -39,117 +39,75 @@ function SampleNextArrow(props) {
 
 export default function Productos2() {
 
-
-
-    const [formafarmaceutica, setformafarmaceuticaid] = useState('');
-    const [producto, setProductos] = useState([]);
-    const [busqueda, setBusqueda] = useState("");
-
-    //Parametro de selectValue
     const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const selectedValue = searchParams.get('selectedValue');
-    // console.log(selectedValue);
-
-    //Busqueda por el boton 
-    const searchText = searchParams.get('searchProcut');
-    // console.log(searchText);
-
-
-    // Paginacion
-    const [currentPage] = useState(1);
-    const [itemsPerPage] = useState(25);
-
-
-
-
     const navigate = useNavigate();
+    const [productos, setProductos] = useState([]);
 
-
-
+    const [busqueda, setBusqueda] = useState("");
+  
+  
     useEffect(() => {
-        const fetchData = async () => {
-            
-           
-           
-            let endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`;
-            if (selectedValue) {
-               
-               
-                 endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${selectedValue}`;
-            }
-            const response = await fetch(endpoint);
-            const data = await response.json();
-            setProductos(data);
-        };
-        fetchData();
-    }, [selectedValue, formafarmaceutica, searchText]);
-
-
-
-
-    let result = [];
-
-
-    // const buscar = (e) => {
-    //     if (!busqueda) {
-    //         result = producto;
-    //     } else {
-    //         result = producto.filter((dato) =>
-    //             dato.nombreproducto
-    //                 .toLowerCase()
-    //                 .includes(busqueda.toLocaleLowerCase())
-    //         );
-    //     }
-    // };
-
-    const buscar = () => {
-        if (!busqueda && busqueda.length > 0) {
-            result = producto;
-        } else {
-            result = producto.filter((dato) =>
-                dato.nombreproducto
-                    .toLowerCase()
-                    .includes(busqueda.toLowerCase())
-            );
-        }
-
-        if (searchText) {
-            result = result.filter((dato) =>
-                dato.nombreproducto.toLowerCase().includes(searchText.toLowerCase())
-            );
-        }
+      async function loadProductos() {
+        const response = await getProductosCarrucel();
+        setProductos(response.data);
+      }
+      loadProductos();
+    }, []);
+  
+    const handleChange = (e) => {
+      setBusqueda(e.target.value);
+      buscar(e.target.value);
     };
-
-
-    // let searchTextTemp = searchText;
-
-    // const buscar = () => {
-    //     if (!busqueda && busqueda.length >= 0) {
-    //         navigate(`/productos`);
-    //         result = producto;
-    //         searchTextTemp = null;
-    //     } else {
-    //         result = producto.filter((dato) =>
-    //             dato.nombreproducto
-    //                 .toLowerCase()
-    //                 .includes(busqueda.toLowerCase())
-    //         );
-    //     }
-
-    //     if (searchTextTemp) {
-    //         result = result.filter((dato) =>
-    //             dato.nombreproducto.toLowerCase().includes(searchTextTemp.toLowerCase())
-    //         );
-    //     }
-    // };
-
+  
+    let result = [];
+  
+    const buscar = (e) => {
+      if (!busqueda) {
+        result = productos;
+      } else {
+        result = productos.filter((dato) =>
+          dato.principioactivo
+            .toLowerCase()
+            .includes(busqueda.toLocaleLowerCase())
+        );
+      }
+    };
+  
     buscar();
+  
+    console.log(result);
+  
+    // if (result == 0) {
+    //     console.log("RODRIGO ");
+    // };
+    /*  const filtrar = (terminobusqueda) => {
+              var resbusqueda = productos.filter((elemento) => {
+                  if (elemento.nombreproducto.toString().toLowerCase().includes(terminobusqueda.toLowerCase())
+                      || elemento.formafarmaceutica.toString().toLowerCase().includes(terminobusqueda.toLowerCase())
+                  ) 
+                      return (elemento);
+                  
+              });
+              setProductos(resbusqueda);
+          }*/
+  
+    // let active = 1;
+    // // let items = [];
+    // for (let number = 1; number <= 5; number++) {
+    //     result.push(
+    //         <Pagination.Item key={number} active={number === active}>
+    //             {number}
+    //         </Pagination.Item>,
+    //     );
+    // }
+    // const unreadMessages = "hola";
+  
+    // if (result.length > 0) {
+    // }else {
+    //     console.log("RODRIGO    ")
+    // }
 
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = result.slice(indexOfFirstItem, indexOfLastItem);
-
+    
     const settings = {
        /*  dots: true, */
         lazyLoad: true,
@@ -207,9 +165,9 @@ export default function Productos2() {
                 </div>
 
                 <div className="sliderimagen col-9">
-                    <Slider {...settings} key={producto.id}>
+                    <Slider {...settings} >
 
-                        {currentItems.map((producto) => (
+                        {result.map((producto) => (
 
                             <div className="slider col-12" key={producto.id}>
 
