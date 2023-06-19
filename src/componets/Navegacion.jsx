@@ -1,41 +1,35 @@
 import React from "react";
-import Empresa from "../img/imgempresa.png";
-import Productos from "../img/imgProductos.png";
-import Farmacovigilancia from "../img/imgFarmacovigilancia.png";
-import Vademecum from "../img/imgVademecum.png";
-import { useNavigate, Link } from "react-router-dom";
+import Empresa from "../img/empresa.png";
+import Productos from "../img/Productos.png";
+import Farmacovigilancia from "../img/Farmacovigilancia.png";
+import Vademecum from "../img/Vademecum.png";
+import {  Link } from "react-router-dom";
 import LogoAlfa from "../img/LogoAlfa.png";
 
 import "../style/Navegacion.css";
 
 export default function Navegacion() {
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <div className="container">
       <div className="row">
         <section className="col-12 col-sm-12 col-lg-6">
           <div className="row">
+            
             <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
-                <img
-                  onClick={() => navigate("/empresa")}
-                  className="fondo-img"
-                  src={Empresa}
-                  alt="Empresa"
-                />
+                <Link to="/empresa">
+                  <img className="fondo-img" src={Empresa} alt="" />
+                </Link>
               </div>
             </div>
-
             <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
-                <img
-                  onClick={() => navigate("/productos")}
-                  className="fondo-img"
-                  src={Productos}
-                  alt="Productos"
-                />
+                <Link to="/productos">
+                  <img className="fondo-img" src={Productos} alt="" />
+                </Link>
               </div>
             </div>
             <div className="col-6 col-sm-6 mt-4">

@@ -124,7 +124,7 @@ export default function DetalleProducto() {
                 </h6>
 
                 <div className="boton" style={{marginTop:"20px", width:"auto" ,height:"30px", color:"white", marginLeft:"50px", backgroundColor:"#003057", textAlign: "center" }}>
-                <Link to="/"  style={{color:"white", textDecoration:"none"}}> VER MAS (Prospecto)</Link> 
+                <Link to=""  style={{color:"white", textDecoration:"none"}}> VER MAS (Prospecto)</Link> 
                 </div>
               </Card.Text>
             </Card.Body>
