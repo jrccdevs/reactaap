@@ -20,7 +20,7 @@ export default class Principal extends Component {
           <BusquedaPrincipal />
           {/* <BusquedaProducto /> */}
         </div>
-      <div  style={{ overflow: "hidden", margin:"190px auto 0px"}}>
+      <div  style={{ overflow: "hidden", margin:"200px auto 0px"}}>
         <div >
           <ControlCarousel />
           <Navegacion />

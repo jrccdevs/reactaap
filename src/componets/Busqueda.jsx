@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -11,6 +11,25 @@ import { FaSearch } from "react-icons/fa";
 import labalfa from "../img/labalfa.png";
 
 import "../style/Header.css";
+
+function useKey(key, cb) {
+  const callbackRef = useRef(cb);
+
+  useEffect(() =>{
+    callbackRef.current = cb;
+  });
+
+  useEffect(() =>{
+    function handle(event){
+      if(event.code === key){
+        callbackRef.current(event)
+      }
+    }
+    document.addEventListener("keypress",handle );
+    return () => document.removeEventListener("keypress", handle);
+  },[key]);
+}
+
 
 export default function Busqueda() {
 
@@ -83,7 +102,7 @@ export default function Busqueda() {
 
     // pasamos el valor del input guardado en el estado searchText a la función Busqueda
   };
-
+  useKey("Enter", handleRedirect)
   return (
     <>
       {['lg'].map((expand) => (

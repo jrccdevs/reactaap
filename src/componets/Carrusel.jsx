@@ -19,7 +19,7 @@ export default function ControlCarousel() {
 
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel style={{ height:"230px"}} activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img className="carrucel d-block w-100" src={BannerAnvena} alt="Banner Anticaspa" />
         <Carousel.Caption></Carousel.Caption>

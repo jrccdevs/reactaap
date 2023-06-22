@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -12,8 +12,26 @@ import labalfa from "../img/labalfa.png";
 
 import "../style/Header.css";
 
-export default function BusquedaPrincipal() {
+function useKey(key, cb) {
+  const callbackRef = useRef(cb);
 
+  useEffect(() =>{
+    callbackRef.current = cb;
+  });
+
+  useEffect(() =>{
+    function handle(event){
+      if(event.code === key){
+        callbackRef.current(event)
+      }
+    }
+    document.addEventListener("keypress",handle );
+    return () => document.removeEventListener("keypress", handle);
+  },[key]);
+}
+
+export default function BusquedaPrincipal() {
+ 
   const Busqueda = useNavigate();
 
   const [formafarmaceutica, setformafarmaceuticaid] = useState('');
@@ -21,7 +39,7 @@ export default function BusquedaPrincipal() {
   const [productosMatch, setProductosMatch] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-
+  
   // const handleFormaFarmace = (event) => {
   //   const getformafarmaceuticaid = event.target.value;
   //   setformafarmaceuticaid(getformafarmaceuticaid);
@@ -84,7 +102,10 @@ export default function BusquedaPrincipal() {
     // pasamos el valor del input guardado en el estado searchText a la función Busqueda
   };
 
+  
+  useKey("Enter", handleRedirect)
   return (
+    
     <div className="arribainicio">
       {/* <div className="arriba">
        
@@ -139,17 +160,19 @@ export default function BusquedaPrincipal() {
                   </select>
                 </section>
 
-                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6">
-                  <Form className="d-flex">
+                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6" >
+                  <Form className="d-flex"  >
+                    
                     <Form.Control
                       onChange={(e) => buscarProductos(e.target.value)}
-                      type="search"
+                      
+                      type="text"
                       placeholder="Buscador de Productos"
                       className="me-2"
                       aria-label="Search"
                     />
 
-                    <Button variant="primary" onClick={handleRedirect}><FaSearch /></Button>
+                    <Button variant="primary" onClick={handleRedirect}   ><FaSearch /></Button>
 
                     <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
 
