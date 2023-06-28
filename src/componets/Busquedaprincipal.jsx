@@ -141,7 +141,7 @@ export default function BusquedaPrincipal() {
 
                 <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2">
                   <select className="form-select" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
-                    <option className="mostrar-pro" value={''}>-- MOSTRAR TODOS --</option>
+                    <option className="mostrar-pro" value={''}>FORMA FARMACEUTICA</option>
                     <option value="CAPSULAS">CÁPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                     <option value="CREMAS">CREMAS</option>

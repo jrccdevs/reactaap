@@ -52,8 +52,8 @@ export default function DetalleProducto() {
 
           <ModalProducto />
           <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-           {/*  <Header /> */}
-           <CarrucelHeader />
+            {/*  <Header /> */}
+            <CarrucelHeader />
             <Busqueda />
           </div>
 
@@ -69,7 +69,7 @@ export default function DetalleProducto() {
                   sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px'
 
                 },
-               
+
                 largeImage: {
                   src: producto.image,
                   width: 1000,
@@ -84,26 +84,33 @@ export default function DetalleProducto() {
               }} />
             </div>
           </div>
-          <div className="copy">
-            <Card.Body>
+          <div className="copy" >
+            <Card.Body >
               <div className="tituloDetalleProducto">{producto.nombreproducto}</div>
-              <Card.Text>
+              <Card.Text >
                 {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
                       Precio:
                       <text style={{ color: "rgb(248, 149, 149)" }}>
                         {" "} Bs. {producto.precio}
                       </text>
                     </h6> */}
-                <h6 className="detalle" style={{ color: "red" }}>   <img style={{ width: "30px", height: "30px" }} src={icono1} alt="" />{" "}
+                
+               
+                    <h6 className="detalle" style={{  width: "auto",color: "red" }}>   <img style={{ width: "30px", height: "30px" }} src={icono1} alt="" />{" "}
                       Principio Activo:
-                      <text style={{ color: "rgb(248, 149, 149)" }}>
-                    {" "} {producto.principioactivo}
-                  </text>
-                </h6>
-                <h6 className="detalle" style={{ color: "#2062f0" }}>
+                      <text style={{ display: "flex" ,width: "auto",height:"auto", marginTop:"-29px", color: "rgb(248, 149, 149)", paddingTop: "2px", textAlign:"left", marginLeft: "172px"}}>
+                      {" "} {producto.principioactivo}
+                    </text>
+                    </h6>
+                 
+                
+                   
+                  
+              
+                <h6 className="detalle" style={{ color: "#2062f0", width: "auto" }}>
                   <img style={{ width: "30px", height: "30px" }} src={icono2} alt="" />{" "}
                       Acción Terapéutica:
-                      <text style={{ color: "  #5187fc" }}>
+                      <text style={{ color: "  #5187fc", display: "flex" ,width: "auto",height:"auto", marginTop:"-29px",  paddingTop: "2px", textAlign:"left", marginLeft: "192px" }}>
                     {" "} {producto.accionterapeutica}
                   </text>
                 </h6>
@@ -123,8 +130,8 @@ export default function DetalleProducto() {
                   </text>
                 </h6>
 
-                <div className="boton" style={{marginTop:"20px", width:"auto" ,height:"30px", color:"white", marginLeft:"50px", backgroundColor:"#003057", textAlign: "center" }}>
-                <Link to=""  style={{color:"white", textDecoration:"none"}}> VER MAS (Prospecto)</Link> 
+                <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
+                  <Link to="" style={{ color: "white", textDecoration: "none" }}> VER MAS (Prospecto)</Link>
                 </div>
               </Card.Text>
             </Card.Body>
