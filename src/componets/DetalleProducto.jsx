@@ -118,7 +118,7 @@ export default function DetalleProducto() {
                   <img style={{ width: "30px", height: "30px" }} src={icono3} alt="" /> Forma Farmacéutica:
                       <text style={{ color: "rgb(159, 163, 165)" }}>
                     {" "}
-                    {producto.precio}{" "}
+                    {producto.formafarmaceutica}{" "}
                   </text>
                 </h6>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import BusquedaProducto from "./BusquedaProducto";
@@ -10,7 +10,24 @@ import "../style/Productos2.css";
 import ModalProducto from "./ModalProducto";
 import { useLocation } from 'react-router-dom';
 
-
+function useKey(key, cb) {
+    const callbackRef = useRef(cb);
+  
+    useEffect(() =>{
+      callbackRef.current = cb;
+    });
+  
+    useEffect(() =>{
+      function handle(event){
+        if(event.code === key){
+          callbackRef.current(event)
+        }
+      }
+      document.addEventListener("keypress",handle );
+      return () => document.removeEventListener("keypress", handle);
+    },[key]);
+  }
+  
 
 export default function Productos2() {
 
@@ -134,6 +151,8 @@ export default function Productos2() {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = result.slice(indexOfFirstItem, indexOfLastItem);
 
+
+    useKey("Enter", handleChange)
     return (
         <>
             <ModalProducto />
