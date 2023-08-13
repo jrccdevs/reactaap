@@ -190,7 +190,7 @@ export default function Productos2() {
                                                    <strong> {producto.nombreproducto}</strong>
                                                 </h5>
                                                 <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
-                                                    {producto.precio}
+                                                    {producto.formafarmaceutica}
                                                 </h5>
                                                 <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
                                                     {producto.presentacion}

@@ -28,7 +28,7 @@ import { Link } from "react-router-dom";
 export default function Productos() {
   // const [page, setPage] = useState(1)
 
-  const [productos, setProductos] = useState([]);
+   const [productos, setProductos] = useState([]);
 
   const [busqueda, setBusqueda] = useState("");
 

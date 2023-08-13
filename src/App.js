@@ -14,7 +14,10 @@ import {PostProvider} from './context/postContext'
 import DetalleProducto from './componets/DetalleProducto';
 import Productos2 from './componets/Productos2';
 import PanelControl from './componets/PanelControl';
-
+import Dasboard from './componets/login/Dasboard';
+import ProductosAside from './componets/login/ProductosAside';
+import EditarProducto from './componets/login/EditarProducto';
+import Prospecto from './componets/Prospecto'
 import Vigilancia from './componets/vigilancia'
 
 //import React, { useState, useEffect } from 'react'
@@ -55,7 +58,7 @@ export default function App() {
           <Route path="/productos" element={<Productos2 />} />
           <Route path="/productos/:id" element={<DetalleProducto />} />
           
-
+          <Route path="/prospecto" element={<Prospecto />} />
           <Route path="/vigilancia" element={<Vigilancia />} />
           <Route path="/menuadmin" element={<Menuadmin />} />
           <Route path="/login" element={<Login />} />
@@ -69,6 +72,9 @@ export default function App() {
 
           {/* PanelControl */}
           <Route path="/panelControl" element={<PanelControl />} />
+          <Route path="/dasboard" element={<Dasboard />} />
+          <Route path="/productosaside" element={<ProductosAside />} />
+          <Route path="/editarproducto" element={<EditarProducto />} />
 
         </Routes>
       </BrowserRouter>
