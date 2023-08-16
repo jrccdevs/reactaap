@@ -68,7 +68,7 @@ const openModal = (op,id, codigoproducto, nombreproducto,principioactivo, accion
     setProspecto('');
     setOperation(op);
     if(op === 1) {
-        setTitle('Regiistrar Producto');
+        setTitle('Registrar Producto');
     }
     else if(op === 2){
         setTitle('Editar Producto');
@@ -142,7 +142,7 @@ const openModal = (op,id, codigoproducto, nombreproducto,principioactivo, accion
                 filter: true,
                 customBodyRender: (value, tableMeta, updateValue) => {
                     return (
-                        <Button data-bs-toggle='modal' data-bs-target='#modalProducts' className="btn btn-primary" onClick={()=> openModal(2,  codigoproducto, nombreproducto, principioactivo, accionterapeutica, categoria, formafarmaceutica, carrucel, image, prospecto)}
+                        <Button  className="btn btn-primary" onClick={()=> openModal(2, id, codigoproducto, nombreproducto, principioactivo, accionterapeutica, categoria, formafarmaceutica, carrucel, image, prospecto)}
 
                         > <CiEdit /></Button>
                     );
@@ -156,7 +156,7 @@ const openModal = (op,id, codigoproducto, nombreproducto,principioactivo, accion
     //4 - renderizamos la datatable
     return (
         <div >
-             <Button onClick={()=>openModal(1)} data-bs-toggle='modal' data-bs-target='#modalProducts' color="primary" variant="contained">Agregar</Button>
+             <Button onClick={()=>openModal(1)}  color="primary" variant="contained">Agregar</Button>
             <MUIDataTable
                 title={"Show data with Axios"}
                 data={products}

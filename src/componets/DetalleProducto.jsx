@@ -145,24 +145,21 @@ export default function DetalleProducto() {
                 </h6>
 
                 <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
-                  <a href={producto.prospecto} target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }} zoom={100}> VER MAS (Prospecto)</a>
-                  {/*   <Link to="/prospecto"  style={{ color: "white", textDecoration: "none" }}> VER MAS (Prospecto)
-                  
-                
-                
-                
-                </Link>  */}
-                  {/*  <RViewerTrigger>
-                      <a href={producto.image} target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }}> VER MAS (Prospecto)</a>
-
-                  </RViewerTrigger> */}
-
-
+                    <a href={producto.prospecto}  type="application/pdf"  target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }} zoom={100}> VER MAS (Prospecto) opcion PDF</a>
+                  {/*  <object
+               data={producto.prospecto}
+               type="application/pdf"
+               width= "100%"
+               height="100%"
+               >
+                 PROSPECTO
+               </object>
+  */}
 
                 </div>
 
                 <div style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
-                  <button onClick={() => { setVisible(true); }} style={{ color: "white", textDecoration: "none",backgroundColor: "#003057" }}>VER MAS (Prospecto) opcion 2</button>
+                  <button onClick={() => { setVisible(true); }} style={{ color: "white", textDecoration: "none",backgroundColor: "#003057" }}>VER MAS (Prospecto) opcion IMAGEN</button>
                   <Viewer 
                   options={options} 
                     visible={visible}
@@ -173,11 +170,23 @@ export default function DetalleProducto() {
                     noNavbar={false}
                     disableMouseZoom={true}
                     prev={false}
-                    changeable={false}
+                    changeable={true}
                     noToolbar={false}
                     
                   />
                 </div>
+               {/*  <div className="boton" style={{ marginTop: "20px", width: "500px", height: "500px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
+                     <object
+               data={producto.prospecto}
+               type="application/pdf"
+               width= "100%"
+               height="100%"
+               >
+                 PROSPECTO
+               </object>
+  
+
+                </div> */}
               </Card.Text>
             </Card.Body>
           </div>
