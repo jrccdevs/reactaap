@@ -34,7 +34,7 @@ export const crearProductosRequest = async(productos) => {
         form.append(key, productos[key]);
     }
  return await axios.post('https://node-alfa.vercel.app/productos', form, {
- //   return await axios.post('http://localhost:7000/productos', form, {
+ //  return await axios.post('http://localhost:7000/productos', form, {
         headers: {
             "Content-Type" : "multipart/form-data",
         },
