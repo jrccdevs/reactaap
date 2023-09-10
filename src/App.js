@@ -72,6 +72,7 @@ export default function App() {
 
           {/* PanelControl */}
           <Route path="/panelControl" element={<PanelControl />} />
+          <Route path="/panelControl/producto" element={<PanelControl />} />
           <Route path="/dasboard" element={<Dasboard />} />
           <Route path="/productosaside" element={<ProductosAside />} />
           <Route path="/editarproducto" element={<EditarProducto />} />

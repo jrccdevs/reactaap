@@ -38,7 +38,7 @@ function Login () {
 		if(result.length>0){
 		 axios.post(`http://node-alfa.vercel.app/authenticacion`, body)
 			console.log("ingreso")
-			navigate("/Dasboard");
+			navigate("/ProductoAside");
 			//window.location.href="../PanelControl";
 		}else{
 			console.log("error al entrar")

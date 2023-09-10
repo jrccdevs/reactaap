@@ -21,8 +21,10 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from "@material-ui/core/Tooltip";
-
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import IconButton from "@material-ui/core/IconButton"
+import { actualizarProductosRequest, crearProductosRequest, deleteProductoRequest, getProductosIdRequest } from '../../api/productos.api';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -53,203 +55,270 @@ function ProductosAside() {
 	
 	//const styles = useStyles();
 	//1 - configuramos Los hooks
-	const [data, setData] = useState([])
+	const [productos, setProductos] = useState([]);
 	const [modalInsertar, setModalInsertar] = useState(false);
 	const [modalEditar, setModalEditar] = useState(false);
 	const [modalEliminar, setModalEliminar] = useState(false);
-	const [productoSeleccionado, setProductoSeleccionado] = useState({
-		acciones:"",
-		accionterapeutica: "",
-        carrucel: "",
-        categoria: "",
-        codigoproducto: "",
-        formafarmaceutica: "",
-        id: "",
-        image: "",
-        nombreproducto: " ",
-        presentacion: "",
-        principioactivo: "",
-        prospecto: "",
-		
-		/* id: "",
-		codigoproducto: "",
-		nombreproducto: " ",
-		principioactivo: "",
-		accionterapeutica: "",
-		categoria: "",
-		formafarmaceutica: "",
-		carrucel: "",
-		presentacion: "",
-		image: "",
-		prospecto: "" */
-	});
-
-	const handleChange = e => {
-		const { name, value } = e.target;
-		setProductoSeleccionado(prevState => ({
-			...prevState,
-			[name]: value
-		}));
-console.log(productoSeleccionado);
-	}
-
-    /* ///modal popup
-     const [open, openchange] = useState(false);
-    
-     const closepopup = () => {
-         openchange(false);
-     }  */
-
-	//2 - fcion para mostrar los datos con axios
-
-	const peticionGet = async () => {
-		await axios.get(url)
-			.then(response => {
-				setData(response.data);
-			}).catch(error => {
-				console.log(error);
-			})
-	}
 
 
-	const peticionPost = async () => {
-		await axios.post(url, productoSeleccionado)
-			.then(response => {
-				setData(data.concat(response.data));
-				abrirCerrarModalInsertar();
-			}).catch(error => {
-				console.log(error);
-			})
-	}
+	//const [showModal, setShowModal] = useState(false);
+  //const [showModalEditar, setShowModalEditar] = useState(false);
 
-	const peticionPut = async () => {
-		await axios.put(url + "/" + productoSeleccionado.id, productoSeleccionado)
-			.then(response => {
-				var dataNueva = data;
-				dataNueva.map(artista => {
-					if (artista.id === productoSeleccionado.id) {
-						artista.codigoproducto = productoSeleccionado.codigoproducto;
-						artista.nombreproducto = productoSeleccionado.nombreproducto;
-						artista.principioactivo = productoSeleccionado.principioactivo;
-						artista.accionterapeutica = productoSeleccionado.accionterapeutica;
-						artista.categoria = productoSeleccionado.categoria;
-						artista.formafarmaceutica = productoSeleccionado.formafarmaceutica;
-						artista.carrucel = productoSeleccionado.carrucel;
-						artista.presentacion = productoSeleccionado.presentacion;
-						artista.image = productoSeleccionado.image;
-						artista.prospecto = productoSeleccionado.prospecto;
-					}
-				});
-				setData(dataNueva);
-				abrirCerrarModalEditar();
-			}).catch(error => {
-				console.log(error);
-			})
-	};
-	//3 - Definimos las columns
-	const seleccionarProducto = (artista, caso, error) => {
-		setProductoSeleccionado(artista);
-		
-		if(caso === "Editar"){
-			abrirCerrarModalEditar()
-		} else{
-			console.log(error)
-		}
-		console.log(productoSeleccionado)
-	};
+  useEffect(() => {
+    const loadProductos = async () => {
+      // const response = await fetch(`http://localhost:7000/formaFarmaceutica/`);
+      const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/`);
+      const data = response.json();
+      setProductos(await data);
+    }
+    loadProductos();
+  }, []);
 
-	const abrirCerrarModalInsertar = () => {
-		setModalInsertar(!modalInsertar);
-	}
-	const abrirCerrarModalEditar = () => {
-		setModalEditar(!modalEditar);
-	}
-    /*   const abrirCerrarModalEliminar=()=>{
-        setModalEliminar(!modalEliminar);
-      } */
+  useEffect(() => {
+    document.body.classList.add("panel-control-body");
+    return () => {
+      document.body.classList.remove("panel-control-body");
+    };
+  }, []);
 
-	//definimos cual modal se va a abriri
+  const abrirCerrarModalInsertar = () => {
+	setModalInsertar(true);
+}
+const abrirCerrarModalEditar = () => {
+	setModalEditar(true);
+}
 
-    /* const openModal = (op,id, codigoproducto, nombreproducto,principioactivo, accionterapeutica, categoria, formafarmaceutica,presentacion, carrucel, image, prospecto )=>{
-        openchange(true);
-        setId('');
-        setCodigoproducto('');
-        setNombreproducto('');
-        setPrincipioactivo('');
-        setAccionterapeutica('');
-        setCategoria('');
-        setFormafarmaceutica('');
-        setPresentacion('')
-        setCarrucel('');
-        setImage('');
-        setProspecto('');
-        setOperation(op);
-        if(op === 1) {
-            setTitle('Registrar Producto');
-        }
-        else if(op === 2){
-            setTitle('Editar Producto');
-            setId(id);
-        setCodigoproducto(codigoproducto);
-        setNombreproducto(nombreproducto);
-        setPrincipioactivo(principioactivo);
-        setAccionterapeutica(accionterapeutica);
-        setCategoria(categoria);
-        setFormafarmaceutica(formafarmaceutica);
-        setPresentacion(presentacion)
-        setCarrucel(carrucel);
-        setImage(image);
-        setProspecto(prospecto);
-        }
-        window.setTimeout(function(){
-            document.getElementById('codigoproducto').focus();
-        }, 500);
-    } */
-    /*  const validar = () => {
-         var parametros;
-         var metodo;
- 
-         if (codigoproducto === '') {
-             show_alerta('Ingrese el codigo del Producto')
-         }
-         else if (nombreproducto.trim() === '') {
-             show_alerta('Escribe el Nombre del Producto');
-         }
-         else if (principioactivo.trim() === '') {
-             show_alerta('Escribe el Nombre del Principio Activo');
-         }
-         else {
-             if (operation === 1) {
-                 parametros = { codigoproducto: codigoproducto, nombreproducto: nombreproducto.trim(), principioactivo: principioactivo.trim(), accionterapeutica: accionterapeutica.trim(), categoria: categoria.trim(), formafarmaceutica: formafarmaceutica.trim(), carrucel: carrucel.trim(), presentacion: presentacion.trim(), image: image.trim(), prospecto: prospecto.trim() };
-                 metodo = 'POST';
-             }
-             else {
-                 parametros = { id: id, codigoproducto: codigoproducto, nombreproducto: nombreproducto.trim(), principioactivo: principioactivo.trim(), accionterapeutica: accionterapeutica.trim(), categoria: categoria.trim(), formafarmaceutica: formafarmaceutica.trim(), carrucel: carrucel.trim(), presentacion: presentacion.trim(), image: image.trim(), prospecto: prospecto.trim() };
-                 metodo = 'PUT';
-             }
-             enviarSolicitud(metodo, parametros);
-         }
-     } */
+ /*  const handleRegistrar = () => {
+    setShowModal(true);
+  };
 
-    /* const enviarSolicitud = async (metodo, parametros) => {
-        await axios({ method: metodo, url: url, data: parametros }).then(function (respuesta) {
-            var tipo = respuesta.data[0];
-            var msj = respuesta.data[1];
-            show_alerta(msj, tipo);
-            if (ti
-                document.getElementById('btnCerrar').click();
-                getProducts();
-            }
-        })
-            .catch(function (error) {
-                show_alerta('Error en la solictud', 'error');
-                console.log(error)
-            });
-    } */
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
-	useEffect(() => {
-		peticionGet();
-	}, [])
+  const handleCloseModalEditar = () => {
+    setShowModalEditar(false);
+  }; */
+
+
+  const loadProductos = async () => {
+    // const response = await fetch(`http://localhost:7000/formaFarmaceutica/`);
+    const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/`);
+    const data = response.json();
+    setProductos(await data);
+  }
+
+  const [productoPost, setProductoPost] = useState({
+    codigoproducto: '',
+    nombreproducto: '',
+    principioactivo: '',
+    accionterapeutica: '',
+    categoria: '',
+    formafarmaceutica: '',
+    carrucel: '',
+    presentacion: '',
+    image: null,   //img
+    prospecto: null,  //pdf
+  });
+
+
+  const handleInputChange = (e) => {
+    const { name, value, type, files } = e.target;
+    const newValue = type === 'file' ? files[0] : value;
+    setProductoPost({ ...productoPost, [name]: newValue });
+  };
+
+  const resetForm = () => {
+    setProductoPost({
+      codigoproducto: '',
+      nombreproducto: '',
+      principioactivo: '',
+      accionterapeutica: '',
+      categoria: '',
+      formafarmaceutica: '',
+      carrucel: '',
+      presentacion: '',
+      image: null,
+      prospecto: null,
+    });
+  };
+
+  const validateForm = () => {
+    if (
+      !productoPost.codigoproducto ||
+      !productoPost.nombreproducto ||
+      !productoPost.principioactivo ||
+      !productoPost.accionterapeutica ||
+      !productoPost.formafarmaceutica ||
+      !productoPost.categoria ||
+      !productoPost.carrucel ||
+      !productoPost.presentacion ||
+      !productoPost.image ||
+      !productoPost.prospecto
+    ) {
+      MySwal.fire({
+        position: 'center',
+        icon: 'error',
+        title: '"Por Favor, llene todos los campos son obligatorios."',
+        showConfirmButton: true,
+      })
+      return false;
+    }
+    return true;
+  };
+
+  const validateFormEditar = () => {
+    if (
+      !productoPut.codigoproducto ||
+      !productoPut.nombreproducto ||
+      !productoPut.principioactivo ||
+      !productoPut.accionterapeutica ||
+      !productoPut.formafarmaceutica ||
+      !productoPut.categoria ||
+      !productoPut.carrucel ||
+      !productoPut.presentacion ||
+      !productoPut.image ||
+      !productoPut.prospecto
+    ) {
+      MySwal.fire({
+        position: 'center',
+        icon: 'error',
+        title: '"Por Favor, llene todos los campos son obligatorios."',
+        showConfirmButton: true,
+      })
+      return false;
+    }
+    return true;
+  };
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+    try {
+      const response = await crearProductosRequest(productoPost);
+      const result = await MySwal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'El producto se registró exitosamente.',
+        showConfirmButton: true,
+      });
+      if (result.isConfirmed) {
+        setShowModal(false);
+        resetForm();
+        loadProductos();
+      }
+    } catch (error) {
+      console.error('Error al registrar el producto:', error);
+    }
+  };
+
+
+  const [productoPut, setProductoPut] = useState({
+    id: 0,
+    codigoproducto: '',
+    nombreproducto: '',
+    principioactivo: '',
+    accionterapeutica: '',
+    categoria: '',
+    formafarmaceutica: '',
+    carrucel: '',
+    presentacion: '',
+    image: null,   //img
+    prospecto: null,  //pdf
+  });
+
+
+  const obtenerDetallesProducto = async (idProducto) => {
+    try {
+      const producto = await getProductosIdRequest(idProducto);
+      setProductoPut({
+        ...productoPut,
+        id: producto[0].id,
+        codigoproducto: producto[0].codigoproducto,
+        nombreproducto: producto[0].nombreproducto,
+        principioactivo: producto[0].principioactivo,
+        accionterapeutica: producto[0].accionterapeutica,
+        categoria: producto[0].categoria,
+        formafarmaceutica: producto[0].formafarmaceutica,
+        carrucel: producto[0].carrucel,
+        presentacion: producto[0].presentacion,
+        image: producto[0].image,
+        prospecto: producto[0].prospecto
+      });
+    } catch (error) {
+      console.error("Error al obtener los detalles del producto:", error);
+    }
+  };
+
+
+  const handleEditar = (id) => {
+    setShowModalEditar(true);
+    obtenerDetallesProducto(id);
+    setProductoPut({ ...productoPut, image: null });
+
+  };
+
+  const handleSubmitEditar = async (e) => {
+    e.preventDefault();
+    if (!validateFormEditar()) {
+      return;
+    }
+    try {
+      await actualizarProductosRequest(productoPut, productoPut.id);
+      const result = await MySwal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'El producto se actualizo exitosamente.',
+        showConfirmButton: true,
+      });
+      if (result.isConfirmed) {
+        setShowModalEditar(false);
+        resetForm();
+        loadProductos();
+      }
+    } catch (error) {
+      console.error('Error al registrar el producto:', error);
+    }
+  };
+
+  const handleInputChangeEditar = (e) => {
+    const { name, value, type, files } = e.target;
+    const newValue = type === 'file' ? files[0] : value;
+    setProductoPut({ ...productoPut, [name]: newValue });
+  };
+
+
+  const handleEliminar = async (id) => {
+    try {
+      const result = await MySwal.fire({
+        title: '¿Está seguro de eliminar el producto?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar',
+        cancelButtonColor: "#e72323",
+        confirmButtonColor: "#008000",
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      });
+      if (result.isConfirmed) {
+        await deleteProductoRequest(id);
+        MySwal.fire(
+          '¡Eliminado!',
+          'El producto ha sido eliminado exitosamente',
+          'success'
+        );
+        loadProductos();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
 	const bodyInsertar = (
 		<div >
@@ -259,15 +328,15 @@ console.log(productoSeleccionado);
 				<DialogContent >
 					{/* <DialogContentText>Do you want remove this user?</DialogContentText> */}
 					<Stack spacing={2} margin={2}>
-						<TextField variant="outlined" type='text' name="codigoproducto" className='form-control' placeholder='Codigo Producto' label="Codigo Producto" onChange={handleChange}></TextField>
-						<TextField variant="outlined" type='text' name="nombreproducto" className='form-control' placeholder='Nombre Producto' label="Producto" onChange={handleChange}></TextField>
-						<TextField variant="outlined" type='text' name="principioactivo" className='form-control' placeholder='Principioactivo' label="Principio Activo" onChange={handleChange}></TextField>
-						<TextField variant="outlined" type='text' name='accionterapeutica' className='form-control' placeholder='Accionterapeutica' label="Accion Terapeutica" onChange={handleChange}></TextField>
+						<TextField variant="outlined" type='text' name="codigoproducto" className='form-control' placeholder='Codigo Producto' label="Codigo Producto" value={productoPost.codigoproducto} onChange={handleInputChange}></TextField>
+						<TextField variant="outlined" type='text' name="nombreproducto" className='form-control' placeholder='Nombre Producto' label="Producto" value={productoPost.nombreproducto} onChange={handleInputChange}></TextField>
+						<TextField variant="outlined" type='text' name="principioactivo" className='form-control' placeholder='Principioactivo' label="Principio Activo" value={productoPost.principioactivo} onChange={handleInputChange}></TextField>
+						<TextField variant="outlined" type='text' name='accionterapeutica' className='form-control' placeholder='Accionterapeutica' label="Accion Terapeutica" value={productoPost.accionterapeutica} onChange={handleInputChange}></TextField>
 						<FormControl>
 							<InputLabel id="demo-mutiple-name-label">  Categoria</InputLabel>
 
 						<Select
-							label="Categoria" type='text' placeholder='Categoria' onChange={handleChange}
+							label="Categoria" type='text' placeholder='Categoria' value={productoPost.categoria} onChange={handleInputChange}
 							className="form-select" aria-label="Default select example"
 							name='categoria'
 							variant="outlined"
@@ -291,9 +360,9 @@ console.log(productoSeleccionado);
 								<MenuItem value="TABLETA">TABLETA</MenuItem>
 						</Select>
 						</FormControl>
-						<TextField variant="outlined" type='text' name='formafarmaceutica' className='form-control' placeholder='Formafarmaceutica' label="Forma Farmaceutica" onChange={handleChange}></TextField>
+						<TextField variant="outlined" type='text' name='formafarmaceutica' className='form-control' placeholder='Formafarmaceutica' label="Forma Farmaceutica" value={productoPost.formafarmaceutica} onChange={handleInputChange}></TextField>
 						<Select
-							type='text' name='carrucel' placeholder='carrucel' onChange={handleChange}
+							type='text' name='carrucel' placeholder='carrucel' value={productoPost.carrucel} onChange={handleInputChange}
 							className="form-select" aria-label="Default select example"
 							label="Carrucel"
 							variant="outlined"
@@ -303,13 +372,13 @@ console.log(productoSeleccionado);
 
 						</Select>
 						
-						<TextField variant="outlined" type='text' name='presentacion' className='form-control' placeholder='presentacion' label="Presentacion" onChange={handleChange}></TextField>
+						<TextField variant="outlined" type='text' name='presentacion' className='form-control' placeholder='presentacion' label="Presentacion" value={productoPost.presentacion} onChange={handleInputChange}></TextField>
 
-						<TextField variant="outlined" type='file' name='image' className='form-control' placeholder='Imagen' label="Image" onChange={handleChange} ></TextField>
-						<TextField variant="outlined" type='file' name='prospecto' className='form-control' placeholder='Prospecto' label="Prospecto" onChange={handleChange} ></TextField>
+						<TextField variant="outlined" type='file' name='image' className='form-control' placeholder='Imagen' label="Image" onChange={handleInputChange} ></TextField>
+						<TextField variant="outlined" type='file' name='prospecto' className='form-control' placeholder='Prospecto' label="Prospecto" onChange={handleInputChange}></TextField>
 
 
-						<Button color="primary" onClick={() => peticionPost()}>Insertar</Button>
+						<Button color="primary" onClick={handleSubmit}>Insertar</Button>
 						<Button onClick={() => abrirCerrarModalInsertar()}>Cancelar</Button>
 					</Stack>
 				</DialogContent>
@@ -325,15 +394,15 @@ console.log(productoSeleccionado);
 				<DialogContent >
 					{/* <DialogContentText>Do you want remove this user?</DialogContentText> */}
 					<Stack spacing={2} margin={2}>
-						<TextField variant="outlined" type='text' name="codigoproducto" placeholder='Codigo Producto' label="Codigo " onChange={handleChange} value={productoSeleccionado && productoSeleccionado.codigoproducto}></TextField>
-						<TextField variant="outlined" type='text' name="nombreproducto" placeholder='Nombre Producto' label="Producto" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.nombreproducto}></TextField>
-						<TextField variant="outlined" type='text' name="principioactivo" placeholder='Principioactivo' label="Principio Activo" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.principioactivo}></TextField>
-						<TextField variant="outlined" type='text' name='accionterapeutica' placeholder='Accionterapeutica' label="Accion Terapeutica" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.accionterapeutica}></TextField>
+						<TextField variant="outlined" type='text' name="codigoproducto" placeholder='Codigo Producto' label="Codigo "value={productoPut.codigoproducto} onChange={handleInputChangeEditar}></TextField>
+						<TextField variant="outlined" type='text' name="nombreproducto" placeholder='Nombre Producto' label="Producto" value={productoPut.nombreproducto} onChange={handleInputChangeEditar}></TextField>
+						<TextField variant="outlined" type='text' name="principioactivo" placeholder='Principioactivo' label="Principio Activo" value={productoPut.principioactivo} onChange={handleInputChangeEditar}></TextField>
+						<TextField variant="outlined" type='text' name='accionterapeutica' placeholder='Accionterapeutica' label="Accion Terapeutica" value={productoPut.accionterapeutica} onChange={handleInputChangeEditar}></TextField>
 						<FormControl>
 							<InputLabel id="demo-mutiple-name-label">  Categoria</InputLabel>
 
 							<Select
-								label="Categoria" type='text' placeholder='Categoria' onChange={handleChange} value={productoSeleccionado && productoSeleccionado.categoria}
+								label="Categoria" type='text' placeholder='Categoria'value={productoPut.categoria} onChange={handleInputChangeEditar}
 								aria-label="Default select example"
 								name='categoria'
 								variant="outlined"
@@ -363,7 +432,7 @@ console.log(productoSeleccionado);
 								<MenuItem value="TABLETA">TABLETA</MenuItem>
 							</Select>
 						</FormControl>
-						<TextField variant="outlined" type='text' name='formafarmaceutica' placeholder='Formafarmaceutica' label="Forma Farmaceutica" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.formafarmaceutica}></TextField>
+						<TextField variant="outlined" type='text' name='formafarmaceutica' placeholder='Formafarmaceutica' label="Forma Farmaceutica" value={productoPut.formafarmaceutica} onChange={handleInputChangeEditar}></TextField>
 						
 
 						<FormControl fullWidth>
@@ -371,9 +440,9 @@ console.log(productoSeleccionado);
 							<Select
 								aria-label="Default select example"
 								name= 'carrucel'
-								value={productoSeleccionado && productoSeleccionado.carrucel}
+								value={productoPut.carrucel} onChange={handleInputChangeEditar}
 								label="Carrucel"
-								onChange={handleChange}
+								
 							>
 								
 								<MenuItem selected>Seleccionar Carrucel</MenuItem>
@@ -383,12 +452,12 @@ console.log(productoSeleccionado);
 								
 							</Select>
 						</FormControl>
-						<TextField variant="outlined" type='text' name='presentacion' placeholder='presentacion' label="Presentacion" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.presentacion}></TextField>
-						<TextField variant="outlined" type='file' name='image' placeholder='Imagen' label="Image" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.image}></TextField>
-						<TextField variant="outlined" type='file' name='prospecto ' placeholder='Prospecto' label="Prospecto" onChange={handleChange} value={productoSeleccionado && productoSeleccionado.prospecto}></TextField>
+						<TextField variant="outlined" type='text' name='presentacion' placeholder='presentacion' label="Presentacion" value={productoPut.presentacion} onChange={handleInputChangeEditar}></TextField>
+						<TextField variant="outlined" type='file' name='image' placeholder='Imagen' label="Image"  onChange={handleInputChangeEditar}></TextField>
+						<TextField variant="outlined" type='file' name='prospecto ' placeholder='Prospecto' label="Prospecto" onChange={handleInputChangeEditar}></TextField>
 
 
-						<Button color="primary" onClick={() => peticionPut()} >Editar</Button>
+						<Button color="primary" onClick={handleSubmitEditar} >Editar</Button>
 						<Button onClick={() => abrirCerrarModalEditar()}>Cancelar</Button>
 					</Stack>
 				</DialogContent>
@@ -474,7 +543,7 @@ console.log(productoSeleccionado);
                 customBodyRender: (value, tableMeta, updateValue) => {
                     return (
 						<div>
-                        <Button  className="btn btn-primary"   onClick={(event, rowData) => seleccionarProducto(rowData, "Editar")}
+                        <Button  className="btn btn-primary"   onClick={() => handleEditar(producto.id)}
                          
                         > <CiEdit /></Button>
 						</div>
@@ -495,7 +564,7 @@ console.log(productoSeleccionado);
 		customToolbarSelect: selectedRows => (
 		  <Tooltip title="edit">
 			<IconButton
-			  onClick={(event, rowData) => seleccionarProducto(rowData, "Editar")}
+			 
 			  style={{
 				marginRight: "24px",
 				height: "48px",
@@ -515,14 +584,14 @@ console.log(productoSeleccionado);
 			<Button onClick={() => abrirCerrarModalInsertar()} color="primary" variant="contained">Agregar</Button>
 			<MUIDataTable
 				title={"Show data with Axios"}
-				data={data}
+				data={productos}
 				columns={columns}
 				options={options}
 				actions={[
 					{
 						icon: 'edit',
 						tooltip: 'Editar Artista',
-						onClick: (event, rowData) => seleccionarProducto(rowData, "Editar")
+						
 					},
 					{
 						icon: 'delete',

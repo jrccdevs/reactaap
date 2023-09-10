@@ -1,0 +1,12 @@
+.productoImg {
+    height: auto;
+    width: 100px;
+    object-fit: cover;
+    margin-left: -8px;
+  }
+  
+  body.panel-control-body {
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+  }
