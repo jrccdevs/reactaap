@@ -5,16 +5,10 @@ import Footer from './Footer';
 import gradas from "../img/Grada.jpg";
 import construccion from "../img/MisionEmp.jpg";
 import drferrer from "../img/DrFerrer.jpg";
-
-
 import { Modal, Container, Row, Col } from "react-bootstrap";
-import mapa from "../img/mapa-sucursales.png";
 import ImageMapResizer from 'image-map-resizer';
-import { BsTelephoneInbound } from "react-icons/bs";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import Menu from '@material-ui/core/Menu';
-import { withStyles } from '@material-ui/core/styles';
+
 
 
 export default function Empresa() {
@@ -53,19 +47,7 @@ export default function Empresa() {
       ImageMapResizer();
     }, []);
   
-    //Google Maps API
-    const { isLoaded } = useJsApiLoader({
-      id: 'google-map-script',
-      googleMapsApiKey: "AIzaSyCu1PibFXxSl3qpJvjbEcs0TgRHSyd_gbE"
-    })
-  
-    // const {isLoaded, loadError} = useJsApiLoader({
-    //   id: 'google-map-script',
-    //   googleMapsApiKey: "AIzaSyCu1PibFXxSl3qpJvjbEcs0TgRHSyd_gbE",
-    //   onLoad: () => console.log('Google Maps API loaded!'),
-    //   onError: (error) => console.error(error),
-    // })
-  
+   
   
     const containerStyle = {
       width: '100%',
@@ -119,18 +101,7 @@ export default function Empresa() {
                  
                 })}
               />
-              
-            {/*   <area
-                shape="circle"
-                coords="134,49,17"
-                href="#"
-                alt="pando"
-                onClick={(event) => openModal(event, {
-                  title: "Sucursal pando",
-                  body: "Información de la sucursal de pando",
-                })}
-              /> */}
-
+            
               <area
                 shape="rect"
                 coords="209,96,271,123"
@@ -231,12 +202,7 @@ export default function Empresa() {
               </Container>
               </Modal.Title>
             </Modal.Header>
-           
-            {/* <Modal.Footer>
-              {/* <Button variant="primary" onClick={closeModal}>
-                Cerrar
-              </Button> 
-            </Modal.Footer> */}
+       
           </Modal>
         )
       }
