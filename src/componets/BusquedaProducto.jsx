@@ -20,7 +20,8 @@ class BusquedaProducto extends React.Component {
             <div className="container-fluid col-12">
               <section className="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
                 <select className="form-select" onChange={(e) => handleFormaFarmace(e)}>
-                  <option value={''}>-- MOSTRAR TODOS --</option>
+                <option disabled selected hidden>FORMA FARMACEUTICA</option>
+                  <option value={''}>MOSTRAR TODOS </option>
                   <option value="CAPSULAS">CÁPSULAS</option>
                   <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                   <option value="CREMAS">CREMAS</option>

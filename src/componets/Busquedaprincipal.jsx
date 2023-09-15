@@ -9,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FaSearch } from "react-icons/fa";
 import labalfa from "../img/labalfa.png";
+import Logochica from "../img/imgLogochica.png";
 
 import "../style/Header.css";
 
@@ -122,7 +123,7 @@ export default function BusquedaPrincipal() {
           
           <Container fluid>
          
-            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "290px" , height: "80px" }} src={labalfa}alt="" /></Navbar.Brand>
+            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "85px" , height: "85px", marginLeft:"15px" }} src={Logochica}alt="" /></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -130,18 +131,16 @@ export default function BusquedaPrincipal() {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Laboratorio ALFA
-                </Offcanvas.Title>
+              <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
               </Offcanvas.Header>
               <Offcanvas.Body className="row justify-content-center ">
                 {/* <Nav className="justify-content flex-grow-1 pe-3">
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
 
-                <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2">
-                  <select className="form-select" aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
-                    <option className="mostrar-pro" value={''}>FORMA FARMACEUTICA</option>
+                <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2" >
+                  <select className="form-select" aria-label="Default select example"  onChange={(e) => handleFormaFarmace(e)}>
+                    <option className="mostrar-pro"  value={''} disabled selected hidden>FORMA FARMACEUTICA</option>
                     <option value="CAPSULAS">CÁPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                     <option value="CREMAS">CREMAS</option>

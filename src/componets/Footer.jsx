@@ -24,14 +24,14 @@ export default function Footer() {
                 <FaMapMarkerAlt /> Av. Busch #1970 Miraflores
               </p>
             </div>
-            <div className="col-12 col-md-6 col-sm-12 text-center">
+            {/* <div className="col-12 col-md-6 col-sm-12 text-center">
               <h4>
                 <strong>NUESTRAS REDES SOCIALES</strong>
               </h4>
               <h4 className="icono">
                 <FaFacebook className="facebook" /> <FaTwitter className="twitter" /> <FaLinkedin className="linkedin" />
               </h4>
-            </div>
+            </div> */}
           </div>
 
           <hr className="linea" />
