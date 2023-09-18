@@ -4,6 +4,7 @@ import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { FaCaretDown, FaListAlt, FaProductHunt } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
+import Productosaside from "./login/ProductosAside"
 
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -23,9 +24,10 @@ function PanelControl() {
   const MySwal = withReactContent(Swal)
 
   const [currentContent, setCurrentContent] = useState('dashboard');
+  const [currentImage, setCurrentImage] = useState('dashboard');
   const [productos, setProductos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(15);
+  const [itemsPerPage] = useState(10);
 
   const cerrarSesion = async () => {
     console.log(" cerrando sesion")
@@ -264,7 +266,7 @@ function PanelControl() {
         loadProductos();
       }
     } catch (error) {
-      console.error('Error al registrar el producto:', error);
+      console.error('Error al actualizar el producto:', error);
     }
   };
 
@@ -316,18 +318,7 @@ function PanelControl() {
                 </a>
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
 
-                  <li>
-                    <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                      <i><FaListAlt /></i> <span className="ms-1 d-none d-sm-inline">Dashboard </span> <FaCaretDown /> </a>
-                    <ul className="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                      <li className="w-100">
-                        <a href="/#" className="nav-link px-0"> <span className="d-none d-sm-inline">Item</span> 1 </a>
-                      </li>
-                      <li>
-                        <a href="/#" className="nav-link px-0"> <span className="d-none d-sm-inline">Item</span> 2 </a>
-                      </li>
-                    </ul>
-                  </li>
+                  
 
                   <li className="nav-item">
                     <Link
@@ -336,6 +327,15 @@ function PanelControl() {
                       onClick={() => setCurrentContent('panelControl/producto')}
                     >
                       <i><FaProductHunt /></i> <span className="ms-1 d-none d-sm-inline">Productos</span>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/panelControl/imagenes"
+                      className="nav-link align-middle px-0"
+                      onClick={() => setCurrentContent('panelControl/imagenes')}
+                    >
+                      <i><FaProductHunt /></i> <span className="ms-1 d-none d-sm-inline">Imagenes</span>
                     </Link>
                   </li>
 
@@ -363,7 +363,14 @@ function PanelControl() {
                 </div>
               </div>
             </div>
+            
             <div className="col py-3" id="content">
+            {currentContent === 'panelControl/imagenes' && (
+                  <div>
+                 
+                <Productosaside></Productosaside>
+                </div>
+                  )}
               {currentContent === 'dashboard' && (
                 <h1>Laboratorios Alfa</h1>
               )}
@@ -602,10 +609,13 @@ function PanelControl() {
               )}
 
             </div>
+            
+
           </div>
         </div>
       </div >
-
+     
+     
     </>
   );
 }

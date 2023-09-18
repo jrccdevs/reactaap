@@ -159,7 +159,9 @@ export default function Productos2() {
 
             <div className="slider-container col-12">
                 <div className="chica col-3">
-                <img className="logoAlfaprueba" onClick={() => navigate("/")} src={LogoAlfa} alt="logoAlfa" />
+                <Link to={"/"}>
+                <img className="logoAlfaprueba" src={LogoAlfa} alt="" />
+                </Link>
                {/*  <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
     */}
                 </div>

@@ -77,6 +77,8 @@ export default function App() {
           <Route path="/productosaside" element={<ProductosAside />} />
           <Route path="/editarproducto" element={<EditarProducto />} />
 
+          <Route path="/panelControl/imagenes" element={<PanelControl />} />
+
         </Routes>
       </BrowserRouter>
     </PostProvider>
