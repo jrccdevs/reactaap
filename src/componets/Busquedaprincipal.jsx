@@ -123,7 +123,9 @@ export default function BusquedaPrincipal() {
           
           <Container fluid>
          
-            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "85px" , height: "85px", marginLeft:"15px" }} src={Logochica}alt="" /></Navbar.Brand>
+            <Navbar.Brand className="tituloLafar ml-4" href="#" >
+              {/* <img style={{ width: "85px" , height: "85px", marginLeft:"15px" }} src={Logochica}alt="" />
+      */}         </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

@@ -110,7 +110,9 @@ export default function Busqueda() {
       {['lg'].map((expand) => (
         <Navbar key={expand} variant="dark" expand={expand} className=" fijo mb-3 nav-bar">
           <Container fluid>
-            <Navbar.Brand className="tituloLafar ml-4" href="#" ><img style={{ width: "80px" , height: "80px", marginLeft:"15px" }} src={Logochica}alt="" /></Navbar.Brand>
+            <Navbar.Brand className="tituloLafar ml-4" href="#" >
+              {/* <img style={{ width: "80px" , height: "80px", marginLeft:"15px" }} src={Logochica}alt="" />
+            */}   </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -118,8 +120,8 @@ export default function Busqueda() {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-              <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
-  
+             {/*  <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
+   */}
               </Offcanvas.Header>
               <Offcanvas.Body className="row justify-content-center ">
                 {/* <Nav className="justify-content flex-grow-1 pe-3">
@@ -147,7 +149,7 @@ export default function Busqueda() {
                   </select>
                 </section>
 
-                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6">
+                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6" style={{  marginRight: "-80px" }}>
                   <Form className="d-flex">
                     <Form.Control
                       onChange={(e) => buscarProductos(e.target.value)}

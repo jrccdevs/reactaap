@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { getProductosCarrucel } from "../api/productosCar";
 import { useLocation } from 'react-router-dom';
 import Slider from "react-slick";
-//import Logochica from "../img/imgLogochica.png";
+import Logochica from "../img/imgLogochica.png";
 import LogoAlfa from "../img/LogoAlfa.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -162,8 +162,8 @@ export default function Productos2() {
                 <Link to={"/"}>
                 <img className="logoAlfaprueba" src={LogoAlfa} alt="" />
                 </Link>
-               {/*  <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
-    */}
+               <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
+  
                 </div>
 
                 <div className="sliderimagen col-9">

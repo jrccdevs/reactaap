@@ -17,7 +17,7 @@ class BusquedaProducto extends React.Component {
 
         <Navbar className="mb-3 nav-bar">
           <Container >
-            <div className="container-fluid col-12">
+            <div className="container-fluid col-12"  style={{ marginLeft: "100px"}}>
               <section className="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
                 <select className="form-select" onChange={(e) => handleFormaFarmace(e)}>
                 <option disabled selected hidden>FORMA FARMACEUTICA</option>
@@ -41,7 +41,7 @@ class BusquedaProducto extends React.Component {
               </section>
 
               <section className="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-9">
-                <Form className="d-flex">
+                <Form className="d-flex" style={{width: "70%", marginRight: "70px",marginLeft: "10px"}}>
                   <Form.Control
                     onChange={handleChange}
                     type="search"

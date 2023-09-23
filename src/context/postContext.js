@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import {getProductosRequest} from '../api/posts'
-
+import {getImagenesRequest} from '../api/posts'
 
 const postContext = createContext();
 
@@ -17,11 +17,18 @@ export const PostProvider = ({ children }) => {
     const res =  await getProductosRequest();
       console.log(res)
     }
+
+
+    const getImagenes = async() => {
+      const res =  await getImagenesRequest();
+        console.log(res)
+      }
     return (
       <postContext.Provider
         value={{ 
             posts, 
             getProductos,
+            getImagenes,
             setPosts
             
         }}>
