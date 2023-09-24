@@ -150,7 +150,7 @@ export const actualizarImagenesRequest = async (productos, id) => {
     form.append(key, productos[key]);
   }
   return await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
-  //return await axios.put(`http://localhost:7000/imagenes/${id}`, form, {
+  //creturn await axios.put(`http://localhost:7000/imagenes/${id}`, form, {
     headers: {
       "Content-Type": "multipart/form-data",
     },

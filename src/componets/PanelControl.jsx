@@ -596,6 +596,12 @@ function PanelControl() {
                             <label htmlFor="formFile" className="form-label">Prospecto</label>
                             <input type="file" name="prospecto" onChange={handleInputChangeEditar} />
                           </div>
+                           {/* Vista previa de la imagen actual si hay una imagen */}
+                           {productoPut.prospecto !== null && (
+                            <div className="mb-3 col-6">
+                              <img src={productoPut.prospecto} alt="Prospecto Actual" width="150" />
+                            </div>
+                          )}
                         </div>
 
                       </form>
