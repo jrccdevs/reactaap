@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import BusquedaProducto from "./BusquedaProducto";
@@ -10,24 +10,24 @@ import "../style/Productos2.css";
 import ModalProducto from "./ModalProducto";
 import { useLocation } from 'react-router-dom';
 
-function useKey(key, cb) {
+function useKey(key, cb) {
     const callbackRef = useRef(cb);
-  
-    useEffect(() =>{
-      callbackRef.current = cb;
+
+    useEffect(() => {
+        callbackRef.current = cb;
     });
-  
-    useEffect(() =>{
-      function handle(event){
-        if(event.code === key){
-          callbackRef.current(event)
+
+    useEffect(() => {
+        function handle(event) {
+            if (event.code === key) {
+                callbackRef.current(event)
+            }
         }
-      }
-      document.addEventListener("keypress",handle );
-      return () => document.removeEventListener("keypress", handle);
-    },[key]);
-  }
-  
+        document.addEventListener("keypress", handle);
+        return () => document.removeEventListener("keypress", handle);
+    }, [key]);
+}
+
 
 export default function Productos2() {
 
@@ -49,14 +49,13 @@ export default function Productos2() {
 
 
     // Paginacion
-    const [currentPage, setCurrentPage] = useState(1);
+    // const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(12);
 
- 
 
-    const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
+    // const handlePageChange = (pageNumber) => {
+    //     setCurrentPage(pageNumber);
+    // };
 
 
     const navigate = useNavigate();
@@ -68,6 +67,18 @@ export default function Productos2() {
         event.preventDefault();
     }
 
+    // useEffect(() => {
+    //     navigate(`/productos?page=${currentPage}`);
+    // }, [currentPage, navigate]);
+
+    const currentPageFromURL = searchParams.get('page');
+    const [currentPage, setCurrentPage] = useState(currentPageFromURL ? parseInt(currentPageFromURL) : 1);
+
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        navigate(`/productos?page=${pageNumber}`);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -152,27 +163,27 @@ export default function Productos2() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = result.slice(indexOfFirstItem, indexOfLastItem);
- /*    useEffect(() => {
-      // Guardar la página actual en LocalStorage
-localStorage.setItem( currentPage);
-
-       return () => {
-         // Recuperar la página actual de LocalStorage
-const currentPage = localStorage.getItem(currentPage);
- 
-        };
-      }, []); */
+    /*    useEffect(() => {
+         // Guardar la página actual en LocalStorage
+   localStorage.setItem( currentPage);
+   
+          return () => {
+            // Recuperar la página actual de LocalStorage
+   const currentPage = localStorage.getItem(currentPage);
+    
+           };
+         }, []); */
 
     useKey("Enter", handleChange)
     return (
         <>
             <ModalProducto />
-            <div  style={{ position: "fixed", top:"0px", left: "0px", right:"0px",   zIndex: "999"}}>
-              {/*  <Header /> */}
-              <CarrucelHeader />
-               <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
+            <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+                {/*  <Header /> */}
+                <CarrucelHeader />
+                <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
             </div>
-           <Container className="content" style={{ overflow: "hidden", margin:"190px auto 0px"}}>
+            <Container className="content" style={{ overflow: "hidden", margin: "190px auto 0px" }}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
                         <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-lg-4 ">
@@ -188,7 +199,7 @@ const currentPage = localStorage.getItem(currentPage);
                                                 {/* <div key={producto.id.toString()}> */}
                                                 <div className="div-producto col-12">
                                                     <a href="#!">
-                                                        <Link className="cover" to={`/productos/${producto.id}`}>
+                                                        <Link className="cover" to={`/productos/${producto.id}/page/${currentPage}`}>
                                                             <img
                                                                 className="img-productos"
                                                                 src={producto.image}
@@ -198,7 +209,7 @@ const currentPage = localStorage.getItem(currentPage);
                                                     </a>
                                                 </div>
                                                 <h5 className="card-title" style={{ textAlign: "left" }} >
-                                                   <strong> {producto.nombreproducto}</strong>
+                                                    <strong> {producto.nombreproducto}</strong>
                                                 </h5><br></br><br></br>
                                                 <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
                                                     {producto.precio}
@@ -206,7 +217,7 @@ const currentPage = localStorage.getItem(currentPage);
                                                 <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
                                                     {producto.formafarmaceutica}
                                                 </h5>
-                                                 <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
+                                                <h5 className="card-title1" style={{ textAlign: "left", color: "rgb(65, 67, 68)" }} >
                                                     {producto.presentacion}
                                                 </h5>
                                             </div>
@@ -238,7 +249,7 @@ const currentPage = localStorage.getItem(currentPage);
                         hideNavigation={false}
                         hideFirstLastPages={true}
                         breakLabel="..."
-                        activeLabel ='(current)'
+                        activeLabel='(current)'
                     />
                 ) : (
                     <p className="text-center">No hay productos para mostrar</p>
