@@ -218,7 +218,7 @@ function ContentControl() {
         loadProductos();
       }
     } catch (error) {
-      console.error('Error al registrar el producto:', error);
+      console.error('Error al actualizar el producto:', error);
     }
   };
 
@@ -427,7 +427,7 @@ function ContentControl() {
                         <div className="row">
                           <div className="mb-3 col-6">
                             <label htmlFor="formFile" className="form-label">Imagen</label>
-                            <input type="file" name="image" onChange={handleInputChangeEditar} />
+                            <input type="file" name="image"   onChange={handleInputChangeEditar} />
                           </div>
 
                           {/* Vista previa de la imagen actual si hay una imagen */}

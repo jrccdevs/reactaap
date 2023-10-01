@@ -52,6 +52,8 @@ export default function Productos2() {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(12);
 
+ 
+
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -150,7 +152,16 @@ export default function Productos2() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = result.slice(indexOfFirstItem, indexOfLastItem);
+ /*    useEffect(() => {
+      // Guardar la página actual en LocalStorage
+localStorage.setItem( currentPage);
 
+       return () => {
+         // Recuperar la página actual de LocalStorage
+const currentPage = localStorage.getItem(currentPage);
+ 
+        };
+      }, []); */
 
     useKey("Enter", handleChange)
     return (
@@ -227,6 +238,7 @@ export default function Productos2() {
                         hideNavigation={false}
                         hideFirstLastPages={true}
                         breakLabel="..."
+                        activeLabel ='(current)'
                     />
                 ) : (
                     <p className="text-center">No hay productos para mostrar</p>
