@@ -166,7 +166,8 @@ export default function Busqueda() {
                       {productosMatch && productosMatch.slice(0, 5).map((item, index) => (
                         <div key={index}>
                           <div key={item.id} className="producto-item">
-                            <Link to={`/productos/${item.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                            {/* <Link to={`/productos/${item.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}> */}
+                            <Link to={`/productos/${item.id}/page/1`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                               <div className="mb-3 " style={{ maxWidth: "100%" }}>
                                 <div className="row g-0">
                                   <div className="col-md-3 col-3">

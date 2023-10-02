@@ -174,7 +174,8 @@ export default function Productos2() {
                             <div className="slider col-12" key={producto.id}>
 
                                 <div className='item'>
-                                    <Link to={`/productos/${producto.id}`}>
+                                    {/* <Link to={`/productos/${producto.id}`}> */}
+                                    <Link to={`/productos/${producto.id}/page/1`}>
                                         <img
 
                                             src={producto.image}
