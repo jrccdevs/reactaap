@@ -82,6 +82,7 @@ export default function Busqueda() {
   // console.log(productos);
 
   const buscarProductos = (text) => {
+    console.log(text);
     if (!text) {
       setProductosMatch([]);
     } else {
@@ -98,12 +99,17 @@ export default function Busqueda() {
     }
   };
 
+
   const handleRedirect = () => {
     // navigate("/productos", { state: { searchText } });
+    setSearchText("prodru"); // Establecer el texto de búsqueda
     navigate(`/productos?searchProcut=${searchText}`);
+
 
     // pasamos el valor del input guardado en el estado searchText a la función Busqueda
   };
+
+
   useKey("Enter", handleRedirect)
   return (
     <>
@@ -167,7 +173,8 @@ export default function Busqueda() {
                         <div key={index}>
                           <div key={item.id} className="producto-item">
                             {/* <Link to={`/productos/${item.id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}> */}
-                            <Link to={`/productos/${item.id}/page/1`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                            <Link to={`/productos/${item.id}/page/1`} style={{ color: 'inherit', textDecoration: 'inherit' }}   onClick={() => buscarProductos("")}
+>
                               <div className="mb-3 " style={{ maxWidth: "100%" }}>
                                 <div className="row g-0">
                                   <div className="col-md-3 col-3">

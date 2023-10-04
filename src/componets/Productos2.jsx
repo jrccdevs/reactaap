@@ -71,16 +71,27 @@ export default function Productos2() {
     //     navigate(`/productos?page=${currentPage}`);
     // }, [currentPage, navigate]);
 
-    const currentPageFromURL = searchParams.get('page');
-    const [currentPage, setCurrentPage] = useState(currentPageFromURL ? parseInt(currentPageFromURL) : 1);
+    // const currentPageFromURL = searchParams.get('page');
+    // const [currentPage, setCurrentPage] = useState(currentPageFromURL ? parseInt(currentPageFromURL) : 1);
 
+  
+    const currentPageFromURL = parseInt(searchParams.get('page')) || 1;
+  
+    const [currentPage, setCurrentPage] = useState(currentPageFromURL);
+  
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
         navigate(`/productos?page=${pageNumber}`);
     };
 
+    // useEffect(() => {
+    //     setCurrentPage(currentPageFromURL);
+
+    //   }, [currentPageFromURL]);
+
     useEffect(() => {
+        setCurrentPage(currentPageFromURL);
         const fetchData = async () => {
             let endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`;
             if (selectedValue) {
@@ -91,7 +102,7 @@ export default function Productos2() {
             setProductos(data);
         };
         fetchData();
-    }, [selectedValue, formafarmaceutica, searchText]);
+    }, [selectedValue, formafarmaceutica, searchText,currentPageFromURL]);
 
 
     const handleChange = (e) => {
