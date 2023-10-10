@@ -114,7 +114,7 @@ export default function DetalleProducto() {
                 <h6 className="detalle" style={{ width: "auto", color: "red" }}>   <img style={{ width: "30px", height: "30px" }} src={icono1} alt="" />{" "}
                   Principio Activo:
                   <text style={{ display: "flex", width: "auto", height: "auto", marginTop: "-29px", color: "rgb(248, 149, 149)", paddingTop: "2px", textAlign: "left", marginLeft: "172px" }}>
-                    {" "} {producto.principioactivo}
+                     {producto.principioactivo}
                   </text>
                 </h6>
 
