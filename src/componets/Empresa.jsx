@@ -78,9 +78,10 @@ export default function Empresa() {
       <div className="row">
         <section className="col-12">
           <div className="col-lg-12 text-center">
-             <img style={{width:"100%", height:"400px", background:"red"}} className="img-fluid" src={gradas} alt="sucursales-bolivia" useMap="#Map" />
+             <img style={{width:"100%", height:"400px"}} className="img-fluid" src={gradas} alt="sucursales-bolivia" useMap="#Map" />
             <map name="Map">
-              <area
+              <area 
+                fontSize="10px"
                 shape="rect"
                 coords="81,44,143,71"
                 href="#"

@@ -13,7 +13,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import "../style/PanelControl.css";
-
+import FooterControl from './login/FooterControl';
+import ContentControl from './login/ContentControl';
+import AsideControl from './login/AsideControl';
+import HeaderControl from './login/HeaderControl';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { actualizarProductosRequest, crearProductosRequest, deleteProductoRequest, getProductosIdRequest } from '../api/productos.api';
@@ -307,6 +310,7 @@ function PanelControl() {
 
   return (
     <>
+    
       <div className="panel-control-container">
 
         <div className="container-fluid scroll-x-hidden">

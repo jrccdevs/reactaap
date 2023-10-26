@@ -15,6 +15,7 @@ import DetalleProducto from './componets/DetalleProducto';
 import Productos2 from './componets/Productos2';
 import PanelControl from './componets/PanelControl';
 import Dasboard from './componets/login/Dasboard';
+import ContentControl from './componets/login/ContentControl';
 import ProductosAside from './componets/login/ProductosAside';
 import Prospecto from './componets/Prospecto'
 import Vigilancia from './componets/vigilancia'
@@ -75,6 +76,7 @@ export default function App() {
           <Route path="/dasboard" element={<Dasboard />} />
           <Route path="/productosaside" element={<ProductosAside />} />
           <Route path="/panelControl/imagenes" element={<PanelControl />} />
+          <Route path="/contentControl/imagenes" element={<ContentControl />} />
 
         </Routes>
       </BrowserRouter>

@@ -5,10 +5,10 @@
 }
 
 .container2{
- height: 350px;
+ height: 100%;
  width: 100%;
  /* border: 3px  solid #0081b8; */
- padding: 15px 15px 15px 15px;
+ padding: -90px 15px 15px 15px;
  overflow-y: auto;
  border-radius: 3%;
 }

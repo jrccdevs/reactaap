@@ -28,25 +28,86 @@
 .principal{
     
     background-color: white;
+    display: flex;
 }
 .chica{
-    display: inline-block;
+    display: flex;
   /* background-color: aqua;*/
 }
 .sliderimagen{
-    display: inline-block;
+   
     margin-left: 1%;
     margin-right: 1%;
   /*  background-color: yellowgreen;*/
 }
  .logoChica{
-    height: auto;
+   display: flex;
+    height: 90px;
     width: 95px;
    margin-left: 5px;
 }
 .logoAlfaprueba{
+  display: flex;
     height: auto;
     width: 95px;
+}
+
+/*media query para celular*/
+/* Regla para pantallas más pequeñas (por ejemplo, menos de 600px de ancho) */
+@media (max-width: 600px) {
+  .principal {
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .item img {
+   width: 100%;
+  }
+}
+/* Regla para pantallas más grandes (por ejemplo, más de 1200px de ancho) */
+@media (min-width: 1200px) {
+  .principal {
+   
+  }
+}
+@media (max-width: 600px) {
+  .sliderimagen {
+    width: 100%;
+    margin-left: 20%;
+  }
+}
+@media (max-width: 600px) {
+  .logoAlfaprueba {
+    height: 40px;
+    width: 45px;
+   margin-left: 5px;
+   margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .logoChica {
+    height: 40px;
+    width: 45px;
+   margin-left: 5px;
+   margin-top: 10px;
+  }
+  .chica{
+    margin-left: -50px;
+  }
+  .slider-container{
+   /*background-color: aqua;*/
+  }
+  .slider{
+   /* background-color: blue;*/
+    margin-left: 500px;
+  }
+  .item{
+   /* background-colorrgb(98, 122, 51)en;*/
+    height: auto;
+    width: 40px;
+    
+  }
 }
 /* .logoChica:hover{
   border-radius:50%;

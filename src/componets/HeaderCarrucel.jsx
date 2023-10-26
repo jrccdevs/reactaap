@@ -128,25 +128,26 @@ export default function Productos2() {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
+                    infinite: false,
+                    dots: false
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  initialSlide: 2,
+                  lazyLoad: true,
+                  infinite: true,
+                  autoplay: true,
+                  pauseOnHover: true,
+                  nextArrow: <SampleNextArrow />,
+                  prevArrow: <SamplePrevArrow />,
+                  speed: 500,
                 }
             },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
+           
         ]
     };
 
@@ -158,7 +159,7 @@ export default function Productos2() {
 
 
             <div className="slider-container col-12">
-                <div className="chica col-3">
+                <div className="chica col-3 ">
                 <Link to={"/"}>
                 <img className="logoAlfaprueba" src={LogoAlfa} alt="" />
                 </Link>
@@ -166,12 +167,12 @@ export default function Productos2() {
   
                 </div>
 
-                <div className="sliderimagen col-9">
+                <div className="sliderimagen col-9 ">
                     <Slider {...settings} >
 
                         {result.map((producto) => (
 
-                            <div className="slider col-12" key={producto.id}>
+                            <div className="slider col-12 " key={producto.id}>
 
                                 <div className='item'>
                                     {/* <Link to={`/productos/${producto.id}`}> */}

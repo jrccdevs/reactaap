@@ -142,6 +142,13 @@ section.col-12.col-sm-12.col-lg-12 {
  margin-left: 52%;
  
 }
+
+@media (max-width: 600px) {
+  .comprendido {
+    margin-left: 32%;
+    font-size: 10px;
+  }
+}
 .header{
  /*  border:1px solid #2a739e;
   border-radius: 13%;
@@ -154,4 +161,9 @@ section.col-12.col-sm-12.col-lg-12 {
   word-break: break-all;
 
   
+}
+@media (max-width: 600px) {
+   .logomodal {
+    display: none;
+  }
 }

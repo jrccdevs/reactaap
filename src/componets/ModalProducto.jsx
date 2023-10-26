@@ -33,7 +33,7 @@ consulta médica para el empleo de los mismos.</p>
 <p>El uso de la información contenida en esta sección es de responsabilidad exclusiva del usuario y exime a Laboratorios Alfa
 S.A. de cualquier responsabilidad por el uso indebido de la misma.</p>
 <p>ANTES DE HACER USO DE LOS MEDICAMENTOS CONSULTE A SU MÉDICO.</p>
-<img style={{ width: "70px" , height: "70px", marginLeft:"90%" }}   src={LogoAlfa} alt="logoAlfa" />
+<img className="logomodal" style={{ width: "70px" , height: "70px", marginLeft:"90%" }}   src={LogoAlfa} alt="logoAlfa" />
                     </Modal.Body>
                  <Modal.Footer>
                

@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ProductosAside from './ProductosAside'
 
 function ContentControl() {
+
+    const [currentContent, setCurrentContent] = useState('dashboard');
+
+    
     return (
         <div className="content-wrapper">
-        <ProductosAside />
+         {currentContent === 'contentControl/imagenes' && (
+                  <div>
+                 
+                <ProductosAside></ProductosAside>
+                </div>
+                  )}
         </div>
     );
 }

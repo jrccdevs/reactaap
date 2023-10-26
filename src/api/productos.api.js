@@ -124,8 +124,8 @@ export const crearImagenesRequest = async (imagenes) => {
   for (let key in imagenes) {
     form.append(key, imagenes[key]);
   }
-   //return await axios.post("http://localhost:7000/imagenes", form, {
-    return await axios.post("https://node-alfa.vercel.app/imagenes", form, {
+   return await axios.post("http://localhost:7000/imagenes", form, {
+    //return await axios.post("https://node-alfa.vercel.app/imagenes", form, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -151,9 +151,11 @@ export const actualizarImagenesRequest = async (productos, id) => {
   }
   return await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
   // return await axios.put(`http://localhost:7000/image/${id}`, form, {
+    
     headers: {
-      "Content-Type": "multipart/form-data",
-      
+      "Content-Type": `multipart/form-data: boundary=add-random-characters`,
+      "Accept": "application/json",
+     
     },
   });
 };

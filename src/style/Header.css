@@ -71,6 +71,20 @@
     display: none !important;
     font-size: 10px !important;
   }
+  .carrucel{
+    height: 150px;
+   /* background-color: aqua;*/
+    
+  }
+  .carrucel-principal{
+    /*background-color: yellow;*/
+    
+  }
+  .carrucel-altura{
+    /*background-color: slateblue;
+    padding-top: 10px;*/
+  }
+  
 
   .nav-bar {
     padding: 0px 0px 0px 0px !important;
@@ -179,3 +193,7 @@
 .producto-item:hover {
   background-color: lightgray !important;
 }
+
+
+/*CARRUCEL PRINCIPAL*/
+

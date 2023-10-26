@@ -75,8 +75,8 @@ export default function DetalleProducto() {
 
 
           <div className="image" sm={12} md={12} lg={6} xl={6} style={{ marginLeft: "100px", width: "600px", height: "auto" }}>
-            <div style={{ marginLeft: "-100px", width: "450px", height: "auto" }}>
-              <ReactImageMagnify variant="top" style={{ width: "200px", height: 'auto' }} {...{
+            <div className="imageresponsive" style={{ marginLeft: "-125px", width: "450px", height: "auto" }}>
+              <ReactImageMagnify  variant="top" style={{ width: "200px", height: 'auto' }} {...{
                 smallImage: {
                   alt: 'Wristwatch by Ted Baker London',
                   isFluidWidth: true,

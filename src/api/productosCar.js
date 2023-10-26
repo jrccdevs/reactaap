@@ -14,10 +14,21 @@ await axios.get('https://node-alfa.vercel.app/carrucel');
 //await axios.get('http://localhost:7000/carrucel');
  
 
+export const getImagenesBanner = async () => 
 
 
+await axios.get('https://node-alfa.vercel.app/banner');
+
+export const getImagenesVademecum = async () => 
 
 
+await axios.get('https://node-alfa.vercel.app/vademecum');
+
+
+export const getImagenesNoticias = async () => 
+
+
+await axios.get('https://node-alfa.vercel.app/noticias');
  
 
 //  await axios.get('http://localhost:7000/productos');

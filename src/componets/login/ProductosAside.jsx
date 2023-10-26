@@ -394,7 +394,7 @@ function ContentControl() {
                       <Modal.Title>Editar Imagenes</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <form >
+                      <form encType="multipart/form-data" action=''>
                         <div className="row">
                           
                           <div className="mb-3 col-6">
@@ -426,7 +426,7 @@ function ContentControl() {
 
                         <div className="row">
                           <div className="mb-3 col-6">
-                            <label htmlFor="formFile" className="form-label">Imagen</label>
+                            <label htmlFor="image" className="form-label">Imagen</label>
                             <input type="file" name="image"   onChange={handleInputChangeEditar} />
                           </div>
 
