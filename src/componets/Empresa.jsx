@@ -3,7 +3,7 @@ import CarrucelHeader from './HeaderCarrucel';
 import Busquedaprincipal from './Busquedaprincipal';
 import Footer from './Footer';
 import gradas from "../img/Grada.jpg";
-import construccion from "../img/MisionEmp.jpg";
+import construccion from "../img/MisionVision.jpg";
 import drferrer from "../img/DrFerrer.jpg";
 import { Modal, Container, Row, Col } from "react-bootstrap";
 import ImageMapResizer from 'image-map-resizer';

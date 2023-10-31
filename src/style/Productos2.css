@@ -149,6 +149,12 @@ section.col-12.col-sm-12.col-lg-12 {
     font-size: 10px;
   }
 }
+@media (max-width: 1024px) {
+  .comprendido {
+    margin-left: 32%;
+    font-size: 10px;
+  }
+}
 .header{
  /*  border:1px solid #2a739e;
   border-radius: 13%;
@@ -162,8 +168,18 @@ section.col-12.col-sm-12.col-lg-12 {
 
   
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
    .logomodal {
     display: none;
   }
+}
+
+@media (max-width: 991px) {
+  .secction-productos {
+   margin-right: 100px;
+ }
+ .select-producto{
+   margin-left: -100px;
+   width: auto;
+ }
 }

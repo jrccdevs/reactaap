@@ -92,15 +92,18 @@
   }
 
   .busquer {
-    margin-bottom: auto;
+    margin-bottom: 400px;
   }
 
   /* Nuevo panel control */
   .navbar-brand.panelControl button{
     /* display: none !important; */
     font-size: 10px;
-    padding: auto;
+    margin-right: -110px;
   }
+.panelControl{
+  
+}
 }
 
 .navbar {

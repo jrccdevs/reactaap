@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 //import emailjs from '@emailjs/browser';
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
-import Busqueda from "./Busqueda";
+import Busqueda from "./Busquedaprincipal";
 import Footer from './Footer';
 import axios from "axios";
 import Swal from 'sweetalert2'

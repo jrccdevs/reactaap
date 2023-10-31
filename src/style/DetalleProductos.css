@@ -78,6 +78,7 @@ h6 {
 @media (min-width: 415px) {
   .perimeter {
     flex-direction: row;
+    
   }
   
   .image {
@@ -85,25 +86,37 @@ h6 {
   }
 }
 
-@media (min-width: 800px) {
+ @media (min-width: 800px) {
   .image {
     flex: 0 0 33.5%;
   }
-}
-
-@media (min-width: 800px) {
+} 
+ @media (min-width: 700px) {
   .image {
-    flex: 0 0 33.5%;
+    display: block;
   }
+}
+ 
+
+.imageresponsive{
+   margin-left: -125px;
+    width: 450px;
+     height: "auto" ;
 }
 
-@media (max-width: 600px) {
-  .detalle {
-    font-size: 18px;
-    margin-top: 7px;
-  }
-  .imageresponsive{
-  width: 50px;
-  height: 50px;
-  }
-}
+ @media (max-width: 770px) {
+      .detalle {
+        margin-left: 60px;
+        font-size: 15px;
+        margin-top: 17px;
+        text-align: justify;
+        
+        
+      }
+      .imageresponsive{
+        margin-left: -85px;
+      width: 350px;
+      height: auto;
+       
+      }
+} 

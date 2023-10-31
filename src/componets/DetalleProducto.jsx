@@ -14,7 +14,7 @@ import icono3 from "../img/icono 3.png";
 import icono4 from "../img/icono 4.png";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
-import Busqueda from "./Busqueda";
+import Busqueda from "./Busquedaprincipal";
 import imagen7 from '../assets/img/Imagen7.jpg';
 import ReactImageMagnify from 'react-image-magnify';
 import { useHistory } from "react-router-dom";
@@ -74,14 +74,14 @@ export default function DetalleProducto() {
 
 
 
-          <div className="image" sm={12} md={12} lg={6} xl={6} style={{ marginLeft: "100px", width: "600px", height: "auto" }}>
-            <div className="imageresponsive" style={{ marginLeft: "-125px", width: "450px", height: "auto" }}>
-              <ReactImageMagnify  variant="top" style={{ width: "200px", height: 'auto' }} {...{
+          <div className="image" sm={12} md={12} lg={6} xl={6} style={{ marginLeft: "100px", width: "100%", height: "100%" }}>
+            <div className="imageresponsive" >
+              <ReactImageMagnify className="img-fluid"  variant="top" style={{ width: "200px", height: 'auto' }} {...{
                 smallImage: {
                   alt: 'Wristwatch by Ted Baker London',
                   isFluidWidth: true,
                   src: producto.image,
-                  sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px'
+                  sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 160px'
 
                 },
 
@@ -147,47 +147,8 @@ export default function DetalleProducto() {
 
                 <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
                   <a href={producto.prospecto} type="application/pdf" target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }} zoom={100}> VER MAS (Prospecto)</a>
-                  {/*  <object
-               data={producto.prospecto}
-               type="application/pdf"
-               width= "100%"
-               height="100%"
-               >
-                 PROSPECTO
-               </object>
-  */}
-
                 </div>
 
-                {/*  <div style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
-                  <button onClick={() => { setVisible(true); }} style={{ color: "white", textDecoration: "none",backgroundColor: "#003057" }}>VER MAS (Prospecto) opcion IMAGEN</button>
-                  <Viewer 
-                  options={options} 
-                    visible={visible}
-                    onClose={() => { setVisible(false); }}
-                    images={[{ src:producto.prospecto, alt: '' }]}
-                    rotatable={false}
-                    drag={false}
-                    noNavbar={false}
-                    disableMouseZoom={true}
-                    prev={false}
-                    changeable={true}
-                    noToolbar={false}
-                    
-                  />
-                </div> */}
-                {/*  <div className="boton" style={{ marginTop: "20px", width: "500px", height: "500px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
-                     <object
-               data={producto.prospecto}
-               type="application/pdf"
-               width= "100%"
-               height="100%"
-               >
-                 PROSPECTO
-               </object>
-  
-
-                </div> */}
               </Card.Text>
             </Card.Body>
           </div>

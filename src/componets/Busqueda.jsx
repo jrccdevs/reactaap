@@ -12,7 +12,7 @@ import labalfa from "../img/labalfa.png";
 import Logochica from "../img/imgLogochica.png";
 import "../style/prueba.css";
 
-import "../style/Header.css";
+//import "../style/Header.css";
 
 function useKey(key, cb) {
   const callbackRef = useRef(cb);

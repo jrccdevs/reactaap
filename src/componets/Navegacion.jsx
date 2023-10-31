@@ -9,6 +9,11 @@ import { getImagenesNoticias } from "../api/productosCar";
 import ReactPlayer from 'react-player'
 import "../style/Navegacion.css";
 
+
+const iframeStyle = {
+  backgroundColor: 'red', // Cambia el fondo a transparente
+};
+
 export default function Navegacion() {
 
   const [productos, setProductos] = useState([]);
@@ -96,12 +101,24 @@ export default function Navegacion() {
         <section className="col-12 col-sm-12 col-lg-6">
         {result.map((producto) => (
           <div className="row">
-            <div className="col-lg-12 mt-4 abajo">
-              <div className="container2">
+            <div className="container-fluit col-lg-12 mt-4 abajo">
+              <div className="container2" >
                 
-              
-                <ReactPlayer url={producto.image} controls loop width="510px" height="360px"/>
-              </div>
+               {/*  <video width="600" height="400" autoplay>
+                   <source src={producto.image} type="video/mp4">
+                </video> */}
+
+                <ReactPlayer url={producto.image} controls={true} loop={true} playing={true}   width="510"  height="550"></ReactPlayer>
+                 {/*    <iframe
+                       src={producto.image} 
+                       title="Contenido multimedia"
+                       allowFullScreen
+                       allow="autoplay"
+                       width="100%"
+                       height="100%"
+                       style={{ border: 'none', margin: '0', padding: '0' }}
+                 ></iframe>  */}
+             </div>
             </div>
           </div>
            ))}

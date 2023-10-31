@@ -89,8 +89,8 @@ export const actualizarProductosRequest = async (productos, id) => {
   for (let key in productos) {
     form.append(key, productos[key]);
   }
-  return await axios.put(`https://node-alfa.vercel.app/productos/${id}`, form, {
-  // return await axios.put(`http://localhost:7000/productos/${id}`, form, {
+  //return await axios.put(`https://node-alfa.vercel.app/productos/${id}`, form, {
+   return await axios.put(`http://localhost:7000/productos/${id}`, form, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
@@ -125,7 +125,7 @@ export const crearImagenesRequest = async (imagenes) => {
     form.append(key, imagenes[key]);
   }
    return await axios.post("http://localhost:7000/imagenes", form, {
-    //return await axios.post("https://node-alfa.vercel.app/imagenes", form, {
+  //return await axios.post("https://node-alfa.vercel.app/imagenes", form, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -134,8 +134,8 @@ export const crearImagenesRequest = async (imagenes) => {
 
 export const getImagenesIdRequest = async (id) => {
   try {
-     //const response = await axios.get(`http://localhost:7000/imagenes/${id}`);
-    const response = await axios.get(`https://node-alfa.vercel.app/imagenes/${id}`);
+     const response = await axios.get(`http://localhost:7000/imagenes/${id}`);
+    //const response = await axios.get(`https://node-alfa.vercel.app/imagenes/${id}`);
     return response.data;
   } catch (error) {
     console.error("Error al obtener los detalles del las imagenes:", error);
@@ -149,12 +149,12 @@ export const actualizarImagenesRequest = async (productos, id) => {
   for (let key in productos) {
     form.append(key, productos[key]);
   }
-  return await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
-  // return await axios.put(`http://localhost:7000/image/${id}`, form, {
+  //return await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
+   return await axios.put(`http://localhost:7000/imagenes/${id}`, form, {
     
     headers: {
-      "Content-Type": `multipart/form-data: boundary=add-random-characters`,
-      "Accept": "application/json",
+      "Content-Type": `multipart/form-data`,
+     
      
     },
   });

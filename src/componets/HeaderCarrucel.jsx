@@ -124,12 +124,17 @@ export default function Productos2() {
         prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 890,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: false,
-                    dots: false
+                    lazyLoad: true,
+                  infinite: true,
+                  autoplay: true,
+                  pauseOnHover: true,
+                  nextArrow: <SampleNextArrow />,
+                  prevArrow: <SamplePrevArrow />,
+                  speed: 500,
                 }
             },
             {
