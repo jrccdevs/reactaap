@@ -14,7 +14,7 @@ import icono3 from "../img/icono 3.png";
 import icono4 from "../img/icono 4.png";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
-import Busqueda from "./Busquedaprincipal";
+import Busqueda from "./Busqueda";
 import imagen7 from '../assets/img/Imagen7.jpg';
 import ReactImageMagnify from 'react-image-magnify';
 import { useHistory } from "react-router-dom";

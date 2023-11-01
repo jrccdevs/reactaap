@@ -64,8 +64,8 @@ export const crearProductosRequest = async (productos) => {
   for (let key in productos) {
     form.append(key, productos[key]);
   }
-  // return await axios.post("http://localhost:7000/productos", form, {
-  return await axios.post("https://node-alfa.vercel.app/productos", form, {
+   return await axios.post("http://localhost:7000/productos", form, {
+  //return await axios.post("https://node-alfa.vercel.app/productos", form, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
@@ -74,8 +74,8 @@ export const crearProductosRequest = async (productos) => {
 
 export const getProductosIdRequest = async (id) => {
   try {
-    // const response = await axios.get(`http://localhost:7000/productos/${id}`);
-    const response = await axios.get(`https://node-alfa.vercel.app/productos/${id}`);
+     const response = await axios.get(`http://localhost:7000/productos/${id}`);
+    //const response = await axios.get(`https://node-alfa.vercel.app/productos/${id}`);
     return response.data;
   } catch (error) {
     console.error("Error al obtener los detalles del producto:", error);
@@ -150,7 +150,7 @@ export const actualizarImagenesRequest = async (productos, id) => {
     form.append(key, productos[key]);
   }
   //return await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
-   return await axios.put(`http://localhost:7000/imagenes/${id}`, form, {
+  return await axios.put(`http://localhost:7000/imagenes/${id}`, form, {
     
     headers: {
       "Content-Type": `multipart/form-data`,

@@ -30,7 +30,7 @@ function ContentControl() {
   useEffect(() => {
     const loadProductos = async () => {
        const response = await fetch(`http://localhost:7000/imagenes/`);
-    //  const response = await fetch(`https://node-alfa.vercel.app/formaImage/`);
+    //const response = await fetch(`https://node-alfa.vercel.app/formaImage/`);
       const data = response.json();
       setProductos(await data);
     }

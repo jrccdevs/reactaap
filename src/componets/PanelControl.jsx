@@ -49,8 +49,8 @@ function PanelControl() {
 
   useEffect(() => {
     const loadProductos = async () => {
-      // const response = await fetch(`http://localhost:7000/formaFarmaceutica/`);
-      const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/`);
+       const response = await fetch(`http://localhost:7000/formaFarmaceutica/`);
+      //const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/`);
       const data = response.json();
       setProductos(await data);
     }
@@ -90,8 +90,8 @@ function PanelControl() {
 
 
   const loadProductos = async () => {
-    // const response = await fetch(`http://localhost:7000/formaFarmaceutica/`);
-    const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/`);
+     const response = await fetch(`http://localhost:7000/formaFarmaceutica/`);
+    //const response = await fetch(`https://node-alfa.vercel.app/formaFarmaceutica/`);
     const data = response.json();
     setProductos(await data);
   }
