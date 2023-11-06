@@ -2,11 +2,15 @@ import React from "react";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { MdMarkEmailRead } from "react-icons/md";
 import { FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import {Container, Grid} from "@mui/material"
 import "../style/Footer.css";
 
 export default function Footer() {
   return (
     <>
+    <Container sx={{paddingLeft: "0px", paddingRight: "0px", width: "100vw"}} maxWidth={false} disableGutters={true}>
+    <Grid container>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
       <div className="footer">
         <div className="container mt-4">
           <div className="row">
@@ -42,6 +46,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      </Grid>
+      </Grid>
+      </Container>
     </>
   );
 }

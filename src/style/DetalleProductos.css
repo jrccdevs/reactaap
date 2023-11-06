@@ -75,7 +75,7 @@ h6 {
   margin-left: -30px;
 }
 
-@media (min-width: 415px) {
+/* @media (min-width: 415px) {
   .perimeter {
     flex-direction: row;
     
@@ -96,15 +96,15 @@ h6 {
     display: block;
   }
 }
- 
+  */
 
 .imageresponsive{
-   margin-left: -125px;
+  text-align: "center";
     width: 450px;
      height: "auto" ;
 }
 
- @media (max-width: 770px) {
+/*  @media (max-width: 770px) {
       .detalle {
         margin-left: 60px;
         font-size: 15px;
@@ -119,4 +119,4 @@ h6 {
       height: auto;
        
       }
-} 
+}  */

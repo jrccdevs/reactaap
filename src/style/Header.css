@@ -197,6 +197,11 @@
   background-color: lightgray !important;
 }
 
-
 /*CARRUCEL PRINCIPAL*/
-
+.carrucel{
+  width: 100%;
+  height: auto;
+  margin-left: 0px;
+  background-color: aqua;
+  margin-top: 5px;
+}

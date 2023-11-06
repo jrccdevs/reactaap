@@ -1,64 +1,64 @@
 .item{
-    height: auto;
-    width: 90px;
-    
-  margin-top: 10px;
+  height: auto;
+  width: 90px;
+  
+margin-top: 10px;
 }
 .item img{
-    height: 100%;
-    width: 100%;
-   /* background-color: slateblue;*/
-    padding:-110px;
+  height: 100%;
+  width: 100%;
+ /* background-color: slateblue;*/
+  padding:-110px;
 }
 .slider{
-   width: 80%;
-    margin-right: -60px;
-    /*background-color: aqua;*/
-    margin-left: -20px;
-  
+ width: 80%;
+  margin-right: -60px;
+  /*background-color: aqua;*/
+  margin-left: -20px;
+
 }
 .slider-container{
-  /** margin-left: 27%;*/
-    
-   margin-bottom: 0px;
-  display: flex;
-  background-color: white;
-   
+/** margin-left: 27%;*/
+  
+ margin-bottom: 0px;
+display: flex;
+background-color: white;
+ 
 }
 .principal{
-    
-    background-color: white;
-    display: flex;
+  
+  background-color: white;
+  display: flex;
 }
 .chica{
-    display: flex;
-  /* background-color: aqua;*/
+  display: flex;
+/* background-color: aqua;*/
 }
 .sliderimagen{
-   
-    margin-left: 1%;
-    margin-right: 1%;
-  /*  background-color: yellowgreen;*/
+ 
+  margin-left: 1%;
+  margin-right: 1%;
+/*  background-color: yellowgreen;*/
 }
- .logoChica{
-   display: flex;
-    height: 90px;
-    width: 95px;
-   margin-left: 5px;
+.logoChica{
+ display: flex;
+  height: 90px;
+  width: 95px;
+ margin-left: 5px;
 }
 .logoAlfaprueba{
-  display: flex;
-    height: auto;
-    width: 95px;
+display: flex;
+  height: auto;
+  width: 95px;
 }
 /* barra de busqueda responsive*/
 
 @media (max-width: 991px) {
-  .form-select {
-   
-    
-    
-  }
+.form-select {
+ 
+  
+  
+}
 }
 
 
@@ -70,108 +70,108 @@
 /*media query para celular*/
 /* Regla para pantallas más pequeñas (por ejemplo, menos de 600px de ancho) */
 @media (max-width: 890px) {
-  .principal {
-    height: auto;
-  }
+.principal {
+  height: auto;
+}
 }
 
 
 @media (max-width: 890px) {
-  .item img {
-   width: 100%;
-  }
+.item img {
+ width: 100%;
+}
 }
 /* Regla para pantallas más grandes (por ejemplo, más de 1200px de ancho) */
 @media (min-width: 1200px) {
-  .principal {
-   
-  }
+.principal {
+ 
+}
 }
 @media (max-width: 890px) {
-  .sliderimagen {
-    width: 100%;
-    margin-left: -5%;
-  }
+.sliderimagen {
+  width: 100%;
+  margin-left: -5%;
+}
 }
 
 
 @media (max-width: 600px) {
-  .sliderimagen {
-    width: 100%;
-    margin-left: 10%;
-  }
+.sliderimagen {
+  width: 100%;
+  margin-left: 10%;
+}
 }
 
 @media (max-width: 380px) {
+.sliderimagen {
+  width: 100%;
+  margin-left: 20%;
+}
+}
+
+
+@media (max-width: 890px) {
+.logoAlfaprueba {
+  height: 40px;
+  width: 45px;
+ margin-left: 5px;
+ margin-top: 10px;
+}
+}
+@media (max-width: 890px) {
+.logoChica {
+  height: 40px;
+  width: 45px;
+ margin-left: 5px;
+ margin-top: 10px;
+}
+
+/* @media (min-width: 890px) {
   .sliderimagen {
     width: 100%;
-    margin-left: 20%;
+    margin-left: 40%;
   }
-}
-
-
-@media (max-width: 890px) {
-  .logoAlfaprueba {
-    height: 40px;
-    width: 45px;
-   margin-left: 5px;
-   margin-top: 10px;
-  }
-}
-@media (max-width: 890px) {
   .logoChica {
     height: 40px;
     width: 45px;
    margin-left: 5px;
    margin-top: 10px;
   }
-
-  /* @media (min-width: 890px) {
-    .sliderimagen {
-      width: 100%;
-      margin-left: 40%;
-    }
-    .logoChica {
-      height: 40px;
-      width: 45px;
-     margin-left: 5px;
-     margin-top: 10px;
-    }
-    .logoAlfaprueba {
-      height: 40px;
-      width: 45px;
-     margin-left: 5px;
-     margin-top: 10px;
-    }
-  } */
-  .chica{
-    margin-left: -50px;
+  .logoAlfaprueba {
+    height: 40px;
+    width: 45px;
+   margin-left: 5px;
+   margin-top: 10px;
   }
-  .slider-container{
-   /*background-color: aqua;*/
-  }
-  .slider{
-   /* background-color: blue;*/
-    margin-left: 500px;
-  }
-  .item{
-   /* background-colorrgb(98, 122, 51)en;*/
-    height: auto;
-    width: 40px;
-    
-  }
+} */
+.chica{
+  margin-left: -50px;
+}
+.slider-container{
+ /*background-color: aqua;*/
+}
+.slider{
+ /* background-color: blue;*/
+  margin-left: 500px;
+}
+.item{
+ /* background-colorrgb(98, 122, 51)en;*/
+  height: auto;
+  width: 40px;
+  
+}
 }
 /* .logoChica:hover{
-  border-radius:50%;
-  -webkit-border-radius:50%;
-  box-shadow: 0px 0px 15px 15px rgb(120, 129, 136);
-  -webkit-box-shadow: 0px 0px 15px 15px rgb(17, 120, 189);
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  } */
-  /* .logoAlfaprueba:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;
-  } */
+border-radius:50%;
+-webkit-border-radius:50%;
+box-shadow: 0px 0px 15px 15px rgb(120, 129, 136);
+-webkit-box-shadow: 0px 0px 15px 15px rgb(17, 120, 189);
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+} */
+/* .logoAlfaprueba:hover {
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+} */

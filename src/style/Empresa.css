@@ -254,4 +254,38 @@
     position: relative;
     top: 4px;
   }
+
+
+  /* query para pantallas moviles*/
+ 
+
+  @media (max-width: 768px) {
+    .color-fecha {
+      
+      width: auto; /* Haz que el div ocupe el ancho completo en dispositivos móviles */
+      padding-left: none !important;
+      /*background-color: #d66e6e !important;*/
+      justify-content: center !important;
+      
+    }
+  }
+.color-fecha{
+  display: flex;
+  /*background-color: yellow;*/
+  height: 20px;
+  width: auto;
+  justify-items: baseline;
+  text-align: center;
   
+}
+
+
+  .imagen-grid{
+    width: 30%;
+    height: auto;
+    justify-content: center;
+    margin-left: 50px;
+  }
+  .fondo-img{
+    
+  }

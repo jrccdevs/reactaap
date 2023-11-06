@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { getImagenesBanner } from "../api/productosCar";
-import BannerAnvena from "../img/Avena.png";
-import BannerCetrimida from "../img/Cetrimida.png";
-import BannerDermiurea from "../img/Dermiurea.png";
-import BannerDermosul from "../img/Dermosul.png";
-import BannerDesulpir from "../img/Desulpir.png";
-import BannerTrietal from "../img/Trietal.png";
+import {Container, Grid} from "@mui/material"
 
 import "../style/Header.css";
+
 
 export default function ControlCarousel() {
 
@@ -56,17 +52,23 @@ export default function ControlCarousel() {
 
 
   return (
-    
-    <Carousel fade indicators={false} className="carrucel-principal"  activeIndex={index} onSelect={handleSelect}>
+
+    <Container >
+      <Grid container>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
+        <Carousel fade indicators={false}   activeIndex={index} onSelect={handleSelect}>
      {result.map((producto) => (
-      <Carousel.Item className="carrucel-altura">
-        <img className="carrucel d-block w-100"  src={producto.image} alt="Banner Limpieza" />
+      <Carousel.Item >
+        <img className="carrucel "  src={producto.image} alt="Banner Limpieza" />
        
       </Carousel.Item>
-
-    
   ))}
     </Carousel>
+     </Grid>
+    </Grid>
+
+    </Container>
+   );
+  }
    
-  );
-}
+    

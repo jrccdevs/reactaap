@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
-//import { AiOutlineFunnelPlot } from "react-icons/ai";
-//import { GiMedicalThermometer } from "react-icons/gi";
-//import { FaTable } from "react-icons/fa";
+import { Container, Grid } from "@mui/material"
 import Footer from "./Footer";
 //import { RViewer, RViewerTrigger } from "react-viewerjs"
 import Viewer from 'react-viewer'
 import Card from 'react-bootstrap/Card';
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import icono1 from "../img/icono 1.png";
 import icono2 from "../img/icono 2.png";
 import icono3 from "../img/icono 3.png";
@@ -31,7 +29,7 @@ export default function DetalleProducto() {
   const [visible, setVisible] = React.useState(false);
   //   console.log(useParams());
 
-  const { id, page } = useParams(); 
+  const { id, page } = useParams();
   console.log(page);
 
 
@@ -61,8 +59,10 @@ export default function DetalleProducto() {
 
   }
   return (
-    <>
-      {producto.map((producto, index) => (
+<>
+  <Container maxWidth={"xl"}>
+    <Grid container>
+      <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
         <div className="perimeter" style={{ overflow: "hidden", margin: "190px auto 0px" }}>
 
           <ModalProducto />
@@ -71,12 +71,17 @@ export default function DetalleProducto() {
             <CarrucelHeader />
             <Busqueda />
           </div>
+        </div>
+      </Grid>
+    </Grid>
+  </Container>
 
-
-
-          <div className="image" sm={12} md={12} lg={6} xl={6} style={{ marginLeft: "100px", width: "100%", height: "100%" }}>
-            <div className="imageresponsive" >
-              <ReactImageMagnify className="img-fluid"  variant="top" style={{ width: "200px", height: 'auto' }} {...{
+<Container maxWidth={"xl"}>
+{producto.map((producto, index) => (
+<Grid container>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"50px",textAlign: "center", height:"auto", width:"auto"}}>
+            <div className="imageresponsive" style={{textAlign: "center"}}>
+              <ReactImageMagnify className="img-fluid" variant="top" style={{textAlign: "center", width: "200px", height: 'auto' }} {...{
                 smallImage: {
                   alt: 'Wristwatch by Ted Baker London',
                   isFluidWidth: true,
@@ -97,10 +102,12 @@ export default function DetalleProducto() {
                 },
                 isHintEnabled: true
               }} />
-            </div>
-          </div>
-          <div className="copy" >
-            <Card.Body >
+              </div>
+         
+  </Grid>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{textAlign: "center", marginTop:"20px"}}>
+         <div className="copy"  >
+            <Card.Body style={{textAlign: "center"}}>
               <div className="tituloDetalleProducto">{producto.nombreproducto}</div>
               <Card.Text >
                 {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
@@ -113,8 +120,8 @@ export default function DetalleProducto() {
 
                 <h6 className="detalle" style={{ width: "auto", color: "red" }}>   <img style={{ width: "30px", height: "30px" }} src={icono1} alt="" />{" "}
                   Principio Activo:
-                  <text style={{ display: "flex", width: "auto", height: "auto", marginTop: "-29px", color: "rgb(248, 149, 149)", paddingTop: "2px", textAlign: "left", marginLeft: "172px" }}>
-                     {producto.principioactivo}
+                  <text style={{ display: "block", width: "auto", height: "auto", marginTop: "-29px", color: "rgb(248, 149, 149)", paddingTop: "2px", textAlign: "left", marginLeft: "172px" }}>
+                    {producto.principioactivo}
                   </text>
                 </h6>
 
@@ -152,10 +159,15 @@ export default function DetalleProducto() {
               </Card.Text>
             </Card.Body>
           </div>
-        </div>
-      ))}
+         
 
-      <Footer />
-    </>
-  );
+      
+      </Grid>
+      
+    </Grid>
+ ))}
+</Container>
+<Footer />
+</>
+ );
 }
