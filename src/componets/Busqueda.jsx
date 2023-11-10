@@ -135,7 +135,7 @@ export default function Busqueda() {
                   </Nav> */}
 
                 <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2">
-                  <select className="form-select" style={{ width: "225px"}} aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
+                  <select className="form-select" style={{ width: "225px", marginLeft:"-50px"}} aria-label="Default select example" onChange={(e) => handleFormaFarmace(e)}>
                     <option className="mostrar-pro"  value={''}disabled selected hidden>FORMA FARMACEUTICA</option>
                     <option value="CAPSULAS">CÁPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>

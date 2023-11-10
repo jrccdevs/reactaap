@@ -19,7 +19,7 @@ class BusquedaProducto extends React.Component {
           <Container className="secction-productos">
             <div className=" container-fluid col-12"  style={{ marginLeft: "100px"}}>
               <section className=" col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
-                <select className="select-producto form-select" onChange={(e) => handleFormaFarmace(e)}>
+                <select className="select-producto form-select" style={{width:"225px", marginLeft:"-10px"}} onChange={(e) => handleFormaFarmace(e)}>
                 <option disabled selected hidden>FORMA FARMACEUTICA</option>
                   <option value={''}>MOSTRAR TODOS </option>
                   <option value="CAPSULAS">CÁPSULAS</option>

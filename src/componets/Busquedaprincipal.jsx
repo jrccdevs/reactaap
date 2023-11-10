@@ -123,25 +123,21 @@ export default function BusquedaPrincipal() {
           
           <Container fluid>
          
-            <Navbar.Brand className="tituloLafar ml-4" href="#" >
-              {/* <img style={{ width: "85px" , height: "85px", marginLeft:"15px" }} src={Logochica}alt="" />
-      */}         </Navbar.Brand>
+           
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
             >
-              <Offcanvas.Header closeButton>
-              <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
-              </Offcanvas.Header>
+              
               <Offcanvas.Body className="row justify-content-center ">
                 {/* <Nav className="justify-content flex-grow-1 pe-3">
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
 
                 <section className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 me-2" >
-                  <select className="form-select" aria-label="Default select example"  onChange={(e) => handleFormaFarmace(e)}>
+                  <select className="form-select" style={{width:"225px", marginLeft:"-20px"}} aria-label="Default select example"  onChange={(e) => handleFormaFarmace(e)}>
                     <option className="mostrar-pro"  value={''} disabled selected hidden>FORMA FARMACEUTICA</option>
                     <option value="CAPSULAS">CÁPSULAS</option>
                     <option value="COMPRIMIDOS">COMPRIMIDOS</option>
@@ -162,7 +158,7 @@ export default function BusquedaPrincipal() {
                 </section>
 
                 <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6" >
-                  <Form className="d-flex"  >
+                  <Form className="tamanio-buscador d-flex"  style={{ marginRight:"-50px"}} >
                     
                     <Form.Control
                       onChange={(e) => buscarProductos(e.target.value)}

@@ -9,6 +9,7 @@ import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
 import ModalProducto from "./ModalProducto";
 import { useLocation } from 'react-router-dom';
+import ChicaAlfa from "../img/ChicaALFA.JPG";
 
 function useKey(key, cb) {
     const callbackRef = useRef(cb);
@@ -189,11 +190,29 @@ export default function Productos2() {
     return (
         <>
             <ModalProducto />
-            <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-                {/*  <Header /> */}
-                <CarrucelHeader />
-                <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
+            <div className="container-fluid" style={{backgroundColor:"white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+          <div className="row">
+
+            <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
+            <Link to={"/"}>
+                <img className="logoAlfaprueba" style={{width:"300px", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
+                </Link>
             </div>
+
+            <div className="col-md-9" style={{marginRight: "0px"}}>
+
+              <div style={{ backgroundColor: "lightgreen" }}>
+              <CarrucelHeader />
+              </div>
+
+
+              <div style={{ backgroundColor: "lightgreen" }}>
+              <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
+              </div>
+            </div>
+          </div>
+        </div>
+
             <Container className="content" style={{ overflow: "hidden", margin: "190px auto 0px" }}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">

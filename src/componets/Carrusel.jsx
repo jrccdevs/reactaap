@@ -53,9 +53,7 @@ export default function ControlCarousel() {
 
   return (
 
-    <Container >
-      <Grid container>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
+   
         <Carousel fade indicators={false}   activeIndex={index} onSelect={handleSelect}>
      {result.map((producto) => (
       <Carousel.Item >
@@ -64,10 +62,7 @@ export default function ControlCarousel() {
       </Carousel.Item>
   ))}
     </Carousel>
-     </Grid>
-    </Grid>
 
-    </Container>
    );
   }
    

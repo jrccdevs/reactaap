@@ -17,7 +17,7 @@ function ModalProducto() {
 
     return (
         <div>
-            <Modal show={showModal} onHide={() => setShowModal(false)} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
+            <Modal className="modal-tamaño" show={showModal} onHide={() => setShowModal(false)} aria-labelledby="contained-modal-title-vcenter" centered size="lg">
                 <Modal.Header className="text-center" closeButton>
                     <Modal.Title className="modal-title">Laboratorio Alfa S.A.</Modal.Title>
                     <h6 className="comprendido">COMPRENDIDO</h6>

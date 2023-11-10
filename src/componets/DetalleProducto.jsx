@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
 import { Container, Grid } from "@mui/material"
 import Footer from "./Footer";
+
+import ChicaAlfa from "../img/ChicaALFA.JPG";
 //import { RViewer, RViewerTrigger } from "react-viewerjs"
 import Viewer from 'react-viewer'
 import Card from 'react-bootstrap/Card';
@@ -60,23 +62,33 @@ export default function DetalleProducto() {
   }
   return (
 <>
-  <Container maxWidth={"xl"}>
-    <Grid container>
-      <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-        <div className="perimeter" style={{ overflow: "hidden", margin: "190px auto 0px" }}>
 
+<div className="container-fluid" style={{backgroundColor:"white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+          <div className="row">
           <ModalProducto />
-          <div style={{ position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-            {/*  <Header /> */}
-            <CarrucelHeader />
-            <Busqueda />
+            <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
+            <Link to={"/"}>
+                <img className="logoAlfaprueba" style={{width:"300px", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
+                </Link>
+            </div>
+
+            <div className="col-md-9" style={{marginRight: "0px"}}>
+
+              <div style={{ backgroundColor: "white" }}>
+              <CarrucelHeader />
+              </div>
+
+
+              <div style={{ backgroundColor: "white" }}>
+              <Busqueda />
+              </div>
+            </div>
           </div>
         </div>
-      </Grid>
-    </Grid>
-  </Container>
 
-<Container maxWidth={"xl"}>
+ 
+
+<Container maxWidth={"xl"} style={{marginTop:"200px"}}>
 {producto.map((producto, index) => (
 <Grid container>
   <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"50px",textAlign: "center", height:"auto", width:"auto"}}>
