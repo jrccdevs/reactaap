@@ -61,39 +61,38 @@ export default function DetalleProducto() {
 
   }
   return (
-<>
+    <>
 
-<div className="container-fluid" style={{backgroundColor:"white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-          <div className="row">
+      <div className="container-fluid" style={{ backgroundColor: "white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+        <div className="row">
           <ModalProducto />
-            <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
+          <div className="col-md-3" style={{ backgroundColor: "white", height: "auto" }}>
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"300px", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
-                </Link>
+              <img className="logoAlfaprueba" style={{ width: "300px", paddingTop: "18px" }} src={ChicaAlfa} alt="" />
+            </Link>
+          </div>
+
+          <div className="col-md-9" style={{ marginRight: "0px" }}>
+
+            <div style={{ backgroundColor: "white" }}>
+              <CarrucelHeader />
             </div>
 
-            <div className="col-md-9" style={{marginRight: "0px"}}>
 
-              <div style={{ backgroundColor: "white" }}>
-              <CarrucelHeader />
-              </div>
-
-
-              <div style={{ backgroundColor: "white" }}>
+            <div style={{ backgroundColor: "white" }}>
               <Busqueda />
-              </div>
             </div>
           </div>
         </div>
-
- 
-
+      </div>
+     
 <Container maxWidth={"xl"} style={{marginTop:"200px"}}>
 {producto.map((producto, index) => (
 <Grid container>
-  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"50px",textAlign: "center", height:"auto", width:"auto"}}>
-            <div className="imageresponsive" style={{textAlign: "center"}}>
-              <ReactImageMagnify className="img-fluid" variant="top" style={{textAlign: "center", width: "200px", height: 'auto' }} {...{
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"10px",textAlign: "center", height:"auto", width:"auto"}}>
+            <div className="imageresponsiv" style={{textAlign: "center"}}>
+                
+              <ReactImageMagnify className="imgfluid" variant="top" style={{textAlign: "center", width: "200px", height: 'auto' }} {...{
                 smallImage: {
                   alt: 'Wristwatch by Ted Baker London',
                   isFluidWidth: true,
@@ -104,8 +103,8 @@ export default function DetalleProducto() {
 
                 largeImage: {
                   src: producto.image,
-                  width: 1000,
-                  height: 1000,
+                  width: 1500,
+                  height: 1500,
 
                 },
                 lensStyle: {
@@ -114,10 +113,11 @@ export default function DetalleProducto() {
                 },
                 isHintEnabled: true
               }} />
+              
               </div>
          
   </Grid>
-  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{textAlign: "center", marginTop:"20px"}}>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{  marginTop:"20px"}}>
          <div className="copy"  >
             <Card.Body style={{textAlign: "center"}}>
               <div className="tituloDetalleProducto">{producto.nombreproducto}</div>
@@ -164,7 +164,7 @@ export default function DetalleProducto() {
                   </text>
                 </h6>
 
-                <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
+                <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "0px", backgroundColor: "#003057", textAlign: "center" }}>
                   <a href={producto.prospecto} type="application/pdf" target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }} zoom={100}> VER MAS (Prospecto)</a>
                 </div>
 
@@ -179,7 +179,10 @@ export default function DetalleProducto() {
     </Grid>
  ))}
 </Container>
-<Footer />
-</>
- );
+
+
+
+      <Footer />
+    </>
+  );
 }

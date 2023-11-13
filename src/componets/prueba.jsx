@@ -13,229 +13,34 @@ import "../style/prueba.css";
 
 
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "rgb(17, 120, 189)", borderRadius:"50%" }}
-        onClick={onClick}
-      />
-    );
-  }
-  
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "rgb(17, 120, 189)", borderRadius:"50%", paddingRight:"1%"}}
-        onClick={onClick}
-      />
-    );
-  }
-
-
 
 export default function Productos2() {
 
 
-
-    const [formafarmaceutica, setformafarmaceuticaid] = useState('');
-    const [producto, setProductos] = useState([]);
-    const [busqueda, setBusqueda] = useState("");
-
-    //Parametro de selectValue
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const selectedValue = searchParams.get('selectedValue');
-    // console.log(selectedValue);
-
-    //Busqueda por el boton 
-    const searchText = searchParams.get('searchProcut');
-    // console.log(searchText);
-
-
-    // Paginacion
-    const [currentPage] = useState(1);
-    const [itemsPerPage] = useState(25);
-
-
-
-
-    const navigate = useNavigate();
-
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            
-           
-           
-            let endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${formafarmaceutica}`;
-            if (selectedValue) {
-               
-               
-                 endpoint = `https://node-alfa.vercel.app/formaFarmaceutica/${selectedValue}`;
-            }
-            const response = await fetch(endpoint);
-            const data = await response.json();
-            setProductos(data);
-        };
-        fetchData();
-    }, [selectedValue, formafarmaceutica, searchText]);
-
-
-
-
-    let result = [];
-
-
-    // const buscar = (e) => {
-    //     if (!busqueda) {
-    //         result = producto;
-    //     } else {
-    //         result = producto.filter((dato) =>
-    //             dato.nombreproducto
-    //                 .toLowerCase()
-    //                 .includes(busqueda.toLocaleLowerCase())
-    //         );
-    //     }
-    // };
-
-    const buscar = () => {
-        if (!busqueda && busqueda.length > 0) {
-            result = producto;
-        } else {
-            result = producto.filter((dato) =>
-                dato.nombreproducto
-                    .toLowerCase()
-                    .includes(busqueda.toLowerCase())
-            );
-        }
-
-        if (searchText) {
-            result = result.filter((dato) =>
-                dato.nombreproducto.toLowerCase().includes(searchText.toLowerCase())
-            );
-        }
-    };
-
-
-    // let searchTextTemp = searchText;
-
-    // const buscar = () => {
-    //     if (!busqueda && busqueda.length >= 0) {
-    //         navigate(`/productos`);
-    //         result = producto;
-    //         searchTextTemp = null;
-    //     } else {
-    //         result = producto.filter((dato) =>
-    //             dato.nombreproducto
-    //                 .toLowerCase()
-    //                 .includes(busqueda.toLowerCase())
-    //         );
-    //     }
-
-    //     if (searchTextTemp) {
-    //         result = result.filter((dato) =>
-    //             dato.nombreproducto.toLowerCase().includes(searchTextTemp.toLowerCase())
-    //         );
-    //     }
-    // };
-
-    buscar();
-
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = result.slice(indexOfFirstItem, indexOfLastItem);
-
-    const settings = {
-       /*  dots: true, */
-        lazyLoad: true,
-        initialSlide: 2,
-      
-        infinite: true,
-        color: 'black',
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        speed: 500,
-        autoplay: true,
-        pauseOnHover: true,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
-
-
     return (
 
-        <div className="principal col-12">
+        <div class="container">
+  <h1 class="text-center mt-5">Dos Elementos div Responsivos</h1>
 
+  <div class="row mt-4">
 
+    <div class="col-md-6">
 
-            <div className="slider-container col-12">
-                <div className="chica col-3">
-                <img className="logoAlfaprueba" onClick={() => navigate("/")} src={LogoAlfa} alt="logoAlfa" />
-                <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
-   
-                </div>
+      <div class="bg-primary p-3">
+        <p class="text-white">Elemento 1</p>
+      </div>
+    </div>
 
-                <div className="sliderimagen col-9">
-                    <Slider {...settings} key={producto.id}>
-
-                        {currentItems.map((producto) => (
-
-                            <div className="slider col-12" key={producto.id}>
-
-                                <div className='item'>
-                                    <Link to={`/productos/${producto.id}`}>
-                                        <img
-
-                                            src={producto.image}
-                                            alt=""
-                                        />
-                                    </Link>
-                                </div>
-
-
-                            </div>
-
-                        ))}
-
-                    </Slider>
-                </div>
-            </div>
-        </div>
-
+    <div class="col-md-6 mt-3 mt-md-0">
+     
+      <div class="bg-secondary p-3">
+        <p class="text-white">Elemento 2</p>
+      </div>
+    </div>
+  </div>
+</div>
     );
 }
-
 /* {currentItems.map((producto) => (
     <div className="App">
         <Slider
@@ -249,3 +54,100 @@ export default function Productos2() {
         </Slider>
     </div>
 ))} */
+
+
+<Container maxWidth={"xl"} style={{marginTop:"200px"}}>
+{producto.map((producto, index) => (
+<Grid container>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"50px",textAlign: "center", height:"auto", width:"auto"}}>
+            <div className="imageresponsive" style={{textAlign: "center"}}>
+                ...
+              <ReactImageMagnify className="img-fluid" variant="top" style={{textAlign: "center", width: "200px", height: 'auto' }} {...{
+                smallImage: {
+                  alt: 'Wristwatch by Ted Baker London',
+                  isFluidWidth: true,
+                  src: producto.image,
+                  sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 160px'
+
+                },
+
+                largeImage: {
+                  src: producto.image,
+                  width: 1000,
+                  height: 1000,
+
+                },
+                lensStyle: {
+                  backgroundColor: 'hsla(0, 0%, 100%, .3)',
+                  marginRight: '30px'
+                },
+                isHintEnabled: true
+              }} />
+              ...
+              </div>
+         
+  </Grid>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{textAlign: "center", marginTop:"20px"}}>
+         <div className="copy"  >
+            <Card.Body style={{textAlign: "center"}}>
+              <div className="tituloDetalleProducto">{producto.nombreproducto}</div>
+              <Card.Text >
+                {/*  <h6 className="detalle" style={{ color: "red" }}> <AiOutlineFunnelPlot></AiOutlineFunnelPlot>{" "}
+                      Precio:
+                      <text style={{ color: "rgb(248, 149, 149)" }}>
+                        {" "} Bs. {producto.precio}
+                      </text>
+                    </h6> */}
+
+
+                <h6 className="detalle" style={{ width: "auto", color: "red" }}>   <img style={{ width: "30px", height: "30px" }} src={icono1} alt="" />{" "}
+                  Principio Activo:
+                  <text style={{ display: "block", width: "auto", height: "auto", marginTop: "-29px", color: "rgb(248, 149, 149)", paddingTop: "2px", textAlign: "left", marginLeft: "172px" }}>
+                    {producto.principioactivo}
+                  </text>
+                </h6>
+
+
+
+
+
+                <h6 className="detalle" style={{ color: "#2062f0", width: "auto" }}>
+                  <img style={{ width: "30px", height: "30px" }} src={icono2} alt="" />{" "}
+                  Acción Terapéutica:
+                  <text style={{ color: "  #5187fc", display: "flex", width: "auto", height: "auto", marginTop: "-29px", paddingTop: "2px", textAlign: "left", marginLeft: "192px" }}>
+                    {" "} {producto.accionterapeutica}
+                  </text>
+                </h6>
+                <h6 className="detalle" style={{ color: "rgb(65, 67, 68)" }}>
+                  <img style={{ width: "30px", height: "30px" }} src={icono3} alt="" /> Forma Farmacéutica:
+                  <text style={{ color: "rgb(159, 163, 165)" }}>
+                    {" "}
+                    {producto.formafarmaceutica}{" "}
+                  </text>
+                </h6>
+
+                <h6 className="detalle" style={{ color: "rgb(12, 143, 12)" }}>
+                  <img style={{ width: "30px", height: "30px" }} src={icono4} alt="" /> Presentación:
+                  <text style={{ color: " rgb(93, 180, 93)" }}>
+                    {" "}
+                    {producto.presentacion}{" "}
+                  </text>
+                </h6>
+
+                <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "50px", backgroundColor: "#003057", textAlign: "center" }}>
+                  <a href={producto.prospecto} type="application/pdf" target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }} zoom={100}> VER MAS (Prospecto)</a>
+                </div>
+
+              </Card.Text>
+            </Card.Body>
+          </div>
+         
+
+      
+      </Grid>
+      
+    </Grid>
+ ))}
+</Container>
+
+

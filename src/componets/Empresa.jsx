@@ -134,9 +134,9 @@ export default function Empresa() {
       <div className="container-fluid" style={{ backgroundColor: "white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
         <div className="row">
 
-          <div className="col-md-3" style={{ backgroundColor: "white", height: "auto" }}>
+          <div className="col-md-3" style={{ backgroundColor: "white", height: "100%" }}>
             <Link to={"/"}>
-              <img className="logoAlfaprueba" style={{ width: "300px", paddingTop: "18px" }} src={ChicaAlfa} alt="" />
+              <img className="logoAlfaprueba" style={{ width: "100%", paddingTop: "18px" }} src={ChicaAlfa} alt="" />
             </Link>
           </div>
 
@@ -148,35 +148,38 @@ export default function Empresa() {
 
 
             <div style={{ backgroundColor: "lightgreen" }}>
-            <Busquedaprincipal />
+              <Busquedaprincipal />
             </div>
           </div>
-          
+
         </div>
 
-        
+
       </div>
 
       <div className="col-12" style={{ marginTop: "220px" }}>
 
-            <div style={{ backgroundColor: "white" }}>
-            <img src={construccion} width="100%" height="auto" className="rounded img-fluid" alt="..." />
+        <div style={{ backgroundColor: "white" }}>
+          <img src={construccion} width="100%" height="auto" className="rounded img-fluid" alt="..." />
 
-            </div>
+        </div>
 
 
-            <div style={{ backgroundColor: "white" }}>
-            <h5 style={{ marginLeft: "150px", color: "#003057", fontSize: "30px" }}>HISTORIA</h5>
-      
-            </div>
-          </div>
+        <div style={{ backgroundColor: "white" }}>
+          <h5 style={{ marginBottom: "70px", textAlign:"center", color: "#003057", fontSize: "30px" }}>HISTORIA</h5>
+
+        </div>
+      </div>
+
+
+     
       <Container maxWidth='xl'>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-              <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1950" style={{ color: lightBlue[900] }}
-                  control={<div  ><BlueRadio style={{ marginLeft: "120px" }}
+              <AccordionSummary className="acordion"  aria-controls="panel1d-content" id="panel1d-header">
+                <FormControlLabel className="color-fecha" value="female" label="1950" style={{marginLeft: "120px", color: lightBlue[900] }}
+                  control={<div  ><BlueRadio 
                     checked={selectedValue === 'a'}
                     onChange={handleChangegren}
                     value="a"
@@ -187,21 +190,21 @@ export default function Empresa() {
 
               </AccordionSummary>
               <AccordionDetails  >
-
+              <Grid container>
                 <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
                   <Typography >
-                    <p style={{ marginTop: "15%" }}>El Dr. Santiago Ferrer Alsina, farmacéutico catalán, emigra a Bolivia (1950) e inicia su actividad profesional en la Farmacia Española en la ciudad de La Paz, la cual se encontraba en la Plaza Murillo."</p>
+                    <p style={{ marginTop: "15%", textAlign:"justify" }}>El Dr. Santiago Ferrer Alsina, farmacéutico catalán, emigra a Bolivia (1950) e inicia su actividad profesional en la Farmacia Española en la ciudad de La Paz, la cual se encontraba en la Plaza Murillo."</p>
                   </Typography>
                 </Grid>
                 <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
                   <div className="imagen-grid">
 
                     <img
-                      className="fondo-img" target="_blank" src={drferrer} alt=""
+                     style={{textAlign:"center"}} className="fondo-img" target="_blank" src={drferrer} alt=""
                     />
                   </div>
                 </Grid>
-
+                </Grid>
               </AccordionDetails>
             </Accordion>
           </Grid>
@@ -211,8 +214,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
               <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1952" style={{ color: teal[500] }}
-                  control={<div><GreenRadio style={{ marginLeft: "200px" }}
+                <FormControlLabel className="color-fecha" value="female" label="1952" style={{marginLeft: "200px", color: teal[500] }}
+                  control={<div><GreenRadio 
                     checked={selectedValue === 'b'}
                     onChange={handleChangegren}
                     value="b"
@@ -235,8 +238,8 @@ export default function Empresa() {
           <Grid itemxs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1964" style={{ color: blue['A400'] }}
-                  control={<div><BlueGreyRadio style={{ marginLeft: "300px" }}
+                <FormControlLabel className="color-fecha" value="female" label="1964" style={{marginLeft: "300px", color: blue['A400'] }}
+                  control={<div><BlueGreyRadio 
                     checked={selectedValue === 'c'}
                     onChange={handleChangegren}
                     value="c"
@@ -259,8 +262,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
               <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1965" style={{ color: lightBlue[900] }}
-                  control={<div><BlueRadio style={{ marginLeft: "400px" }}
+                <FormControlLabel className="color-fecha" value="female" label="1965" style={{ marginLeft: "400px", color: lightBlue[900] }}
+                  control={<div><BlueRadio 
                     checked={selectedValue === 'd'}
                     onChange={handleChangegren}
                     value="d"
@@ -287,8 +290,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1977" style={{ color: teal[500] }}
-                  control={<div><GreenRadio style={{ marginLeft: "500px" }}
+                <FormControlLabel className="color-fecha" value="female" label="1977" style={{marginLeft: "500px" , color: teal[500] }}
+                  control={<div><GreenRadio 
                     checked={selectedValue === 'e'}
                     onChange={handleChangegren}
                     value="e"
@@ -311,8 +314,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
               <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1980" style={{ color: blue['A400'] }}
-                  control={<div><BlueGreyRadio style={{ marginLeft: "600px" }}
+                <FormControlLabel className="color-fecha" value="female" label="1980" style={{marginLeft: "600px", color: blue['A400'] }}
+                  control={<div><BlueGreyRadio 
                     checked={selectedValue === 'f'}
                     onChange={handleChangegren}
                     value="f"
@@ -335,8 +338,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1993" style={{ color: lightBlue[900] }}
-                  control={<div><BlueRadio style={{ marginLeft: "700px" }}
+                <FormControlLabel className="color-fecha" value="female" label="1993" style={{marginLeft: "700px", color: lightBlue[900] }}
+                  control={<div><BlueRadio 
                     checked={selectedValue === 'G'}
                     onChange={handleChangegren}
                     value="g"
@@ -363,8 +366,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
               <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="2015" style={{ color: teal[500] }}
-                  control={<div><GreenRadio style={{ marginLeft: "800px" }}
+                <FormControlLabel className="color-fecha" style={{ marginLeft: "800px", color: teal[500] }} value="female" label="2015" 
+                  control={<div><GreenRadio 
                     checked={selectedValue === 'h'}
                     onChange={handleChangegren}
                     value="h"
@@ -387,8 +390,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel9'} onChange={handleChange('panel9')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" style={{ marginLeft: "900px" }} value="female" label="2024"
-                  control={<div><Radio
+                <FormControlLabel className="color-fecha" style={{ marginLeft: "900px", color: blue['A400']}} value="female" label="2024"
+                  control={<div><BlueGreyRadio
                     checked={selectedValue === 'i'}
                     onChange={handleChangegren}
                     value="i"
@@ -409,34 +412,8 @@ export default function Empresa() {
         </Grid>
 
       </Container>
-      <div class="container-fluid">
-        <div class="row">
-
-          <div class="col-md-6" style={{ backgroundColor: "lightblue", height: "auto" }}>
-            <div>Div Vertical</div>
-          </div>
-
-          <div class="col-md-6">
-
-            <div style={{ backgroundColor: "lightgreen" }}>
-              <div>Div Horizontal 1</div>
-            </div>
 
 
-            <div style={{ backgroundColor: "lightgreen" }}>
-              <div>Div Horizontal 2</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-      </div>
       <Footer />
     </>
   );

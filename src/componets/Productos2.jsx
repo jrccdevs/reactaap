@@ -195,7 +195,7 @@ export default function Productos2() {
 
             <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"300px", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
+                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
                 </Link>
             </div>
 

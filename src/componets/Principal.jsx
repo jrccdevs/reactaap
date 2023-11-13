@@ -19,12 +19,12 @@ export default class Principal extends Component {
     return (
 
       <React.Fragment>
-        <div className="container-fluid" style={{backgroundColor:"white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+        <div className="container-fluid" style={{backgroundColor:"white", position: "fixed", marginBottom:"0px", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
           <div className="row">
 
             <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"300px", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
+                <img className="logoAlfaprueba" style={{width:"100%",  paddingTop:"18px"}} src={ChicaAlfa} alt="" />
                 </Link>
             </div>
 
@@ -45,7 +45,7 @@ export default class Principal extends Component {
 
 
         
-        <div style={{ marginTop: "200px" }}>
+        <div style={{ marginTop: "210px" }}>
           <ControlCarousel />
 
         </div>
