@@ -167,7 +167,7 @@ export default function Busqueda() {
 
                     <Button variant="primary" onClick={handleRedirect}><FaSearch /></Button>
 
-                    <div className="position-absolute" style={{ maxWidth: "100%", marginTop: "56px", marginRight: "60px" }}>
+                    <div className="position-absolute" style={{  marginTop: "56px", marginRight: "60px" }}>
 
                       {productosMatch && productosMatch.slice(0, 5).map((item, index) => (
                         <div key={index}>

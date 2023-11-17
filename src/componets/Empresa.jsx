@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CarrucelHeader from './HeaderCarrucel';
-import Busquedaprincipal from './Busquedaprincipal';
+import Busquedaprincipal from './Principalbusqueda';
 import Footer from './Footer';
 import gradas from "../img/Grada.jpg";
 import construccion from "../img/MisionVision.jpg";
@@ -19,6 +19,7 @@ import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Link } from "react-router-dom";
 import ChicaAlfa from "../img/ChicaALFA.JPG";
+
 import "../style/Empresa.css";
 
 
@@ -116,13 +117,13 @@ const AccordionDetails = withStyles((theme) => ({
 
 export default function Empresa() {
 
-  const [selectedValue, setSelectedValue] = React.useState('a');
+  const [selectedValue, setSelectedValue] = React.useState('z');
 
   const handleChangegren = (event) => {
     setSelectedValue(event.target.value);
   };
 
-  const [expanded, setExpanded] = React.useState('panel1');
+  const [expanded, setExpanded] = React.useState('panel50');
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -136,18 +137,18 @@ export default function Empresa() {
 
           <div className="col-md-3" style={{ backgroundColor: "white", height: "100%" }}>
             <Link to={"/"}>
-              <img className="logoAlfaprueba" style={{ width: "100%", paddingTop: "18px" }} src={ChicaAlfa} alt="" />
+              <img className="logoAlfaprueba" style={{ width: "100%", paddingTop: "7px" }} src={ChicaAlfa} alt="" />
             </Link>
           </div>
 
           <div className="col-md-9" style={{ marginRight: "0px" }}>
 
-            <div style={{ backgroundColor: "lightgreen" }}>
+            <div className="carrucel-header" style={{ backgroundColor: "white" }}>
               <CarrucelHeader />
             </div>
 
 
-            <div style={{ backgroundColor: "lightgreen" }}>
+            <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
               <Busquedaprincipal />
             </div>
           </div>
@@ -157,7 +158,7 @@ export default function Empresa() {
 
       </div>
 
-      <div className="col-12" style={{ marginTop: "220px" }}>
+      <div className="empresa-resp col-12" style={{ marginTop: "220px" }}>
 
         <div style={{ backgroundColor: "white" }}>
           <img src={construccion} width="100%" height="auto" className="rounded img-fluid" alt="..." />
@@ -166,20 +167,20 @@ export default function Empresa() {
 
 
         <div style={{ backgroundColor: "white" }}>
-          <h5 style={{ marginBottom: "70px", textAlign:"center", color: "#003057", fontSize: "30px" }}>HISTORIA</h5>
+          <h5 style={{ marginBottom: "70px", textAlign: "center", color: "#003057", fontSize: "30px" }}>HISTORIA</h5>
 
         </div>
       </div>
 
 
-     
+
       <Container maxWidth='xl'>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-              <AccordionSummary className="acordion"  aria-controls="panel1d-content" id="panel1d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1950" style={{marginLeft: "120px", color: lightBlue[900] }}
-                  control={<div  ><BlueRadio 
+              <AccordionSummary className="acordion" aria-controls="panel1d-content" id="panel1d-header">
+                <FormControlLabel className="color-fecha" value="female" label="1950" style={{ marginLeft: "120px", color: lightBlue[900] }}
+                  control={<div  ><BlueRadio
                     checked={selectedValue === 'a'}
                     onChange={handleChangegren}
                     value="a"
@@ -190,20 +191,20 @@ export default function Empresa() {
 
               </AccordionSummary>
               <AccordionDetails  >
-              <Grid container>
-                <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
-                  <Typography >
-                    <p style={{ marginTop: "15%", textAlign:"justify" }}>El Dr. Santiago Ferrer Alsina, farmacéutico catalán, emigra a Bolivia (1950) e inicia su actividad profesional en la Farmacia Española en la ciudad de La Paz, la cual se encontraba en la Plaza Murillo."</p>
-                  </Typography>
-                </Grid>
-                <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
-                  <div className="imagen-grid">
+                <Grid container>
+                  <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
+                    <Typography variant="body1" color="textSecondary">
+                      <p style={{ marginTop: "15%", textAlign: "justify" }}>El Dr. Santiago Ferrer Alsina, farmacéutico catalán, emigra a Bolivia (1950) e inicia su actividad profesional en la Farmacia Española en la ciudad de La Paz, la cual se encontraba en la Plaza Murillo."</p>
+                    </Typography>
+                  </Grid>
+                  <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
+                    <div className="imagen-grid">
 
-                    <img
-                     style={{textAlign:"center"}} className="fondo-img" target="_blank" src={drferrer} alt=""
-                    />
-                  </div>
-                </Grid>
+                      <img
+                        style={{ textAlign: "center" }} className="fondo-img" target="_blank" src={drferrer} alt=""
+                      />
+                    </div>
+                  </Grid>
                 </Grid>
               </AccordionDetails>
             </Accordion>
@@ -214,8 +215,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
               <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1952" style={{marginLeft: "200px", color: teal[500] }}
-                  control={<div><GreenRadio 
+                <FormControlLabel className="color-fecha" value="female" label="1952" style={{ marginLeft: "200px", color: teal[500] }}
+                  control={<div><GreenRadio
                     checked={selectedValue === 'b'}
                     onChange={handleChangegren}
                     value="b"
@@ -225,7 +226,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography variant="body1" color="textSecondary">
                   " El 20 de Marzo de 1952 se asocia con los Doctores José  Benet y Carlos Grau, ambos de origen catalán, para formar el Laboratorio Farmacéutico GRABESA."
 
              </Typography>
@@ -238,8 +239,8 @@ export default function Empresa() {
           <Grid itemxs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1964" style={{marginLeft: "300px", color: blue['A400'] }}
-                  control={<div><BlueGreyRadio 
+                <FormControlLabel className="color-fecha" value="female" label="1964" style={{ marginLeft: "300px", color: blue['A400'] }}
+                  control={<div><BlueGreyRadio
                     checked={selectedValue === 'c'}
                     onChange={handleChangegren}
                     value="c"
@@ -249,7 +250,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   "El año 1964 la sociedad se disuelve y el Dr. Santiago Ferrer adquiere la maquinaria, equipos  y marcas de Laboratorios GRABESA  para constituir su propia empresa."
 
              </Typography>
@@ -263,7 +264,7 @@ export default function Empresa() {
             <Accordion square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
               <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
                 <FormControlLabel className="color-fecha" value="female" label="1965" style={{ marginLeft: "400px", color: lightBlue[900] }}
-                  control={<div><BlueRadio 
+                  control={<div><BlueRadio
                     checked={selectedValue === 'd'}
                     onChange={handleChangegren}
                     value="d"
@@ -273,7 +274,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   <p>El Dr. Santiago Ferrer Alsina funda la empresa unipersonal
                   LABORATORIOS ALFA (Marzo de 1965), con el propósito y la visión
                   emprendedora de transformarla posteriormente en una empresa familiar de
@@ -290,8 +291,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1977" style={{marginLeft: "500px" , color: teal[500] }}
-                  control={<div><GreenRadio 
+                <FormControlLabel className="color-fecha" value="female" label="1977" style={{ marginLeft: "500px", color: teal[500] }}
+                  control={<div><GreenRadio
                     checked={selectedValue === 'e'}
                     onChange={handleChangegren}
                     value="e"
@@ -301,7 +302,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   " Se transforma la empresa unipersonal en Sociedad de Responsabilidad Ltda. con la integración, como socios accionistas, de la  esposa y los dos hijos del  fundador."
 
              </Typography>
@@ -314,8 +315,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
               <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1980" style={{marginLeft: "600px", color: blue['A400'] }}
-                  control={<div><BlueGreyRadio 
+                <FormControlLabel className="color-fecha" value="female" label="1980" style={{ marginLeft: "600px", color: blue['A400'] }}
+                  control={<div><BlueGreyRadio
                     checked={selectedValue === 'f'}
                     onChange={handleChangegren}
                     value="f"
@@ -325,7 +326,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   "Se trasladan las instalaciones a su  nueva planta,  ubicada en la Plaza Uyuni, donde desarrolla actualmente sus actividades."
 
              </Typography>
@@ -338,8 +339,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1993" style={{marginLeft: "700px", color: lightBlue[900] }}
-                  control={<div><BlueRadio 
+                <FormControlLabel className="color-fecha" value="female" label="1993" style={{ marginLeft: "700px", color: lightBlue[900] }}
+                  control={<div><BlueRadio
                     checked={selectedValue === 'G'}
                     onChange={handleChangegren}
                     value="g"
@@ -349,7 +350,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   <p>El 3 de Mayo de 1993 fallece el Dr. Santiago Ferrer en la ciudad de Santiago de Chile,
                   asumiendo la dirección de la empresa sus hijos, quienes ya trabajaban en la Empresa
                   desde el año 1982. En Octubre de 1993 la empresa es auspiciada por el Centro para la
@@ -366,8 +367,8 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
               <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" style={{ marginLeft: "800px", color: teal[500] }} value="female" label="2015" 
-                  control={<div><GreenRadio 
+                <FormControlLabel className="color-fecha" style={{ marginLeft: "800px", color: teal[500] }} value="female" label="2015"
+                  control={<div><GreenRadio
                     checked={selectedValue === 'h'}
                     onChange={handleChangegren}
                     value="h"
@@ -377,7 +378,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   "  Abril 2015 se incorporan nuevos socios con nuevos aportes de capital y “know-how”, iniciando la transformación de SRL a S.A."
 
              </Typography>
@@ -390,7 +391,7 @@ export default function Empresa() {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel9'} onChange={handleChange('panel9')}>
               <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" style={{ marginLeft: "900px", color: blue['A400']}} value="female" label="2024"
+                <FormControlLabel className="color-fecha" style={{ marginLeft: "900px", color: blue['A400'] }} value="female" label="2024"
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'i'}
                     onChange={handleChangegren}
@@ -401,7 +402,7 @@ export default function Empresa() {
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography  variant="body1" color="textSecondary">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
                   sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
                   elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -412,9 +413,7 @@ export default function Empresa() {
         </Grid>
 
       </Container>
-
-
-      <Footer />
+        <Footer />
     </>
   );
 }

@@ -105,10 +105,10 @@
   
 }
 }
-
+/*barra azul del buscador */
 .navbar {
   background-color: rgb(17, 120, 189);
-  height: 70px;
+  height: 40px;
   margin-bottom: 20px;
 }
 
@@ -174,16 +174,17 @@
 .buscar input {
   height: 40px;
 }
-
+/*barra azul donde se puede poner la barra azul mas delgada*/
 .nav-bar {
   background-color: rgb(17, 120, 189);
-  padding: 45px 0px 45px 0px;
+  padding: 35px 0px 35px 0px;
+  height: 30px;
 }
 
 .rodrigo {
   width: 200px;
 }
-
+/*modificar la parte del buscador el contenido cuando se muestran los productos*/
 .position-absolute {
   background-color: #fff;
   /* top: 150;
@@ -191,10 +192,16 @@
   /* width: 100%;
   height: 100%; */
   z-index: 1;
+  width: 95%;
 }
-
+/*efecto cuando pasa el mouse sobre los productos cuando se muestra*/
 .producto-item:hover {
   background-color: lightgray !important;
+  color:black;
+}
+.producto-item {
+  width:auto;
+  color:black;
 }
 
 /*CARRUCEL PRINCIPAL*/
@@ -202,6 +209,38 @@
   width: 100%;
   height: auto;
   margin-left: 0px;
-  background-color: aqua;
+  /* background-color: blueviolet; */
   margin-top: 5px;
 }
+
+
+/*LOGO ALFA CHICA JUNTOS*/
+
+@media  (min-width: 320px) and (max-width: 712px) {
+  .logoAlfaprueba {
+ /* width: 30% !important;
+ height: auto !important;
+ padding-top: 10px !important;
+ text-align: center !important; */
+ display: none !important;
+  }
+  .busqueda-principal{
+    padding-top: 2px !important;
+    width: 100% !important;
+    height: 100% !important;
+
+  }
+  .carrucel-header{
+    display: none;
+  }
+  /*media query tamaño de la pantalla productos*/
+  .content{
+    margin-top: 50px !important;
+  }
+  .carrucel-principal{
+    margin-top: 70px !important;
+  }
+  
+}
+
+

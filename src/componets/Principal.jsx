@@ -5,7 +5,7 @@ import ControlCarousel from "./Carrusel";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel"
 import Navegacion from "./Navegacion";
-import BusquedaPrincipal from "./Busquedaprincipal";
+import BusquedaPrincipal from "./Principalbusqueda";
 import Maps from "./Maps";
 import { Container, Grid } from "@mui/material"
 import { Link } from "react-router-dom";
@@ -19,33 +19,31 @@ export default class Principal extends Component {
     return (
 
       <React.Fragment>
-        <div className="container-fluid" style={{backgroundColor:"white", position: "fixed", marginBottom:"0px", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+        <nav className="container-fluid" style={{backgroundColor:"white", position: "fixed", marginBottom:"0px", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
           <div className="row">
 
-            <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
+            <div className=" col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"100%",  paddingTop:"18px"}} src={ChicaAlfa} alt="" />
+                <img className="logoAlfaprueba" style={{width:"100%", height:"auto",  paddingTop:"10px"}} src={ChicaAlfa} alt="" />
                 </Link>
             </div>
 
-            <div className="col-md-9" style={{marginRight: "0px"}}>
+            <div className="  col-md-9" style={{marginRight: "0px"}}>
 
-              <div style={{ backgroundColor: "lightgreen" }}>
+              <div className="carrucel-header" style={{ backgroundColor: "white" }}>
               <CarrucelHeader />
               </div>
-
-
-              <div style={{ backgroundColor: "lightgreen" }}>
+              <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
               <BusquedaPrincipal />
               </div>
             </div>
           </div>
-        </div>
+        </nav>
 
 
 
-        
-        <div style={{ marginTop: "210px" }}>
+     
+        <div className="carrucel-principal" style={{ marginTop: "190px" }} >
           <ControlCarousel />
 
         </div>
@@ -60,7 +58,7 @@ export default class Principal extends Component {
         <div>
           <Footer />
         </div>
-
+      
       </React.Fragment>
     );
   }

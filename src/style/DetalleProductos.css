@@ -104,6 +104,13 @@ padding-left: 0%;
      height: "auto" ;
 }
 
+
+@media  (min-width: 320px) and (max-width: 712px) {
+  .detalle-producto{
+    margin-top: 85px !important;
+  }
+  
+}
 /*  @media (max-width: 770px) {
       .detalle {
         margin-left: 60px;

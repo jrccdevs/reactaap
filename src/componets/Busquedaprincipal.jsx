@@ -107,19 +107,13 @@ export default function BusquedaPrincipal() {
   useKey("Enter", handleRedirect)
   return (
     
-    <div className="arribainicio">
-      {/* <div className="arriba">
-       
-         <a href="#!">
-           <img className="logoAlfa" onClick={() => navigate("/")} src={LogoAlfa} alt="logoAlfa" />
-           <img className="logoChica" onClick={() => navigate("/")} src={Logochica} alt="logoChicaAlfa" />
-         </a>
-       </div> */}
+    <div className="arribainicio" style={{}}>
+      
       
       {['lg'].map((expand) => (
          
         
-        <Navbar key={expand} variant="dark" expand={expand} className="fijo mb-3 nav-bar">
+        <Navbar key={expand} variant="blue" expand={expand} className="fijo mb-3 nav-bar" >
           
           <Container fluid>
          
@@ -131,7 +125,7 @@ export default function BusquedaPrincipal() {
               placement="end"
             >
               
-              <Offcanvas.Body className="row justify-content-center ">
+              <Offcanvas.Body className="row justify-content-center " >
                 {/* <Nav className="justify-content flex-grow-1 pe-3">
                     <Button href="/menuadmin" variant="primary">ADMINISTRADOR</Button>
                   </Nav> */}
@@ -157,8 +151,8 @@ export default function BusquedaPrincipal() {
                   </select>
                 </section>
 
-                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6" >
-                  <Form className="tamanio-buscador d-flex"  style={{ marginRight:"-50px"}} >
+                <section className="busquer col-12 col-sm-12 col-md-12 col-lg-6" style={{height:"40px"}} >
+                  <Form className="tamanio-buscador d-flex"  style={{  marginRight:"-50px"}} >
                     
                     <Form.Control
                       onChange={(e) => buscarProductos(e.target.value)}

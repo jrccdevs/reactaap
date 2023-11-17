@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
 import { Container, Grid } from "@mui/material"
 import Footer from "./Footer";
-
+import Busquedaprincipal from './Principalbusqueda';
 import ChicaAlfa from "../img/ChicaALFA.JPG";
 //import { RViewer, RViewerTrigger } from "react-viewerjs"
 import Viewer from 'react-viewer'
@@ -14,7 +14,6 @@ import icono3 from "../img/icono 3.png";
 import icono4 from "../img/icono 4.png";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
-import Busqueda from "./Busqueda";
 import imagen7 from '../assets/img/Imagen7.jpg';
 import ReactImageMagnify from 'react-image-magnify';
 import { useHistory } from "react-router-dom";
@@ -68,25 +67,25 @@ export default function DetalleProducto() {
           <ModalProducto />
           <div className="col-md-3" style={{ backgroundColor: "white", height: "auto" }}>
             <Link to={"/"}>
-              <img className="logoAlfaprueba" style={{ width: "300px", paddingTop: "18px" }} src={ChicaAlfa} alt="" />
+              <img className="logoAlfaprueba" style={{ width: "300px", paddingTop: "7px" }} src={ChicaAlfa} alt="" />
             </Link>
           </div>
 
           <div className="col-md-9" style={{ marginRight: "0px" }}>
 
-            <div style={{ backgroundColor: "white" }}>
+            <div className="carrucel-header" style={{ backgroundColor: "white" }}>
               <CarrucelHeader />
             </div>
 
 
-            <div style={{ backgroundColor: "white" }}>
-              <Busqueda />
+            <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
+              <Busquedaprincipal />
             </div>
           </div>
         </div>
       </div>
      
-<Container maxWidth={"xl"} style={{marginTop:"200px"}}>
+<Container className="detalle-producto" maxWidth={"xl"} style={{marginTop:"190px"}}>
 {producto.map((producto, index) => (
 <Grid container>
   <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"10px",textAlign: "center", height:"auto", width:"auto"}}>

@@ -18,9 +18,9 @@ class BusquedaProducto extends React.Component {
         <Navbar className="mb-3 nav-bar">
           <Container className="secction-productos">
             <div className=" container-fluid col-12"  style={{ marginLeft: "100px"}}>
-              <section className=" col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
+              <section className=" busquedaproducto col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
                 <select className="select-producto form-select" style={{width:"225px", marginLeft:"-10px"}} onChange={(e) => handleFormaFarmace(e)}>
-                <option disabled selected hidden>FORMA FARMACEUTICA</option>
+                <option disabled selected hidden className="opciones-select">FORMA FARMACEUTICA</option>
                   <option value={''}>MOSTRAR TODOS </option>
                   <option value="CAPSULAS">CÁPSULAS</option>
                   <option value="COMPRIMIDOS">COMPRIMIDOS</option>
@@ -41,7 +41,7 @@ class BusquedaProducto extends React.Component {
               </section>
 
               <section className="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-9">
-                <Form className="d-flex" style={{width: "70%", marginRight: "70px",marginLeft: "10px"}}>
+                <Form className="buscadorpro d-flex" style={{width: "70%", marginRight: "70px",marginLeft: "10px"}}>
                   <Form.Control
                     onChange={handleChange}
                     type="search"

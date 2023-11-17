@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import BusquedaProducto from "./BusquedaProducto";
+import BusquedaProducto from "./Principalbusqueda";
 import Footer from "./Footer";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
 import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
+import "../style/Header.css";
 import ModalProducto from "./ModalProducto";
 import { useLocation } from 'react-router-dom';
 import ChicaAlfa from "../img/ChicaALFA.JPG";
@@ -195,25 +196,25 @@ export default function Productos2() {
 
             <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
+                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", paddingTop:"7px"}} src={ChicaAlfa} alt="" />
                 </Link>
             </div>
 
             <div className="col-md-9" style={{marginRight: "0px"}}>
 
-              <div style={{ backgroundColor: "lightgreen" }}>
+              <div className="carrucel-header" style={{ backgroundColor: "white" }}>
               <CarrucelHeader />
               </div>
 
 
-              <div style={{ backgroundColor: "lightgreen" }}>
+              <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
               <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
               </div>
             </div>
           </div>
         </div>
 
-            <Container className="content" style={{ overflow: "hidden", margin: "190px auto 0px" }}>
+            <Container className="content" style={{ overflow: "hidden", margin: "150px auto 0px" }}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
                         <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-lg-4 ">

@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 //import emailjs from '@emailjs/browser';
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
-import Busqueda from "./Busquedaprincipal";
+import Busqueda from "./Principalbusqueda";
 import Footer from './Footer';
 import axios from "axios";
 import Swal from 'sweetalert2'
@@ -176,12 +176,12 @@ const handleSubmit = (event) => {
 
             <div className="col-md-9" style={{marginRight: "0px"}}>
 
-              <div style={{ backgroundColor: "lightgreen" }}>
+              <div className="carrucel-header"style={{ backgroundColor: "white" }}>
               <CarrucelHeader />
               </div>
 
 
-              <div style={{ backgroundColor: "lightgreen" }}>
+              <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
               <Busqueda />
               </div>
             </div>
@@ -190,7 +190,7 @@ const handleSubmit = (event) => {
 
         
 
-            <div className="container" style={{ overflow: "hidden", margin:"220px auto 0px"}}>
+            <div className="container cont-res" style={{ overflow: "hidden", margin:"220px auto 0px"}}>
                 <h1>Farmacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
                 

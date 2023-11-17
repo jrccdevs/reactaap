@@ -116,20 +116,6 @@ section.col-12.col-sm-12.col-lg-12 {
   height: 55px !important;
 }
 
-@media (max-width: 485px) {
-  .nav-bar .botonLupa {
-    display: none;
-  }
-
-  .nav-bar select {
-    font-size: 12px;
-  }
-
-  .container-fluid section {
-    width: 100% !important;
-    padding: 0 0 0 0 !important;
-  }
-}
 
 
 /*===============================MODAL ===============================================================*/
@@ -183,6 +169,35 @@ section.col-12.col-sm-12.col-lg-12 {
    width: auto;
  }
 }
+
+/*===========================media query para el buscador y el selct productos======================*/
+/* @media (max-width: 485px) {
+  .nav-bar .botonLupa {
+    display: none;
+  }
+
+  .nav-bar select {
+    font-size: 12px;
+  }
+
+  .container-fluid section {
+    width: 100% !important;
+    padding: 0 0 0 0 !important;
+  }
+} */
+@media (max-width: 485px) {
+  .nav-bar{
+    height: 70px !important;
+  }
+  .busquedaproducto{
+    margin-left: -100px !important;
+    width: 50% !important;
+
+  }
+  .opciones-select{
+    color: #003057 !important;
+  }
+  }
 
 
 

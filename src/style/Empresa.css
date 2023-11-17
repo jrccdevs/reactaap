@@ -266,7 +266,7 @@
       padding-left: none !important;
      /* background-color: #d66e6e !important;*/
       justify-content: center !important;
-      flex-direction: column !important;
+      flex-direction: inherit !important;
       margin-top: 0px !important;
       height: 20px !important;
      
@@ -305,65 +305,11 @@
   }
 
 
-/* Definir el contenedor de la cuadrícula */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(1, 100px); /* Define 3 columnas de 100px cada una */
-  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
-  perspective: 1000px; /* Agrega una perspectiva para el efecto de grada */
-}
-
-/* Estilos para los elementos de la cuadrícula */
-.grid-item {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  transform-style: preserve-3d; /* Mantiene la transformación 3D */
-  transition: transform 0.5s; /* Agrega una transición suave para las transformaciones */
-}
-
-/* Establecer transformaciones individuales para cada elemento */
-.grid-item:nth-child(1) {
-  transform: translateX(100px);
-}
-
-.grid-item:nth-child(2) {
-  transform: translateX(200px);
-}
-
-.grid-item:nth-child(3) {
-  transform: translateX(400px);
-}
-
-.grid-item:nth-child(4) {
-  transform: translateX(600px);
-}
-
-.grid-item:nth-child(5) {
-  transform: translateX(800px);
-}
-
-.grid-item:nth-child(6) {
-  transform: translateX(1000px);
-}
-
-
-.contenedor {
-  display: flex;
-  height: 100vh; /* Establece la altura del contenedor al 100% de la altura de la ventana */
-}
-
-/* Estilos para el primer div vertical */
-.div-vertical {
-  flex: 1; /* Ocupa el espacio disponible verticalmente */
-  background-color: lightblue; /* Solo para ilustrar */
-}
-
-/* Estilos para los divs horizontales */
-.div-horizontal {
-  width: 100px;
-  background-color: lightgreen; /* Solo para ilustrar */
-}
-
-
+  @media  (min-width: 320px) and (max-width: 712px) {
+    .empresa-resp{
+      margin-top: 85px !important;
+    }
+    .cont-res{
+      margin-top: 85px !important;
+    }
+  }

@@ -19,6 +19,11 @@ import ContentControl from './componets/login/ContentControl';
 import ProductosAside from './componets/login/ProductosAside';
 import Prospecto from './componets/Prospecto'
 import Vigilancia from './componets/vigilancia'
+import PaginaCarrucel from './componets/PaginaCarrucel'
+
+import User from './componets/User'
+import Principalbusqueda from './componets/Principalbusqueda'
+
 
 //import React, { useState, useEffect } from 'react'
 //import { Redirect } from 'react-router-dom'
@@ -68,6 +73,10 @@ export default function App() {
           <Route path="/productoadmin" element={<Productoadmin />} />
           <Route path="/administradorcarrucel" element={<Administradorcarrucel />} />
           <Route path="/administrarproducto" element={<Administrarproducto />} />
+          <Route path="/paginacarrucel" element={<PaginaCarrucel />} />
+
+          <Route path="/user" element={<User />} />
+          <Route path="/principalbusqueda" element={<Principalbusqueda />} />
 
 
           {/* PanelControl */}
