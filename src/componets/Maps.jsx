@@ -105,11 +105,11 @@ export default function Maps() {
                 alt="la_paz"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal La Paz",
-                  body: "Av. Bush Nº 1970, entre R. Villalobos y Díaz Romero (zona Miraflores).",
+                  body: "Calle 19 No. 100 (entre av. Francia y Enrique Hertzog) - Achumani, sector del Franco, Tel.: (2)2224217, (2)2227910, (2)2224237",
                   telefono: "Tel.: (2) 2 224217, (2) 2 227910, (2 )2 224237",
                   lugar: {
-                    lat: -16.50202943556111,
-                    lng: -68.12109449615929
+                    lat: -16.528251,
+                    lng: - -68.073195
                   }
                 })}
               />

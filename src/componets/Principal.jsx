@@ -33,7 +33,7 @@ export default class Principal extends Component {
               <div className="carrucel-header" style={{ backgroundColor: "white" }}>
               <CarrucelHeader />
               </div>
-              <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
+              <div className="busqueda-principal" style={{ backgroundColor: "white",marginTop:"0px" }}>
               <BusquedaPrincipal />
               </div>
             </div>

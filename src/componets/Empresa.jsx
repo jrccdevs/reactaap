@@ -187,6 +187,7 @@ export default function Empresa() {
                     label="Male"
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'A' }}
+                    style={{ backgroundColor:  lightBlue[900] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
                   /></div>} />
 
               </AccordionSummary>
@@ -220,7 +221,8 @@ export default function Empresa() {
                     checked={selectedValue === 'b'}
                     onChange={handleChangegren}
                     value="b"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  teal[500] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+             
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'B' }}
                   /></div>} />
@@ -244,7 +246,8 @@ export default function Empresa() {
                     checked={selectedValue === 'c'}
                     onChange={handleChangegren}
                     value="c"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  blue['A400'] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'C' }}
                   /></div>} />
@@ -268,7 +271,8 @@ export default function Empresa() {
                     checked={selectedValue === 'd'}
                     onChange={handleChangegren}
                     value="d"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  lightBlue[900] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'D' }}
                   /></div>} />
@@ -296,7 +300,8 @@ export default function Empresa() {
                     checked={selectedValue === 'e'}
                     onChange={handleChangegren}
                     value="e"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  teal[500] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'E' }}
                   /></div>} />
@@ -320,7 +325,8 @@ export default function Empresa() {
                     checked={selectedValue === 'f'}
                     onChange={handleChangegren}
                     value="f"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  blue['A400'] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'F' }}
                   /></div>} />
@@ -344,7 +350,8 @@ export default function Empresa() {
                     checked={selectedValue === 'G'}
                     onChange={handleChangegren}
                     value="g"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  lightBlue[900] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'G' }}
                   /></div>} />
@@ -372,7 +379,8 @@ export default function Empresa() {
                     checked={selectedValue === 'h'}
                     onChange={handleChangegren}
                     value="h"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  teal[500] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'H' }}
                   /></div>} />
@@ -396,7 +404,8 @@ export default function Empresa() {
                     checked={selectedValue === 'i'}
                     onChange={handleChangegren}
                     value="i"
-                    backgroundColor="red"
+                    style={{ backgroundColor:  blue['A400'] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+  
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'I' }}
                   /></div>} />
