@@ -109,6 +109,9 @@ padding-left: 0%;
   .detalle-producto{
     margin-top: 85px !important;
   }
+  .detalle-footer{
+    margin-top: -400px !important;
+  }
   
 }
 /*  @media (max-width: 770px) {

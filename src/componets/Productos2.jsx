@@ -286,8 +286,10 @@ export default function Productos2() {
                     <p className="text-center">No hay productos para mostrar</p>
                 )}
             </Container>
-
-            <Footer />
+             <div className="principal-footer">
+                 <Footer />
+             </div>
+           
         </>
     );
 }

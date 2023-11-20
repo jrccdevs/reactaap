@@ -109,7 +109,7 @@ export default function Maps() {
                   telefono: "Tel.: (2) 2 224217, (2) 2 227910, (2 )2 224237",
                   lugar: {
                     lat: -16.528251,
-                    lng: - -68.073195
+                    lng: -68.073195
                   }
                 })}
               />

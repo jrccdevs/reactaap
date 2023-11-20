@@ -240,6 +240,9 @@
   .carrucel-principal{
     margin-top: 70px !important;
   }
+  .principal-footer{
+    margin-top: -400px !important;
+  }
   
 }
 

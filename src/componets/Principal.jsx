@@ -18,7 +18,7 @@ export default class Principal extends Component {
   render() {
     return (
 
-      <React.Fragment>
+      <React.Fragment style={{height:"auto"}}>
         <nav className="container-fluid" style={{backgroundColor:"white", position: "fixed", marginBottom:"0px", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
           <div className="row">
 
@@ -55,7 +55,7 @@ export default class Principal extends Component {
           <Maps />
         </div>
 
-        <div>
+        <div className="principal-footer">
           <Footer />
         </div>
       

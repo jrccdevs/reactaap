@@ -9,6 +9,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Link } from "react-router-dom";
 import ChicaAlfa from "../img/ChicaALFA.JPG";
+import "../style/Header.css";
 
 //import { useNavigate } from "react-router-dom";
 
@@ -256,8 +257,11 @@ const handleSubmit = (event) => {
                     <input type="hidden" name="_captcha" value="false"/>    
                     <input type="hidden" name="_next" value="http://localhost:3000/es/farmaco-vigilancia"/>
                 </form>
+              
             </div>
-            <Footer />
+            <div className="principal-footer mb-12 mt-12">
+                <Footer />
+                </div>
         </>
     )
 

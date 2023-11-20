@@ -24,7 +24,8 @@ a {
   justify-content: space-around;
   height: 8vh;
   background:  rgb(17, 120, 189);
-  margin-top:"200px"
+  margin-top:"200px";
+  border-radius: 7px;
 }
 /*letras que aparecen al costado del select y buiscador*/
 .nav__brand {
@@ -51,7 +52,7 @@ a {
   transition: 0.3s ease-in;
 }
 
-@media screen and (max-width: 768px) and (orientation: horizontal) {
+@media screen and (max-width: 768px){
   .nav__toggler {
     display: block;
     cursor: pointer;
@@ -99,6 +100,65 @@ a {
   
  }
 }
+
+@media screen and (max-width: 768px) and (orientation: landscape)  {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 14vh;
+    background:  rgb(17, 120, 189);
+    margin-top:"200px";
+    border-radius: 10px;
+  }
+  .nav__menu {
+    position: fixed !important;
+    top: 14vh;
+    right: auto;
+    height: 50%;
+    width: 97%;
+    background: #003057;
+    flex-direction: column;
+    transform: translateX(110%);
+    transition: 0.5s ease-in;
+  }
+  /*realizar el tamaño del select y buscador en media query*/
+  .nav__item{
+    background-color: white !important;
+    width: 97% !important;
+    margin-left: 5px !important;
+   margin-right: 5px !important;
+}
+.nav__brand {
+  text-transform: uppercase;
+  display: flex;
+}
+.nav__buscador{
+  /*  background-color: white !important;  */
+   width: 97% !important;
+   margin-left: 5px !important;
+   margin-right: 5px !important;
+   
+   
+  }
+  /*buscador de productos*/
+.nav-control{
+  
+  width:100% !important;
+  
+ }
+ /*lupa del buscador*/
+ .nav__lupa{
+    
+     width:45px !important;
+  
+ }
+}
+
 /* Active Class */
 .nav__active {
   transform: translateX(0%);
@@ -119,7 +179,7 @@ a {
 .nav__item{
     background-color: white;
     width: 250px;
-    height: 20px;
+    height: 10px;
     margin-top: 3px;
     border-radius: 5px;
     padding-left: 10px;

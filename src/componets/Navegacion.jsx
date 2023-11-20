@@ -8,14 +8,23 @@ import LogoAlfa from "../img/LogoAlfa.png";
 import { getImagenesNoticias } from "../api/productosCar";
 import ReactPlayer from 'react-player'
 import "../style/Navegacion.css";
-
+import {MediaComponent} from './prueba';
 
 const iframeStyle = {
   backgroundColor: 'red', // Cambia el fondo a transparente
 };
 
-export default function Navegacion() {
-
+export default function Navegacion () {
+  const esVideo = url => {
+    const extensionesVideo = ['.mp4', '.webm', '.ogg', '.ogv', '.avi', '.mov', '.mkv', '.flv'];
+    return extensionesVideo.some(ext => url.endsWith(ext));
+  };
+  
+  const esImagen = url => {
+    const extensionesImagen = ['.jpg', '.jpeg', '.png', '.gif', '.bmp'];
+    return extensionesImagen.some(ext => url.endsWith(ext));
+  };
+  
   const [productos, setProductos] = useState([]);
 
   const [busqueda, setBusqueda] = useState("");
@@ -104,20 +113,14 @@ export default function Navegacion() {
             <div className="container-fluit col-lg-12 mt-4 abajo">
               <div className="container2" >
                 
-               {/*  <video width="600" height="400" autoplay>
-                   <source src={producto.image} type="video/mp4">
-                </video> */}
-
-                <ReactPlayer url={producto.image} controls={true} loop={true} playing={true}   width="510"  height="550"></ReactPlayer>
-                 {/*    <iframe
-                       src={producto.image} 
-                       title="Contenido multimedia"
-                       allowFullScreen
-                       allow="autoplay"
-                       width="100%"
-                       height="100%"
-                       style={{ border: 'none', margin: '0', padding: '0' }}
-                 ></iframe>  */}
+               
+              <ReactPlayer url={producto.image} controls={true} loop={true} playing={true}   width="510"  height="550"></ReactPlayer>
+         {/*     
+             <MediaComponent url={producto.image} validateFunction={esVideo} />
+      <MediaComponent url={producto.image} validateFunction={esImagen} /> */}
+                
+                
+               
              </div>
             </div>
           </div>

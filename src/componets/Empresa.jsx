@@ -19,6 +19,7 @@ import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Link } from "react-router-dom";
 import ChicaAlfa from "../img/ChicaALFA.JPG";
+import "../style/Header.css";
 
 import "../style/Empresa.css";
 
@@ -422,7 +423,10 @@ export default function Empresa() {
         </Grid>
 
       </Container>
-        <Footer />
+      <div className="principal-footer mb-12 mt-12">
+         <Footer />
+      </div>
+       
     </>
   );
 }

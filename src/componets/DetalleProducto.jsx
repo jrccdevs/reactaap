@@ -180,8 +180,10 @@ export default function DetalleProducto() {
 </Container>
 
 
-
-      <Footer />
+<div className="detalle-footer">
+<Footer />
+</div>
+      
     </>
   );
 }
