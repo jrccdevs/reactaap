@@ -216,7 +216,7 @@
 
 /*LOGO ALFA CHICA JUNTOS*/
 
-@media  (min-width: 320px) and (max-width: 712px) {
+@media   (min-width: 576px) and (max-width: 767px) {
   .logoAlfaprueba {
  /* width: 30% !important;
  height: auto !important;
@@ -238,7 +238,61 @@
     margin-top: 50px !important;
   }
   .carrucel-principal{
-    margin-top: 70px !important;
+    margin-top: 100px !important;
+  }
+  .principal-footer{
+    margin-top: -400px !important;
+  }
+  
+}
+/*tablets*/
+@media  (min-width: 768px) and (max-width: 991px){
+  .logoAlfaprueba {
+    
+    display: none !important;
+     }
+  .busqueda-principal{
+    padding-top: 2px !important;
+    width: 100% !important;
+    height: 100% !important;
+
+  }
+  .carrucel-header{
+    display: none;
+  }
+  /*media query tamaño de la pantalla productos*/
+  .content{
+    margin-top: 50px !important;
+  }
+  .carrucel-principal{
+    margin-top: 90px !important;
+  }
+  .principal-footer{
+    margin-top: -400px !important;
+  }
+  
+}
+/* Teléfonos */
+@media  (max-width: 575px) {
+  .logoAlfaprueba {
+    
+    display: none !important;
+     }
+  .busqueda-principal{
+    padding-top: 2px !important;
+    width: 100% !important;
+    height: 100% !important;
+
+  }
+  .carrucel-header{
+    display: none;
+  }
+  /*media query tamaño de la pantalla productos*/
+  .content{
+    margin-top: 50px !important;
+  }
+  .carrucel-principal{
+    margin-top: 75px !important;
   }
   .principal-footer{
     margin-top: -400px !important;
@@ -246,4 +300,20 @@
   
 }
 
+
+/* Escritorio pequeño / tablet */
+/* @media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape){
+  .logoAlfaprueba {
+    
+    display: none !important;
+     }
+} */
+
+/* Tablets y phablets */
+/* @media only screen and (min-width: 576px) and (max-width: 767px) and (orientation: landscape){
+  .logoAlfaprueba {
+    
+    display: none !important;
+     }
+} */
 

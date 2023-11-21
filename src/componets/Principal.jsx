@@ -23,9 +23,11 @@ export default class Principal extends Component {
           <div className="row">
 
             <div className=" col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
+              <div className=" col-12">
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"100%", height:"auto",  paddingTop:"10px"}} src={ChicaAlfa} alt="" />
+                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", justifyContent:"center", paddingTop:"10px"}} src={ChicaAlfa} alt="" />
                 </Link>
+                </div>
             </div>
 
             <div className="  col-md-9" style={{marginRight: "0px"}}>

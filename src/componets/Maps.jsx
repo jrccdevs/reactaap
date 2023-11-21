@@ -105,7 +105,7 @@ export default function Maps() {
                 alt="la_paz"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal La Paz",
-                  body: "Calle 19 No. 100 (entre av. Francia y Enrique Hertzog) - Achumani, sector del Franco, Tel.: (2)2224217, (2)2227910, (2)2224237",
+                  body: "Calle 19 No. 100 (entre av. Francia y Enrique Hertzog) - Achumani, sector del Franco",
                   telefono: "Tel.: (2) 2 224217, (2) 2 227910, (2 )2 224237",
                   lugar: {
                     lat: -16.528251,
@@ -121,11 +121,11 @@ export default function Maps() {
                 alt="cochabamba"
                 onClick={(event) => openModal(event, {
                   title: "Sucursal cochabamba",
-                  body: "Calle Aniceto Padilla Nº 406 Zona Recoleta",
-                  telefono: "Tel.: (4) 4 141977, Cel.:717-29408",
+                  body: "Calle Batallón Colorados N°1527 (entre calle Washington y av. Medinaceli)",
+                  telefono: "Tel.: (4) 4 124076 Cel.:717-29408",
                   lugar: {
-                    lat: -17.3782952166273,
-                    lng: -66.15580733516121
+                    lat: -17.378830,
+                    lng: -66.168208
                   }
                 })}
               />
