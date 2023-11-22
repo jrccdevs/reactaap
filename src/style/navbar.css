@@ -18,39 +18,84 @@ a {
   color: rgb(204, 204, 204);
 }
 /*toda la barra azul del buscador y select*/
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 8vh;
-  background:  rgb(17, 120, 189);
-  margin-top:"200px";
-  border-radius: 7px;
-}
-/*letras que aparecen al costado del select y buiscador*/
-.nav__brand {
-  text-transform: uppercase;
-  display: none;
+@media screen and (min-width: 1025px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 7.3vh;
+    background:  rgb(17, 120, 189);
+    margin-top:"200px";
+    border-radius: 7px;
+  }
+  /*letras que aparecen al costado del select y buiscador*/
+  .nav__brand {
+    text-transform: uppercase;
+    display: none;
+    
+  }
   
+  .nav__menu {
+    display: flex;
+    align-items: flex-start;
+    
+    gap: 3rem;
+    /* background-color: yellow; */
+  }
+  .nav__toggler {
+    display: none;
+  }
+  .nav__toggler div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: rgb(204, 204, 204);
+    transition: 0.3s ease-in;
+  }
+  /*nav del selector de categoria*/
+.nav__item{
+  background-color: white;
+  width: 250px;
+  height: 10px;
+  margin-top: 2px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  
+
 }
 
-.nav__menu {
-  display: flex;
-  align-items: flex-start;
+.nav__option{
+font-size: medium;
+padding-right: 10px;
+}
+/*div todo el contenido del buscador y la lupa*/
+
+.nav__buscador{
+ /*  background-color: blue; */
+  width: 330px;
+  height: 53px;
+  margin-top: 2px;
+  border-radius: 5px;
   
-  gap: 3rem;
-  /* background-color: yellow; */
+ }
+/*buscador de productos*/
+.nav-control{
+background-color: white;
+width:280px;
+height:100%;
+
 }
-.nav__toggler {
-  display: none;
+/*lupa del buscador*/
+.nav__lupa{
+ 
+  width:45px;
+  height:100%;
+ color: white;
 }
-.nav__toggler div {
-  width: 2.5rem;
-  height: 0.2rem;
-  margin: 0.4rem;
-  background: rgb(204, 204, 204);
-  transition: 0.3s ease-in;
+
 }
+
 
 @media screen and (min-width: 576px) and (max-width: 767px){
   .nav__toggler {
@@ -282,47 +327,6 @@ a {
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-4px, -5px);
-}
-/*nav del selector de categoria*/
-.nav__item{
-    background-color: white;
-    width: 250px;
-    height: 10px;
-    margin-top: 3px;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 5px;
-    
- 
-}
-
-.nav__option{
-  font-size: medium;
-  padding-right: 10px;
-}
-/*div todo el contenido del buscador y la lupa*/
-
-.nav__buscador{
-   /*  background-color: blue; */
-    width: 330px;
-    height: 53px;
-    margin-top: 2px;
-    border-radius: 5px;
-    
-   }
-/*buscador de productos*/
-.nav-control{
- background-color: white;
- width:280px;
- height:100%;
- 
-}
-/*lupa del buscador*/
-.nav__lupa{
-   
-    width:45px;
-    height:100%;
-   color: white;
 }
 
 /*Ajustando las media querys*/
