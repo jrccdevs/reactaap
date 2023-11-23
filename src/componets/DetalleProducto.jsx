@@ -88,10 +88,10 @@ export default function DetalleProducto() {
 <Container className="detalle-producto" maxWidth={"xl"} style={{marginTop:"190px"}}>
 {producto.map((producto, index) => (
 <Grid container>
-  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"10px",textAlign: "center", height:"auto", width:"auto"}}>
-            <div className="imageresponsiv" style={{textAlign: "center"}}>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"10px",textAlign: "center", height:"auto", width:"580px"}}>
+            <div className="imageresponsiv" style={{textAlign: "center", width: "580px", height: 'auto' }}>
                 
-              <ReactImageMagnify className="imgfluid" variant="top" style={{textAlign: "center", width: "200px", height: 'auto' }} {...{
+              <ReactImageMagnify className="imgfluid" variant="top" style={{textAlign: "center", width: "500px", height: 'auto' }} {...{
                 smallImage: {
                   alt: 'Wristwatch by Ted Baker London',
                   isFluidWidth: true,
@@ -102,8 +102,8 @@ export default function DetalleProducto() {
 
                 largeImage: {
                   src: producto.image,
-                  width: 1500,
-                  height: 1500,
+                  width: 500,
+                  height: 1000,
 
                 },
                 lensStyle: {

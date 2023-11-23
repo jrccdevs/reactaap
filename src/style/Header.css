@@ -239,11 +239,17 @@
   }
   .carrucel-principal{
     margin-top: 100px !important;
+    height: 100%;
+    width: 100%;
+   
   }
   .principal-footer{
     margin-top: -400px !important;
   }
-  
+  .carrucel{
+    height: 70px !important;
+    width: 100% !important;
+  }
 }
 /*tablets*/
 @media  (min-width: 768px) and (max-width: 991px){
@@ -266,11 +272,16 @@
   }
   .carrucel-principal{
     margin-top: 90px !important;
+    height: 100%;
+    width: 100%;
   }
   .principal-footer{
     margin-top: -400px !important;
   }
-  
+  .carrucel{
+    height: 70px !important;
+    width: 100% !important;
+  }
 }
 /* Teléfonos */
 @media  (max-width: 575px) {
@@ -293,9 +304,15 @@
   }
   .carrucel-principal{
     margin-top: 75px !important;
+    height: 100%;
+    width: 100%;
   }
   .principal-footer{
     margin-top: -400px !important;
+  }
+  .carrucel{
+    height: 70px !important;
+    width: 100% !important;
   }
   
 }
