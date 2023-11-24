@@ -88,8 +88,8 @@ export default function DetalleProducto() {
 <Container className="detalle-producto" maxWidth={"xl"} style={{marginTop:"190px"}}>
 {producto.map((producto, index) => (
 <Grid container>
-  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"-10px",justifyContent: "center", height:"auto", width:"auto"}}>
-            <div className="imageresponsiv" style={{justifyContent: "center", width: "600px", height: 'auto', padding:"70px" }}>
+  <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{marginTop:"-60px",justifyContent: "center", height:"auto", width:"auto"}}>
+            <div className="imageresponsiv" style={{justifyContent: "center", width: "600px", height: 'auto', padding:"80px" }}>
                 
               <ReactImageMagnify className="imgfluid" variant="top" style={{justifyContent: "center", width: "500px", height: 'auto' }} {...{
                 smallImage: {
