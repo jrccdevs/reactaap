@@ -123,8 +123,8 @@ function useKey(key, cb) {
   */}             
       </a>
       <div className={active}>
-                <select className="nav__item form-select col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"  onChange={(e) => handleFormaFarmace(e)}>
-                <option disabled selected hidden className="nav__option">FORMA FARMACEUTICA</option>
+                <select className="h-25  nav__item form-select col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{height:"-10px"}}  onChange={(e) => handleFormaFarmace(e)}>
+                <option disabled selected hidden className="nav__option" >FORMA FARMACEUTICA</option>
                   <option value={''}>MOSTRAR TODOS </option>
                   <option value="CAPSULAS">CÁPSULAS</option>
                   <option value="COMPRIMIDOS">COMPRIMIDOS</option>
