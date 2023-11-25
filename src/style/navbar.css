@@ -74,6 +74,7 @@ a {
     width: 97% !important;
     margin-left: 5px !important;
    margin-right: 5px !important;
+   
 }
 .nav__brand {
   text-transform: uppercase;
@@ -287,6 +288,7 @@ a {
 .nav__item{
     background-color: white;
     width: 250px;
+    display: flex;
     height: 10px;
     margin-top: 1.9px;
     border-radius: 5px;
@@ -297,9 +299,9 @@ a {
 }
 
 .nav__option{
-  font-size: medium;
+  font-size: 1px;
   padding-right: 10px;
-  height:15px
+  height:30px
 }
 /*div todo el contenido del buscador y la lupa*/
 
