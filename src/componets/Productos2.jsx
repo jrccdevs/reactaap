@@ -217,7 +217,7 @@ export default function Productos2() {
             <Container className="content" style={{ overflow: "hidden", margin: "150px auto 0px" }}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="row">
-                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-lg-4 ">
+                        <div className="row row-col-1 row-col-md-2 row-col-sm-2 row-col-lg-3 row-col-lg-4 ">
 
 
                             {/*   row-cols-xl-4    {result.map((producto) => ( */}

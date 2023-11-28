@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { FaSearch } from "react-icons/fa";
-import LogoRes from "../img/LogoAlfa.png";
+import LogoRes from "../img/ChicaALFA.JPG";
 import "../style/navbar.css";
 
 
@@ -28,7 +28,14 @@ function useKey(key, cb) {
   
   export default function PrincipalBusqueda() {
 
-    const Busqueda = useNavigate();
+    /* const suppliers = [
+      { label: 'MOSTRAR TODOS', value: '' },
+      { label: 'CÁPSULAS', value: 'CAPSULAS' },
+      { label: 'COMPRIMIDOS', value: 'COMPRIMIDOS' },
+      { label: 'CREMAS', value: 'CREMAS' },
+  ] */
+  
+
 
   const [formafarmaceutica, setformafarmaceuticaid] = useState('');
   const [productos, setProductos] = useState([]);
@@ -119,11 +126,11 @@ function useKey(key, cb) {
   return (
     <nav className="nav">
       <a href="!#" className="nav__brand">
-    {/*   <img className="logo-responsivo" style={{width:"40%", height:"auto"}} src={LogoRes} alt="" />
-  */}             
+    {/*  <img className="logo-responsivo" style={{width:"40%", height:"auto", color:"white"}} src={LogoRes} alt="" />
+    */}           
       </a>
       <div className={active}>
-                <select className="h-25  nav__item form-select col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{height:"-10px"}}  onChange={(e) => handleFormaFarmace(e)}>
+                <select className=" nav__item form-select col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"   onChange={(e) => handleFormaFarmace(e)}>
                 <option disabled selected hidden className="nav__option" >FORMA FARMACEUTICA</option>
                   <option value={''}>MOSTRAR TODOS </option>
                   <option value="CAPSULAS">CÁPSULAS</option>

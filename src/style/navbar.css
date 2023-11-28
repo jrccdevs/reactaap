@@ -61,12 +61,13 @@ a {
     position: fixed !important;
     top: 7vh;
     right: auto;
-    height: 50%;
+    height: 22%;
     width: 94%;
     background: #003057;
     flex-direction: column;
     transform: translateX(110%);
     transition: 0.5s ease-in;
+    padding-top: 15px;
   }
   /*realizar el tamaño del select y buscador en media query*/
   .nav__item{
@@ -109,14 +110,15 @@ a {
   }
   .nav__menu {
     position: fixed !important;
-    top: 7vh;
+    top: 9vh;
     right: auto;
-    height: 50%;
+    height: 27%;
     width: 94%;
     background: #003057;
     flex-direction: column;
     transform: translateX(110%);
     transition: 0.5s ease-in;
+    padding-top: 15px;
   }
   /*realizar el tamaño del select y buscador en media query*/
   .nav__item{
@@ -124,9 +126,11 @@ a {
     width: 97% !important;
     margin-left: 5px !important;
    margin-right: 5px !important;
+   
 }
 .nav__brand {
-  text-transform: uppercase;
+  width: 120px;
+  height: auto;
   display: flex;
 }
 .nav__buscador{
@@ -149,6 +153,7 @@ a {
      width:45px !important;
   
  }
+ 
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px)  and (orientation: landscape)  {
@@ -457,7 +462,7 @@ width: 280px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 9.7vh;
+  height: 8.0vh;
   background:   rgb(17, 120, 189);
   margin-top:"200px";
   border-radius: 7px;
@@ -488,9 +493,9 @@ width: 280px;
 }
 .nav__item{
   background-color: white;
-  width: 250px;
+  width: 280px;
   height: 25px !important;
-  margin-top: 2px;
+  margin-top: 6px;
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 5px;
@@ -508,7 +513,7 @@ padding-right: 10px;
  /*  background-color: blue; */
   width: 330px;
   height: 53px;
-  margin-top: 2px;
+  margin-top: 5.5px;
   border-radius: 5px;
   
  }
@@ -521,9 +526,9 @@ height:100%;
 }
 /*lupa del buscador*/
 .nav__lupa{
- 
+  margin-top: -1px;
   width:45px;
-  height:100%;
+  height:25px;
  color: white;
 }
 
@@ -558,7 +563,7 @@ width: 280px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10.5vh;
+  height: 8.5vh;
   background:  rgb(17, 120, 189);
   margin-top:"200px";
   border-radius: 7px;
@@ -649,4 +654,19 @@ width: auto;
 width: 280px;
 }
 
+}
+
+body .form-select{
+  height: 41px !important;
+  font-size: 13px;
+  padding: 5px;
+  /* background-color: aqua; verificar o cambiar el form-select*/
+ 
+}
+.nav-control{
+ /*  background-color: yellowgreen; */
+  height: 42px;
+}
+.nav__lupa{
+  height: 42px;
 }
