@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
-
 
 
 const suppliers = [
@@ -8,8 +7,6 @@ const suppliers = [
     { label: 'Instagram', value: 'Instagram' },
     { label: 'YouTube', value: 'YouTube' },
 ]
-
-
 
 function User() {
 
@@ -27,12 +24,10 @@ function User() {
                 height:'8px',
                 fontSize:'13px'
               }),
-              option:(baseStyles, state )=> ({
+              option:(baseStyles )=> ({
                 ...baseStyles,
                 color:'blue',
-              
-                fontSize:'13px'
-
+                fontSize:'13px',
               })
             }}
                  defaultValue = {{ label: 'opcion a select', value: 'forma faramceutica'} }

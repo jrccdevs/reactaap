@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import { FaCaretDown, FaListAlt, FaProductHunt } from 'react-icons/fa';
+import { FaPlusCircle } from 'react-icons/fa';
+
 import Pagination from "react-js-pagination";
 import { useNavigate } from 'react-router';
 
@@ -263,10 +264,10 @@ function ContentControl() {
                
              
                 <div className="my-4 mx-4">
-                  <h2>Productos</h2>
+                <h2 className='tituloProducto'>Imagenes Alfa</h2>
 
                   <div className="my-4 float-right mx-4">
-                    <Button onClick={() => handleRegistrar()} variant="primary">Registrar</Button>
+                  <Button onClick={() => handleRegistrar()} variant="primary"> <i><FaPlusCircle /></i> Registrar</Button>
                   </div>
                   <table className="table mt-4">
                     <thead>
