@@ -2,9 +2,10 @@
 import React, { useEffect } from 'react';
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import { FaCaretDown, FaListAlt, FaProductHunt } from 'react-icons/fa';
+import { FaProductHunt } from 'react-icons/fa';
+import { FaPlusCircle } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
-import Productosaside from "./login/ProductosAside"
+import Productosaside from "./login/ProductosAside";
 
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -12,14 +13,12 @@ import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import "../style/PanelControl.css";
-import FooterControl from './login/FooterControl';
-import ContentControl from './login/ContentControl';
-import AsideControl from './login/AsideControl';
-import HeaderControl from './login/HeaderControl';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { actualizarProductosRequest, crearProductosRequest, deleteProductoRequest, getProductosIdRequest } from '../api/productos.api';
+import "../style/PanelControl.css";
+import logoPanel from '../img/logoPanel.png';
+import chicaAlfa from '../img/chiac.jpg';
 
 function PanelControl() {
 
@@ -305,7 +304,11 @@ function PanelControl() {
     } catch (error) {
       console.error(error);
     }
+    const setCurrentContent = (content) => {
+      setCurrentContent(content);
+    };
   };
+
 
 
   return (
@@ -317,14 +320,12 @@ function PanelControl() {
           <div className="row flex-nowrap">
             <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
               <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                  <span className="fs-5 d-none d-sm-inline">Laboratorio ALFA</span>
+                <a href="/" className="logoPanel d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  {/* <span className="fs-5 d-none d-sm-inline">Laboratorio ALFA</span> */}
+                  <img className="logoPanelImage" src={logoPanel} alt="logoAlfa" />
                 </a>
-                <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-
-                  
-
-                  <li className="nav-item">
+                <ul className="nav-pills mb-sm-auto mb-0 flex-row align-items-center align-items-sm-start" id="menu">
+                  <li className={`nav-item ${currentContent === 'panelControl/producto' ? 'selected' : ''}`}>
                     <Link
                       to="/panelControl/producto"
                       className="nav-link align-middle px-0"
@@ -333,7 +334,7 @@ function PanelControl() {
                       <i><FaProductHunt /></i> <span className="ms-1 d-none d-sm-inline">Productos</span>
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className={`nav-item ${currentContent === 'panelControl/imagenes' ? 'selected' : ''}`}>
                     <Link
                       to="/panelControl/imagenes"
                       className="nav-link align-middle px-0"
@@ -342,8 +343,9 @@ function PanelControl() {
                       <i><FaProductHunt /></i> <span className="ms-1 d-none d-sm-inline">Imagenes</span>
                     </Link>
                   </li>
-
                 </ul>
+
+
                 <hr />
                 <div className="dropdown pb-4">
                   <a href="/#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -351,7 +353,7 @@ function PanelControl() {
                     <span className="d-none d-sm-inline mx-1">ADMIN</span>
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                    <li><a className="dropdown-item" href="/#">Perfil</a></li>
+                    <li><a className="dropdown" href="/#">Perfil</a></li>
 
                     <li>
                       <hr className="dropdown-divider" />
@@ -375,16 +377,19 @@ function PanelControl() {
                 <Productosaside></Productosaside>
                 </div>
                   )}
-              {currentContent === 'dashboard' && (
-                <h1>Laboratorios Alfa</h1>
+             {currentContent === 'dashboard' && (
+                <div>
+                  <h1 className='tituloLaboratorio'>Bienvenido al Dashboard de Laboratorios Alfa</h1>
+                  <img  src={chicaAlfa} alt="logoAlfa" />
+                </div>
               )}
               {currentContent === 'panelControl/producto' && (
 
                 <div className="my-4 mx-4">
-                  <h2>Productos</h2>
+                  <h2 className='tituloProducto'>Productos Alfa</h2>
 
                   <div className="my-4 float-right mx-4">
-                    <Button onClick={() => handleRegistrar()} variant="primary">Registrar</Button>
+                    <Button onClick={() => handleRegistrar()} variant="primary"> <i><FaPlusCircle /></i> Registrar</Button>
                   </div>
                   <table className="table mt-4">
                     <thead>
@@ -529,7 +534,7 @@ function PanelControl() {
                   {/* EDITAR */}
                   <Modal show={showModalEditar} onHide={handleCloseModalEditar} centered size="lg">
                     <Modal.Header closeButton>
-                      <Modal.Title>Editar Producto</Modal.Title>
+                      <Modal.Title >Editar Producto</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                       <form >

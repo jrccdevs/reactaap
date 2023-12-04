@@ -203,8 +203,8 @@ export default function Busqueda() {
             <Navbar.Brand href="#">  <Nav className="justify-content flex-grow-1 pe-3">
               {/*    <Button onClick={() => Busqueda("/menuadmin")} variant="primary">ADMINISTRADOR</Button> */}
             </Nav></Navbar.Brand>
-
-            {/* <Navbar.Brand href="#" className="panelControl">  <Nav className="justify-content flex-grow-1 pe-3">
+{/* 
+            <Navbar.Brand href="#" className="panelControl">  <Nav className="justify-content flex-grow-1 pe-3">
               <Button onClick={() => Busqueda("/login")} variant="primary">Iniciar Sesion</Button>
             </Nav></Navbar.Brand> */}
 
