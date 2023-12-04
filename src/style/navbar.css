@@ -52,56 +52,161 @@ a {
   transition: 0.3s ease-in;
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px){
-  .nav__toggler {
-    display: block;
-    cursor: pointer;
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: auto !important;
+    background:  rgb(17, 120, 189) !important;
+    border-radius: 7px;
+    width:100%;
+    padding-top: 4px !important;
   }
-  .nav__menu {
-    position: fixed !important;
-    top: 7vh;
-    right: auto;
-    height: 22%;
-    width: 94%;
-    background: #003057;
-    flex-direction: column;
-    transform: translateX(110%);
-    transition: 0.5s ease-in;
-    padding-top: 15px;
-  }
-  /*realizar el tamaño del select y buscador en media query*/
-  .nav__item{
-    background-color: white !important;
-    width: 97% !important;
-    margin-left: 5px !important;
-   margin-right: 5px !important;
-   
-}
+  /*letras que aparecen al costado del select y buiscador*/
 .nav__brand {
   text-transform: uppercase;
+  display: none;
+  
+}
+
+.nav__menu {
   display: flex;
+  align-items: flex-start;
+  
+  gap:3rem;
+/*background-color: yellow; */
 }
+.nav__toggler {
+  display: none;
+}
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204);
+  transition: 0.3s ease-in;
+}
+.nav__item{
+  background-color: white;
+  width: 200px !important;
+  height: 25px !important;
+  margin-top: 2px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  display: flex;
+
+}
+
+.nav__option{
+font-size: medium;
+padding-right: 10px;
+}
+/*div todo el contenido del buscador y la lupa*/
+
 .nav__buscador{
-  /*  background-color: white !important;  */
-   width: 97% !important;
-   margin-left: 5px !important;
-   margin-right: 5px !important;
-   
-   
-  }
-  /*buscador de productos*/
+ /*  background-color: blue; */
+  width: 230px !important;
+  height: 53px;
+  margin-top: 2px;
+  border-radius: 5px;
+  
+ }
+/*buscador de productos*/
 .nav-control{
-  
-  width:100% !important;
-  
- }
- /*lupa del buscador*/
- .nav__lupa{
-    
-     width:45px !important;
-  
- }
+background-color: white;
+width:280px;
+height:100%;
+
 }
+/*lupa del buscador*/
+.nav__lupa{
+ 
+  width:45px;
+  height:100%;
+ color: white;
+}
+
+}
+/*tablet y ipats*/
+/* @media screen and (min-width: 576px) and (max-width: 767px){
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: auto !important;
+    background:  rgb(17, 120, 189) !important;
+    border-radius: 7px;
+    width:auto;
+    margin-left: 25% !important;
+  }
+  /*letras que aparecen al costado del select y buiscador
+.nav__brand {
+  text-transform: uppercase;
+  display: none;
+  
+}
+
+.nav__menu {
+  display: flex;
+  align-items: flex-start;
+  
+  gap:3rem;
+/*background-color: yellow; 
+}
+.nav__toggler {
+  display: none;
+}
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204);
+  transition: 0.3s ease-in;
+}
+.nav__item{
+  background-color: white;
+  width: 200px !important;
+  height: 25px !important;
+  margin-top: 2px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  display: flex;
+
+}
+
+.nav__option{
+font-size: medium;
+padding-right: 10px;
+}
+/*div todo el contenido del buscador y la lupa
+
+.nav__buscador{
+ /*  background-color: blue; 
+  width: 230px !important;
+  height: 53px;
+  margin-top: 2px;
+  border-radius: 5px;
+  
+ }
+/*buscador de productos
+.nav-control{
+background-color: white;
+width:280px;
+height:100%;
+
+}
+/*lupa del buscador
+.nav__lupa{
+ 
+  width:45px;
+  height:100%;
+ color: white;
+}
+
+} */
 
 @media screen and (max-width: 575px){
   .nav__toggler {
@@ -155,8 +260,7 @@ a {
  }
  
 }
-
-@media screen and (min-width: 768px) and (max-width: 991px)  and (orientation: landscape)  {
+ /* @media screen and (min-width: 768px) and (max-width: 991px)  and (orientation: landscape)  {
   .nav__toggler {
     display: block;
     cursor: pointer;
@@ -165,7 +269,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 14vh;
+    height: 22vh;
     background:  rgb(17, 120, 189);
     margin-top:"200px";
     border-radius: 10px;
@@ -181,7 +285,7 @@ a {
     transform: translateX(110%);
     transition: 0.5s ease-in;
   }
-  /*realizar el tamaño del select y buscador en media query*/
+ 
   .nav__item{
     background-color: white !important;
     width: 97% !important;
@@ -193,29 +297,29 @@ a {
   display: flex;
 }
 .nav__buscador{
-  /*  background-color: white !important;  */
+
    width: 97% !important;
    margin-left: 5px !important;
    margin-right: 5px !important;
    
    
   }
-  /*buscador de productos*/
+ 
 .nav-control{
   
   width:100% !important;
   
  }
- /*lupa del buscador*/
+
  .nav__lupa{
     
      width:45px !important;
   
  }
-}
+} */
+ 
 
-
-@media screen and (max-width: 767px)  and (orientation: landscape)  {
+ /* @media screen and (max-width: 767px)  and (orientation: landscape)  {
   .nav__toggler {
     display: block;
     cursor: pointer;
@@ -224,7 +328,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 14vh;
+    height: auto !important;
     background:  rgb(17, 120, 189);
     margin-top:"200px";
     border-radius: 10px;
@@ -240,7 +344,7 @@ a {
     transform: translateX(110%);
     transition: 0.5s ease-in;
   }
-  /*realizar el tamaño del select y buscador en media query*/
+ 
   .nav__item{
     background-color: white !important;
     width: 97% !important;
@@ -252,27 +356,27 @@ a {
   display: flex;
 }
 .nav__buscador{
-  /*  background-color: white !important;  */
+  
    width: 97% !important;
    margin-left: 5px !important;
    margin-right: 5px !important;
    
    
   }
-  /*buscador de productos*/
+  
 .nav-control{
   
   width:100% !important;
   
  }
- /*lupa del buscador*/
+
  .nav__lupa{
     
      width:45px !important;
   
  }
-}
-
+} 
+ */
 /* Active Class */
 .nav__active {
   transform: translateX(0%);
@@ -363,7 +467,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 9.3vh;
+  height: auto;
+/*   height: 9.3vh; */
   background:   rgb(17, 120, 189);
   margin-top:"200px";
   border-radius: 7px;
@@ -462,7 +567,8 @@ width: 280px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 8.0vh;
+ /*  height: 8.0vh; */
+  height: auto;
   background:   rgb(17, 120, 189);
   margin-top:"200px";
   border-radius: 7px;
@@ -563,7 +669,8 @@ width: 280px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 8.5vh;
+  /* height: 8.5vh; */
+  height: auto;
   background:  rgb(17, 120, 189);
   margin-top:"200px";
   border-radius: 7px;

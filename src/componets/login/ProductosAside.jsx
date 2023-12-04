@@ -346,6 +346,7 @@ function ContentControl() {
                               <option value="BANNER">BANNER</option>
                               <option value="NOTICIAS">NOTICIAS</option>
                               <option value="VADEMECUM">VADEMECUM</option>
+                              <option value="RESPONSIVOBANNER">RESPONSIVOBANNER</option>
                             </select>
                           </div>
                           <div className="mb-3 col-6">
@@ -411,6 +412,7 @@ function ContentControl() {
                               <option value="BANNER">BANNER</option>
                               <option value="NOTICIAS">NOTICIAS</option>
                               <option value="VADEMECUM">VADEMECUM</option>
+                              <option value="RESPONSIVOBANNER">RESPONSIVOBANNER</option>
                             </select>
                           </div>
                           <div className="mb-3 col-6">

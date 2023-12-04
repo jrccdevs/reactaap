@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+
+import { getEmpresaBanner } from "../api/productosCar";
+
 import CarrucelHeader from './HeaderCarrucel';
 import Busquedaprincipal from './Principalbusqueda';
 import Footer from './Footer';
@@ -119,6 +122,42 @@ const AccordionDetails = withStyles((theme) => ({
 export default function Empresa() {
 
 const  grada = "none";
+const [productos, setProductos] = useState([]);
+
+const [busqueda, setBusqueda] = useState("");
+
+
+useEffect(() => {
+  async function loadProductos() {
+    const response = await getEmpresaBanner();
+    setProductos(response.data);
+  }
+  loadProductos();
+}, []);
+
+const handleChangen = (e) => {
+  setBusqueda(e.target.value);
+  buscar(e.target.value);
+};
+
+let result = [];
+
+const buscar = (e) => {
+  if (!busqueda) {
+    result = productos;
+  } else {
+    result = productos.filter((dato) =>
+      dato.principioactivo
+        .toLowerCase()
+        .includes(busqueda.toLocaleLowerCase())
+    );
+  }
+};
+
+buscar();
+
+console.log(result);
+
 
   const [selectedValue, setSelectedValue] = React.useState('z');
 
@@ -134,7 +173,7 @@ const  grada = "none";
 
   return (
     <>
-
+   
       <div className="container-fluid" style={{ backgroundColor: "white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
         <div className="row">
 
@@ -176,8 +215,9 @@ const  grada = "none";
       </div>
 
 
-
-      <Container maxWidth='xl'>
+      <div>
+      {result.map((producto) => ( 
+      <Container maxWidth='xl'  key={producto.id} >
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -427,8 +467,8 @@ const  grada = "none";
         <Grid container >
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
             <Accordion square expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
-              <AccordionSummary style={{display: [grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel  className="color-fecha" style={{ marginLeft: "1000px", color: blue['A400'] }} value="female" label="2024"
+              <AccordionSummary style={{display: [producto.estado] }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel  className="color-fecha" style={{ marginLeft: "1000px", color: blue['A400'] }} value="female" label={producto.articulo}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'j'}
                     onChange={handleChangegren}
@@ -436,14 +476,15 @@ const  grada = "none";
                     style={{ backgroundColor:  blue['A400'] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
   
                     name="radio-button-demo"
-                    inputProps={{ 'aria-label': 'I' }}
+                    inputProps={{ 'aria-label': 'J' }}
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails >
                 <Typography className="detalle-acordion8" variant="body1" color="textSecondary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                  sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+               <p>{producto.descripcion} </p> 
+               <img
+                        style={{ textAlign: "center" }} className="fondo-img" target="_blank" src={producto.categoria} alt=""
+                      />
              </Typography>
               </AccordionDetails>
             </Accordion>
@@ -693,11 +734,12 @@ const  grada = "none";
               </AccordionDetails>
             </Accordion>
           </Grid>
-        </Grid>
-
-
-
+        </Grid>  
       </Container>
+
+       ))}
+      </div>
+
       <div className="principal-footer mb-12 mt-12">
          <Footer />
       </div>

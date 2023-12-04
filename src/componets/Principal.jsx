@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
 import ControlCarousel from "./Carrusel";
+import CarouselRespon from "./CarrucelResponsiv";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel"
 import Navegacion from "./Navegacion";
@@ -44,11 +45,17 @@ export default class Principal extends Component {
 
 
 
-     
+       
+         
         <div className="carrucel-principal" style={{ marginTop: "190px" }} >
           <ControlCarousel />
 
         </div>
+        <div className="carrucel-respon" style={{ marginTop: "190px" }} >
+          <CarouselRespon />
+
+        </div>
+       
         <div>
           <Navegacion />
         </div>

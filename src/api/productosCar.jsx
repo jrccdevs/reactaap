@@ -12,11 +12,12 @@ export const getProductosCarrucel = async () =>
 
 await axios.get('https://node-alfa.vercel.app/carrucel');
 //await axios.get('http://localhost:7000/carrucel');
- 
+
+export const getImagenesBannerRespon = async () => 
+await axios.get('https://node-alfa.vercel.app/responbanner');
+
 
 export const getImagenesBanner = async () => 
-
-
 await axios.get('https://node-alfa.vercel.app/banner');
 
 export const getImagenesVademecum = async () => 
@@ -52,4 +53,6 @@ export const crearProductosRequest = async(productos) => {
     });
 };
 
-
+export const getEmpresaBanner = async () => 
+//await axios.get('https://node-alfa.vercel.app/carrucel');
+await axios.get('http://localhost:7000/empresa');

@@ -1,9 +1,12 @@
+
 .footer {
   background-color: #1178bd;
   color: #ffff;
-  position: absolute;
-  bottom: 0;
+  padding: 0;
   width: 100%;
+  position: absolute;
+  display:flex;
+  bottom: 0;
 }
 
 .datosemp1 {
@@ -59,4 +62,18 @@
   color: #0072b1;
   opacity: 1;
   transition: opacity 500ms;
+}
+@media screen and (min-width: 576px) and (max-width: 767px){
+  
+  .footer {
+  margin: 0 ;
+  width:100%;
+  }
+}
+
+@media screen and (max-width: 575px){
+  .footer {
+    margin: 0 ;
+    width:100%;
+    }
 }

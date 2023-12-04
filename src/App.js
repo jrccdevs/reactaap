@@ -20,6 +20,7 @@ import ProductosAside from './componets/login/ProductosAside';
 import Prospecto from './componets/Prospecto'
 import Vigilancia from './componets/vigilancia'
 import PaginaCarrucel from './componets/PaginaCarrucel'
+import CarrucelRespon from './componets/CarrucelResponsiv'
 
 import User from './componets/User'
 import Principalbusqueda from './componets/Principalbusqueda'
@@ -73,7 +74,8 @@ export default function App() {
           <Route path="/productoadmin" element={<Productoadmin />} />
           <Route path="/administradorcarrucel" element={<Administradorcarrucel />} />
           <Route path="/administrarproducto" element={<Administrarproducto />} />
-          <Route path="/paginacarrucel" element={<PaginaCarrucel />} />
+          <Route path="/carrucelrespon" element={<CarrucelRespon />} />
+          <Route path="/paginacarrucel/:id/page/:page" element={<PaginaCarrucel />} />
 
           <Route path="/user" element={<User />} />
           <Route path="/principalbusqueda" element={<Principalbusqueda />} />

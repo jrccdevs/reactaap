@@ -61,63 +61,32 @@ display: flex;
 }
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .principal {
+    height: auto;
+  }
+  .item img {
+    width: 100%;
+   }
+   .sliderimagen {
+    width: 100%;
+    margin-left: -5%;
+  }
+}
+
+
 
 
 
 
 
-/*header carrucel de arriba*/
-/*media query para celular*/
-/* Regla para pantallas más pequeñas (por ejemplo, menos de 600px de ancho) */
-@media (max-width: 890px) {
-.principal {
-  height: auto;
-}
-}
 
 
-@media (max-width: 890px) {
-.item img {
- width: 100%;
-}
-}
-/* Regla para pantallas más grandes (por ejemplo, más de 1200px de ancho) */
-@media (min-width: 1200px) {
-.principal {
- 
-}
-}
-@media (max-width: 890px) {
-.sliderimagen {
-  width: 100%;
-  margin-left: -5%;
-}
-}
 
 
-@media (max-width: 600px) {
-.sliderimagen {
-  width: 100%;
-  margin-left: 10%;
-}
-}
-
-@media (max-width: 380px) {
-.sliderimagen {
-  width: 100%;
-  margin-left: 20%;
-}
-}
 
 
-@media (max-width: 890px) {
-.logoAlfaprueba {
-  height: 40px;
-  width: 45px;
- margin-left: 5px;
- margin-top: 10px;
-}
-}
+
 @media (max-width: 890px) {
 .logoChica {
   height: 40px;
@@ -126,52 +95,8 @@ display: flex;
  margin-top: 10px;
 }
 
-/* @media (min-width: 890px) {
-  .sliderimagen {
-    width: 100%;
-    margin-left: 40%;
-  }
-  .logoChica {
-    height: 40px;
-    width: 45px;
-   margin-left: 5px;
-   margin-top: 10px;
-  }
-  .logoAlfaprueba {
-    height: 40px;
-    width: 45px;
-   margin-left: 5px;
-   margin-top: 10px;
-  }
-} */
+
 .chica{
   margin-left: -50px;
 }
-.slider-container{
- /*background-color: aqua;*/
 }
-.slider{
- /* background-color: blue;*/
-  margin-left: 500px;
-}
-.item{
- /* background-colorrgb(98, 122, 51)en;*/
-  height: auto;
-  width: 40px;
-  
-}
-}
-/* .logoChica:hover{
-border-radius:50%;
--webkit-border-radius:50%;
-box-shadow: 0px 0px 15px 15px rgb(120, 129, 136);
--webkit-box-shadow: 0px 0px 15px 15px rgb(17, 120, 189);
-transform: rotate(360deg);
--webkit-transform: rotate(360deg);
-} */
-/* .logoAlfaprueba:hover {
-  -webkit-transform: rotateY(180deg);
-  -webkit-transform-style: preserve-3d;
-  transform: rotateY(180deg);
-  transform-style: preserve-3d;
-} */
