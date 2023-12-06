@@ -21,7 +21,7 @@ import Prospecto from './componets/Prospecto'
 import Vigilancia from './componets/vigilancia'
 import PaginaCarrucel from './componets/PaginaCarrucel'
 import CarrucelRespon from './componets/CarrucelResponsiv'
-
+import CarrucelAside from './componets/login/CarrucelAside'
 import User from './componets/User'
 import Principalbusqueda from './componets/Principalbusqueda'
 
@@ -88,6 +88,8 @@ export default function App() {
           <Route path="/productosaside" element={<ProductosAside />} />
           <Route path="/panelControl/imagenes" element={<PanelControl />} />
           <Route path="/contentControl/imagenes" element={<ContentControl />} />
+          <Route path="/panelControl/asidecarrucel" element={<PanelControl />} />
+          <Route path="/asidecarrucel" element={<CarrucelAside />} />
 
         </Routes>
       </BrowserRouter>

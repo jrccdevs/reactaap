@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { getImagenesBanner } from "../api/productosCar";
+import { getMovil } from "../api/productosCar";
 import { Container, Grid } from "@mui/material"
 import { Link, useNavigate } from "react-router-dom";
 import "../style/Header.css";
@@ -17,7 +17,7 @@ export default function ControlCarousel() {
 
   useEffect(() => {
     async function loadProductos() {
-      const response = await getImagenesBanner();
+      const response = await getMovil();
       setProductos(response.data);
     }
     loadProductos();
@@ -61,7 +61,7 @@ export default function ControlCarousel() {
           {result.map((producto) => (
               <Carousel.Item key={producto.id}>
                 <Link to={`/paginacarrucel/${producto.id}/page/1`}>
-                  <img className="carrucel-responcive " src={producto.image} alt="Banner Limpieza" />
+                  <img style={{width:"100%", height:"auto"}} className="carrucel-responcive " src={producto.image} alt="Banner Limpieza" />
                 </Link>
               </Carousel.Item>
             ))}

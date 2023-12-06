@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { getImagenesBanner } from "../api/productosCar";
+import { getBanner } from "../api/productosCar";
 import { Container, Grid } from "@mui/material"
 import { Link } from "react-router-dom";
 import "../style/Header.css";
@@ -15,7 +15,7 @@ export default function ControlCarousel() {
 
   useEffect(() => {
     async function loadProductos() {
-      const response = await getImagenesBanner();
+      const response = await getBanner();
       setProductos(response.data);
     }
     loadProductos();

@@ -19,7 +19,7 @@ function PaginaCarrucel() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(`https://node-alfa.vercel.app/imagenes/${id}`);
+      const data = await fetch(`https://node-alfa.vercel.app/empresa/${id}`);
       const product = await data.json();
       setProducto(product);
     };
@@ -31,8 +31,8 @@ function PaginaCarrucel() {
 
     return (
         <>
-       {producto.map((producto, index) => (
-        <div className='container'>
+       {producto.map((producto) => (
+        <div className='container' key={producto.id}>
          
             <div  style={{ width: "100%", height: "100%" ,marginTop:"10px"}}>
                 
@@ -47,9 +47,18 @@ function PaginaCarrucel() {
             </div>
 
             <div>
-                <p> {producto.nombre} </p>
+                <p> {producto.descripcion} </p>
             </div>
 
+            <div>
+                <p> {producto.estado} </p>
+            </div>
+            <div>
+                <p> {producto.categoria} </p>
+            </div>
+            <div>
+                <p> {producto.id} </p>
+            </div>
          
         </div >
          ))}

@@ -56,3 +56,11 @@ export const crearProductosRequest = async(productos) => {
 export const getEmpresaBanner = async () => 
 //await axios.get('https://node-alfa.vercel.app/carrucel');
 await axios.get('http://localhost:7000/empresa');
+
+export const getMovil = async () => 
+await axios.get('https://node-alfa.vercel.app/movil');
+//await axios.get('http://localhost:7000/movil');
+
+export const getBanner = async () => 
+await axios.get('https://node-alfa.vercel.app/banner');
+//await axios.get('http://localhost:7000/banner');

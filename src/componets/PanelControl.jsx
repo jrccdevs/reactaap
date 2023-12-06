@@ -6,6 +6,7 @@ import { FaProductHunt } from 'react-icons/fa';
 import { FaPlusCircle } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
 import Productosaside from "./login/ProductosAside";
+import CarrucelAside from "./login/CarrucelAside";
 
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -322,7 +323,7 @@ function PanelControl() {
               <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="/" className="logoPanel d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                   {/* <span className="fs-5 d-none d-sm-inline">Laboratorio ALFA</span> */}
-                  <img className="logoPanelImage" src={logoPanel} alt="logoAlfa" />
+                  <img className="logoPanelImage" style={{width:"50%", height:"auto"}} src={logoPanel} alt="logoAlfa" />
                 </a>
                 <ul className="nav-pills mb-sm-auto mb-0 flex-row align-items-center align-items-sm-start" id="menu">
                   <li className={`nav-item ${currentContent === 'panelControl/producto' ? 'selected' : ''}`}>
@@ -331,7 +332,7 @@ function PanelControl() {
                       className="nav-link align-middle px-0"
                       onClick={() => setCurrentContent('panelControl/producto')}
                     >
-                      <i><FaProductHunt /></i> <span className="ms-1 d-none d-sm-inline">Productos</span>
+                      <i></i> <span className="ms-1 d-none d-sm-inline">Productos</span>
                     </Link>
                   </li>
                   <li className={`nav-item ${currentContent === 'panelControl/imagenes' ? 'selected' : ''}`}>
@@ -340,7 +341,16 @@ function PanelControl() {
                       className="nav-link align-middle px-0"
                       onClick={() => setCurrentContent('panelControl/imagenes')}
                     >
-                      <i><FaProductHunt /></i> <span className="ms-1 d-none d-sm-inline">Imagenes</span>
+                      <i></i> <span className="ms-1 d-none d-sm-inline">Imagenes</span>
+                    </Link>
+                  </li>
+                  <li className={`nav-item ${currentContent === 'panelControl/asidecarrucel' ? 'selected' : ''}`}>
+                    <Link
+                      to="/panelControl/asidecarrucel"
+                      className="nav-link align-middle px-0"
+                      onClick={() => setCurrentContent('panelControl/asidecarrucel')}
+                    >
+                      <i></i> <span className="ms-1 d-none d-sm-inline">Banner</span>
                     </Link>
                   </li>
                 </ul>
@@ -371,16 +381,24 @@ function PanelControl() {
             </div>
             
             <div className="col py-3" id="content">
+            {currentContent === 'panelControl/asidecarrucel' && (
+                  <div>
+                 
+            <h5>hola car</h5>
+                <CarrucelAside></CarrucelAside>
+                </div>
+                  )}
             {currentContent === 'panelControl/imagenes' && (
                   <div>
                  
                 <Productosaside></Productosaside>
+              
                 </div>
                   )}
              {currentContent === 'dashboard' && (
                 <div>
                   <h1 className='tituloLaboratorio'>Bienvenido al Dashboard de Laboratorios Alfa</h1>
-                  <img  src={chicaAlfa} alt="logoAlfa" />
+                  <img style={{width:"80%", height:"auto"}} src={chicaAlfa} alt="logoAlfa" />
                 </div>
               )}
               {currentContent === 'panelControl/producto' && (
