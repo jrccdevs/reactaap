@@ -107,6 +107,7 @@ function PanelControl() {
     presentacion: '',
     image: null,   //img
     prospecto: null,  //pdf
+    link: '',
   });
 
 
@@ -128,6 +129,7 @@ function PanelControl() {
       presentacion: '',
       image: null,
       prospecto: null,
+      link: '',
     });
   };
 
@@ -142,7 +144,8 @@ function PanelControl() {
       !productoPost.carrucel ||
       !productoPost.presentacion ||
       !productoPost.image ||
-      !productoPost.prospecto
+      !productoPost.prospecto ||
+      !productoPost.link
     ) {
       MySwal.fire({
         position: 'center',
@@ -166,7 +169,8 @@ function PanelControl() {
       !productoPut.carrucel ||
       !productoPut.presentacion ||
       !productoPut.image ||
-      !productoPut.prospecto
+      !productoPost.prospecto ||
+      !productoPost.link
     ) {
       MySwal.fire({
         position: 'center',
@@ -217,6 +221,7 @@ function PanelControl() {
     presentacion: '',
     image: null,   //img
     prospecto: null,  //pdf
+    link: '',
   });
 
 
@@ -235,7 +240,8 @@ function PanelControl() {
         carrucel: producto[0].carrucel,
         presentacion: producto[0].presentacion,
         image: producto[0].image,
-        prospecto: producto[0].prospecto
+        prospecto: producto[0].prospecto,
+        link: producto[0].link
       });
     } catch (error) {
       console.error("Error al obtener los detalles del producto:", error);
@@ -537,6 +543,11 @@ function PanelControl() {
                             <label htmlFor="formFile" className="form-label">Prospecto</label>
                             <input type="file" name="prospecto" onChange={handleInputChange} />
                           </div>
+
+                          <div className="mb-3 col-6">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Link</label>
+                            <input type="text" className="form-control" name="link" value={productoPost.link} onChange={handleInputChange} />
+                          </div>
                         </div>
 
                         {/* <button type="submit" className="btn btn-primary">Registrar</button> */}
@@ -630,6 +641,10 @@ function PanelControl() {
                             </div>
                           )}
                         </div>
+                        <div className="mb-3 col-6">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Link</label>
+                            <input type="text" className="form-control" name="link" value={productoPut.link} onChange={handleInputChangeEditar} />
+                          </div>
 
                       </form>
                     </Modal.Body>

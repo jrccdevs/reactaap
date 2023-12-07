@@ -162,11 +162,19 @@ export default function DetalleProducto() {
                     {producto.presentacion}{" "}
                   </text>
                 </h6>
-
+                <h6 className="detalle" style={{ color: "blue", width: "30px", height: "30px" }}>
+                <Link to={producto.link}>
+                <text style={{ color: " blue" }}>
+                    {" "}
+                    {producto.link}{" "}
+                  </text>
+                    </Link>
+                </h6>
                 <div className="boton" style={{ marginTop: "20px", width: "auto", height: "30px", color: "white", marginLeft: "0px", backgroundColor: "#003057", textAlign: "center" }}>
                   <a href={producto.prospecto} type="application/pdf" target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }} zoom={100}> VER MAS (Prospecto)</a>
                 </div>
-
+               
+                
               </Card.Text>
             </Card.Body>
           </div>
