@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { getEmpresaBanner } from "../api/productosCar";
+import { getEmpresaAlafa } from "../api/productosCar";
 
 import CarrucelHeader from './HeaderCarrucel';
 import Busquedaprincipal from './Principalbusqueda';
@@ -129,7 +129,7 @@ const [busqueda, setBusqueda] = useState("");
 
 useEffect(() => {
   async function loadProductos() {
-    const response = await getEmpresaBanner();
+    const response = await getEmpresaAlafa();
     setProductos(response.data);
   }
   loadProductos();
@@ -467,8 +467,8 @@ console.log(result);
         <Grid container >
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
             <Accordion square expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
-              <AccordionSummary style={{display: [producto.estado] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel  className="color-fecha" style={{ marginLeft: "1000px", color: blue['A400'] }} value="female" label={producto.articulo}
+              <AccordionSummary style={{display: [producto.accion] }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel  className="color-fecha" style={{ marginLeft: "1000px", color: blue['A400'] }} value="female" label={producto.anio}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'j'}
                     onChange={handleChangegren}
@@ -483,7 +483,7 @@ console.log(result);
                 <Typography className="detalle-acordion8" variant="body1" color="textSecondary">
                <p>{producto.descripcion} </p> 
                <img
-                        style={{ textAlign: "center" }} className="fondo-img" target="_blank" src={producto.categoria} alt=""
+                        style={{ textAlign: "center" }} className="fondo-img" target="_blank" src={producto.estado} alt=""
                       />
              </Typography>
               </AccordionDetails>

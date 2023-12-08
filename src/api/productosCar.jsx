@@ -64,3 +64,9 @@ await axios.get('https://node-alfa.vercel.app/movil');
 export const getBanner = async () => 
 await axios.get('https://node-alfa.vercel.app/banner');
 //await axios.get('http://localhost:7000/banner');
+
+
+
+export const getEmpresaAlafa = async () => 
+await axios.get('https://node-alfa.vercel.app/empresaalfa');
+//await axios.get('http://localhost:7000/empresa');
