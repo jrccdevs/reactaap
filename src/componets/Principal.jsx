@@ -26,7 +26,7 @@ export default class Principal extends Component {
             <div className=" col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
               <div className=" col-12">
             <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", justifyContent:"center", paddingTop:"10px"}} src={ChicaAlfa} alt="" />
+                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", justifyContent:"center", paddingTop:"0px"}} src={ChicaAlfa} alt="" />
                 </Link>
                 </div>
             </div>
@@ -47,11 +47,11 @@ export default class Principal extends Component {
 
        
          
-        <div className="carrucel-principal" style={{ marginTop: "190px" }} >
+        <div className="carrucel-principal" style={{ marginTop: "170px" }} >
           <ControlCarousel />
 
         </div>
-        <div className="carrucel-respon" style={{ marginTop: "190px" }} >
+        <div className="carrucel-respon" style={{ marginTop: "170px" }} >
           <CarouselRespon />
 
         </div>

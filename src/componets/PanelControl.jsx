@@ -7,7 +7,7 @@ import { FaPlusCircle } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
 import Productosaside from "./login/ProductosAside";
 import CarrucelAside from "./login/CarrucelAside";
-
+import BannerAside from "./login/BannerAside";
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
@@ -325,20 +325,24 @@ function PanelControl() {
 
         <div className="container-fluid scroll-x-hidden">
           <div className="row flex-nowrap">
-            <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-              <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" className="logoPanel d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <div className=" aside col-4 col-md-3 col-xl-2 px-sm-2 px-0 ">
+
+              
+              <div className="d-flex flex-column align-items-center align-items-sm-start px-13 pt-2 text-white min-vh-100">
+                <a href="/panelControl" className="logoPanel d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                   {/* <span className="fs-5 d-none d-sm-inline">Laboratorio ALFA</span> */}
                   <img className="logoPanelImage" style={{width:"50%", height:"auto"}} src={logoPanel} alt="logoAlfa" />
                 </a>
-                <ul className="nav-pills mb-sm-auto mb-0 flex-row align-items-center align-items-sm-start" id="menu">
-                  <li className={`nav-item ${currentContent === 'panelControl/producto' ? 'selected' : ''}`}>
+                <hr />
+                <ul  className="nav-pills mb-sm-100 mb-0 flex-row align-items-center align-items-sm-start" id="menu">
+                  <li  className={`nav-item ${currentContent === 'panelControl/producto' ? 'selected' : ''}`}>
                     <Link
                       to="/panelControl/producto"
-                      className="nav-link align-middle px-0"
+                      
+                      className="nav-link align-middle px-20"
                       onClick={() => setCurrentContent('panelControl/producto')}
                     >
-                      <i></i> <span className="ms-1 d-none d-sm-inline">Productos</span>
+                      <i></i> <span  className="ms-10 d-none d-sm-inline">Productos</span>
                     </Link>
                   </li>
                   <li className={`nav-item ${currentContent === 'panelControl/imagenes' ? 'selected' : ''}`}>
@@ -347,7 +351,7 @@ function PanelControl() {
                       className="nav-link align-middle px-0"
                       onClick={() => setCurrentContent('panelControl/imagenes')}
                     >
-                      <i></i> <span className="ms-1 d-none d-sm-inline">Imagenes</span>
+                      <i></i> <span className="ms-1 d-none d-sm-block">Imagenes</span>
                     </Link>
                   </li>
                   <li className={`nav-item ${currentContent === 'panelControl/asidecarrucel' ? 'selected' : ''}`}>
@@ -355,6 +359,15 @@ function PanelControl() {
                       to="/panelControl/asidecarrucel"
                       className="nav-link align-middle px-0"
                       onClick={() => setCurrentContent('panelControl/asidecarrucel')}
+                    >
+                      <i></i> <span className="ms-1 d-none d-sm-inline">Banner Movil</span>
+                    </Link>
+                  </li>
+                  <li className={`nav-item ${currentContent === 'panelControl/asidebanner' ? 'selected' : ''}`}>
+                    <Link
+                      to="/panelControl/asidebanner"
+                      className="nav-link align-middle px-0"
+                      onClick={() => setCurrentContent('panelControl/asidebanner')}
                     >
                       <i></i> <span className="ms-1 d-none d-sm-inline">Banner</span>
                     </Link>
@@ -390,8 +403,15 @@ function PanelControl() {
             {currentContent === 'panelControl/asidecarrucel' && (
                   <div>
                  
-            <h5>hola car</h5>
+           
                 <CarrucelAside></CarrucelAside>
+                </div>
+                  )}
+                  {currentContent === 'panelControl/asidebanner' && (
+                  <div>
+                 
+           
+                <BannerAside></BannerAside>
                 </div>
                   )}
             {currentContent === 'panelControl/imagenes' && (
@@ -415,7 +435,7 @@ function PanelControl() {
                   <div className="my-4 float-right mx-4">
                     <Button onClick={() => handleRegistrar()} variant="primary"> <i><FaPlusCircle /></i> Registrar</Button>
                   </div>
-                  <table className="table mt-4">
+                  <table className="table mt-4" style={{fontSize:"15px"}}>
                     <thead>
                       <tr>
                         <th scope="col">Codigo</th>

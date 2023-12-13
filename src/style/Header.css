@@ -314,7 +314,7 @@
      }
      .carrucel-respon{
     
-       margin-top: 105px !important;
+       margin-top: 88px !important;
        height: 100%;
        width: 100%;
      }
@@ -332,7 +332,7 @@
     margin-top: 50px !important;
   }
   .carrucel-principal{
-    margin-top: 95px !important;
+    margin-top: auto !important;
     height: 100%;
     width: 100%;
     display: none;

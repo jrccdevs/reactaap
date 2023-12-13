@@ -11,29 +11,43 @@ body.panel-control-body {
   margin: 0 !important;
   padding-bottom: 0 !important;
   min-height: 0 !important;
+  background-color: whitesmoke;
 }
 
 .nav-item.selected {
   color: #ffff;
-  background-color: #2196f3;
-  padding: 10px 22px 10px 22px;
+  background-color: rgb(17, 120, 189);
+  padding: 10px 82px 10px 22px;
   border-radius: 5px;
+  width: 235px !important;
+  margin-left: -30px;
+  height: 40px;
 }
 .nav-link:hover {
-  color: inherit !important;
+  color: rgb(93, 180, 93) !important;
   /* color: green !important;  */
   text-decoration: none !important;
 }
 
 .nav-item {
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 1;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 0px;
+  width: 100% !important;
+ /* background-color: aqua;*/
+  font-size: 18px;
 }
-
+.aside{
+  background-color:  #003057;
+  width: 250px;
+  height: auto;
+}
+.hr {
+  border: 1px solid black;
+}
 #menu.nav-pills.mb-sm-auto.mb-0.flex-row.align-items-center.align-items-sm-start {
-  padding-left: 10px;
+  padding-left: 100px;
 }
 
 .logoPanelImage {
@@ -77,4 +91,11 @@ div.mat-mdc-dialog-actions.mdc-dialog__actions {
   font-family: Helvetica;
   font-weight: 700;
   font-style: normal;
+}
+
+
+.dropdown{
+  margin-top:auto;
+  background-color:  rgb(17, 120, 189);
+  width: 100%;
 }

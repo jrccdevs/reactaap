@@ -100,6 +100,7 @@ function ContentControl() {
         image: null,   //img
         categoria: '',
         estado:'',
+        accion:'',
        
     });
   };
@@ -110,7 +111,8 @@ function ContentControl() {
       !productoPost.nombre ||
       !productoPost.image ||
       !productoPost.categoria ||
-      !productoPost.estado 
+      !productoPost.estado ||
+      !productoPost.accion 
     ) {
       MySwal.fire({
         position: 'center',
@@ -128,7 +130,8 @@ function ContentControl() {
         !productoPost.nombre ||
         !productoPost.image ||
         !productoPost.categoria ||
-        !productoPost.estado 
+        !productoPost.estado ||
+        !productoPost.accion 
     ) {
       MySwal.fire({
         position: 'center',
@@ -173,6 +176,7 @@ function ContentControl() {
     image: null,   //img
     categoria: '',
     estado:'',
+    accion:''
   });
 
 
@@ -185,7 +189,8 @@ function ContentControl() {
         nombre: producto[0].nombre,
         image: producto[0].image,
         categoria: producto[0].categoria,
-        estado: producto[0].estado
+        estado: producto[0].estado,
+        accion: producto[0].accion
       });
     } catch (error) {
       console.error("Error al obtener los detalles de las imagenes:", error);
@@ -269,7 +274,7 @@ function ContentControl() {
                   <div className="my-4 float-right mx-4">
                   <Button onClick={() => handleRegistrar()} variant="primary"> <i><FaPlusCircle /></i> Registrar</Button>
                   </div>
-                  <table className="table mt-4">
+                  <table className="table mt-4" style={{fontSize:"15px"}}>
                     <thead>
                       <tr>
                        
@@ -277,6 +282,7 @@ function ContentControl() {
                         <th scope="col">Categoria</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Imagen</th>
+                        <th scope="col">Activacion</th>
                         <th scope="col">Acciones</th>
                       </tr>
                     </thead>
@@ -290,6 +296,7 @@ function ContentControl() {
                           <td>
                             <img className="productoImg" src={producto.image} alt={producto.nombre} style={{height:"30px", width:"30px"}} />
                           </td>
+                          <td>{producto.accion}</td>
                           <td>
                             <button type="button" class="btn btn-primary btn-sm mx-2" onClick={() => handleEditar(producto.id)} >Editar</button>
                             <button type="button" class="btn btn-danger btn-sm" onClick={() => handleEliminar(producto.id)} >Eliminar</button>
@@ -364,6 +371,14 @@ function ContentControl() {
 
 
                         <div className="row">
+                        <div className="mb-3 col-6">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Activacion</label>
+                            <select className="form-select" name="accion" value={productoPost.accion} onChange={handleInputChange}>
+                              <option defaultValue >Seleccione Carrucel : </option>
+                              <option value="none">none</option>
+                              <option value="flex">flex</option>
+                            </select>
+                          </div>
 
                           <div className="mb-3 col-6">
                             <label htmlFor="formFile" className="form-label">Imagen</label>
@@ -428,6 +443,14 @@ function ContentControl() {
 
 
                         <div className="row">
+                        <div className="mb-3 col-6">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Activacion</label>
+                            <select className="form-select" name="accion" value={productoPut.accion} onChange={handleInputChangeEditar}>
+                              <option defaultValue >Seleccione Carrucel : </option>
+                              <option value="none">none</option>
+                              <option value="flex">flex</option>
+                            </select>
+                          </div>
                           <div className="mb-3 col-6">
                             <label htmlFor="image" className="form-label">Imagen</label>
                             <input type="file" name="image"   onChange={handleInputChangeEditar} />

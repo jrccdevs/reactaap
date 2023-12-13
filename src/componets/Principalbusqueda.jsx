@@ -126,9 +126,9 @@ function useKey(key, cb) {
   return (
     <nav className="nav">
       <a href="!#" className="nav__brand">
-      <img className="logo-responsivo" style={{width:"80%", height:"auto", color:"white"}} src={LogoRes} alt="" />
-              
-      </a>
+         <img className="logo-responsivo" style={{width:"auto", height:"auto",  color:"white"}} src={LogoRes} alt="" />  
+        </a>
+     
       <div className={active}>
                 <select className=" nav__item form-select col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"   onChange={(e) => handleFormaFarmace(e)}>
                 <option disabled selected hidden className="nav__option" >FORMA FARMACEUTICA</option>

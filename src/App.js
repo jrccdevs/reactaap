@@ -20,8 +20,10 @@ import ProductosAside from './componets/login/ProductosAside';
 import Prospecto from './componets/Prospecto'
 import Vigilancia from './componets/vigilancia'
 import PaginaCarrucel from './componets/PaginaCarrucel'
+import PaginaBanner from './componets/Paginabanner'
 import CarrucelRespon from './componets/CarrucelResponsiv'
 import CarrucelAside from './componets/login/CarrucelAside'
+import BannerAside from './componets/login/CarrucelAside'
 import User from './componets/User'
 import Principalbusqueda from './componets/Principalbusqueda'
 
@@ -76,6 +78,7 @@ export default function App() {
           <Route path="/administrarproducto" element={<Administrarproducto />} />
           <Route path="/carrucelrespon" element={<CarrucelRespon />} />
           <Route path="/paginacarrucel/:id/page/:page" element={<PaginaCarrucel />} />
+          <Route path="/paginabanner/:id/page/:page" element={<PaginaBanner />} />
 
           <Route path="/user" element={<User />} />
           <Route path="/principalbusqueda" element={<Principalbusqueda />} />
@@ -90,6 +93,8 @@ export default function App() {
           <Route path="/contentControl/imagenes" element={<ContentControl />} />
           <Route path="/panelControl/asidecarrucel" element={<PanelControl />} />
           <Route path="/asidecarrucel" element={<CarrucelAside />} />
+          <Route path="/bannercarrucel" element={<BannerAside />} />
+          <Route path="/panelControl/asidebanner" element={<PanelControl />} />
 
         </Routes>
       </BrowserRouter>

@@ -15,6 +15,10 @@ const iframeStyle = {
 };
 
 export default function Navegacion () {
+
+
+  const  grada = "none";
+
   const esVideo = url => {
     const extensionesVideo = ['.mp4', '.webm', '.ogg', '.ogv', '.avi', '.mov', '.mkv', '.flv'];
     return extensionesVideo.some(ext => url.endsWith(ext));
@@ -111,19 +115,33 @@ export default function Navegacion () {
         {result.map((producto) => (
           <div className="row">
             <div className="container-fluit col-lg-12 mt-4 abajo">
-              <div className="container2" >
+              {/* <div className="container2" style={{display:[producto.accion]}}>
                 
                
-              <ReactPlayer url={producto.image} controls={true} loop={true} playing={true}   width="510"  height="550"></ReactPlayer>
+              <ReactPlayer  url={producto.image} controls={true} loop={true} playing={true} pip={true}  width="510"  height="550"></ReactPlayer>
          {/*     
              <MediaComponent url={producto.image} validateFunction={esVideo} />
-      <MediaComponent url={producto.image} validateFunction={esImagen} /> */}
-                
-                
+      <MediaComponent url={producto.image} validateFunction={esImagen} /> 
+               
+             </div> */}
+             <div className="container2"  style={{ width:"100%", height:"auto"}}>
+                <div style={{display:[grada]}}>
+                  <img
+                    
+                    className="fondo-img"
+                    target="_blank"
+                    src={producto.image}
+                    alt=""
+                  />
+               </div>
+               <ReactPlayer style={{display:[producto.accion]}} url={producto.image} controls={true} loop={true} playing={true}   width="100%"  height="auto"></ReactPlayer>
                
              </div>
+            
+               
             </div>
           </div>
+          
            ))}
         </section>
        

@@ -1,15 +1,28 @@
 .fondo-img{
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0%;
+}
+.video{
   width: 100%;
   height: 100%;
-  border-radius: 5%;
+  border-radius: 0%;
 }
-
-.container2{
- height: 100%;
+.container-fluit{
+ height: 350px;
  width: 100%;
  /* border: 3px  solid #0081b8; */
  padding: -90px 15px 15px 15px;
- overflow-y: auto;
+ overflow: auto;
  border-radius: 3%;
+ display: flex;
 }
 
+.container-fluit::-webkit-scrollbar {
+	width: 7px;
+}
+
+.container-fluit::-webkit-scrollbar-thumb {
+	background: rgb(17, 120, 189);
+	border-radius: 5px;
+}

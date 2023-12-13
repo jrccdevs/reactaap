@@ -216,8 +216,8 @@ console.log(result);
 
 
       <div>
-      {result.map((producto) => ( 
-      <Container maxWidth='xl'  key={producto.id} >
+     
+      <Container maxWidth='xl' >
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -465,9 +465,10 @@ console.log(result);
         </Grid>
 
         <Grid container >
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
+        {result.map((producto) => ( 
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled  key={producto.id} >
             <Accordion square expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
-              <AccordionSummary style={{display: [producto.accion] }} aria-controls="panel3d-content" id="panel3d-header">
+              <AccordionSummary style={{display:[grada] }} aria-controls="panel3d-content" id="panel3d-header">
                 <FormControlLabel  className="color-fecha" style={{ marginLeft: "1000px", color: blue['A400'] }} value="female" label={producto.anio}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'j'}
@@ -489,6 +490,7 @@ console.log(result);
               </AccordionDetails>
             </Accordion>
           </Grid>
+            ))}
         </Grid>
         
         <Grid container >
@@ -737,7 +739,7 @@ console.log(result);
         </Grid>  
       </Container>
 
-       ))}
+     
       </div>
 
       <div className="principal-footer mb-12 mt-12">

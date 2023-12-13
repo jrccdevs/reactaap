@@ -8,12 +8,7 @@ function ContentControl() {
     
     return (
         <div className="content-wrapper">
-         {currentContent === 'contentControl/imagenes' && (
-                  <div>
-                 
-                <ProductosAside></ProductosAside>
-                </div>
-                  )}
+        <h1>contenido</h1>
         </div>
     );
 }
