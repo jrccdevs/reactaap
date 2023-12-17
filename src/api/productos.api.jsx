@@ -44,7 +44,7 @@
 
 
 
-import axios from "axios";
+import axios from 'axios';
 
 export const getProductosRequest = async () => {
   //  await axios.get(`http://localhost:7000/formaFarmaceutica/${formafarmaceutica}`);
@@ -125,7 +125,7 @@ export const crearImagenesRequest = async (imagenes) => {
     form.append(key, imagenes[key]);
   }
   // return await axios.post("http://localhost:7000/imagenes", form, {
-  return await axios.post("https://node-alfa.vercel.app/imagenes", form, {
+  return await axios.post(`https://node-alfa.vercel.app/imagenes`, form, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -149,17 +149,24 @@ export const actualizarImagenesRequest = async (productos, id) => {
   for (let key in productos) {
     form.append(key, productos[key]);
   }
-  return await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
-  //return await axios.put(`http://localhost:7000/imagenes/${id}`, form, {
-    
-    headers: {
-      "Content-Type": `multipart/form-data`,
-     
-     
-    },
-  });
-};
 
+  try {
+    const response = await axios.put(`https://node-alfa.vercel.app/imagenes/${id}`, form, {
+      headers: {
+        "Content-Type": `multipart/form-data`,
+      },
+    });
+
+    // Hacer algo con la respuesta si es necesario
+    console.log(response.data);
+
+    return response;
+  } catch (error) {
+    // Manejar el error
+    console.error('Error al actualizar imágenes:', error);
+    throw error; // Lanzar el error nuevamente si es necesario
+  }
+};
 export const deleteImagenesRequest = async (id) => {
    //await axios.delete(`http://localhost:7000/imagenes/${id}`);
   await axios.delete(`https://node-alfa.vercel.app/imagenes/${id}`);

@@ -113,7 +113,7 @@ export default function Navegacion () {
 
         <section className="col-12 col-sm-12 col-lg-6">
         {result.map((producto) => (
-          <div className="row">
+          <div className="row" key={producto.id}>
             <div className="container-fluit col-lg-12 mt-4 abajo">
               {/* <div className="container2" style={{display:[producto.accion]}}>
                 
@@ -125,7 +125,9 @@ export default function Navegacion () {
                
              </div> */}
              <div className="container2"  style={{ width:"100%", height:"auto"}}>
-                <div style={{display:[grada]}}>
+             {producto.tipo === 'imagen' && (
+                <div style={{ display: producto.accion ? 'block' : 'none' }}>
+                
                   <img
                     
                     className="fondo-img"
@@ -133,9 +135,17 @@ export default function Navegacion () {
                     src={producto.image}
                     alt=""
                   />
+                 
                </div>
-               <ReactPlayer style={{display:[producto.accion]}} url={producto.image} controls={true} loop={true} playing={true}   width="100%"  height="auto"></ReactPlayer>
+               )}
+                  {producto.tipo === 'video' && (
+               <div style={{ display: producto.accion ? 'block' : 'none' }}>
+             
+               <ReactPlayer  url={producto.image} controls={true} loop={true} playing={true}   width="100%"  height="auto"></ReactPlayer>
+              
                
+               </div>
+               )}
              </div>
             
                

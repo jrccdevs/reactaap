@@ -216,13 +216,15 @@ console.log(result);
 
 
       <div>
+      {result.map((producto) => (
+      <Container maxWidth='xl' key={producto.id}>
      
-      <Container maxWidth='xl' >
         <Grid container>
+        {producto.identificador === 'A' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-              <AccordionSummary className="acordion" aria-controls="panel1d-content" id="panel1d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1950" style={{ marginLeft: "120px", color: lightBlue[900] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} className="acordion" aria-controls="panel1d-content" id="panel1d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "150px", color: lightBlue[900] }}
                   control={<div  ><BlueRadio
                     checked={selectedValue === 'a'}
                     onChange={handleChangegren}
@@ -238,7 +240,9 @@ console.log(result);
                 <Grid container>
                   <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
                     <Typography className="detalle-acordion-t" variant="body1" color="textSecondary">
-                      <p style={{ marginTop: "15%", textAlign: "justify" }}>El Dr. Santiago Ferrer Alsina, farmacéutico catalán, emigra a Bolivia (1950) e inicia su actividad profesional en la Farmacia Española en la ciudad de La Paz, la cual se encontraba en la Plaza Murillo."</p>
+                      <p style={{ marginTop: "15%", textAlign: "justify" }}>
+                        {producto.descripcion}
+                       </p>
                     </Typography>
                   </Grid>
                   <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
@@ -253,13 +257,15 @@ console.log(result);
               </AccordionDetails>
             </Accordion>
           </Grid>
+           )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'B' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-              <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1952" style={{ marginLeft: "200px", color: teal[500] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel2d-content" id="panel2d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "250px", color: teal[500] }}
                   control={<div><GreenRadio
                     checked={selectedValue === 'b'}
                     onChange={handleChangegren}
@@ -272,19 +278,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion1" variant="body1" color="textSecondary">
-                  El 20 de Marzo de 1952 se asocia con los Doctores José  Benet y Carlos Grau, ambos de origen catalán, para formar el Laboratorio Farmacéutico GRABESA.
-
+                  {producto.descripcion}
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+             )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'C' && (
           <Grid itemxs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-              <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1964" style={{ marginLeft: "300px", color: blue['A400'] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "350px", color: blue['A400'] }}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'c'}
                     onChange={handleChangegren}
@@ -297,19 +304,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion2" variant="body1" color="textSecondary">
-                  El año 1964 la sociedad se disuelve y el Dr. Santiago Ferrer adquiere la maquinaria, equipos  y marcas de Laboratorios GRABESA  para constituir su propia empresa.
-
+                {producto.descripcion}
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'D' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-              <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1965" style={{ marginLeft: "400px", color: lightBlue[900] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel4d-content" id="panel4d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "450px", color: lightBlue[900] }}
                   control={<div><BlueRadio
                     checked={selectedValue === 'd'}
                     onChange={handleChangegren}
@@ -322,23 +330,21 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion3" variant="body1" color="textSecondary">
-                  <p>El Dr. Santiago Ferrer Alsina funda la empresa unipersonal
-                  LABORATORIOS ALFA (Marzo de 1965), con el propósito y la visión
-                  emprendedora de transformarla posteriormente en una empresa familiar de
-            responsabilidad limitada.<br></br>El nombre de la empresa se constituye a partir de los apellidos del fundador
-            (ALsina Ferrer y Asociados= ALFA).</p>
+                  <p> {producto.descripcion} </p>
 
                 </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'E' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
-              <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1977" style={{ marginLeft: "500px", color: teal[500] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "550px", color: teal[500] }}
                   control={<div><GreenRadio
                     checked={selectedValue === 'e'}
                     onChange={handleChangegren}
@@ -351,19 +357,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion4" variant="body1" color="textSecondary">
-                  Se transforma la empresa unipersonal en Sociedad de Responsabilidad Ltda. con la integración, como socios accionistas, de la  esposa y los dos hijos del  fundador.
-
+                <p> {producto.descripcion} </p>
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'F' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
-              <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1980" style={{ marginLeft: "600px", color: blue['A400'] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel2d-content" id="panel2d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio}  style={{ marginLeft: "650px", color: blue['A400'] }}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'f'}
                     onChange={handleChangegren}
@@ -376,19 +383,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion5" variant="body1" color="textSecondary">
-                  Se trasladan las instalaciones a su  nueva planta,  ubicada en la Plaza Uyuni, donde desarrolla actualmente sus actividades.
-
+                <p> {producto.descripcion} </p>
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+           )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'G' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
-              <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1993" style={{ marginLeft: "700px", color: lightBlue[900] }}
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "750px", color: lightBlue[900] }}
                   control={<div><BlueRadio
                     checked={selectedValue === 'G'}
                     onChange={handleChangegren}
@@ -401,23 +409,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion6" variant="body1" color="textSecondary">
-                  <p>El 3 de Mayo de 1993 fallece el Dr. Santiago Ferrer en la ciudad de Santiago de Chile,
-                  asumiendo la dirección de la empresa sus hijos, quienes ya trabajaban en la Empresa
-                  desde el año 1982. En Octubre de 1993 la empresa es auspiciada por el Centro para la
-                  Promoción de Exportaciones de países en desarrollo del Gobierno de  Holanda (CBI),
-            para asistir al seminario EXPRO IV realizado en Rotterdam.</p>
-
+                <p> {producto.descripcion} </p>
                 </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'H' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
-              <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" style={{ marginLeft: "800px", color: teal[500] }} value="female" label="2015"
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel2d-content" id="panel2d-header">
+                <FormControlLabel className="color-fecha" style={{ marginLeft: "850px", color: teal[500] }} value="female" label={producto.anio}
                   control={<div><GreenRadio
                     checked={selectedValue === 'h'}
                     onChange={handleChangegren}
@@ -430,19 +435,21 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion7" variant="body1" color="textSecondary">
-                  Abril 2015 se incorporan nuevos socios con nuevos aportes de capital y “know-how”, iniciando la transformación de SRL a S.A.
-
+                <p> {producto.descripcion} </p>
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container >
+        {producto.identificador === 'II' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
+         
             <Accordion square expanded={expanded === 'panel9'} onChange={handleChange('panel9')}>
-              <AccordionSummary style={{display: [grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel  className="color-fecha" style={{ marginLeft: "900px", color: blue['A400'] }} value="female" label="2024"
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel  className="color-fecha" style={{ marginLeft: "950px", color: blue['A400'] }} value="female" label={producto.anio}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'i'}
                     onChange={handleChangegren}
@@ -455,33 +462,34 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails >
                 <Typography className="detalle-acordion8" variant="body1" color="textSecondary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                  sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+                 {producto.descripcion}
              </Typography>
               </AccordionDetails>
             </Accordion>
+           
           </Grid>
+          )}
         </Grid>
 
         <Grid container >
-        {result.map((producto) => ( 
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled  key={producto.id} >
+        {producto.identificador === 'JJ' && (
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
+         
             <Accordion square expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
-              <AccordionSummary style={{display:[grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel  className="color-fecha" style={{ marginLeft: "1000px", color: blue['A400'] }} value="female" label={producto.anio}
-                  control={<div><BlueGreyRadio
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel  className="color-fecha" style={{ marginLeft: "1050px", color: lightBlue[900] }} value="female" label={producto.anio}
+                  control={<div><BlueRadio
                     checked={selectedValue === 'j'}
                     onChange={handleChangegren}
                     value="j"
-                    style={{ backgroundColor:  blue['A400'] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+                    style={{ backgroundColor:  lightBlue[900] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
   
                     name="radio-button-demo"
                     inputProps={{ 'aria-label': 'J' }}
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails >
-                <Typography className="detalle-acordion8" variant="body1" color="textSecondary">
+                <Typography className="detalle-acordion9" variant="body1" color="textSecondary">
                <p>{producto.descripcion} </p> 
                <img
                         style={{ textAlign: "center" }} className="fondo-img" target="_blank" src={producto.estado} alt=""
@@ -489,41 +497,43 @@ console.log(result);
              </Typography>
               </AccordionDetails>
             </Accordion>
+            
           </Grid>
-            ))}
+           )}
         </Grid>
         
         <Grid container >
+        {producto.identificador === 'K' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
             <Accordion square expanded={expanded === 'panel11'} onChange={handleChange('panel11')}>
-              <AccordionSummary style={{display: [grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel  className="color-fecha" style={{ marginLeft: "900px", color: blue['A400'] }} value="female" label="2026"
-                  control={<div><BlueGreyRadio
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel  className="color-fecha" style={{ marginLeft: "950px", color: teal[500] }} value="female" label={producto.anio}
+                  control={<div><GreenRadio
                     checked={selectedValue === 'k'}
                     onChange={handleChangegren}
                     value="k"
-                    style={{ backgroundColor:  blue['A400'] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
+                    style={{ backgroundColor: teal[500] , width:"15px", height:"15px", marginBottom:"8px"}} // Establecer el color de fondo
   
                     name="radio-button-demo"
-                    inputProps={{ 'aria-label': 'I' }}
+                    inputProps={{ 'aria-label': 'k' }}
                   /></div>} />
               </AccordionSummary>
               <AccordionDetails >
                 <Typography className="detalle-acordion8" variant="body1" color="textSecondary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                  sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+                <p>{producto.descripcion} </p> 
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+           )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'L' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel12'} onChange={handleChange('panel12')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" style={{ marginLeft: "800px", color: teal[500] }} value="female" label="2015"
+              <AccordionSummary  style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel2d-content" id="panel2d-header">
+                <FormControlLabel className="color-fecha" style={{ marginLeft: "850px", color: teal[500] }} value="female" label={producto.anio}
                   control={<div><GreenRadio
                     checked={selectedValue === 'l'}
                     onChange={handleChangegren}
@@ -536,19 +546,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion7" variant="body1" color="textSecondary">
-                  Abril 2015 se incorporan nuevos socios con nuevos aportes de capital y “know-how”, iniciando la transformación de SRL a S.A.
-
+                <p>{producto.descripcion} </p> 
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'M' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel13'} onChange={handleChange('panel13')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="2028" style={{ marginLeft: "700px", color: lightBlue[900] }}
+              <AccordionSummary  style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "750px", color: lightBlue[900] }}
                   control={<div><BlueRadio
                     checked={selectedValue === 'M'}
                     onChange={handleChangegren}
@@ -561,23 +572,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion6" variant="body1" color="textSecondary">
-                  <p>El 3 de Mayo de 1993 fallece el Dr. Santiago Ferrer en la ciudad de Santiago de Chile,
-                  asumiendo la dirección de la empresa sus hijos, quienes ya trabajaban en la Empresa
-                  desde el año 1982. En Octubre de 1993 la empresa es auspiciada por el Centro para la
-                  Promoción de Exportaciones de países en desarrollo del Gobierno de  Holanda (CBI),
-            para asistir al seminario EXPRO IV realizado en Rotterdam.</p>
-
+                <p>{producto.descripcion} </p> 
                 </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'N' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel14'} onChange={handleChange('panel14')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="2029" style={{ marginLeft: "600px", color: blue['A400'] }}
+              <AccordionSummary  style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel2d-content" id="panel2d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "650px", color: blue['A400'] }}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'n'}
                     onChange={handleChangegren}
@@ -590,19 +598,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion5" variant="body1" color="textSecondary">
-                  Se trasladan las instalaciones a su  nueva planta,  ubicada en la Plaza Uyuni, donde desarrolla actualmente sus actividades.
-
+                <p>{producto.descripcion} </p> 
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'O' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel15'} onChange={handleChange('panel15')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1977" style={{ marginLeft: "500px", color: teal[500] }}
+              <AccordionSummary   style={{ display: producto.accion ? 'flex' : 'none' }}  aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "550px", color: teal[500] }}
                   control={<div><GreenRadio
                     checked={selectedValue === 'o'}
                     onChange={handleChangegren}
@@ -615,18 +624,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion4" variant="body1" color="textSecondary">
-                  Se transforma la empresa unipersonal en Sociedad de Responsabilidad Ltda. con la integración, como socios accionistas, de la  esposa y los dos hijos del  fundador.
-
+                <p>{producto.descripcion} </p> 
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+             )}
         </Grid>
+
         <Grid container>
+        {producto.identificador === 'P' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel16'} onChange={handleChange('panel16')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel4d-content" id="panel4d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1965" style={{ marginLeft: "400px", color: lightBlue[900] }}
+              <AccordionSummary  style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel4d-content" id="panel4d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "450px", color: lightBlue[900] }}
                   control={<div><BlueRadio
                     checked={selectedValue === 'p'}
                     onChange={handleChangegren}
@@ -639,23 +650,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion3" variant="body1" color="textSecondary">
-                  <p>El Dr. Santiago Ferrer Alsina funda la empresa unipersonal
-                  LABORATORIOS ALFA (Marzo de 1965), con el propósito y la visión
-                  emprendedora de transformarla posteriormente en una empresa familiar de
-            responsabilidad limitada.<br></br>El nombre de la empresa se constituye a partir de los apellidos del fundador
-            (ALsina Ferrer y Asociados= ALFA).</p>
-
+                <p>{producto.descripcion} </p> 
                 </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+            )}
         </Grid>
         
         <Grid container>
+        {producto.identificador === 'Q' && (
           <Grid itemxs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel17'} onChange={handleChange('panel17')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel3d-content" id="panel3d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1964" style={{ marginLeft: "300px", color: blue['A400'] }}
+              <AccordionSummary  style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "350px", color: blue['A400'] }}
                   control={<div><BlueGreyRadio
                     checked={selectedValue === 'q'}
                     onChange={handleChangegren}
@@ -668,19 +676,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion2" variant="body1" color="textSecondary">
-                  El año 1964 la sociedad se disuelve y el Dr. Santiago Ferrer adquiere la maquinaria, equipos  y marcas de Laboratorios GRABESA  para constituir su propia empresa.
-
+                <p>{producto.descripcion} </p> 
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'R' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel18'} onChange={handleChange('panel18')}>
-              <AccordionSummary  style={{display: [grada] }} aria-controls="panel2d-content" id="panel2d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1952" style={{ marginLeft: "200px", color: teal[500] }}
+              <AccordionSummary   style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel2d-content" id="panel2d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio}  style={{ marginLeft: "250px", color: teal[500] }}
                   control={<div><GreenRadio
                     checked={selectedValue === 'r'}
                     onChange={handleChangegren}
@@ -693,19 +702,20 @@ console.log(result);
               </AccordionSummary>
               <AccordionDetails>
                 <Typography className="detalle-acordion1" variant="body1" color="textSecondary">
-                  El 20 de Marzo de 1952 se asocia con los Doctores José  Benet y Carlos Grau, ambos de origen catalán, para formar el Laboratorio Farmacéutico GRABESA.
-
+                <p>{producto.descripcion} </p> 
              </Typography>
               </AccordionDetails>
             </Accordion>
           </Grid>
+            )}
         </Grid>
 
         <Grid container>
+        {producto.identificador === 'S' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             <Accordion square expanded={expanded === 'panel19'} onChange={handleChange('panel19')}>
-              <AccordionSummary  style={{display: [grada] }} className="acordion" aria-controls="panel1d-content" id="panel1d-header">
-                <FormControlLabel className="color-fecha" value="female" label="1950" style={{ marginLeft: "120px", color: lightBlue[900] }}
+              <AccordionSummary  style={{ display: producto.accion ? 'flex' : 'none' }}className="acordion" aria-controls="panel1d-content" id="panel1d-header">
+                <FormControlLabel className="color-fecha" value="female" label={producto.anio} style={{ marginLeft: "150px", color: lightBlue[900] }}
                   control={<div  ><BlueRadio
                     checked={selectedValue === 's'}
                     onChange={handleChangegren}
@@ -721,8 +731,9 @@ console.log(result);
                 <Grid container>
                   <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
                     <Typography className="detalle-acordion-t" variant="body1" color="textSecondary">
-                      <p style={{ marginTop: "15%", textAlign: "justify" }}>El Dr. Santiago Ferrer Alsina, farmacéutico catalán, emigra a Bolivia (1950) e inicia su actividad profesional en la Farmacia Española en la ciudad de La Paz, la cual se encontraba en la Plaza Murillo."</p>
-                    </Typography>
+                  
+                      <p>{producto.descripcion} </p> 
+                         </Typography>
                   </Grid>
                   <Grid xs={12} sm={12} md={12} lg={6} xl={6}>
                     <div className="imagen-grid">
@@ -736,12 +747,14 @@ console.log(result);
               </AccordionDetails>
             </Accordion>
           </Grid>
+          )}
         </Grid>  
+        
       </Container>
-
+      ))}
+     </div>
      
-      </div>
-
+      
       <div className="principal-footer mb-12 mt-12">
          <Footer />
       </div>

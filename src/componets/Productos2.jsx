@@ -76,11 +76,11 @@ export default function Productos2() {
     // const currentPageFromURL = searchParams.get('page');
     // const [currentPage, setCurrentPage] = useState(currentPageFromURL ? parseInt(currentPageFromURL) : 1);
 
-  
+
     const currentPageFromURL = parseInt(searchParams.get('page')) || 1;
-  
+
     const [currentPage, setCurrentPage] = useState(currentPageFromURL);
-  
+
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -104,7 +104,7 @@ export default function Productos2() {
             setProductos(data);
         };
         fetchData();
-    }, [selectedValue, formafarmaceutica, searchText,currentPageFromURL]);
+    }, [selectedValue, formafarmaceutica, searchText, currentPageFromURL]);
 
 
     const handleChange = (e) => {
@@ -191,28 +191,28 @@ export default function Productos2() {
     return (
         <>
             <ModalProducto />
-            <div className="container-fluid" style={{backgroundColor:"white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
-          <div className="row">
+            <div className="container-fluid" style={{ backgroundColor: "white", position: "fixed", top: "0px", left: "0px", right: "0px", zIndex: "999" }}>
+                <div className="row">
 
-            <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
-            <Link to={"/"}>
-                <img className="logoAlfaprueba" style={{width:"100%", height:"auto", paddingTop:"7px"}} src={ChicaAlfa} alt="" />
-                </Link>
+                    <div className="col-md-3" style={{ backgroundColor: "white", height: "auto" }}>
+                        <Link to={"/"}>
+                            <img className="logoAlfaprueba" style={{ width: "100%", height: "auto", paddingTop: "7px" }} src={ChicaAlfa} alt="" />
+                        </Link>
+                    </div>
+
+                    <div className="col-md-9" style={{ marginRight: "0px" }}>
+
+                        <div className="carrucel-header" style={{ backgroundColor: "white" }}>
+                            <CarrucelHeader />
+                        </div>
+
+
+                        <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
+                            <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div className="col-md-9" style={{marginRight: "0px"}}>
-
-              <div className="carrucel-header" style={{ backgroundColor: "white" }}>
-              <CarrucelHeader />
-              </div>
-
-
-              <div className="busqueda-principal" style={{ backgroundColor: "white" }}>
-              <BusquedaProducto handleChange={handleChange} handleFormaFarmace={handleFormaFarmace} />
-              </div>
-            </div>
-          </div>
-        </div>
 
             <Container className="content" style={{ overflow: "hidden", margin: "150px auto 0px" }}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -259,42 +259,45 @@ export default function Productos2() {
                         </div>
                     </div>
                 </section>
-                <secction>
-                    <div className="container"> 
-                    <div className="row">
-                 {result.length > 0 ? (
-                    <Pagination
-                        activePage={currentPage}
-                        itemsCountPerPage={itemsPerPage}
-                        totalItemsCount={result.length}
-                        pageRangeDisplayed={5}
-                        onChange={handlePageChange}
-                        activeClassName="active"
-                        firstPageText="First"
-                        lastPageText="Last"
-                        prevPageText="Anterior"
-                        nextPageText="Siguiente"
-                        innerClass="pagination justify-content-center"
-                        itemClass="page-item"
-                        linkClass="page-link"
-                        disabledClass="disabled"
-                        hideDisabled={false}
-                        hideNavigation={false}
-                        hideFirstLastPages={true}
-                        breakLabel="..."
-                        activeLabel='(current)'
-                    />
-                ) : (
-                    <p className="text-center">No hay productos para mostrar</p>
-                )}
-                </div>
-                </div>
-                </secction>
+                <section className="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div className="container">
+                        <div className="row col-md-12">
+                            
+                                {result.length > 0 ? (
+                                    
+                                    <Pagination
+                                        activePage={currentPage}
+                                        itemsCountPerPage={itemsPerPage}
+                                        totalItemsCount={result.length}
+                                        pageRangeDisplayed={5}
+                                        onChange={handlePageChange}
+                                        activeClassName="active"
+                                        firstPageText="First"
+                                        lastPageText="Last"
+                                        prevPageText="Anterior"
+                                        nextPageText="Siguiente"
+                                        innerClass="pagination justify-content-center"
+                                        itemClass="page-item"
+                                        linkClass="page-link"
+                                        disabledClass="disabled"
+                                        hideDisabled={false}
+                                        hideNavigation={false}
+                                        hideFirstLastPages={true}
+                                        breakLabel="..."
+                                        activeLabel='(current)'
+                                    />
+                                ) : (
+                                        <p className="text-center">No hay productos para mostrar</p>
+                                    )}
+                            
+                        </div>
+                    </div>
+                </section>
             </Container>
-             <div className="principal-footer">
-                 <Footer />
-             </div>
-           
+            <div className="principal-footer">
+                <Footer />
+            </div>
+
         </>
     );
 }

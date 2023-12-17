@@ -83,6 +83,7 @@ function ContentControl() {
     image: null,   //img
     categoria: '',
     estado:'',
+    tipo:'',
    
     
   });
@@ -101,7 +102,7 @@ function ContentControl() {
         categoria: '',
         estado:'',
         accion:'',
-       
+        tipo:'',
     });
   };
 
@@ -112,7 +113,8 @@ function ContentControl() {
       !productoPost.image ||
       !productoPost.categoria ||
       !productoPost.estado ||
-      !productoPost.accion 
+      !productoPost.accion ||
+      !productoPost.tipo
     ) {
       MySwal.fire({
         position: 'center',
@@ -131,7 +133,8 @@ function ContentControl() {
         !productoPost.image ||
         !productoPost.categoria ||
         !productoPost.estado ||
-        !productoPost.accion 
+        !productoPost.accion ||
+        !productoPost.tipo
     ) {
       MySwal.fire({
         position: 'center',
@@ -176,7 +179,8 @@ function ContentControl() {
     image: null,   //img
     categoria: '',
     estado:'',
-    accion:''
+    accion:'',
+    tipo:''
   });
 
 
@@ -190,7 +194,8 @@ function ContentControl() {
         image: producto[0].image,
         categoria: producto[0].categoria,
         estado: producto[0].estado,
-        accion: producto[0].accion
+        accion: producto[0].accion,
+        tipo: producto[0].tipo
       });
     } catch (error) {
       console.error("Error al obtener los detalles de las imagenes:", error);
@@ -283,6 +288,7 @@ function ContentControl() {
                         <th scope="col">Estado</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Activacion</th>
+                        <th scope="col">Tipo de Archivo</th>
                         <th scope="col">Acciones</th>
                       </tr>
                     </thead>
@@ -297,6 +303,7 @@ function ContentControl() {
                             <img className="productoImg" src={producto.image} alt={producto.nombre} style={{height:"30px", width:"30px"}} />
                           </td>
                           <td>{producto.accion}</td>
+                          <td>{producto.tipo}</td>
                           <td>
                             <button type="button" class="btn btn-primary btn-sm mx-2" onClick={() => handleEditar(producto.id)} >Editar</button>
                             <button type="button" class="btn btn-danger btn-sm" onClick={() => handleEliminar(producto.id)} >Eliminar</button>
@@ -344,6 +351,10 @@ function ContentControl() {
                             <label htmlFor="exampleInputPassword1" className="form-label">Nombre</label>
                             <input type="text" className="form-control" name="nombre" value={productoPost.nombre} onChange={handleInputChange} />
                           </div>
+                          <div className="mb-3 col-6">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Tipo de Archivo</label>
+                            <input type="text" className="form-control" name="tipo" value={productoPost.tipo} onChange={handleInputChange} />
+                          </div>
                         </div>
                         
                         <div className="row">
@@ -374,7 +385,7 @@ function ContentControl() {
                         <div className="mb-3 col-6">
                             <label htmlFor="exampleInputPassword1" className="form-label">Activacion</label>
                             <select className="form-select" name="accion" value={productoPost.accion} onChange={handleInputChange}>
-                              <option defaultValue >Seleccione Carrucel : </option>
+                              <option defaultValue >Seleccione Activacion : </option>
                               <option value="none">none</option>
                               <option value="flex">flex</option>
                             </select>
@@ -417,6 +428,10 @@ function ContentControl() {
                           <div className="mb-3 col-6">
                             <label htmlFor="exampleInputPassword1" className="form-label">Nombre</label>
                             <input type="text" className="form-control" name="nombre" value={productoPut.nombre} onChange={handleInputChangeEditar} />
+                          </div>
+                          <div className="mb-3 col-6">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Tipo de Archivo</label>
+                            <input type="text" className="form-control" name="tipo" value={productoPut.tipo} onChange={handleInputChangeEditar} />
                           </div>
                         </div>
                         

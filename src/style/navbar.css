@@ -263,6 +263,11 @@ height:100%;
      width:45px !important;
   
  }
+ .lista-productos{
+  /*background-color: #003057;*/
+   /*width: 280px;*/
+   width: auto !important;
+ }
  
 }
  /* @media screen and (min-width: 768px) and (max-width: 991px)  and (orientation: landscape)  {
@@ -460,7 +465,8 @@ height:100%;
 }
 .lista-productos{
  /*background-color: #003057;*/
-  width: 280px;
+  /*width: 280px;*/
+  width: auto;
 }
 .form-select{
   height: 10px;
