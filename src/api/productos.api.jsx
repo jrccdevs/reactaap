@@ -45,7 +45,7 @@
 
 
 import axios from 'axios';
-
+// --------------------CRUD DE TODOS LOS PRODUCTOS------------------------------
 export const getProductosRequest = async () => {
   //  await axios.get(`http://localhost:7000/formaFarmaceutica/${formafarmaceutica}`);
   //  await axios.get('http://localhost:7000/formaFarmaceutica');
@@ -105,7 +105,7 @@ export const deleteProductoRequest = async (id) => {
 
 
 //------------------------------------------------------------------------------------------------//
-// crud de imagenes 
+// crud de imagenes VADEMECUM Y SECCION ARTICULO 
 
 export const getImagenesRequest = async () => {
  
@@ -176,7 +176,7 @@ export const deleteImagenesRequest = async (id) => {
 
 
 //-------------------------------------crud de imagenes del banner principal-----------------------------------------------------------//
-// crud de imagenes 
+ 
 
 export const getBannerAlfa = async () => {
  
@@ -238,4 +238,109 @@ export const getBannerAlfa = async () => {
  
 
 
+// CRUD DE IMAGENES DEL BANNER MOVIL ---------------
+
+export const getBannerMovil = async () => {
+  
+  await axios.get("https://node-alfa.vercel.app/empresa");
+  // await axios.get('http://localhost:7000/productos');
+};
+
+export const crearBannerMovil = async (productos) => {
+  const form = new FormData();
+
+  for (let key in productos) {
+    form.append(key, productos[key]);
+  }
+  // return await axios.post("http://localhost:7000/productos", form, {
+  return await axios.post("https://node-alfa.vercel.app/empresa", form, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const getBannerMovilId = async (id) => {
+  try {
+    // const response = await axios.get(`http://localhost:7000/productos/${id}`);
+    const response = await axios.get(`https://node-alfa.vercel.app/empresa/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener los detalles del producto:", error);
+    throw error;
+  }
+};
+
+export const actualizarBannerMovil = async (productos, id) => {
+  const form = new FormData();
+
+  for (let key in productos) {
+    form.append(key, productos[key]);
+  }
+  return await axios.put(`https://node-alfa.vercel.app/empresa/${id}`, form, {
+  // return await axios.put(`http://localhost:7000/productos/${id}`, form, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const deleteBannerMovil = async (id) => {
+  // await axios.delete(`http://localhost:7000/productos/${id}`);
+  await axios.delete(`https://node-alfa.vercel.app/empresa/${id}`);
+};
+
+
+
+// CRUD DE SECCION EMPRESA ---------------
+
+export const getAlfaEmpresa = async () => {
+  
+  await axios.get("https://node-alfa.vercel.app/empresaalfa");
+  // await axios.get('http://localhost:7000/productos');
+};
+
+export const createAlfaEmpresa = async (productos) => {
+  const form = new FormData();
+
+  for (let key in productos) {
+    form.append(key, productos[key]);
+  }
+  // return await axios.post("http://localhost:7000/productos", form, {
+  return await axios.post("https://node-alfa.vercel.app/empresaalfa", form, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const getAlfaEmpresaId = async (id) => {
+  try {
+    // const response = await axios.get(`http://localhost:7000/productos/${id}`);
+    const response = await axios.get(`https://node-alfa.vercel.app/empresaalfa/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener los detalles del registro:", error);
+    throw error;
+  }
+};
+
+export const updateAlfaEmpresa = async (productos, id) => {
+  const form = new FormData();
+
+  for (let key in productos) {
+    form.append(key, productos[key]);
+  }
+  return await axios.put(`https://node-alfa.vercel.app/empresaalfa/${id}`, form, {
+  // return await axios.put(`http://localhost:7000/productos/${id}`, form, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const deleteAlfaEmpresa = async (id) => {
+  // await axios.delete(`http://localhost:7000/productos/${id}`);
+  await axios.delete(`https://node-alfa.vercel.app/empresaalfa/${id}`);
+};
 

@@ -23,7 +23,8 @@ import PaginaCarrucel from './componets/PaginaCarrucel'
 import PaginaBanner from './componets/Paginabanner'
 import CarrucelRespon from './componets/CarrucelResponsiv'
 import CarrucelAside from './componets/login/CarrucelAside'
-import BannerAside from './componets/login/CarrucelAside'
+import BannerAside from './componets/login/BannerAside'
+import EmpresaAside from './componets/login/EmpresaAside'
 import User from './componets/User'
 import Principalbusqueda from './componets/Principalbusqueda'
 
@@ -95,6 +96,8 @@ export default function App() {
           <Route path="/asidecarrucel" element={<CarrucelAside />} />
           <Route path="/bannercarrucel" element={<BannerAside />} />
           <Route path="/panelControl/asidebanner" element={<PanelControl />} />
+          <Route path="/empresaaside" element={<EmpresaAside />} />
+          <Route path="/panelControl/asideempresa" element={<PanelControl />} />
 
         </Routes>
       </BrowserRouter>

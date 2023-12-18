@@ -8,6 +8,7 @@ import Pagination from "react-js-pagination";
 import Productosaside from "./login/ProductosAside";
 import CarrucelAside from "./login/CarrucelAside";
 import BannerAside from "./login/BannerAside";
+import EmpresaAside from "./login/EmpresaAside";
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
@@ -372,6 +373,15 @@ function PanelControl() {
                       <i></i> <span className="ms-1 d-none d-sm-inline">Banner</span>
                     </Link>
                   </li>
+                  <li className={`nav-item ${currentContent === 'panelControl/asideempresa' ? 'selected' : ''}`}>
+                    <Link
+                      to="/panelControl/asideempresa"
+                      className="nav-link align-middle px-0"
+                      onClick={() => setCurrentContent('panelControl/asideempresa')}
+                    >
+                      <i></i> <span className="ms-1 d-none d-sm-inline">Empresa</span>
+                    </Link>
+                  </li>
                 </ul>
 
 
@@ -419,6 +429,14 @@ function PanelControl() {
                  
                 <Productosaside></Productosaside>
               
+                </div>
+                  )}
+
+               {currentContent === 'panelControl/asideempresa' && (
+                  <div>
+                 
+           
+                <EmpresaAside></EmpresaAside>
                 </div>
                   )}
              {currentContent === 'dashboard' && (
@@ -496,7 +514,7 @@ function PanelControl() {
                       <Modal.Title>Registrar Producto</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <form >
+                      <form style={{fontSize:"15px"}}>
                         <div className="row">
                           <div className="mb-3 col-6">
                             <label htmlFor="exampleInputEmail1" className="form-label">Codigo</label>
@@ -586,7 +604,7 @@ function PanelControl() {
                       <Modal.Title >Editar Producto</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <form >
+                      <form style={{fontSize:"15px"}}>
                         <div className="row">
                           <div className="mb-3 col-6">
                             <label htmlFor="exampleInputEmail1" className="form-label">Codigo</label>

@@ -110,7 +110,7 @@ function ContentControl() {
     if (
      
       !productoPost.nombre ||
-      !productoPost.image ||
+  
       !productoPost.categoria ||
       !productoPost.estado ||
       !productoPost.accion ||
@@ -119,7 +119,7 @@ function ContentControl() {
       MySwal.fire({
         position: 'center',
         icon: 'error',
-        title: '"Por Favor, llene todos los campos son obligatorios."',
+        title: '"Por Favor, verifique que los campos esten llenados correctamente."',
         showConfirmButton: true,
       })
       return false;
@@ -159,7 +159,7 @@ function ContentControl() {
       const result = await MySwal.fire({
         position: 'center',
         icon: 'success',
-        title: 'La imagen se registró exitosamente.',
+        title: 'Datos registrados exitosamente.',
         showConfirmButton: true,
       });
       if (result.isConfirmed) {
@@ -168,7 +168,7 @@ function ContentControl() {
         loadProductos();
       }
     } catch (error) {
-      console.error('Error al registrar la imagen:', error);
+      console.error('Error al registrar los datos:', error);
     }
   };
 
@@ -198,7 +198,7 @@ function ContentControl() {
         tipo: producto[0].tipo
       });
     } catch (error) {
-      console.error("Error al obtener los detalles de las imagenes:", error);
+      console.error("Error al obtener los detalles de los registros:", error);
     }
   };
 
@@ -220,7 +220,7 @@ function ContentControl() {
       const result = await MySwal.fire({
         position: 'center',
         icon: 'success',
-        title: 'El producto se actualizo exitosamente.',
+        title: 'Registro actualizado exitosamente.',
         showConfirmButton: true,
       });
       if (result.isConfirmed) {
@@ -229,7 +229,7 @@ function ContentControl() {
         loadProductos();
       }
     } catch (error) {
-      console.error('Error al actualizar el producto:', error);
+      console.error('Error al actualizar la imagen:', error);
     }
   };
 
@@ -243,7 +243,7 @@ function ContentControl() {
   const handleEliminar = async (id) => {
     try {
       const result = await MySwal.fire({
-        title: '¿Está seguro de eliminar el producto?',
+        title: '¿Está seguro de eliminar el item seleccionado?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Eliminar',
@@ -256,7 +256,7 @@ function ContentControl() {
         await deleteImagenesRequest(id);
         MySwal.fire(
           '¡Eliminado!',
-          'El producto ha sido eliminado exitosamente',
+          'La imagen ha sido eliminado exitosamente',
           'success'
         );
         loadProductos();
@@ -335,16 +335,16 @@ function ContentControl() {
                       breakLabel="..."
                     />
                   ) : (
-                    <p className="text-center">No hay productos para mostrar</p>
+                    <p className="text-center">No hay registros para mostrar</p>
                   )}
 
                   {/* Modal */}
                   <Modal show={showModal} onHide={handleCloseModal} centered size="lg">
                     <Modal.Header closeButton>
-                      <Modal.Title>Registrar Producto</Modal.Title>
+                      <Modal.Title>Registrar Imagenes</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <form >
+                      <form style={{fontSize:"15px"}}>
                         <div className="row">
                           
                           <div className="mb-3 col-6">
@@ -371,7 +371,7 @@ function ContentControl() {
                           <div className="mb-3 col-6">
                             <label htmlFor="exampleInputPassword1" className="form-label">Estado</label>
                             <select className="form-select" name="estado" value={productoPost.estado} onChange={handleInputChange}>
-                              <option defaultValue >Seleccione Carrucel : </option>
+                              <option defaultValue >Seleccione un Estado : </option>
                               <option value="INACTIVO">INACTIVO</option>
                               <option value="ACTIVO">ACTIVO</option>
                             </select>
@@ -422,7 +422,7 @@ function ContentControl() {
                       <Modal.Title>Editar Imagenes</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <form encType="multipart/form-data" action=''>
+                      <form encType="multipart/form-data" action='' style={{fontSize:"15px"}}>
                         <div className="row">
                           
                           <div className="mb-3 col-6">
@@ -449,7 +449,7 @@ function ContentControl() {
                           <div className="mb-3 col-6">
                             <label htmlFor="exampleInputPassword1" className="form-label">Estado</label>
                             <select className="form-select" name="estado" value={productoPut.estado} onChange={handleInputChangeEditar}>
-                              <option defaultValue >Seleccione Carrucel : </option>
+                              <option defaultValue >Seleccione un Estado : </option>
                               <option value="INACTIVO">INACTIVO</option>
                               <option value="ACTIVO">ACTIVO</option>
                             </select>
@@ -461,7 +461,7 @@ function ContentControl() {
                         <div className="mb-3 col-6">
                             <label htmlFor="exampleInputPassword1" className="form-label">Activacion</label>
                             <select className="form-select" name="accion" value={productoPut.accion} onChange={handleInputChangeEditar}>
-                              <option defaultValue >Seleccione Carrucel : </option>
+                              <option defaultValue >Seleccione la Activacion : </option>
                               <option value="none">none</option>
                               <option value="flex">flex</option>
                             </select>

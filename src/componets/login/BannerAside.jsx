@@ -113,8 +113,8 @@ function BannerAside() {
        
         !productoPost.descripcion ||
         !productoPost.estado ||
-        !productoPost.accion ||
-        !productoPost.image 
+        !productoPost.accion 
+       
       
      
       ) {
@@ -159,7 +159,7 @@ function BannerAside() {
         const result = await MySwal.fire({
           position: 'center',
           icon: 'success',
-          title: 'La imagen se registró exitosamente.',
+          title: 'El Banner se registró exitosamente.',
           showConfirmButton: true,
         });
         if (result.isConfirmed) {
@@ -168,7 +168,7 @@ function BannerAside() {
           loadProductos();
         }
       } catch (error) {
-        console.error('Error al registrar la imagen:', error);
+        console.error('Error al registrar el Banner:', error);
       }
     };
   
@@ -199,7 +199,7 @@ function BannerAside() {
         
         });
       } catch (error) {
-        console.error("Error al obtener los detalles de las imagenes:", error);
+        console.error("Error al obtener los detalles del Banner:", error);
       }
     };
   
@@ -221,7 +221,7 @@ function BannerAside() {
         const result = await MySwal.fire({
           position: 'center',
           icon: 'success',
-          title: 'El producto se actualizo exitosamente.',
+          title: 'El Banner se actualizo exitosamente.',
           showConfirmButton: true,
         });
         if (result.isConfirmed) {
@@ -230,7 +230,7 @@ function BannerAside() {
           loadProductos();
         }
       } catch (error) {
-        console.error('Error al actualizar el producto:', error);
+        console.error('Error al actualizar el Banner:', error);
       }
     };
   
@@ -244,7 +244,7 @@ function BannerAside() {
     const handleEliminar = async (id) => {
       try {
         const result = await MySwal.fire({
-          title: '¿Está seguro de eliminar el producto?',
+          title: '¿Está seguro de eliminar el item seleccionado?',
           icon: 'warning',
           showCancelButton: true,
           confirmButtonText: 'Eliminar',
@@ -257,7 +257,7 @@ function BannerAside() {
           await deleteBannerAlfa(id);
           MySwal.fire(
             '¡Eliminado!',
-            'El producto ha sido eliminado exitosamente',
+            'Item seleccionado ha sido eliminado exitosamente',
             'success'
           );
           loadProductos();
@@ -337,7 +337,7 @@ function BannerAside() {
                         breakLabel="..."
                       />
                     ) : (
-                      <p className="text-center">No hay productos para mostrar</p>
+                      <p className="text-center">No hay Registros para mostrar</p>
                     )}
   
                     {/* Modal */}
@@ -403,7 +403,7 @@ function BannerAside() {
                         <Modal.Title>Editar Imagenes del Banner Principa</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>
-                        <form encType="multipart/form-data" action=''>
+                        <form encType="multipart/form-data" action='' style={{fontSize:"15px"}}>
                           <div className="row">
                             
                             <div className="mb-3 col-6">

@@ -444,7 +444,7 @@ console.log(result);
         </Grid>
 
         <Grid container >
-        {producto.identificador === 'II' && (
+        {producto.identificador === 'I' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
          
             <Accordion square expanded={expanded === 'panel9'} onChange={handleChange('panel9')}>
@@ -472,7 +472,7 @@ console.log(result);
         </Grid>
 
         <Grid container >
-        {producto.identificador === 'JJ' && (
+        {producto.identificador === 'J' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
          
             <Accordion square expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
@@ -491,9 +491,7 @@ console.log(result);
               <AccordionDetails >
                 <Typography className="detalle-acordion9" variant="body1" color="textSecondary">
                <p>{producto.descripcion} </p> 
-               <img
-                        style={{ textAlign: "center" }} className="fondo-img" target="_blank" src={producto.estado} alt=""
-                      />
+               
              </Typography>
               </AccordionDetails>
             </Accordion>
@@ -506,7 +504,7 @@ console.log(result);
         {producto.identificador === 'K' && (
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} disabled>
             <Accordion square expanded={expanded === 'panel11'} onChange={handleChange('panel11')}>
-              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel3d-content" id="panel3d-header">
+              <AccordionSummary style={{ display: producto.accion ? 'flex' : 'none' }} aria-controls="panel11d-content" id="panel11d-header">
                 <FormControlLabel  className="color-fecha" style={{ marginLeft: "950px", color: teal[500] }} value="female" label={producto.anio}
                   control={<div><GreenRadio
                     checked={selectedValue === 'k'}
