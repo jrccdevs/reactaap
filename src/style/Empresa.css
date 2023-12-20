@@ -136,7 +136,10 @@
 
   @media  (min-width: 320px) and (max-width: 712px) {
     .empresa-resp{
-      margin-top: 85px !important;
+      margin-top: 195px !important;
+    }
+     .cont-res{
+      margin-top: 285px !important;
     }
     .cont-res{
       margin-top: 85px !important;

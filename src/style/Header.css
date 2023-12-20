@@ -217,6 +217,7 @@
 /*LOGO ALFA CHICA JUNTOS*/
 /* Tablets y phablets */
 @media   (min-width: 576px) and (max-width: 767px) {
+ 
   .carrucel-respon{
    display: none;
     margin-top: 85px !important;
@@ -247,7 +248,7 @@
   }
   /*media query tamaño de la pantalla productos*/
   .content{
-    margin-top: 50px !important;
+    margin-top: 150px !important;
   }
   .carrucel-principal{
     margin-top: 180px !important;
@@ -290,7 +291,7 @@
   }
   /*media query tamaño de la pantalla productos*/
   .content{
-    margin-top: 50px !important;
+    margin-top: 150px !important;
   }
   .carrucel-principal{
     margin-top: 170px !important;
@@ -343,6 +344,9 @@
   .carrucel{
     height: 110px !important;
     width: 100% !important;
+  }
+  .farmaco{
+    margin-top: 90px !important;
   }
   
 }

@@ -10,7 +10,7 @@ import withReactContent from 'sweetalert2-react-content'
 import { Link } from "react-router-dom";
 import ChicaAlfa from "../img/ChicaALFA.JPG";
 import "../style/Header.css";
-
+import "../style/Empresa.css";
 //import { useNavigate } from "react-router-dom";
 
 
@@ -191,7 +191,7 @@ const handleSubmit = (event) => {
 
         
 
-            <div className="container cont-res" style={{ overflow: "hidden", margin:"220px auto 0px"}}>
+            <div className="container farmaco" style={{  marginTop:"220px"}}>
                 <h1>Farmacovigilancia</h1>
                 <h5>Campos marcados con <span className="text-danger">*</span> son requeridos</h5>
                 

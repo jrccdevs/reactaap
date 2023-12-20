@@ -99,16 +99,21 @@ padding-left: 0%;
   
 
 
-
-@media  (min-width: 320px) and (max-width: 712px) {
+@media screen and (min-width: 576px) and (max-width: 768px){
   .detalle-producto{
-    margin-top: 85px !important;
+    margin-top: 185px !important;
   }
   .detalle-footer{
     margin-top: -400px !important;
   }
-  
 }
+@media screen and (max-width: 575px){
+  .detalle-producto{
+    margin-top: 95px !important;
+  }
+}
+
+
 /*  @media (max-width: 770px) {
       .detalle {
         margin-left: 60px;
