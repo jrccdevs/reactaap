@@ -40,7 +40,7 @@ function PaginaCarrucel() {
                 
             
                 <img
-                    style={{marginLeft:"1%", marginTop:"5%", width: "100%", height: "auto", marginBottom:"45px" }}
+                    style={{marginLeft:"0", marginRight:"0", marginTop:"5%", width: "100%", height: "auto", marginBottom:"45px" }}
                     className="img-productos"
                     src={producto.archivo}
                     alt=""
