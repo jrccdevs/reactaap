@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
 import { getEmpresaBanner } from "../api/productosCar";
-
+import Footer from './Footer';
 import construccion from "../img/construccion.jpg";
 
-
+//componente para imagenes moviles 
 function PaginaCarrucel() {
     const [visible, setVisible] = React.useState(false);
   //   console.log(useParams());
@@ -34,19 +34,23 @@ function PaginaCarrucel() {
        {producto.map((producto) => (
         <div className='container' key={producto.id}>
          
-            <div  style={{ width: "100%", height: "100%" ,marginTop:"10px"}}>
+            <div className='row' >
                 
-              
+            <div className='col-md-12' style={{ width: "100%", height: "100%" ,marginTop:"10px"}}>
+                
+            
                 <img
-                    style={{marginLeft:"1%", marginTop:"5%", width: "100%", height: "100%" }}
+                    style={{marginLeft:"1%", marginTop:"5%", width: "100%", height: "auto" }}
                     className="img-productos"
-                    src={producto.image}
+                    src={producto.archivo}
                     alt=""
                 />
 
             </div>
 
-            <div>
+            </div>
+
+           {/*  <div>
                 <p> {producto.descripcion} </p>
             </div>
 
@@ -58,10 +62,13 @@ function PaginaCarrucel() {
             </div>
             <div>
                 <p> {producto.id} </p>
-            </div>
+            </div> */}
          
         </div >
          ))}
+         <div className="principal-footer mb-12 mt-12">
+         <Footer />
+         </div>
         </>
     );
 }

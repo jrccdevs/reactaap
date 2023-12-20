@@ -134,7 +134,49 @@
   }
 
 
-  @media  (min-width: 320px) and (max-width: 712px) {
+  @media  (max-width: 575px) {
+    .empresa-resp{
+      margin-top: 85px !important;
+    }
+    
+    .empresa-footer {
+     padding-top: 400px !important;
+    }
+    .detalle-acordion-t{
+      padding: 0;
+    }
+    .detalle-acordion1{
+      padding: 0;
+    }
+    .detalle-acordion2{
+      padding: 0;
+    }
+    .detalle-acordion3{
+      padding: 0;
+    }
+    .detalle-acordion4{
+      padding: 0;
+    }
+    .detalle-acordion5{
+      padding: 0;
+    }
+    .detalle-acordion6{
+      padding: 0;
+    }
+    
+    .detalle-acordion7{
+      padding: 0;
+    }
+    .detalle-acordion8{
+      padding: 0;
+    
+    }
+    .detalle-acordion9{
+      padding: 0;
+     }
+  }
+
+  @media  (min-width: 576px) and (max-width: 991px) {
     .empresa-resp{
       margin-top: 195px !important;
     }

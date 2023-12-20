@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 import ChicaAlfa from "../img/ChicaALFA.JPG";
 import "../style/Header.css";
 
-
+import "../style/Empresa.css";
 
 
 const Root = styled('div')(({ theme }) => ({
