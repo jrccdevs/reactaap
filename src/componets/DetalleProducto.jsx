@@ -102,8 +102,8 @@ export default function DetalleProducto() {
 
                 largeImage: {
                   src: producto.image,
-                  width: 2000,
-                  height: 2000,
+                  width: 1000,
+                  height: 1000,
 
                 },
                 lensStyle: {

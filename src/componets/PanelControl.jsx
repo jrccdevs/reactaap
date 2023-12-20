@@ -144,8 +144,6 @@ function PanelControl() {
       !productoPost.categoria ||
       !productoPost.carrucel ||
       !productoPost.presentacion ||
-      !productoPost.image ||
-      !productoPost.prospecto ||
       !productoPost.link
     ) {
       MySwal.fire({
@@ -169,8 +167,8 @@ function PanelControl() {
       !productoPut.categoria ||
       !productoPut.carrucel ||
       !productoPut.presentacion ||
-      !productoPut.image ||
-      !productoPost.prospecto ||
+/*       !productoPut.image ||
+      !productoPost.prospecto || */
       !productoPost.link
     ) {
       MySwal.fire({
