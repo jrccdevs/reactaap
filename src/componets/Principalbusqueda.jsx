@@ -161,9 +161,9 @@ function useKey(key, cb) {
                 <Form className="nav__buscador d-flex" >
                   <Form.Control
                   onChange={(e) => buscarProductos(e.target.value)}
-                      
+                  style={{fontSize:"14px"}}
                     type="search"
-                    placeholder="Buscador de Productos"
+                    placeholder="Buscar por Nombre o Principio Activo"
                     className="nav-control me-2"
                     aria-label="Search"
                   />

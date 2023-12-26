@@ -104,7 +104,8 @@ import "../style/navbar.css";
               <Form.Control
                 onChange={(e) => this.handleChange(e)}
                 type="search"
-                placeholder="Buscador de Productos"
+                style={{fontSize:"14px"}}
+                placeholder="Buscar por Nombre o Principio Activo"
                 className="nav-control me-2"
                 aria-label="Search"
               />

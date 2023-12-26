@@ -98,16 +98,9 @@ export default function Productos2() {
 
 
     const handlePageChange = (pageNumber) => {
-       /*  setCurrentPage(pageNumber);
+         setCurrentPage(pageNumber);
         navigate(`/productos?page=${pageNumber}`);
- */setCurrentPage(pageNumber);
-
-        // Obtén la categoría seleccionada del parámetro de consulta
-        const selectedValueFromQuery = searchParams.get('selectedValue');
-        
-        // Navega a la nueva página manteniendo la categoría y la página actual
-        navigate(`/productos?page=${pageNumber}&selectedValue=${selectedValueFromQuery}`);
-       
+ 
         window.scrollTo({
             top: 0,
             behavior: 'smooth', // Esto hará que el desplazamiento sea suave
