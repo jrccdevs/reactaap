@@ -1,27 +1,89 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+
 import Form from "react-bootstrap/Form";
-import Navbar from "react-bootstrap/Navbar";
+
 import { FaSearch } from "react-icons/fa";
-import "../style/Productos2.css";
+import LogoRes from "../img/ChicaALFA.JPG";
+import "../style/navbar.css";
 
-class BusquedaProducto extends React.Component {
-  render() {
 
-    const { handleChange } = this.props;
-    const { handleFormaFarmace } = this.props;
+  class BusquedaProducto extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        active: "nav__menu",
+        icon: "nav__toggler",
+        showSearchBar: true, // Nuevo estado para controlar la visibilidad del buscador
+  
+      };
+    }
+  
+    navToggle = () => {
+      const { active, icon } = this.state;
+      if (active === "nav__menu") {
+        this.setState({ active: "nav__menu nav__active" });
+      } else {
+        this.setState({ active: "nav__menu" });
+      }
+  
+      // Icon Toggler
+      if (icon === "nav__toggler") {
+        this.setState({ icon: "nav__toggler toggle" });
+      } else {
+        this.setState({ icon: "nav__toggler" });
+      }
+    };
+  
 
-    return (
-      <>
+    handleFormaFarmace = (event) => {
+      const { handleFormaFarmace  } = this.props;
+      handleFormaFarmace(event);
+  
+      // Scroll al inicio de la página
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+      // Restablecer el valor del selector a la opción por defecto
+    // Restablecer el valor del selector a la opción por defecto
+     // Mostrar nuevamente el buscador y selector en la barra responsiva
+     this.setState({ showSearchBar: true });
+    };
 
-        <Navbar className="mb-3 nav-bar">
-          <Container className="secction-productos">
-            <div className=" container-fluid col-12"  style={{ marginLeft: "100px"}}>
-              <section className=" busquedaproducto col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
-                <select className="select-producto form-select" style={{width:"225px", marginLeft:"-10px"}} onChange={(e) => handleFormaFarmace(e)}>
-                <option disabled selected hidden className="opciones-select">FORMA FARMACEUTICA</option>
-                  <option value={''}>MOSTRAR TODOS </option>
+    handleChange = (e) => {
+      const { handleChange } = this.props;
+      handleChange(e);
+  
+      // Ocultar el buscador y selector en la barra responsiva después de la búsqueda
+      this.setState({ showSearchBar: false });
+    };
+    render() {
+      const { showSearchBar } = this.state;
+      const { handleFormaFarmace } = this.props;
+  
+  
+      return (
+        <nav className="nav">
+          <a href="!#" className="nav__brand">
+            <img
+              className="logo-responsivo"
+              style={{ width: "auto", height: "auto", color: "white" }}
+              src={LogoRes}
+              alt=""
+            />
+          </a>
+  
+          <div className={this.state.active}>
+            <select
+              className=" nav__item form-select col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+              onChange={(e) => this.handleFormaFarmace(e)}
+             
+            >
+              <option disabled selected hidden className="nav__option">
+                FORMA FARMACEUTICA
+              </option>
+              <option value={""}>MOSTRAR TODOS </option>
                   <option value="CAPSULAS">CÁPSULAS</option>
                   <option value="COMPRIMIDOS">COMPRIMIDOS</option>
                   <option value="CREMAS">CREMAS</option>
@@ -37,29 +99,28 @@ class BusquedaProducto extends React.Component {
                   <option value="SUPOSITORIO">SUPOSITORIO</option>
                   <option value="SUSPENSION">SUSPENSIÓN</option>
                   <option value="TABLETAS">TABLETAS</option>
-                </select>
-              </section>
-
-              <section className="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-9">
-                <Form className="buscadorpro d-flex" style={{width: "70%", marginRight: "70px",marginLeft: "10px"}}>
-                  <Form.Control
-                    onChange={handleChange}
-                    type="search"
-                    placeholder="Buscador de Productos"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button className="botonLupa" variant="primary"><FaSearch></FaSearch></Button>
-                </Form>
-              </section>
-
-            </div>
-          </Container>
-        </Navbar>
-
-      </>
-    );
+            </select>
+            <Form className="nav__buscador d-flex">
+              <Form.Control
+                onChange={(e) => this.handleChange(e)}
+                type="search"
+                placeholder="Buscador de Productos"
+                className="nav-control me-2"
+                aria-label="Search"
+              />
+              <Button className="nav__lupa" variant="primary"><FaSearch></FaSearch></Button>
+            </Form>
+          </div>
+  
+          <div onClick={this.navToggle} className={this.state.icon}>
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+        </nav>
+      );
+    }
   }
-}
+  
 
 export default BusquedaProducto;

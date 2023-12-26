@@ -170,7 +170,7 @@ const handleSubmit = (event) => {
           <div className="row">
 
             <div className="col-md-3" style={{ backgroundColor: "white", height: "auto"}}>
-            <Link to={"/"}>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
                 <img className="logoAlfaprueba" style={{width:"300px", paddingTop:"18px"}} src={ChicaAlfa} alt="" />
                 </Link>
             </div>

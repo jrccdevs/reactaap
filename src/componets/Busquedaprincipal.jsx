@@ -56,8 +56,6 @@ export default function BusquedaPrincipal() {
     event.preventDefault();
   }
 
-
-
   // useEffect(() => {
   //   async function loadProductos() {
   //     const response = await getProductosRequest();
@@ -99,7 +97,7 @@ export default function BusquedaPrincipal() {
   const handleRedirect = () => {
     // navigate("/productos", { state: { searchText } });
     navigate(`/productos?searchProcut=${searchText}`);
-
+    setSearchText("");
     // pasamos el valor del input guardado en el estado searchText a la función Busqueda
   };
 

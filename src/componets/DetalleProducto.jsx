@@ -66,7 +66,7 @@ export default function DetalleProducto() {
         <div className="row">
           <ModalProducto />
           <div className="col-md-3" style={{ backgroundColor: "white", height: "auto" }}>
-            <Link to={"/"}>
+            <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
               <img className="logoAlfaprueba" style={{ width: "300px", paddingTop: "7px" }} src={ChicaAlfa} alt="" />
             </Link>
           </div>

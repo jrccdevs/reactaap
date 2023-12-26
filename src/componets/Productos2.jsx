@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import BusquedaProducto from "./Principalbusqueda";
+import BusquedaProducto from "./BusquedaProducto";
 import Footer from "./Footer";
 //import Header from "./Header";
 import CarrucelHeader from "./HeaderCarrucel";
@@ -33,7 +33,7 @@ function useKey(key, cb) {
 
 export default function Productos2() {
 
-
+    const isMobile = window.innerWidth <= 768;
 
     const [formafarmaceutica, setformafarmaceuticaid] = useState('');
     const [producto, setProductos] = useState([]);
@@ -62,10 +62,25 @@ export default function Productos2() {
 
     const navigate = useNavigate();
 
-    const handleFormaFarmace = (event) => {
+    /* const handleFormaFarmace = (event) => {
         const getformafarmaceuticaid = event.target.value;
         setformafarmaceuticaid(getformafarmaceuticaid);
         navigate(`/productos`);
+        event.preventDefault();
+    }
+ */ 
+
+    const handleFormaFarmace = (event) => {
+        const getformafarmaceuticaid = event.target.value;
+        const selectedValue = event.target.value;
+        setformafarmaceuticaid(getformafarmaceuticaid);
+        
+        navigate(`/productos?page=${selectedValue}&selectedValue=${getformafarmaceuticaid}&page=1`);
+        currentPage([]);
+         window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Esto hará que el desplazamiento sea suave
+          });
         event.preventDefault();
     }
 
@@ -83,8 +98,20 @@ export default function Productos2() {
 
 
     const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
+       /*  setCurrentPage(pageNumber);
         navigate(`/productos?page=${pageNumber}`);
+ */setCurrentPage(pageNumber);
+
+        // Obtén la categoría seleccionada del parámetro de consulta
+        const selectedValueFromQuery = searchParams.get('selectedValue');
+        
+        // Navega a la nueva página manteniendo la categoría y la página actual
+        navigate(`/productos?page=${pageNumber}&selectedValue=${selectedValueFromQuery}`);
+       
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Esto hará que el desplazamiento sea suave
+          });
     };
 
     // useEffect(() => {
@@ -111,6 +138,10 @@ export default function Productos2() {
         navigate(`/productos`);
         setBusqueda(e.target.value);
         buscar(e.target.value);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Esto hará que el desplazamiento sea suave
+          });
         e.preventDefault();
         // e.preventDefault();
     };
@@ -135,17 +166,20 @@ export default function Productos2() {
             result = producto;
         } else {
             result = producto.filter((dato) =>
-                dato.nombreproducto
-                    .toLowerCase()
-                    .includes(busqueda.toLowerCase())
+                dato.principioactivo.toLowerCase().includes(busqueda.toLowerCase()) ||
+                dato.nombreproducto.toLowerCase().includes(busqueda.toLowerCase())
             );
         }
 
         if (searchText) {
             result = result.filter((dato) =>
+                dato.principioactivo.toLowerCase().includes(searchText.toLowerCase()) ||
                 dato.nombreproducto.toLowerCase().includes(searchText.toLowerCase())
             );
+
+            
         }
+      
     };
 
 
@@ -195,7 +229,7 @@ export default function Productos2() {
                 <div className="row">
 
                     <div className="col-md-3" style={{ backgroundColor: "white", height: "auto" }}>
-                        <Link to={"/"}>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
                             <img className="logoAlfaprueba" style={{ width: "100%", height: "auto", paddingTop: "7px" }} src={ChicaAlfa} alt="" />
                         </Link>
                     </div>
@@ -230,7 +264,7 @@ export default function Productos2() {
                                                 {/* <div key={producto.id.toString()}> */}
                                                 <div className="div-producto col-12">
                                                     <a href="#!">
-                                                        <Link className="cover" to={`/productos/${producto.id}/page/${currentPage}`}>
+                                                        <Link className="cover" to={`/productos/${producto.id}/page/${currentPage}`} onClick={() => window.scrollTo(0, 0)}>
                                                             <img
                                                                 className="img-productos"
                                                                 src={producto.image}
@@ -259,23 +293,24 @@ export default function Productos2() {
                         </div>
                     </div>
                 </section>
-                <section className="col-12 col-sm-12 col-md-12 col-lg-12">
+                <section className="col-12">
                     <div className="container">
-                        <div className="row col-md-12">
-                            
+                        <div className="row justify-content-center">
+                            <div className="col-md-8 col-12 d-flex justify-content-center" style={{ maxWidth: '100%' }}>
                                 {result.length > 0 ? (
                                     
                                     <Pagination
                                         activePage={currentPage}
-                                        itemsCountPerPage={itemsPerPage}
+                                        itemsCountPerPage={ itemsPerPage} // Ajustar el número de elementos por página
                                         totalItemsCount={result.length}
-                                        pageRangeDisplayed={5}
+                                        pageRangeDisplayed={isMobile ? 3 : 5} // Ajustar el rango de páginas mostradas
+                                     
                                         onChange={handlePageChange}
                                         activeClassName="active"
                                         firstPageText="First"
                                         lastPageText="Last"
                                         prevPageText="Anterior"
-                                        nextPageText="Siguiente"
+                                        nextPageText="Siguiente" 
                                         innerClass="pagination justify-content-center"
                                         itemClass="page-item"
                                         linkClass="page-link"
@@ -285,11 +320,12 @@ export default function Productos2() {
                                         hideFirstLastPages={true}
                                         breakLabel="..."
                                         activeLabel='(current)'
+                                        
                                     />
                                 ) : (
                                         <p className="text-center">No hay productos para mostrar</p>
                                     )}
-                            
+                             </div>
                         </div>
                     </div>
                 </section>

@@ -178,7 +178,7 @@ console.log(result);
         <div className="row">
 
           <div className="col-md-3" style={{ backgroundColor: "white", height: "100%" }}>
-            <Link to={"/"}>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <img className="logoAlfaprueba" style={{ width: "100%", paddingTop: "7px" }} src={ChicaAlfa} alt="" />
             </Link>
           </div>

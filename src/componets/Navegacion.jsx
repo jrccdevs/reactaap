@@ -76,21 +76,23 @@ export default function Navegacion () {
             
             <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
-                <Link to="/empresa">
+                <Link to="/empresa" onClick={() => window.scrollTo(0, 0)}>
                   <img className="fondo-img" src={Empresa} alt="" />
                 </Link>
               </div>
             </div>
             <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
-                <Link to="/productos">
+                <Link to="/productos" onClick={() => window.scrollTo(0, 0)}>
                   <img className="fondo-img" src={Productos} alt="" />
                 </Link>
               </div>
             </div>
             <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
-                <Link to="/es/farmaco-vigilancia">
+               
+                <Link to='/es/farmaco-vigilancia' onClick={() => window.scrollTo(0, 0)}>
+     
                   <img className="fondo-img" src={Farmacovigilancia} alt="" />
                 </Link>
               </div>
@@ -98,7 +100,7 @@ export default function Navegacion () {
 
             <div className="col-6 col-sm-6 mt-4">
               <div className="imagen1">
-                <Link to="/vademecun">
+                <Link to="/vademecun" onClick={() => window.scrollTo(0, 0)}>
                   <img
                     className="fondo-img"
                     target="_blank"

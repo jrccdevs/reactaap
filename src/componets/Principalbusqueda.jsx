@@ -53,10 +53,18 @@ function useKey(key, cb) {
 
   const handleFormaFarmace = (event) => {
     const selectedValue = event.target.value;
-    // console.log(selectedValue);
-    navigate(`/productos?selectedValue=${selectedValue}`);
+    navigate(`/productos?selectedValue=${selectedValue}&page=1`); // Asegúrate de incluir la página 1 al cambiar la categoría
+    
+    setProductosMatch([]); // Reiniciar productosMatch al cambiar la categoría
+    setSearchText(""); // Reiniciar el texto de búsqueda al cambiar la categoría
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     event.preventDefault();
   }
+
+  
 
 
 
@@ -99,12 +107,13 @@ function useKey(key, cb) {
   };
 
   const handleRedirect = () => {
-    // navigate("/productos", { state: { searchText } });
-    navigate(`/productos?searchProcut=${searchText}`);
-
-    // pasamos el valor del input guardado en el estado searchText a la función Busqueda
+    console.log("Texto de búsqueda antes de limpiar:", searchText);
+  navigate(`/productos?searchProcut=${searchText}&page=1`);
+  
+  setSearchText(""); // Limpiar el texto de búsqueda de inmediato
+  console.log("Texto de búsqueda después de limpiar:", searchText); // Esto imprimirá el valor actual, que debería ser vacío
+  setProductosMatch([]);
   };
-
   
   useKey("Enter", handleRedirect)
 
