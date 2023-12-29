@@ -89,7 +89,7 @@ function useKey(key, cb) {
 
   // console.log(productos);
 
-  const buscarProductos = (text) => {
+  /* const buscarProductos = (text) => {
     if (!text) {
       setProductosMatch([]);
     } else {
@@ -104,7 +104,35 @@ function useKey(key, cb) {
 
       setSearchText(text); // guardamos el valor del input en el estado searchText
     }
+  }; */
+
+  const normalizeText = (text) => {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   };
+  
+  const buscarProductos = (text) => {
+    if (!text) {
+      setProductosMatch([]);
+    } else {
+      const normalizedText = normalizeText(text.toLowerCase());
+  
+      let matches = productos.filter((country) => {
+        const regex = new RegExp(`${normalizedText}`, "gi");
+        const normalizedNombreProducto = normalizeText(country.nombreproducto.toLowerCase());
+        const normalizedPrincipioActivo = normalizeText(country.principioactivo.toLowerCase());
+  
+        return (
+          normalizedNombreProducto.match(regex) ||
+          normalizedPrincipioActivo.match(regex)
+        );
+      });
+  
+      setProductosMatch(matches);
+  
+      setSearchText(text); // guardamos el valor del input en el estado searchText
+    }
+  };
+
 
   const handleRedirect = () => {
     console.log("Texto de búsqueda antes de limpiar:", searchText);

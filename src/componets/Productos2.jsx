@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import CarrucelHeader from "./HeaderCarrucel";
 import Pagination from "react-js-pagination";
 import "../style/Productos2.css";
-import "../style/Header.css";
+/* import "../style/Header.css"; */
 import ModalProducto from "./ModalProducto";
 import { useLocation } from 'react-router-dom';
 import ChicaAlfa from "../img/ChicaALFA.JPG";
@@ -153,27 +153,37 @@ export default function Productos2() {
     //         );
     //     }
     // };
+    const normalizeText = (text) => {
+        return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      };
+      
 
-    const buscar = () => {
-        if (!busqueda && busqueda.length > 0) {
-            result = producto;
+      const buscar = () => {
+       
+        if (!busqueda || busqueda.length === 0) {
+          result = producto;
         } else {
-            result = producto.filter((dato) =>
-                dato.principioactivo.toLowerCase().includes(busqueda.toLowerCase()) ||
-                dato.nombreproducto.toLowerCase().includes(busqueda.toLowerCase())
-            );
-        }
-
-        if (searchText) {
-            result = result.filter((dato) =>
-                dato.principioactivo.toLowerCase().includes(searchText.toLowerCase()) ||
-                dato.nombreproducto.toLowerCase().includes(searchText.toLowerCase())
-            );
-
-            
+          const normalizedBusqueda = normalizeText(busqueda.toLowerCase());
+      
+          result = producto.filter((dato) =>
+            normalizeText(dato.principioactivo.toLowerCase()).includes(normalizedBusqueda) ||
+            normalizeText(dato.nombreproducto.toLowerCase()).includes(normalizedBusqueda)
+          );
         }
       
-    };
+        if (searchText) {
+          const normalizedSearchText = normalizeText(searchText.toLowerCase());
+      
+          result = result.filter((dato) =>
+            normalizeText(dato.principioactivo.toLowerCase()).includes(normalizedSearchText) ||
+            normalizeText(dato.nombreproducto.toLowerCase()).includes(normalizedSearchText)
+          );
+        }
+      
+        // Resto de tu lógica...
+      
+        return result;
+      };
 
 
     // let searchTextTemp = searchText;
@@ -244,7 +254,7 @@ export default function Productos2() {
             <Container className="content" style={{ overflow: "hidden", margin: "150px auto 0px" }}>
                 <section className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="container">
-                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-cols-lg-4 ">
+                        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-4 row-cols-lg-4 ">
 
 
                             {/*   row-cols-xl-4    {result.map((producto) => ( */}

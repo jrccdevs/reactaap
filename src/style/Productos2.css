@@ -1,47 +1,56 @@
 /* ========================================= Componente Producto ============================================== */
-.div-producto {
-  height: 250px;
-  border-radius: 8%;
-  width: 250px;
-  margin-top: 10px;
- 
+ .div-producto {
+  max-height: auto;
+  /* border-radius: 8%; */
+  max-width: 100%;
+  margin-top: 1px;
+/*  background: brown; */
   /*  border:2px solid #8a8f9b;*/
   /*color: rgb(46, 155, 243);*/
 }
 
-
+ .card-body{
+  padding: 1rem;
+} 
 
 .card {
   margin-top: 70px;
   border:1px solid #ece9e9;
   border-radius: 5%;
-  height: 100%;
-  width: 100%;
-  
+  height:auto;
+  width: auto;
+ 
   /* border: none !important; */
 }
 
 .card-title{
+  /* margin-top: 15px; */
   margin-top: 15px;
-  margin-left: 25px;
+  margin-left: 0;
   text-transform: uppercase;
   color: #003057;
   /*font-weight: bold;*/
   font-weight: normal;
   font-size: 17px;
+  margin-bottom: 30px;
+  width: auto;
 }
 .card-title1{
   margin-top: -10px;
-  margin-left: 25px;
-  font-size: 13px;
+  /* margin-left: 25px; */
+  font-size: 13px; 
+  width: auto;
+ 
 }
 .img-productos {
-  height: auto;
-  width: 200px;
+  max-height: auto;
+  max-width: 100%;
   object-fit: cover;
-  margin-left: -8px;
+/*   margin-left: -8px;
+ */  justify-content: center;
   /* border-radius: 8%; */
   /* width: 250px; */
+ /* background: aqua; */
  
 }
 
